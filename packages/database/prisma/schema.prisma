@@ -113,6 +113,7 @@ model RoleAssignment {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   role RoleDefinition @relation(fields: [roleKey], references: [key], onDelete: Restrict)
   @@index([userId, roleKey])
+  @@index([userId, revokedAt])
   @@index([scopeType, scopeId])
 }
 model AuditLog {

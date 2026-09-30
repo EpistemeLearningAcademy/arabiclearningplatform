@@ -202,7 +202,7 @@
     "zeptomatch": "^2.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test --workspace=@greenfield/api"
   },
   "repository": {
     "type": "git",

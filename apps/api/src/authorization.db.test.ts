@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import { config as loadEnv } from "dotenv";
 import { test } from "node:test";
 import { getEffectivePermissions, hasLinkedChildPermission, hasPermission, recordBreakGlassAccess } from "./authorization.js";
+import { assertDisposableTestDatabase } from "./test-database.js";
 
 loadEnv({ path: resolve(process.cwd(), "../../.env") });
 const enabled = process.env.RUN_DATABASE_TESTS === "1";
@@ -11,10 +12,7 @@ const enabled = process.env.RUN_DATABASE_TESTS === "1";
 async function getLocalPrisma() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL is required for database integration tests.");
-  const host = new URL(connectionString).hostname;
-  if (host !== "localhost" && host !== "127.0.0.1") {
-    throw new Error("Database integration tests are restricted to a local PostgreSQL host.");
-  }
+  assertDisposableTestDatabase(connectionString);
   return (await import("@greenfield/database")).prisma;
 }
 
