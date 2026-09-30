@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 type Campus = {
   id: string;
@@ -66,100 +66,142 @@ export default function HomePage() {
     setBusy(true);
     setError("");
     try {
-      await fetch("/api/auth/logout", { method: "POST" });
+      const response = await fetch("/api/auth/logout", { method: "POST" });
+      if (!response.ok) throw new Error("Your session could not be ended.");
       setSignedIn(false);
       setCampuses([]);
       setPassword("");
-    } catch {
-      setError("Could not sign out. Please try again.");
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : "Could not sign out. Please try again.");
     } finally {
       setBusy(false);
     }
   }
 
   return (
-    <main className="min-h-screen bg-[#f4f7f4] px-5 py-8 text-slate-900 sm:px-8 sm:py-12">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-6xl flex-col">
-        <header className="flex items-center gap-3">
-          <div className="flex size-11 items-center justify-center rounded-2xl bg-emerald-800 text-lg font-bold text-white">G</div>
-          <div>
-            <p className="text-sm font-bold tracking-wide text-emerald-950">GREENFIELD</p>
-            <p className="text-xs text-slate-500">Schools learning platform</p>
-          </div>
-        </header>
+    <main className="min-h-screen bg-canvas lg:grid lg:grid-cols-[minmax(20rem,0.88fr)_minmax(0,1.12fr)]">
+      <aside className="flex min-h-64 flex-col justify-between bg-brand px-6 py-7 text-white sm:px-10 sm:py-9 lg:min-h-screen lg:px-14 lg:py-11">
+        <Link href="/" aria-label="Greenfield School Platform home" className="inline-flex w-fit items-center gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+          <span className="flex size-10 items-center justify-center border border-white/30 text-sm font-semibold text-white">G</span>
+          <span>
+            <span className="block text-xs font-bold uppercase text-white">Greenfield</span>
+            <span className="mt-0.5 block text-xs text-white/70">School Platform</span>
+          </span>
+        </Link>
 
-        <section className="grid flex-1 items-center gap-12 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-          <div className="max-w-xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">Learning, connected</p>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl">A calmer place to learn and grow.</h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-slate-600">Sign in to reach your Greenfield campus and the people who help you thrive.</p>
-            <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-600">
-              <span className="rounded-full border border-emerald-100 bg-white px-4 py-2">One school, many campuses</span>
-              <span className="rounded-full border border-emerald-100 bg-white px-4 py-2">A welcoming space to learn</span>
+        <div className="max-w-lg py-10 lg:py-20">
+          <p className="text-xs font-semibold uppercase text-[#dfc98f]">Schools learning platform</p>
+          <h1 className="font-display mt-4 max-w-md text-4xl font-medium leading-tight text-white sm:text-5xl">
+            Greenfield School Platform
+          </h1>
+          <p className="mt-5 max-w-md text-sm leading-6 text-white/75 sm:text-base">
+            A considered workspace for the people and campuses that make Greenfield.
+          </p>
+          <div className="mt-8 h-px w-16 bg-gold" aria-hidden="true" />
+        </div>
+
+        <p className="text-xs text-white/60">Greenfield Schools</p>
+      </aside>
+
+      <section className="flex min-h-[28rem] items-center justify-center px-5 py-10 sm:px-10 lg:min-h-screen lg:px-14">
+        <div className="w-full max-w-xl">
+          {checkingSession ? (
+            <div role="status" aria-live="polite" className="space-y-4">
+              <span className="sr-only">Checking your sign-in</span>
+              <div className="h-3 w-28 animate-pulse rounded-sm bg-slate-200" />
+              <div className="h-9 w-64 max-w-full animate-pulse rounded-sm bg-slate-200" />
+              <div className="h-24 rounded-md border border-line bg-white" />
             </div>
-          </div>
-
-          <div className="w-full rounded-3xl border border-emerald-100 bg-white p-6 shadow-[0_24px_70px_-36px_rgba(15,75,45,0.35)] sm:p-9">
-            {checkingSession ? (
-              <div className="py-12 text-center text-sm text-slate-500" role="status">Checking your sign-in…</div>
-            ) : signedIn ? (
-              <div>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-medium text-emerald-700">Greenfield</p>
-                    <h2 className="mt-1 text-2xl font-semibold tracking-tight">Choose a campus</h2>
-                    <p className="mt-2 text-sm text-slate-500">You’ll only see campuses where you have access.</p>
-                  </div>
-                  <button className="rounded-full px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 disabled:opacity-50" disabled={busy} onClick={handleSignOut} type="button">Sign out</button>
+          ) : signedIn ? (
+            <div>
+              <p className="text-xs font-semibold uppercase text-gold-deep">Workspace selection</p>
+              <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <h2 className="font-display text-3xl font-medium leading-tight text-ink sm:text-4xl">Your campuses</h2>
+                  <p className="mt-2 text-sm leading-6 text-muted">Choose a campus to continue.</p>
                 </div>
+                <button
+                  className="min-h-10 rounded-md px-3 text-sm font-semibold text-ink-soft transition-colors hover:bg-brand-tint hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep disabled:opacity-50"
+                  disabled={busy}
+                  onClick={handleSignOut}
+                  type="button"
+                >
+                  Sign out
+                </button>
+              </div>
 
-                {campuses.length === 0 ? (
-                  <p className="mt-8 rounded-2xl bg-amber-50 p-4 text-sm text-amber-900">Your account doesn’t have a campus membership yet. Ask your school administrator for help.</p>
-                ) : (
-                  <div className="mt-7 space-y-3">
-                    {campuses.map((campus) => (
+              {campuses.length === 0 ? (
+                <div className="mt-7 rounded-md border border-line bg-white p-5">
+                  <h3 className="text-sm font-semibold text-ink">No campus access yet</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">Your account is active, but it is not a member of a campus. Ask a school administrator to grant access.</p>
+                </div>
+              ) : (
+                <ul className="mt-7 divide-y divide-line border-y border-line">
+                  {campuses.map((campus) => (
+                    <li key={campus.id}>
                       <Link
-                        className="flex w-full items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-emerald-300 hover:bg-emerald-50/50 focus:outline-none focus:ring-4 focus:ring-emerald-100"
-                        href={`/campuses/${campus.id}`}
-                        key={campus.id}
+                        href={`/campuses/${encodeURIComponent(campus.id)}`}
+                        className="group flex min-h-20 items-center justify-between gap-4 py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
                       >
-                        <span>
-                          <span className="block text-xs font-medium uppercase tracking-wide text-emerald-700">{campus.school.name}</span>
-                          <span className="mt-1 block font-semibold text-slate-900">{campus.name}</span>
-                          <span className="mt-1 block text-sm text-slate-500">{campus.slug}</span>
+                        <span className="min-w-0">
+                          <span className="block truncate text-xs font-medium text-muted">{campus.school.name}</span>
+                          <span className="mt-1 block truncate text-base font-semibold text-ink transition-colors group-hover:text-brand">{campus.name}</span>
+                          <span className="mt-1 block truncate text-xs text-muted">{campus.slug}</span>
                         </span>
-                        <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-100">{campus.role.replaceAll("_", " ").toLowerCase()}</span>
+                        <span className="shrink-0 text-right">
+                          <span className="block text-xs font-semibold text-brand">{campus.role.replaceAll("_", " ").toLowerCase()}</span>
+                          <span aria-hidden="true" className="mt-1 block text-right text-muted transition-transform group-hover:translate-x-1">→</span>
+                        </span>
                       </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div>
-                <p className="text-sm font-medium text-emerald-700">Welcome back</p>
-                <h2 className="mt-1 text-2xl font-semibold tracking-tight">Sign in to Greenfield</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">Use the email and password given to you by your school.</p>
-                <form className="mt-7 space-y-5" onSubmit={handleSignIn}>
-                  <label className="block text-sm font-medium text-slate-700">
-                    Email address
-                    <input autoComplete="username" className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-100" onChange={(event) => setEmail(event.target.value)} required type="email" value={email} />
-                  </label>
-                  <label className="block text-sm font-medium text-slate-700">
-                    Password
-                    <input autoComplete="current-password" className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-100" onChange={(event) => setPassword(event.target.value)} required type="password" value={password} />
-                  </label>
-                  {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">{error}</p>}
-                  <button className="w-full rounded-xl bg-emerald-800 px-5 py-3.5 font-semibold text-white transition hover:bg-emerald-900 focus:outline-none focus:ring-4 focus:ring-emerald-200 disabled:cursor-wait disabled:opacity-60" disabled={busy} type="submit">{busy ? "Signing in…" : "Sign in"}</button>
-                </form>
-                <p className="mt-6 text-center text-xs leading-5 text-slate-400">Your sign-in is protected by your school account.</p>
-              </div>
-            )}
-            {error && signedIn && <p className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">{error}</p>}
-          </div>
-        </section>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {error && <p role="alert" className="mt-5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>}
+            </div>
+          ) : (
+            <div>
+              <p className="text-xs font-semibold uppercase text-gold-deep">Account access</p>
+              <h2 className="font-display mt-3 text-3xl font-medium leading-tight text-ink sm:text-4xl">Sign in</h2>
+              <p className="mt-2 text-sm leading-6 text-muted">Use the account provided by your school.</p>
 
-        <footer className="border-t border-emerald-100 pt-5 text-xs text-slate-500">Greenfield · A shared learning space across campuses</footer>
-      </div>
+              <form className="mt-8 space-y-5" onSubmit={handleSignIn}>
+                <label className="block text-sm font-semibold text-ink-soft">
+                  Email address
+                  <input
+                    autoComplete="username"
+                    className="mt-2 min-h-12 w-full rounded-md border border-line bg-white px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    type="email"
+                    value={email}
+                  />
+                </label>
+                <label className="block text-sm font-semibold text-ink-soft">
+                  Password
+                  <input
+                    autoComplete="current-password"
+                    className="mt-2 min-h-12 w-full rounded-md border border-line bg-white px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+                    onChange={(event) => setPassword(event.target.value)}
+                    required
+                    type="password"
+                    value={password}
+                  />
+                </label>
+                {error && <p role="alert" className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>}
+                <button
+                  className="min-h-12 w-full rounded-md bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep disabled:cursor-wait disabled:opacity-60"
+                  disabled={busy}
+                  type="submit"
+                >
+                  {busy ? "Signing in…" : "Sign in"}
+                </button>
+              </form>
+              <p className="mt-6 border-t border-line pt-4 text-xs leading-5 text-muted">Your sign-in is protected by your school account.</p>
+            </div>
+          )}
+        </div>
+      </section>
     </main>
   );
 }

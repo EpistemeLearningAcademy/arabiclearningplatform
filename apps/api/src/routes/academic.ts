@@ -46,6 +46,13 @@ async function hasAny(user: string, permissions: string[], type: ResourceType, i
   for (const permission of permissions) if (await hasResourcePermission(user, permission, type, id)) return true;
   return false;
 }
+async function createWithAudit<T extends { id: string }>(create: (tx: any) => Promise<T>, audit: (record: T) => any): Promise<T> {
+  return prisma.$transaction(async (tx) => {
+    const record = await create(tx);
+    await tx.auditLog.create({ data: audit(record) });
+    return record;
+  });
+}
 async function createHandler(req: express.Request, res: express.Response, key: string, permission = "academic.structure.manage") {
   const actor = await userId(req);
   if (!actor) return fail(res, 401, "UNAUTHENTICATED", "A valid bearer token is required.");
@@ -57,19 +64,19 @@ async function createHandler(req: express.Request, res: express.Response, key: s
   const when = dates(body);
   if (!when) return fail(res, 422, "VALIDATION_ERROR", "Dates must be valid ISO timestamps and end after start.");
   let data: any = { name: body.name.trim(), ...(body.code !== undefined ? { code: body.code?.trim() || null } : {}) };
-  let created: any;
+  let create: ((tx: any) => Promise<any>) | undefined;
   if (key === "academicYear") {
     data = { ...data, schoolId: body.schoolId, ...when };
-    created = await db.academicYear.create({ data, select: { id: true, schoolId: true, name: true, startsAt: true, endsAt: true } });
+    create = (tx) => tx.academicYear.create({ data, select: { id: true, schoolId: true, name: true, startsAt: true, endsAt: true } });
   } else if (key === "academicSection") {
     data = { ...data, schoolId: body.schoolId };
-    created = await db.academicSection.create({ data, select: { id: true, schoolId: true, name: true, code: true } });
+    create = (tx) => tx.academicSection.create({ data, select: { id: true, schoolId: true, name: true, code: true } });
   } else if (key === "subject") {
     data = { ...data, schoolId: body.schoolId };
-    created = await db.subject.create({ data, select: { id: true, schoolId: true, name: true, code: true } });
+    create = (tx) => tx.subject.create({ data, select: { id: true, schoolId: true, name: true, code: true } });
   }
-  if (!created) return fail(res, 404, "NOT_FOUND", "Unknown academic resource.");
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: `academic.${key}.created`, resourceType: key, resourceId: created.id, scopeType: "SCHOOL", scopeId: body.schoolId, metadata: {} } });
+  if (!create) return fail(res, 404, "NOT_FOUND", "Unknown academic resource.");
+  const created = await createWithAudit(create, (record) => ({ actorUserId: actor, action: `academic.${key}.created`, resourceType: key, resourceId: record.id, scopeType: "SCHOOL", scopeId: body.schoolId, metadata: {} }));
   return res.status(201).json({ data: created });
 }
 
@@ -101,8 +108,10 @@ router.post("/academic/terms", async (req, res) => {
   const scope = await requireScope(actor, "ACADEMIC_YEAR", academicYearId, "academic.structure.manage");
   if (scope.status !== 200) return fail(res, scope.status, scope.status === 404 ? "NOT_FOUND" : "FORBIDDEN", "You cannot manage terms for this academic year.");
   const period = dates(req.body); if (!period) return fail(res, 422, "VALIDATION_ERROR", "Term dates are invalid.");
-  const created = await prisma.term.create({ data: { academicYearId, name: req.body.name.trim(), sequence: sequence ?? null, ...period }, select: { id: true, academicYearId: true, name: true, sequence: true, startsAt: true, endsAt: true } });
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: "academic.term.created", resourceType: "Term", resourceId: created.id, scopeType: "SCHOOL", scopeId: scope.target?.schoolId, metadata: { academicYearId } } });
+  const created = await createWithAudit(
+    (tx) => tx.term.create({ data: { academicYearId, name: req.body.name.trim(), sequence: sequence ?? null, ...period }, select: { id: true, academicYearId: true, name: true, sequence: true, startsAt: true, endsAt: true } }),
+    (record) => ({ actorUserId: actor, action: "academic.term.created", resourceType: "Term", resourceId: record.id, scopeType: "SCHOOL", scopeId: scope.target?.schoolId, metadata: { academicYearId } }),
+  );
   return res.status(201).json({ data: created });
 });
 
@@ -132,8 +141,10 @@ router.post("/academic/levels", async (req, res) => {
   if (typeof sectionId !== "string" || !validName(req.body)) return fail(res, 422, "VALIDATION_ERROR", "sectionId and a valid name are required.");
   const scope = await requireScope(actor, "ACADEMIC_SECTION", sectionId, "academic.structure.manage");
   if (scope.status !== 200) return fail(res, scope.status, scope.status === 404 ? "NOT_FOUND" : "FORBIDDEN", "You cannot manage levels in this section.");
-  const created = await prisma.academicLevel.create({ data: { sectionId, name: req.body.name.trim(), code: req.body.code?.trim() || null }, select: { id: true, sectionId: true, name: true, code: true } });
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: "academic.level.created", resourceType: "AcademicLevel", resourceId: created.id, scopeType: "SECTION", scopeId: sectionId, metadata: {} } });
+  const created = await createWithAudit(
+    (tx) => tx.academicLevel.create({ data: { sectionId, name: req.body.name.trim(), code: req.body.code?.trim() || null }, select: { id: true, sectionId: true, name: true, code: true } }),
+    (record) => ({ actorUserId: actor, action: "academic.level.created", resourceType: "AcademicLevel", resourceId: record.id, scopeType: "SECTION", scopeId: sectionId, metadata: {} }),
+  );
   return res.status(201).json({ data: created });
 });
 
@@ -163,8 +174,10 @@ router.post("/academic/classes", async (req, res) => {
   const mayManage = await hasPermission(actor, "academic.structure.manage", { type: "CAMPUS", id: campusId }) ||
     await hasPermission(actor, "academic.structure.manage", { type: "SECTION", id: level.section.id });
   if (!mayManage) return fail(res, 403, "FORBIDDEN", "You cannot manage classes for this campus or academic section.");
-  const created = await prisma.classGroup.create({ data: { campusId, levelId, name: req.body.name.trim(), code: req.body.code?.trim() || null }, select: { id: true, campusId: true, levelId: true, name: true, code: true } });
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: "academic.class.created", resourceType: "ClassGroup", resourceId: created.id, scopeType: "CAMPUS", scopeId: campusId, metadata: { levelId } } });
+  const created = await createWithAudit(
+    (tx) => tx.classGroup.create({ data: { campusId, levelId, name: req.body.name.trim(), code: req.body.code?.trim() || null }, select: { id: true, campusId: true, levelId: true, name: true, code: true } }),
+    (record) => ({ actorUserId: actor, action: "academic.class.created", resourceType: "ClassGroup", resourceId: record.id, scopeType: "CAMPUS", scopeId: campusId, metadata: { levelId } }),
+  );
   return res.status(201).json({ data: created });
 });
 
@@ -200,8 +213,10 @@ router.post("/academic/teacher-assignments", async (req, res) => {
   if (!classGroup || !subject || classGroup.campus.schoolId !== subject.schoolId) return fail(res, 422, "INVALID_RELATIONSHIP", "The subject and class must belong to the same school.");
   if (!(await hasActiveRoleForResource(teacherUserId, "TEACHER", "CLASS_GROUP", classGroupId))) return fail(res, 422, "INVALID_TEACHER", "The selected user must hold an active Teacher role whose scope covers this class.");
   const period = dates(req.body); if (!period) return fail(res, 422, "VALIDATION_ERROR", "Assignment dates are invalid.");
-  const created = await prisma.subjectAssignment.create({ data: { classGroupId, subjectId, teacherUserId, ...period }, select: { id: true, classGroupId: true, subjectId: true, teacherUserId: true, startsAt: true, endsAt: true } });
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: "academic.teacher_assignment.created", resourceType: "SubjectAssignment", resourceId: created.id, scopeType: "CLASS_GROUP", scopeId: classGroupId, metadata: { subjectId, teacherUserId } } });
+  const created = await createWithAudit(
+    (tx) => tx.subjectAssignment.create({ data: { classGroupId, subjectId, teacherUserId, ...period }, select: { id: true, classGroupId: true, subjectId: true, teacherUserId: true, startsAt: true, endsAt: true } }),
+    (record) => ({ actorUserId: actor, action: "academic.teacher_assignment.created", resourceType: "SubjectAssignment", resourceId: record.id, scopeType: "CLASS_GROUP", scopeId: classGroupId, metadata: { subjectId, teacherUserId } }),
+  );
   return res.status(201).json({ data: created });
 });
 
@@ -232,8 +247,10 @@ router.post("/academic/enrollments", async (req, res) => {
   const start = period.startsAt ?? new Date(0), end = period.endsAt ?? new Date("9999-12-31T23:59:59.999Z");
   const overlap = await prisma.studentEnrollment.findFirst({ where: { studentId, academicYearId, OR: [{ startsAt: null }, { startsAt: { lte: end } }], AND: [{ OR: [{ endsAt: null }, { endsAt: { gte: start } }] }] }, select: { id: true } });
   if (overlap) return fail(res, 409, "ENROLLMENT_OVERLAP", "This student already has an overlapping enrollment in the academic year.");
-  const created = await prisma.studentEnrollment.create({ data: { studentId, classGroupId, academicYearId, ...period }, select: { id: true, studentId: true, classGroupId: true, academicYearId: true, startsAt: true, endsAt: true } });
-  await prisma.auditLog.create({ data: { actorUserId: actor, action: "academic.enrollment.created", resourceType: "StudentEnrollment", resourceId: created.id, scopeType: "CLASS_GROUP", scopeId: classGroupId, metadata: { academicYearId } } });
+  const created = await createWithAudit(
+    (tx) => tx.studentEnrollment.create({ data: { studentId, classGroupId, academicYearId, ...period }, select: { id: true, studentId: true, classGroupId: true, academicYearId: true, startsAt: true, endsAt: true } }),
+    (record) => ({ actorUserId: actor, action: "academic.enrollment.created", resourceType: "StudentEnrollment", resourceId: record.id, scopeType: "CLASS_GROUP", scopeId: classGroupId, metadata: { academicYearId } }),
+  );
   return res.status(201).json({ data: created });
 });
 

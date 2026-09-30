@@ -7,6 +7,7 @@ import {
   verifyPassword,
 } from "./auth.js";
 import { getEffectivePermissions, hasPermission } from "./authorization.js";
+import { LoginThrottle } from "./login-throttle.js";
 import identityRoutes from "./routes/identity.js";
 import academicRoutes from "./routes/academic.js";
 
@@ -31,19 +32,14 @@ app.use((_request, response, next) => {
   next();
 });
 
-const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+const loginThrottle = new LoginThrottle();
 app.use("/auth/login", (request, response, next) => {
   const email = typeof request.body?.email === "string" ? request.body.email.trim().toLowerCase().slice(0, 254) : "";
-  const key = `${request.ip ?? "unknown"}:${email}`;
   const now = Date.now();
-  const attempt = loginAttempts.get(key);
-  if (attempt && attempt.resetAt > now && attempt.count >= 10) {
-    response.setHeader("Retry-After", String(Math.ceil((attempt.resetAt - now) / 1000)));
+  if (loginThrottle.isLimited(request.ip ?? "unknown", email, now)) {
+    response.setHeader("Retry-After", "900");
     response.status(429).json({ error: { code: "RATE_LIMITED", message: "Too many sign-in attempts. Try again later." } });
     return;
-  }
-  if (loginAttempts.size > 5000) {
-    for (const [entryKey, entry] of loginAttempts) if (entry.resetAt <= now) loginAttempts.delete(entryKey);
   }
   next();
 });
@@ -97,21 +93,14 @@ app.post("/auth/login", async (request, response) => {
     user?.passwordHash ?? fallbackHash,
   );
   if (!user || !passwordMatches) {
-    const email = body.email.trim().toLowerCase();
-    const key = `${request.ip ?? "unknown"}:${email}`;
-    const previous = loginAttempts.get(key);
-    if (!previous && loginAttempts.size >= 5000) {
-      const oldestKey = loginAttempts.keys().next().value;
-      if (oldestKey) loginAttempts.delete(oldestKey);
-    }
-    loginAttempts.set(key, { count: previous && previous.resetAt > Date.now() ? previous.count + 1 : 1, resetAt: previous && previous.resetAt > Date.now() ? previous.resetAt : Date.now() + 15 * 60 * 1000 });
+    loginThrottle.recordFailure(request.ip ?? "unknown", email);
     response.status(401).json({ error: { code: "INVALID_CREDENTIALS", message: "Email or password is incorrect." } });
     return;
   }
 
   const token = createSessionToken();
   const expiresAt = new Date(Date.now() + sessionLifetimeMs);
-  loginAttempts.delete(`${request.ip ?? "unknown"}:${email}`);
+  loginThrottle.clearAccount(request.ip ?? "unknown", email);
   await prisma.$transaction(async (tx) => {
     await tx.session.create({ data: { tokenHash: hashSessionToken(token), userId: user.id, expiresAt } });
     await tx.auditLog.create({ data: { actorUserId: user.id, action: "auth.login.succeeded", resourceType: "User", resourceId: user.id, metadata: {} } });
@@ -258,7 +247,7 @@ app.use((error: unknown, _request: express.Request, response: express.Response, 
     response.status(404).json({ error: { code: "NOT_FOUND", message: "The requested record was not found." } });
     return;
   }
-  console.error("Unhandled API error", error instanceof Error ? error.name : "unknown");
+  console.error("Unhandled API error", error);
   response.status(500).json({ error: { code: "INTERNAL_ERROR", message: "An unexpected error occurred." } });
 });
 

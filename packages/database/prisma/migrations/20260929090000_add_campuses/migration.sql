@@ -28,27 +28,30 @@ BEGIN
     SELECT "id" INTO main_school_id FROM "School" WHERE "slug" = 'greenfield-schools-ibadan';
     SELECT "id" INTO annex_school_id FROM "School" WHERE "slug" = 'greenfield-montessori-early-years';
 
-    IF main_school_id IS NULL OR annex_school_id IS NULL THEN
-        RAISE EXCEPTION 'Expected Greenfield main and Annex school records were not found; no campus data was moved.';
+    IF main_school_id IS NULL AND annex_school_id IS NULL THEN
+        NULL;
+    ELSIF main_school_id IS NULL OR annex_school_id IS NULL THEN
+        RAISE EXCEPTION 'Expected both Greenfield main and Annex school records; no campus data was moved.';
+    ELSE
+        IF EXISTS (SELECT 1 FROM "School" WHERE "slug" = 'greenfield' AND "id" <> main_school_id) THEN
+            RAISE EXCEPTION 'The school ID greenfield is already in use.';
+        END IF;
+
+        INSERT INTO "Campus" ("id", "schoolId", "name", "slug", "createdAt", "updatedAt")
+        VALUES
+            (main_school_id, main_school_id, 'Greenfield Schools, Ibadan', 'greenfield-schools-ibadan', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+            (annex_school_id, main_school_id, 'Greenfield Montessori and Early Years', 'greenfield-montessori-early-years', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+        INSERT INTO "CampusMembership" ("id", "campusId", "userId", "role", "createdAt")
+        SELECT "id", "schoolId", "userId", "role", "createdAt"
+        FROM "SchoolMembership";
+
+        UPDATE "School"
+        SET "name" = 'Greenfield', "slug" = 'greenfield', "updatedAt" = CURRENT_TIMESTAMP
+        WHERE "id" = main_school_id;
+
+        DELETE FROM "School" WHERE "id" = annex_school_id;
     END IF;
-    IF EXISTS (SELECT 1 FROM "School" WHERE "slug" = 'greenfield' AND "id" <> main_school_id) THEN
-        RAISE EXCEPTION 'The school ID greenfield is already in use.';
-    END IF;
-
-    INSERT INTO "Campus" ("id", "schoolId", "name", "slug", "createdAt", "updatedAt")
-    VALUES
-        (main_school_id, main_school_id, 'Greenfield Schools, Ibadan', 'greenfield-schools-ibadan', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-        (annex_school_id, main_school_id, 'Greenfield Montessori and Early Years', 'greenfield-montessori-early-years', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
-    INSERT INTO "CampusMembership" ("id", "campusId", "userId", "role", "createdAt")
-    SELECT "id", "schoolId", "userId", "role", "createdAt"
-    FROM "SchoolMembership";
-
-    UPDATE "School"
-    SET "name" = 'Greenfield', "slug" = 'greenfield', "updatedAt" = CURRENT_TIMESTAMP
-    WHERE "id" = main_school_id;
-
-    DELETE FROM "School" WHERE "id" = annex_school_id;
 END $$;
 
 ALTER TABLE "SchoolMembership" DROP CONSTRAINT "SchoolMembership_schoolId_fkey";

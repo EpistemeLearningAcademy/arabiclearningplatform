@@ -1,18 +1,27 @@
 import Link from "next/link";
-import { cookies } from "next/headers";
-import { notFound, redirect } from "next/navigation";
-
-const apiUrl = process.env.GREENFIELD_API_URL ?? "http://127.0.0.1:4000";
-
-type CampusResponse = {
-  campus: {
-    id: string;
-    name: string;
-    slug: string;
-    school: { id: string; name: string; slug: string };
-  };
-  role: string;
-};
+import {
+  AcademicContextPanel,
+  type AcademicPanelState,
+} from "../../../components/dashboard/academic-context-panel";
+import { UpcomingPanel } from "../../../components/dashboard/upcoming-panel";
+import { WorkspaceAreas } from "../../../components/dashboard/workspace-areas";
+import { PageHeader } from "../../../components/ui/page-header";
+import { InlineAlert } from "../../../components/ui/states";
+import {
+  buildAcademicSnapshot,
+  type AcademicYearsResponse,
+} from "../../../lib/academic";
+import { experienceCopy, resolveExperiences } from "../../../lib/experience";
+import { formatLongDate, greetingFor } from "../../../lib/format";
+import {
+  campusNavigation,
+  campusPath,
+  visibleNavigation,
+} from "../../../lib/navigation";
+import {
+  backendGet,
+  getCampusContext,
+} from "../../../lib/server/campus-context";
 
 export default async function CampusHomePage({
   params,
@@ -20,69 +29,88 @@ export default async function CampusHomePage({
   params: Promise<{ campusId: string }>;
 }) {
   const { campusId } = await params;
-  const token = (await cookies()).get("greenfield_session")?.value;
-  if (!token) redirect("/");
+  const context = await getCampusContext(campusId);
 
-  let apiResponse: Response;
-  try {
-    apiResponse = await fetch(
-      `${apiUrl}/campuses/${encodeURIComponent(campusId)}/me`,
-      { headers: { Authorization: `Bearer ${token}` }, cache: "no-store" },
+  // The campus layout already renders the unavailable screen in this case.
+  if (context.status !== "ready") return null;
+
+  const { campus, user, permissions, permissionsLoaded } = context;
+  const now = new Date();
+
+  let academic: AcademicPanelState | null = null;
+
+  if (permissions.has("academic.structure.read")) {
+    const result = await backendGet<AcademicYearsResponse>(
+      `/academic/years?schoolId=${encodeURIComponent(campus.school.id)}`,
+      context.token,
     );
-  } catch {
-    return (
-      <main className="min-h-screen bg-[#f4f7f4] px-5 py-10 text-slate-900">
-        <section className="mx-auto max-w-3xl rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
-          <p className="text-lg font-semibold">Greenfield is temporarily unavailable</p>
-          <p className="mt-2 text-sm text-slate-600">Please check that the school service is running, then try again.</p>
-          <Link className="mt-6 inline-block font-semibold text-emerald-800 underline" href="/">Return to campus selection</Link>
-        </section>
-      </main>
-    );
+
+    academic =
+      result.ok && Array.isArray(result.data.data)
+        ? { kind: "ready", snapshot: buildAcademicSnapshot(result.data.data, now) }
+        : { kind: "error" };
   }
 
-  if (apiResponse.status === 401) redirect("/");
-  if (apiResponse.status === 403 || apiResponse.status === 404) notFound();
-  if (!apiResponse.ok) throw new Error("Campus details could not be loaded.");
-  const result = (await apiResponse.json()) as CampusResponse;
+  const experiences = resolveExperiences(permissions);
+  const openable = new Set(
+    visibleNavigation(campusNavigation, permissions).flatMap((group) =>
+      group.items.map((item) => item.href),
+    ),
+  );
+
+  const seen = new Set<string>();
+  const areas = experiences
+    .flatMap((experience) => experienceCopy[experience].areas)
+    .filter((area) => !seen.has(area.title) && seen.add(area.title))
+    .map((area) => ({
+      title: area.title,
+      description: area.description,
+      href:
+        area.href && openable.has(area.href)
+          ? campusPath(campusId, area.href)
+          : undefined,
+    }));
+
+  const firstName = user.name?.trim().split(/\s+/)[0];
+  const greeting = greetingFor(now);
+  const overviewHref = campusPath(campusId, "");
 
   return (
-    <main className="min-h-screen bg-[#f4f7f4] px-5 py-8 text-slate-900 sm:px-8 sm:py-12">
-      <div className="mx-auto max-w-6xl">
-        <header className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex size-11 items-center justify-center rounded-2xl bg-emerald-800 text-lg font-bold text-white">G</div>
-            <div>
-              <p className="text-sm font-bold tracking-wide text-emerald-950">GREENFIELD</p>
-              <p className="text-xs text-slate-500">{result.campus.school.name}</p>
-            </div>
-          </div>
-          <Link className="rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-50" href="/">All campuses</Link>
-        </header>
+    <div className="space-y-8 md:space-y-10">
+      <PageHeader
+        eyebrow={`${campus.name} · ${formatLongDate(now)}`}
+        title={firstName ? `${greeting}, ${firstName}.` : `${greeting}.`}
+        description={experienceCopy[experiences[0]].description}
+      />
 
-        <section className="mt-12 rounded-3xl bg-emerald-950 px-7 py-10 text-white sm:px-10 sm:py-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-200">{result.campus.school.name}</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{result.campus.name}</h1>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-emerald-50">Campus workspace</span>
-            <span className="rounded-full bg-emerald-300 px-4 py-2 text-sm font-semibold text-emerald-950">{result.role.replaceAll("_", " ").toLowerCase()}</span>
-          </div>
-        </section>
+      {!permissionsLoaded && (
+        <InlineAlert tone="warning">
+          Your permissions could not be loaded, so some pages may be hidden.{" "}
+          <Link href={overviewHref} className="font-semibold underline">
+            Reload
+          </Link>
+        </InlineAlert>
+      )}
 
-        <section className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { title: "Classes", description: "Class groups and timetables will live here." },
-            { title: "Learning", description: "Lessons and learning materials will live here." },
-            { title: "People", description: "Staff, learners, and families will live here." },
-          ].map((item) => (
-            <article className="rounded-2xl border border-emerald-100 bg-white p-6" key={item.title}>
-              <p className="text-lg font-semibold text-slate-900">{item.title}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
-              <span className="mt-5 inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800">Coming soon</span>
-            </article>
-          ))}
+      {academic && (
+        <section
+          aria-label="Academic overview"
+          className={`grid gap-6 ${
+            academic.kind === "ready" ? "xl:grid-cols-[1.6fr_1fr]" : ""
+          }`}
+        >
+          <AcademicContextPanel
+            state={academic}
+            yearsHref={campusPath(campusId, "/academic/years")}
+            reloadHref={overviewHref}
+          />
+          {academic.kind === "ready" && (
+            <UpcomingPanel items={academic.snapshot.upcoming} />
+          )}
         </section>
-      </div>
-    </main>
+      )}
+
+      <WorkspaceAreas areas={areas} />
+    </div>
   );
 }

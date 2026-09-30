@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { createSessionToken, hashPassword, hashSessionToken, verifyPassword } from "./auth.js";
+import { LoginThrottle } from "./login-throttle.js";
 
 test("password hashes verify only the matching password", async () => {
   const hash = await hashPassword("a-long-test-password");
@@ -23,5 +24,15 @@ test("session token generation is random and only a digest is stored", () => {
   assert.match(digest, /^[a-f0-9]{64}$/);
   assert.notEqual(digest, first);
   assert.equal(hashSessionToken(first), digest);
+});
+
+test("login throttling limits both an account and all attempts from one IP", () => {
+  const throttle = new LoginThrottle(2, 60_000);
+  throttle.recordFailure("127.0.0.1", "first@example.test", 1000);
+  assert.equal(throttle.isLimited("127.0.0.1", "first@example.test", 1001), false);
+  throttle.recordFailure("127.0.0.1", "second@example.test", 1002);
+  assert.equal(throttle.isLimited("127.0.0.1", "third@example.test", 1003), true);
+  assert.equal(throttle.isLimited("127.0.0.2", "third@example.test", 1003), false);
+  assert.equal(throttle.isLimited("127.0.0.1", "third@example.test", 61_000), false);
 });
 

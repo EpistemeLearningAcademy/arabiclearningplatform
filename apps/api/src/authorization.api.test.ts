@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import { config as loadEnv } from "dotenv";
 import { test } from "node:test";
 import { createSessionToken, hashSessionToken } from "./auth.js";
+import { assertDisposableTestDatabase } from "./test-database.js";
 
 loadEnv({ path: resolve(process.cwd(), "../../.env") });
 const baseUrl = process.env.GREENFIELD_TEST_API_URL;
@@ -12,8 +13,7 @@ const enabled = process.env.RUN_DATABASE_TESTS === "1" && Boolean(baseUrl);
 test("campus permissions endpoint is member-scoped and logout revokes the session", { skip: !enabled }, async () => {
   const connectionString = process.env.DATABASE_URL;
   assert.ok(connectionString);
-  const host = new URL(connectionString).hostname;
-  assert.ok(host === "localhost" || host === "127.0.0.1", "integration test only supports local PostgreSQL");
+  assertDisposableTestDatabase(connectionString);
   const { prisma } = await import("@greenfield/database");
   const campuses = await prisma.campus.findMany({ take: 2, orderBy: { id: "asc" }, select: { id: true } });
   assert.ok(campuses.length >= 2, "requires two local campuses for the membership boundary check");

@@ -54,7 +54,15 @@ npx tsc --project apps/web/tsconfig.json --noEmit --incremental false
 npm test --workspace @greenfield/api
 ```
 
-Database-backed tests are opt-in. Use a separate disposable test database and `RUN_DATABASE_TESTS=1`; do not run them against the development database.
+Database-backed tests are opt-in and refuse to run unless `GREENFIELD_DISPOSABLE_DATABASE=1` and `DATABASE_URL` points to a localhost database named `greenfield_test_*`. Create a new disposable PostgreSQL database first; never use the development database. Example PowerShell environment for a database named `greenfield_test_backend`:
+
+```powershell
+$env:DATABASE_URL = "postgresql://postgres:<local-password>@localhost:5432/greenfield_test_backend?schema=public"
+$env:GREENFIELD_DISPOSABLE_DATABASE = "1"
+$env:RUN_DATABASE_TESTS = "1"
+```
+
+The campus migration expects the two initial Greenfield school rows to exist before it runs. For a fresh migration-chain test, apply migrations 1 and 2, seed those initial rows in the disposable database, then deploy the remaining migrations. Do not use this test bootstrap on a development database.
 
 ## Authorization and frontend contract
 

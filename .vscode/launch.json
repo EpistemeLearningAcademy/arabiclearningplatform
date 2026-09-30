@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Greenfield Web — Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3001",
+            "webRoot": "${workspaceFolder}/apps/web"
+        },
+        {
+            "name": "Greenfield Web — Edge",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:3001",
+            "webRoot": "${workspaceFolder}/apps/web"
+        }
+    ]
+}

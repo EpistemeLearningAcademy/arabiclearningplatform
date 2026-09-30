@@ -41,7 +41,7 @@ AuditLog stores actor, action, resource, optional scope, JSON metadata, and time
 Never edit applied migration history. Add a timestamped migration, review SQL for destructive statements, then use npm run db:validate --workspace @greenfield/database, npm run db:generate --workspace @greenfield/database, and npx prisma migrate deploy --config prisma.config.ts from packages/database. Keep real credentials in ignored .env; .env.example contains placeholders.
 
 ## Tests and frontend boundary
-Run npm test --workspace @greenfield/api for API utility tests. Database tests require a disposable local test database and `RUN_DATABASE_TESTS=1`; never point them at the development database. Exact frontend-consumable paths are in `docs/frontend-integration-contract.md`. Academic update/delete, standalone student, results, finance, transport, admissions, content, notifications, and report APIs are not implemented.
+Run npm test --workspace @greenfield/api for API utility tests. Database tests require a disposable PostgreSQL database on localhost named `greenfield_test_*`, `GREENFIELD_DISPOSABLE_DATABASE=1`, and `RUN_DATABASE_TESTS=1`; the test helper fails closed for other database names/hosts. Never point tests at the development database. The campus migration expects two initial Greenfield school rows before it runs, so a fresh migration-chain test must apply migrations 1 and 2, seed those two rows on the disposable database, and then apply the remaining migrations. Exact frontend-consumable paths are in `docs/frontend-integration-contract.md`. Academic update/delete, standalone student, results, finance, transport, admissions, content, notifications, and report APIs are not implemented.
 
 
 
