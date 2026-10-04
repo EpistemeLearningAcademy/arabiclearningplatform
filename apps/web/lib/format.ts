@@ -22,7 +22,9 @@ const dateFormatter = new Intl.DateTimeFormat("en-NG", {
   year: "numeric",
 });
 
-export function formatDate(value: string | Date) {
+export function formatDate(value: string | Date | null | undefined) {
+  if (!value) return "Not set";
+
   const date = value instanceof Date ? value : new Date(value);
   return Number.isNaN(date.getTime()) ? "Not set" : dateFormatter.format(date);
 }

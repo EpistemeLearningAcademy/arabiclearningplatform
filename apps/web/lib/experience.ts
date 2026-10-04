@@ -4,6 +4,8 @@ export type Experience =
   | "learner"
   | "family"
   | "transport"
+  | "finance"
+  | "admissions"
   | "staff";
 
 const signals: Record<Exclude<Experience, "staff">, readonly string[]> = {
@@ -30,9 +32,22 @@ const signals: Record<Exclude<Experience, "staff">, readonly string[]> = {
     "finance.payment.linked.initiate",
   ],
   transport: ["transport.assigned.read"],
+  finance: ["finance.read", "finance.manage", "finance.reports.read"],
+  admissions: [
+    "admissions.applicants.read",
+    "admissions.applicants.manage",
+  ],
 };
 
-const priority = ["leadership", "teaching", "learner", "family", "transport"] as const;
+const priority = [
+  "leadership",
+  "teaching",
+  "learner",
+  "family",
+  "transport",
+  "finance",
+  "admissions",
+] as const;
 
 /** Matching experiences in priority order; "staff" when none match. */
 export function resolveExperiences(
@@ -106,6 +121,20 @@ export const experienceCopy: Record<
     areas: [
       { title: "Today's route", description: "Your assigned runs for the day." },
       { title: "Assigned students", description: "Basic details for students on your run." },
+    ],
+  },
+  finance: {
+    description: "Your finance workspace.",
+    areas: [
+      { title: "Fees and payments", description: "Fee schedules, invoices and payment records." },
+      { title: "Finance reports", description: "Financial summaries for your authorized scope." },
+    ],
+  },
+  admissions: {
+    description: "Your admissions workspace.",
+    areas: [
+      { title: "Applicant journey", description: "Applications, review and admissions decisions." },
+      { title: "Admissions activity", description: "Updates and work for your authorized scope." },
     ],
   },
   staff: {

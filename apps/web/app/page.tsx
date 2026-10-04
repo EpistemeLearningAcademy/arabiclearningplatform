@@ -100,7 +100,15 @@ export default function HomePage() {
           <div className="mt-8 h-px w-16 bg-gold" aria-hidden="true" />
         </div>
 
-        <p className="text-xs text-white/60">Greenfield Schools</p>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="text-xs text-white/60">Greenfield Schools</p>
+          <Link
+            href="/school"
+            className="text-xs font-semibold text-white underline decoration-gold underline-offset-4 transition-colors hover:text-[#ead7a3] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Visit school website
+          </Link>
+        </div>
       </aside>
 
       <section className="flex min-h-[28rem] items-center justify-center px-5 py-10 sm:px-10 lg:min-h-screen lg:px-14">

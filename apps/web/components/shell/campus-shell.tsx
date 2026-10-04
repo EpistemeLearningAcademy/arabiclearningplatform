@@ -31,7 +31,10 @@ export function CampusShell({
     }
 
     wasOpen.current = true;
-    drawerRef.current?.focus();
+    const firstFocusable = drawerRef.current?.querySelector<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
+    firstFocusable?.focus();
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -39,7 +42,31 @@ export function CampusShell({
     const media = window.matchMedia("(min-width: 1024px)");
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setDrawerOpen(false);
+      if (event.key === "Escape") {
+        setDrawerOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = drawerRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusable?.length) {
+        event.preventDefault();
+        drawerRef.current?.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
     function onBreakpoint(event: MediaQueryListEvent) {
@@ -106,6 +133,7 @@ export function CampusShell({
             tabs={tabs}
             overflow={overflow}
             menuOpen={drawerOpen}
+            menuButtonRef={menuButtonRef}
             onOpenMenu={() => setDrawerOpen(true)}
           />
         )}

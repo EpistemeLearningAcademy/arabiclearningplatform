@@ -2,11 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
   title: {
     default: "Greenfield Schools | Learning Platform",
     template: "%s | Greenfield Schools",
   },
   description: "The Greenfield Schools learning platform.",
+  robots: { index: false, follow: false },
   applicationName: "Greenfield School Platform",
   appleWebApp: {
     capable: true,

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { RefObject } from "react";
 import { campusPath, isActivePath, type NavItem } from "../../lib/navigation";
 
 const tabClass =
@@ -12,12 +13,14 @@ export function BottomNav({
   tabs,
   overflow,
   menuOpen,
+  menuButtonRef,
   onOpenMenu,
 }: {
   campusId: string;
   tabs: NavItem[];
   overflow: boolean;
   menuOpen: boolean;
+  menuButtonRef: RefObject<HTMLButtonElement | null>;
   onOpenMenu: () => void;
 }) {
   const pathname = usePathname();
@@ -53,6 +56,7 @@ export function BottomNav({
         {overflow && (
           <li className="min-w-0 flex-1">
             <button
+              ref={menuButtonRef}
               type="button"
               onClick={onOpenMenu}
               aria-haspopup="dialog"
