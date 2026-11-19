@@ -1,0 +1,549 @@
+{
+ "schema": 1,
+ "passages": [
+  {
+   "id": "r-home-01",
+   "level": "intermediate",
+   "classical": false,
+   "title": {
+    "en": "This is my home",
+    "ar": "هٰذَا بَيْتٌ"
+   },
+   "lines": [
+    {
+     "ar": "هٰذَا بَيْتٌ.",
+     "tr": "hādhā baytun.",
+     "en": "This is a house."
+    },
+    {
+     "ar": "هٰذَا بَابٌ.",
+     "tr": "hādhā bābun.",
+     "en": "This is a door."
+    },
+    {
+     "ar": "هٰذِهِ طَاوِلَةٌ.",
+     "tr": "hādhihi ṭāwilatun.",
+     "en": "This is a table."
+    },
+    {
+     "ar": "هٰذَا كِتَابٌ.",
+     "tr": "hādhā kitābun.",
+     "en": "This is a book."
+    },
+    {
+     "ar": "هٰذَا قَلَمٌ.",
+     "tr": "hādhā qalamun.",
+     "en": "This is a pen."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "بَيْتٌ",
+     "tr": "baytun",
+     "en": "house"
+    },
+    {
+     "ar": "بَابٌ",
+     "tr": "bābun",
+     "en": "door"
+    },
+    {
+     "ar": "طَاوِلَةٌ",
+     "tr": "ṭāwilatun",
+     "en": "table"
+    },
+    {
+     "ar": "كِتَابٌ",
+     "tr": "kitābun",
+     "en": "book"
+    },
+    {
+     "ar": "قَلَمٌ",
+     "tr": "qalamun",
+     "en": "pen"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which word means “door”?",
+      "ar": "أيُّ كلمة تعني «door»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بَابٌ",
+       "ar": true
+      },
+      {
+       "text": "بَيْتٌ",
+       "ar": true
+      },
+      {
+       "text": "قَلَمٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The second sentence is about a door: بَابٌ.",
+      "ar": "الجملة الثانية عن الباب: بَابٌ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which demonstrative goes with the table (طَاوِلَةٌ)?",
+      "ar": "أيُّ اسم إشارة مع طَاوِلَةٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَاوِلَةٌ is feminine (ة), so the text uses هٰذِهِ.",
+      "ar": "طَاوِلَةٌ مؤنّثة فاستُعملت هٰذِهِ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does هٰذَا قَلَمٌ mean?",
+      "ar": "ماذا تعني هٰذَا قَلَمٌ؟"
+     },
+     "promptAr": "هٰذَا قَلَمٌ",
+     "options": [
+      {
+       "text": {
+        "en": "This is a pen.",
+        "ar": "هذا قلم."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a book.",
+        "ar": "هذا كتاب."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a door.",
+        "ar": "هذا باب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "قَلَمٌ means pen.",
+      "ar": "قَلَمٌ تعني pen."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What is the first thing named in the text?",
+      "ar": "ما أول شيء سُمّي في النص؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "A house",
+        "ar": "بيت"
+       }
+      },
+      {
+       "text": {
+        "en": "A table",
+        "ar": "طاولة"
+       }
+      },
+      {
+       "text": {
+        "en": "A pen",
+        "ar": "قلم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The first sentence says هٰذَا بَيْتٌ.",
+      "ar": "الجملة الأولى هٰذَا بَيْتٌ."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  },
+  {
+   "id": "r-people-01",
+   "level": "intermediate",
+   "classical": false,
+   "title": {
+    "en": "I am a student",
+    "ar": "أَنَا طَالِبٌ"
+   },
+   "lines": [
+    {
+     "ar": "أَنَا طَالِبٌ.",
+     "tr": "ana ṭālibun.",
+     "en": "I am a (male) student."
+    },
+    {
+     "ar": "أَنْتَ طَالِبٌ.",
+     "tr": "anta ṭālibun.",
+     "en": "You (to a man) are a student."
+    },
+    {
+     "ar": "هُوَ تِلْمِيذٌ.",
+     "tr": "huwa tilmīdhun.",
+     "en": "He is a pupil."
+    },
+    {
+     "ar": "هِيَ طَالِبَةٌ.",
+     "tr": "hiya ṭālibatun.",
+     "en": "She is a (female) student."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "أَنَا",
+     "tr": "ana",
+     "en": "I"
+    },
+    {
+     "ar": "أَنْتَ",
+     "tr": "anta",
+     "en": "you (to a man)"
+    },
+    {
+     "ar": "هُوَ",
+     "tr": "huwa",
+     "en": "he"
+    },
+    {
+     "ar": "هِيَ",
+     "tr": "hiya",
+     "en": "she"
+    },
+    {
+     "ar": "طَالِبٌ",
+     "tr": "ṭālibun",
+     "en": "student (male)"
+    },
+    {
+     "ar": "تِلْمِيذٌ",
+     "tr": "tilmīdhun",
+     "en": "pupil (male)"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Who is the female student?",
+      "ar": "من هي الطالبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هُوَ",
+       "ar": true
+      },
+      {
+       "text": "هِيَ",
+       "ar": true
+      },
+      {
+       "text": "أَنَا",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The last sentence: هِيَ طَالِبَةٌ.",
+      "ar": "الجملة الأخيرة: هِيَ طَالِبَةٌ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Who is the pupil (تِلْمِيذٌ)?",
+      "ar": "من هو التلميذ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هُوَ",
+       "ar": true
+      },
+      {
+       "text": "هِيَ",
+       "ar": true
+      },
+      {
+       "text": "أَنْتَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The third sentence: هُوَ تِلْمِيذٌ.",
+      "ar": "الجملة الثالثة: هُوَ تِلْمِيذٌ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does أَنَا طَالِبٌ mean?",
+      "ar": "ماذا تعني أَنَا طَالِبٌ؟"
+     },
+     "promptAr": "أَنَا طَالِبٌ",
+     "options": [
+      {
+       "text": {
+        "en": "I am a student.",
+        "ar": "أنا طالب."
+       }
+      },
+      {
+       "text": {
+        "en": "He is a pupil.",
+        "ar": "هو تلميذ."
+       }
+      },
+      {
+       "text": {
+        "en": "She is a student.",
+        "ar": "هي طالبة."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَنَا means I.",
+      "ar": "أَنَا تعني I."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Why does طَالِبَةٌ end with ة?",
+      "ar": "لماذا تنتهي طَالِبَةٌ بـ «ة»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "It is feminine",
+        "ar": "لأنها مؤنّثة"
+       }
+      },
+      {
+       "text": {
+        "en": "It is plural",
+        "ar": "لأنها جمع"
+       }
+      },
+      {
+       "text": {
+        "en": "It is definite",
+        "ar": "لأنها معرَّفة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ة marks the feminine.",
+      "ar": "«ة» علامة التأنيث."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  },
+  {
+   "id": "r-animals-01",
+   "level": "intermediate",
+   "classical": false,
+   "title": {
+    "en": "Animals",
+    "ar": "الحَيَوَانَات"
+   },
+   "lines": [
+    {
+     "ar": "هٰذِهِ قِطَّةٌ.",
+     "tr": "hādhihi qiṭṭatun.",
+     "en": "This is a cat."
+    },
+    {
+     "ar": "هٰذَا كَلْبٌ.",
+     "tr": "hādhā kalbun.",
+     "en": "This is a dog."
+    },
+    {
+     "ar": "هٰذَا أَسَدٌ.",
+     "tr": "hādhā asadun.",
+     "en": "This is a lion."
+    },
+    {
+     "ar": "هٰذَا فِيلٌ.",
+     "tr": "hādhā fīlun.",
+     "en": "This is an elephant."
+    },
+    {
+     "ar": "هٰذِهِ سَمَكَةٌ.",
+     "tr": "hādhihi samakatun.",
+     "en": "This is a fish."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "قِطَّةٌ",
+     "tr": "qiṭṭatun",
+     "en": "cat"
+    },
+    {
+     "ar": "كَلْبٌ",
+     "tr": "kalbun",
+     "en": "dog"
+    },
+    {
+     "ar": "أَسَدٌ",
+     "tr": "asadun",
+     "en": "lion"
+    },
+    {
+     "ar": "فِيلٌ",
+     "tr": "fīlun",
+     "en": "elephant"
+    },
+    {
+     "ar": "سَمَكَةٌ",
+     "tr": "samakatun",
+     "en": "fish"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which animal is a fish?",
+      "ar": "أيُّ حيوان هو السمكة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "سَمَكَةٌ",
+       "ar": true
+      },
+      {
+       "text": "أَسَدٌ",
+       "ar": true
+      },
+      {
+       "text": "فِيلٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The last sentence: هٰذِهِ سَمَكَةٌ.",
+      "ar": "الجملة الأخيرة: هٰذِهِ سَمَكَةٌ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word means “lion”?",
+      "ar": "أيُّ كلمة تعني «lion»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَلْبٌ",
+       "ar": true
+      },
+      {
+       "text": "أَسَدٌ",
+       "ar": true
+      },
+      {
+       "text": "قِطَّةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "أَسَدٌ means lion.",
+      "ar": "أَسَدٌ تعني lion."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which demonstrative goes with كَلْبٌ?",
+      "ar": "أيُّ اسم إشارة مع كَلْبٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَلْبٌ is masculine.",
+      "ar": "كَلْبٌ مذكّر."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does هٰذِهِ سَمَكَةٌ mean?",
+      "ar": "ماذا تعني هٰذِهِ سَمَكَةٌ؟"
+     },
+     "promptAr": "هٰذِهِ سَمَكَةٌ",
+     "options": [
+      {
+       "text": {
+        "en": "This is a fish.",
+        "ar": "هذه سمكة."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a lion.",
+        "ar": "هذا أسد."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a cat.",
+        "ar": "هذه قطة."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَمَكَةٌ means fish.",
+      "ar": "سَمَكَةٌ تعني fish."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  }
+ ]
+}
