@@ -1,0 +1,161 @@
+{
+ "schema": 1,
+ "achievements": [
+  {
+   "id": "first-steps",
+   "icon": "🌱",
+   "xp": 20,
+   "title": {
+    "en": "First Steps",
+    "ar": "الخطوات الأولى"
+   },
+   "desc": {
+    "en": "Complete your first lesson.",
+    "ar": "أكمِل أول درس."
+   },
+   "rule": {
+    "type": "lessonsCompleted",
+    "min": 1
+   }
+  },
+  {
+   "id": "word-explorer",
+   "icon": "🧭",
+   "xp": 20,
+   "title": {
+    "en": "Word Explorer",
+    "ar": "مستكشف الكلمات"
+   },
+   "desc": {
+    "en": "Learn 25 vocabulary words.",
+    "ar": "تعلّم ٢٥ كلمة."
+   },
+   "rule": {
+    "type": "learned",
+    "set": "vocab",
+    "min": 25
+   }
+  },
+  {
+   "id": "letter-master",
+   "icon": "🔤",
+   "xp": 20,
+   "title": {
+    "en": "Letter Master",
+    "ar": "متقن الحروف"
+   },
+   "desc": {
+    "en": "Reach mastery on 6 letters in letter quizzes.",
+    "ar": "أتقن ستة حروف في اختبارات الحروف."
+   },
+   "rule": {
+    "type": "mastered",
+    "set": "letters",
+    "min": 6
+   }
+  },
+  {
+   "id": "vowel-reader",
+   "icon": "📖",
+   "xp": 20,
+   "title": {
+    "en": "Short Vowel Reader",
+    "ar": "قارئ الحركات"
+   },
+   "desc": {
+    "en": "Complete all short-vowel lessons.",
+    "ar": "أكمِل دروس الحركات القصيرة."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "short-vowels"
+   }
+  },
+  {
+   "id": "long-vowel-reader",
+   "icon": "📏",
+   "xp": 20,
+   "title": {
+    "en": "Long Vowel Reader",
+    "ar": "قارئ المدود"
+   },
+   "desc": {
+    "en": "Complete all long-vowel lessons.",
+    "ar": "أكمِل دروس حروف المدّ."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "long-vowels"
+   }
+  },
+  {
+   "id": "sign-reader",
+   "icon": "✍️",
+   "xp": 20,
+   "title": {
+    "en": "Sign Reader",
+    "ar": "قارئ العلامات"
+   },
+   "desc": {
+    "en": "Complete the sukūn, shaddah and tanwīn lessons.",
+    "ar": "أكمِل دروس السكون والشدّة والتنوين."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "signs"
+   }
+  },
+  {
+   "id": "perfect-quiz",
+   "icon": "💯",
+   "xp": 20,
+   "title": {
+    "en": "Perfect Score",
+    "ar": "درجة كاملة"
+   },
+   "desc": {
+    "en": "Score 100% on a quiz of 5 or more questions.",
+    "ar": "احصل على ١٠٠٪ في اختبار من ٥ أسئلة أو أكثر."
+   },
+   "rule": {
+    "type": "perfectQuiz",
+    "minQuestions": 5
+   }
+  },
+  {
+   "id": "consistent-learner",
+   "icon": "🔥",
+   "xp": 20,
+   "title": {
+    "en": "Consistent Learner",
+    "ar": "متعلّم مواظب"
+   },
+   "desc": {
+    "en": "Learn on 3 days in a row.",
+    "ar": "تعلّم ٣ أيام متتالية."
+   },
+   "rule": {
+    "type": "streak",
+    "min": 3
+   }
+  },
+  {
+   "id": "level2-start",
+   "icon": "🚀",
+   "xp": 20,
+   "title": {
+    "en": "Intermediate Starter",
+    "ar": "بداية المتوسط"
+   },
+   "desc": {
+    "en": "Complete your first Intermediate lesson.",
+    "ar": "أكمِل أول درس في المستوى المتوسط."
+   },
+   "rule": {
+    "type": "levelLessons",
+    "level": "intermediate",
+    "min": 1
+   }
+  }
+ ]
+}
