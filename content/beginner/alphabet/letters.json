@@ -1,0 +1,257 @@
+{
+ "schema": 1,
+ "letters": [
+  {
+   "id": "b-letter-01",
+   "level": "beginner",
+   "ar": "ا",
+   "nameAr": "أَلِف",
+   "en": "Alif",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-02",
+   "level": "beginner",
+   "ar": "ب",
+   "nameAr": "بَاء",
+   "en": "Bāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-03",
+   "level": "beginner",
+   "ar": "ت",
+   "nameAr": "تَاء",
+   "en": "Tāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-04",
+   "level": "beginner",
+   "ar": "ث",
+   "nameAr": "ثَاء",
+   "en": "Thāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-05",
+   "level": "beginner",
+   "ar": "ج",
+   "nameAr": "جِيم",
+   "en": "Jīm",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-06",
+   "level": "beginner",
+   "ar": "ح",
+   "nameAr": "حَاء",
+   "en": "Ḥāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-07",
+   "level": "beginner",
+   "ar": "خ",
+   "nameAr": "خَاء",
+   "en": "Khāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-08",
+   "level": "beginner",
+   "ar": "د",
+   "nameAr": "دَال",
+   "en": "Dāl",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-09",
+   "level": "beginner",
+   "ar": "ذ",
+   "nameAr": "ذَال",
+   "en": "Dhāl",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-10",
+   "level": "beginner",
+   "ar": "ر",
+   "nameAr": "رَاء",
+   "en": "Rāʾ",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-11",
+   "level": "beginner",
+   "ar": "ز",
+   "nameAr": "زَاي",
+   "en": "Zāy",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-12",
+   "level": "beginner",
+   "ar": "س",
+   "nameAr": "سِين",
+   "en": "Sīn",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-13",
+   "level": "beginner",
+   "ar": "ش",
+   "nameAr": "شِين",
+   "en": "Shīn",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-14",
+   "level": "beginner",
+   "ar": "ص",
+   "nameAr": "صَاد",
+   "en": "Ṣād",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-15",
+   "level": "beginner",
+   "ar": "ض",
+   "nameAr": "ضَاد",
+   "en": "Ḍād",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-16",
+   "level": "beginner",
+   "ar": "ط",
+   "nameAr": "طَاء",
+   "en": "Ṭāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-17",
+   "level": "beginner",
+   "ar": "ظ",
+   "nameAr": "ظَاء",
+   "en": "Ẓāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-18",
+   "level": "beginner",
+   "ar": "ع",
+   "nameAr": "عَيْن",
+   "en": "ʿAyn",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-19",
+   "level": "beginner",
+   "ar": "غ",
+   "nameAr": "غَيْن",
+   "en": "Ghayn",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-20",
+   "level": "beginner",
+   "ar": "ف",
+   "nameAr": "فَاء",
+   "en": "Fāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-21",
+   "level": "beginner",
+   "ar": "ق",
+   "nameAr": "قَاف",
+   "en": "Qāf",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-22",
+   "level": "beginner",
+   "ar": "ك",
+   "nameAr": "كَاف",
+   "en": "Kāf",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-23",
+   "level": "beginner",
+   "ar": "ل",
+   "nameAr": "لَام",
+   "en": "Lām",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-24",
+   "level": "beginner",
+   "ar": "م",
+   "nameAr": "مِيم",
+   "en": "Mīm",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-25",
+   "level": "beginner",
+   "ar": "ن",
+   "nameAr": "نُون",
+   "en": "Nūn",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-26",
+   "level": "beginner",
+   "ar": "ه",
+   "nameAr": "هَاء",
+   "en": "Hāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-27",
+   "level": "beginner",
+   "ar": "و",
+   "nameAr": "وَاو",
+   "en": "Wāw",
+   "joinsNext": false,
+   "review": "names-standard-unreviewed"
+  },
+  {
+   "id": "b-letter-28",
+   "level": "beginner",
+   "ar": "ي",
+   "nameAr": "يَاء",
+   "en": "Yāʾ",
+   "joinsNext": true,
+   "review": "names-standard-unreviewed"
+  }
+ ]
+}
