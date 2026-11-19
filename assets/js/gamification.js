@@ -11,6 +11,7 @@ export function evaluate(P, catalog, c) {
     moduleComplete: r => { const m = c.lessons.filter(l => l.module === r.module); return m.length > 0 && m.every(l => (L[l.id] || {}).completed); },
     levelLessons: r => done.filter(l => l.level === r.level).length >= r.min,
     perfectQuiz: r => pr.attempts.some(a => a.total >= r.minQuestions && a.pct === 100),
+    readingPassed: r => Object.values(pr.reading || {}).filter(x => x.passed).length >= r.min,
     streak: r => pr.streak.count >= r.min };
   return catalog.filter(a => !got[a.id] && rules[a.rule.type] && rules[a.rule.type](a.rule));
 }

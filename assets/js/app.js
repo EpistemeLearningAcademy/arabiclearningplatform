@@ -2,10 +2,10 @@ import { t, setLang, savedLang, lang } from "./i18n.js";
 import * as S from "./storage.js";
 import { POLICY, itemState, buildQuiz, buildLessonQuiz, buildPositionQuiz, letterForms, scoreQuiz, recordAnswers, touchStreak, revisionList } from "./engine.js";
 import { evaluate } from "./gamification.js";
-import { validateVocab, validateLetters, validateLessons, validateAchievements } from "./validators.js";
+import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading } from "./validators.js";
 
 const app = document.getElementById("app");
-let themes = [], catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
+let themes = [], passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
 const vocabItems = () => themes.flatMap(th => th.items);
 const allItems = () => [...letters, ...vocabItems()];
 
@@ -23,6 +23,7 @@ const ar = (txt, cls = "") => h("span", { class: "ar " + cls, lang: "ar", dir: "
 const btn = (label, fn, cls = "") => h("button", { class: cls, type: "button", onclick: fn }, label);
 const bar = pct => h("div", { class: "bar", role: "progressbar", "aria-valuenow": Math.round(pct), "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${pct}%` }));
 const loc = o => (typeof o === "string" ? o : (o && (o[lang()] || o.en)) || "");
+const rp = id => ((P.progress.reading ||= {})[id] ||= {});
 const lp = id => ((P.progress.lessons ||= {})[id] ||= {});
 const title = th => (lang() === "ar" ? th.title.ar : th.title.en);
 
@@ -82,6 +83,7 @@ function homeView() {
   });
   shell([h("h1", {}, `${P.avatar} ${P.name}`), h("h2", {}, t("level1")),
     h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
+    h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("library") }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
     h("p", { class: "muted" }, t("themes")),
     h("div", { class: "grid" }, tiles), btn(t("practiceAll"), () => startQuiz(vocabItems()), "primary"),
     h("h2", {}, t("lessons")), P.progress.lastLesson && lessons.find(l => l.id === P.progress.lastLesson) ? btn("▶ " + t("resume"), () => go("lesson", { l: lessons.find(l => l.id === P.progress.lastLesson) }), "gold") : null,
@@ -114,6 +116,23 @@ function themeView() {
     h("div", { style: "margin-top:1rem" }, btn(t("practice"), () => startQuiz(th.items))) ]);
 }
 function markSeen(it) { const m = P.progress.items; (m[it.id] ||= { correct: 0, wrong: 0 }).seen = true; save(); }
+
+// ---------- Reading library ----------
+function libraryView() {
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("library")), h("p", { class: "muted" }, t("libraryIntro")),
+    passages.map(p => h("button", { class: "card row sb", style: "width:100%", type: "button", onclick: () => go("passage", { p, show: false }) }, h("span", {}, loc(p.title)),
+      h("span", { class: "badge" }, rp(p.id).passed ? "✓" : rp(p.id).best != null ? rp(p.id).best + "%" : "•")))]);
+}
+function passageView() {
+  const p = ctx.p, r = rp(p.id);
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("library")), p.classical ? h("span", { class: "badge" }, t("classical")) : null), h("h1", {}, loc(p.title)),
+    p.lines.map(l => h("div", { class: "card" }, h("div", { class: "row sb" }, ar(l.ar, "big"), h("button", { type: "button", "aria-label": t("listen"), onclick: () => speak(l.ar) }, "🔊")),
+      h("div", { dir: "ltr", class: "muted" }, l.tr), ctx.show ? h("div", { dir: "ltr" }, l.en) : null)),
+    btn(ctx.show ? t("hideTrans") : t("showTrans"), () => { ctx.show = !ctx.show; render(); }),
+    h("h3", {}, t("support")), p.vocabulary.map(v => h("div", { class: "row sb card" }, ar(v.ar), h("span", { dir: "ltr" }, `${v.tr} · ${v.en}`))),
+    h("p", {}, t("readBest") + ": ", h("strong", {}, r.best != null ? r.best + "%" : t("noScore"))),
+    btn(t("answerQs"), () => go("quiz", { qs: buildLessonQuiz({ id: p.id, practice: p.questions }, lang()), qi: 0, passageId: p.id }), "primary"), h("p", { class: "muted" }, t("voiceNote"))]);
+}
 
 // ---------- Alphabet ----------
 const forms = letterForms;
@@ -180,18 +199,18 @@ function quizView() {
 }
 function answer(i) { const q = ctx.qs[ctx.qi]; if (q.chosen !== undefined) return; q.chosen = i; render(); } // locks: second tap ignored
 async function finishQuiz() {
-  const res = scoreQuiz(ctx.qs), lid = ctx.lessonId, ls = lid ? lp(lid) : null, firstPass = ls && !ls.passed;
+  const res = scoreQuiz(ctx.qs), lid = ctx.lessonId || ctx.passageId, ls = ctx.lessonId ? lp(lid) : ctx.passageId ? rp(lid) : null, firstPass = ls && !ls.passed;
   if (!lid) recordAnswers(P.progress, ctx.qs); else { ls.best = Math.max(ls.best || 0, res.pct); ls.attempts = (ls.attempts || 0) + 1; if (res.passed) ls.passed = true; }
   const xp = lid && !firstPass ? 0 : res.correct * POLICY.xpPerCorrect; P.progress.xp += xp; touchStreak(P.progress);
   P.progress.attempts.push({ topic: lid || ctx.topic || "vocab", ts: Date.now(), correct: res.correct, total: res.total, pct: res.pct });
-  await save(); go("result", { res, xp, qs: ctx.qs, lessonId: lid });
+  await save(); go("result", { res, xp, qs: ctx.qs, lessonId: ctx.lessonId, passageId: ctx.passageId });
 }
 function resultView() {
-  const { res, xp, qs, lessonId } = ctx, wrong = qs.filter(q => !q.options[q.chosen].ok);
+  const { res, xp, qs, lessonId, passageId } = ctx, wrong = qs.filter(q => !q.options[q.chosen].ok);
   shell([h("h1", {}, t("result")), h("div", { class: "card" }, h("p", {}, t("score") + ": ", h("strong", {}, `${res.correct}/${res.total} (${res.pct}%)`)),
     h("p", {}, res.passed ? "🏆 " + t("passed") : t("keep")), h("p", { class: "muted" }, `${t("xpEarned")}: +${xp}`)),
     wrong.length ? [h("h3", {}, t("review")), wrong.map(q => h("div", { class: "card row" }, h("span", { class: "emoji" }, q.emoji), ar(q.ar || ""), h("span", { dir: "ltr" }, q.lesson || q.type === "position" ? q.answer : q.en)))] : null,
-    h("div", { class: "row" }, lessonId ? btn(t("backLesson"), () => go("lesson", { l: lessons.find(x => x.id === lessonId) }), "primary") : btn(t("again"), () => go("home"), "primary"), btn(t("dashboard"), () => go("dashboard")))]);
+    h("div", { class: "row" }, passageId ? btn(t("backPassage"), () => go("passage", { p: passages.find(x => x.id === passageId), show: false }), "primary") : lessonId ? btn(t("backLesson"), () => go("lesson", { l: lessons.find(x => x.id === lessonId) }), "primary") : btn(t("again"), () => go("home"), "primary"), btn(t("dashboard"), () => go("dashboard")))]);
 }
 
 // ---------- Dashboard ----------
@@ -201,7 +220,7 @@ function dashView() {
   const stat = (v, k) => h("div", { class: "card tile" }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
   shell([h("h1", {}, t("dashboard")),
     h("div", { class: "grid" }, stat(pr.xp, "xp"), stat(pr.streak.count, "streak"), stat(`${mastered}/${items.length}`, "mastered"), stat(pr.attempts.length, "attempts")),
-    h("p", {}, t("lessonsDone", { n: lessons.filter(l => lp(l.id).completed).length, m: lessons.length })), h("p", {}, t("learnedCount", { n: learned, m: items.length })), bar((learned / items.length) * 100),
+    h("p", {}, t("passagesRead", { n: passages.filter(p => rp(p.id).passed).length, m: passages.length })), h("p", {}, t("lessonsDone", { n: lessons.filter(l => lp(l.id).completed).length, m: lessons.length })), h("p", {}, t("learnedCount", { n: learned, m: items.length })), bar((learned / items.length) * 100),
     h("h2", {}, t("revision")), rev.length ? rev.map(x => h("div", { class: "card row sb" }, h("span", {}, x.i.emoji + " ", ar(x.i.ar)), h("span", { class: "badge" }, t("state." + x.s)))) : h("p", { class: "muted" }, t("noRevision")),
     h("h2", {}, t("attempts")), pr.attempts.length ? [...pr.attempts].reverse().slice(0, 8).map(a => h("div", { class: "card row sb" }, h("span", {}, new Date(a.ts).toLocaleDateString()), h("strong", {}, `${a.correct}/${a.total} · ${a.pct}%`))) : h("p", { class: "muted" }, t("noAttempts")),
     h("h2", {}, t("achievements")), h("div", { class: "grid" }, catalog.map(a => { const got = (pr.achievements || {})[a.id];
@@ -223,7 +242,7 @@ function settingsView() {
       btn(t("export"), () => { const a = h("a", { href: URL.createObjectURL(new Blob([S.exportJSON(P)], { type: "application/json" })), download: `kalimati-${P.name}.json` }); a.click(); }),
       btn(t("import"), () => file.click()), file),
     h("div", { class: "row", style: "margin-top:1rem" }, btn(t("checkContent"), () => {
-      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
+      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
     h("div", { style: "margin-top:2rem" }, btn(t("delete"), async () => { if (!confirm(t("confirmDelete"))) return; await S.deleteProfile(P.id); P = null; S.setCurrentId(null); go("profiles"); }, "danger")),
     h("p", { class: "note" }, t("localNote")), h("p", { class: "muted" }, t("org"))]);
 }
@@ -233,7 +252,7 @@ function applySize() { document.body.classList.remove("size-l", "size-xl"); cons
 
 // ---------- Router ----------
 function render() {
-  const views = { lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
+  const views = { library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
   if (!P && view !== "profiles") view = "profiles";
   views[view]();
 }
@@ -247,6 +266,8 @@ async function boot() {
     themes = Object.values(files).flatMap(d => d.themes);
     for (const f of idx.alphabet || []) lfiles[f] = await (await fetch("content/" + f)).json();
     for (const f of idx.lessons || []) lsFiles[f] = await (await fetch("content/" + f)).json();
+    for (const f of idx.reading || []) rdFiles[f] = await (await fetch("content/" + f)).json();
+    passages = Object.values(rdFiles).flatMap(d => d.passages);
     if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;
     lessons = Object.values(lsFiles).flatMap(d => d.lessons);
     letters = Object.values(lfiles).flatMap(d => d.letters).map(l => ({ ...l, kind: "letter", emoji: "" }));

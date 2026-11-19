@@ -1,10 +1,28 @@
 // Content checks for vocabulary files. Returns an array of problem strings (empty = OK).
 export function validateAchievements(cat) {
-  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak"];
+  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak", "readingPassed"];
   for (const a of cat || []) {
     if (!a.id || ids.has(a.id)) errs.push(`achievement id missing or duplicate (${a.id})`); else ids.add(a.id);
     if (!a.title || !a.title.en || !a.title.ar || !a.desc || !a.desc.en || !a.desc.ar) errs.push(`${a.id}: missing en/ar title or desc`);
     if (!a.rule || !TYPES.includes(a.rule.type)) errs.push(`${a.id}: unknown rule type`);
+  }
+  return errs;
+}
+export function validateReading(files) {
+  const errs = [], ids = new Set();
+  for (const [name, d] of Object.entries(files)) {
+    if (!d || !Array.isArray(d.passages)) { errs.push(`${name}: missing "passages" array`); continue; }
+    for (const p of d.passages) {
+      const w = `${name}/${p.id || "?"}`;
+      if (!p.id || ids.has(p.id)) errs.push(`${w}: id missing or duplicate`); else ids.add(p.id);
+      if (!p.title || !p.title.en || !p.title.ar) errs.push(`${w}: missing en/ar title`);
+      if (!Array.isArray(p.lines) || !p.lines.length || p.lines.some(l => !l.ar || !l.en)) errs.push(`${w}: lines need ar and en`);
+      if (!Array.isArray(p.questions) || !p.questions.length) errs.push(`${w}: no comprehension questions`);
+      for (const q of p.questions || []) {
+        if (!Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length) errs.push(`${w}/${q.id}: bad options or answer index`);
+        if (!q.explanation) errs.push(`${w}/${q.id}: missing explanation`);
+      }
+    }
   }
   return errs;
 }
