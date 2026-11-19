@@ -1,0 +1,1121 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "i-les-nouns-06",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-number",
+   "title": {
+    "en": "Sun and moon letters",
+    "ar": "الحُرُوفُ الشَّمْسِيَّةُ وَالقَمَرِيَّة"
+   },
+   "objectives": [
+    {
+     "en": "Know the 14 sun letters",
+     "ar": "معرفة الحروف الشمسية الأربعة عشر"
+    },
+    {
+     "en": "Read ال correctly before sun and moon letters",
+     "ar": "قراءة «ال» قراءة صحيحة قبل الحروف الشمسية والقمرية"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-05"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Arabic letters are grouped as “sun letters” and “moon letters”. Before a sun letter, the ل of ال is not pronounced; instead the sun letter is doubled and carries a shaddah: الشَّمْس is read “ash-shams”, not “al-shams”.",
+     "ar": "تنقسم الحروف إلى شمسية وقمرية. قبل الحرف الشمسي لا تُنطق لام «ال»، ويُضاعف الحرف الشمسي وتُكتب عليه شدّة: الشَّمْس تُقرأ «ash-shams» لا «al-shams»."
+    },
+    {
+     "en": "There are 14 sun letters: ت ث د ذ ر ز س ش ص ض ط ظ ل ن. The other letters are moon letters, and the ل is pronounced: القَمَر is “al-qamar”.",
+     "ar": "الحروف الشمسية أربعة عشر حرفًا: ت ث د ذ ر ز س ش ص ض ط ظ ل ن. وما بقي حروف قمرية تُنطق معها اللام: القَمَر «al-qamar»."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "الشَّمْس",
+     "tr": "ash-shams",
+     "en": "the sun"
+    },
+    {
+     "ar": "النَّجْم",
+     "tr": "an-najm",
+     "en": "the star"
+    },
+    {
+     "ar": "الدَّرْس",
+     "tr": "ad-dars",
+     "en": "the lesson"
+    },
+    {
+     "ar": "الرَّجُل",
+     "tr": "ar-rajul",
+     "en": "the man"
+    },
+    {
+     "ar": "التُّفَّاحَة",
+     "tr": "at-tuffāḥa",
+     "en": "the apple"
+    },
+    {
+     "ar": "القَمَر",
+     "tr": "al-qamar",
+     "en": "the moon"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الشَّمْس",
+     "options": [
+      {
+       "text": "ash-shams",
+       "ar": false
+      },
+      {
+       "text": "al-shams",
+       "ar": false
+      },
+      {
+       "text": "shamsun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ش is a sun letter, so the ل is silent: “ash-shams”.",
+      "ar": "الشين حرف شمسي فتسكت اللام: «ash-shams»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "النَّجْم",
+     "options": [
+      {
+       "text": "an-najm",
+       "ar": false
+      },
+      {
+       "text": "al-najm",
+       "ar": false
+      },
+      {
+       "text": "najmun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ن is a sun letter: “an-najm”.",
+      "ar": "النون حرف شمسي: «an-najm»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "القَمَر",
+     "options": [
+      {
+       "text": "al-qamar",
+       "ar": false
+      },
+      {
+       "text": "aq-qamar",
+       "ar": false
+      },
+      {
+       "text": "qamarun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ق is a moon letter, so the ل is pronounced: “al-qamar”.",
+      "ar": "القاف حرف قمري فتُنطق اللام: «al-qamar»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which letter is a sun letter?",
+      "ar": "أيُّ حرف شمسي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ش",
+       "ar": true
+      },
+      {
+       "text": "ب",
+       "ar": true
+      },
+      {
+       "text": "ك",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ش is one of the 14 sun letters.",
+      "ar": "الشين من الحروف الشمسية الأربعة عشر."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which letter is a moon letter?",
+      "ar": "أيُّ حرف قمري؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ق",
+       "ar": true
+      },
+      {
+       "text": "ن",
+       "ar": true
+      },
+      {
+       "text": "ر",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ق is a moon letter; ن and ر are sun letters.",
+      "ar": "القاف قمري، أما النون والراء فشمسيان."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What happens to the ل before a sun letter?",
+      "ar": "ماذا يحدث للام قبل الحرف الشمسي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "It is silent and the sun letter is doubled",
+        "ar": "تسكت اللام ويُضاعف الحرف الشمسي"
+       }
+      },
+      {
+       "text": {
+        "en": "It is pronounced as usual",
+        "ar": "تُنطق كالمعتاد"
+       }
+      },
+      {
+       "text": {
+        "en": "It becomes ن",
+        "ar": "تصبح نونًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The sun letter is doubled instead.",
+      "ar": "يُضاعف الحرف الشمسي بدلًا منها."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-number-01",
+   "level": "intermediate",
+   "module": "number",
+   "unit": "nouns-and-number",
+   "title": {
+    "en": "The dual: two",
+    "ar": "المُثَنَّى"
+   },
+   "objectives": [
+    {
+     "en": "Form and recognise the dual",
+     "ar": "تكوين المثنّى والتعرّف إليه"
+    },
+    {
+     "en": "Handle the ة → ت change",
+     "ar": "فهم تحوّل «ة» إلى «ت»"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-06"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The dual means exactly two. Add ـَانِ (-āni) to a noun and drop its tanwīn: كِتَابٌ → كِتَابَانِ “two books”.",
+     "ar": "المثنّى يدلّ على اثنين. تُضاف «ـَانِ» إلى الاسم ويسقط التنوين: كِتَابٌ ← كِتَابَانِ."
+    },
+    {
+     "en": "A feminine noun’s ة becomes ت: طَالِبَةٌ → طَالِبَتَانِ. In other grammatical positions the ending is -ayni (كِتَابَيْنِ); that comes in a later lesson.",
+     "ar": "وتتحوّل «ة» في المؤنّث إلى «ت»: طَالِبَةٌ ← طَالِبَتَانِ. وفي مواضع إعرابية أخرى تصبح النهاية «ـَيْنِ»، وسيأتي ذلك لاحقًا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابَانِ",
+     "tr": "kitābāni",
+     "en": "two books"
+    },
+    {
+     "ar": "قَلَمَانِ",
+     "tr": "qalamāni",
+     "en": "two pens"
+    },
+    {
+     "ar": "بَابَانِ",
+     "tr": "bābāni",
+     "en": "two doors"
+    },
+    {
+     "ar": "طَالِبَتَانِ",
+     "tr": "ṭālibatāni",
+     "en": "two female students"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِتَابَانِ",
+     "options": [
+      {
+       "text": "kitābāni",
+       "ar": false
+      },
+      {
+       "text": "kitābun",
+       "ar": false
+      },
+      {
+       "text": "kutubun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The ending -āni marks two: “kitābāni”.",
+      "ar": "النهاية «-āni» تدلّ على اثنين."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "قَلَمَانِ",
+     "options": [
+      {
+       "text": "qalamāni",
+       "ar": false
+      },
+      {
+       "text": "qalamun",
+       "ar": false
+      },
+      {
+       "text": "aqlāmun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "قَلَمَانِ is “qalamāni”.",
+      "ar": "قَلَمَانِ تُقرأ «qalamāni»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does بَابَانِ mean?",
+      "ar": "ماذا تعني بَابَانِ؟"
+     },
+     "promptAr": "بَابَانِ",
+     "options": [
+      {
+       "text": {
+        "en": "two doors",
+        "ar": "بابان"
+       }
+      },
+      {
+       "text": {
+        "en": "a door",
+        "ar": "باب"
+       }
+      },
+      {
+       "text": {
+        "en": "the door",
+        "ar": "الباب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The dual ending means two.",
+      "ar": "نهاية المثنّى تدلّ على اثنين."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word means two female students?",
+      "ar": "أيُّ كلمة تعني طالبتين؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبَةٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَتَانِ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَاتٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "ة becomes ت before the dual ending.",
+      "ar": "تتحوّل «ة» إلى «ت» قبل نهاية المثنّى."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "The dual means…",
+      "ar": "المثنّى يعني…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "exactly two",
+        "ar": "اثنين"
+       }
+      },
+      {
+       "text": {
+        "en": "many",
+        "ar": "كثيرًا"
+       }
+      },
+      {
+       "text": {
+        "en": "one",
+        "ar": "واحدًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Dual = two.",
+      "ar": "المثنّى = اثنان."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which ending marks the dual?",
+      "ar": "أيُّ نهاية تدلّ على المثنّى؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـَانِ",
+       "ar": true
+      },
+      {
+       "text": "ـُونَ",
+       "ar": true
+      },
+      {
+       "text": "ـَات",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـَانِ is the dual ending.",
+      "ar": "«ـَانِ» نهاية المثنّى."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-number-02",
+   "level": "intermediate",
+   "module": "number",
+   "unit": "nouns-and-number",
+   "title": {
+    "en": "Sound plurals",
+    "ar": "جَمْعُ المُذَكَّرِ وَالمُؤَنَّثِ السَّالِم"
+   },
+   "objectives": [
+    {
+     "en": "Form sound masculine and feminine plurals",
+     "ar": "تكوين جمع المذكّر السالم وجمع المؤنّث السالم"
+    },
+    {
+     "en": "Read the endings -ūna and -āt",
+     "ar": "قراءة النهايتين -ūna و-āt"
+    }
+   ],
+   "prerequisites": [
+    "i-les-number-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Sound plurals add an ending. Masculine (male people): ـُونَ (-ūna): طَالِبٌ → طَالِبُونَ “students”. (A form ـِينَ, -īna, appears in other positions.) Feminine: drop ة and add ـَات (-āt): طَالِبَةٌ → طَالِبَاتٌ “female students”.",
+     "ar": "جمع المذكّر السالم يضيف «ـُونَ»: طَالِبٌ ← طَالِبُونَ. (وتأتي «ـِينَ» في مواضع أخرى.) وجمع المؤنّث السالم يضيف «ـَات» بعد حذف «ة»: طَالِبَةٌ ← طَالِبَاتٌ."
+    },
+    {
+     "en": "The sound masculine plural is used mainly for male people; the -āt plural is used for many feminine nouns. Not every noun takes a sound plural: many use a broken plural (next lesson).",
+     "ar": "جمع المذكّر السالم يُستعمل غالبًا للذكور العقلاء، وجمع المؤنّث السالم يُستعمل مع كثير من الأسماء المؤنّثة. وليس لكل اسم جمع سالم، فكثير من الأسماء لها جمع تكسير (في الدرس التالي)."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "طَالِبُونَ",
+     "tr": "ṭālibūna",
+     "en": "students (male)"
+    },
+    {
+     "ar": "طَالِبَاتٌ",
+     "tr": "ṭālibātun",
+     "en": "female students"
+    },
+    {
+     "ar": "تِلْمِيذَاتٌ",
+     "tr": "tilmīdhātun",
+     "en": "female pupils"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "طَالِبُونَ",
+     "options": [
+      {
+       "text": "ṭālibūna",
+       "ar": false
+      },
+      {
+       "text": "ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "ṭālibātun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـُونَ is read “-ūna”.",
+      "ar": "«ـُونَ» تُقرأ «-ūna»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "طَالِبَاتٌ",
+     "options": [
+      {
+       "text": "ṭālibātun",
+       "ar": false
+      },
+      {
+       "text": "ṭālibatun",
+       "ar": false
+      },
+      {
+       "text": "ṭālibūna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـَاتٌ is read “-ātun”.",
+      "ar": "«ـَاتٌ» تُقرأ «-ātun»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means female students (plural)?",
+      "ar": "أيُّ كلمة تعني طالبات؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبَةٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَاتٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَتَانِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَالِبَاتٌ is the sound feminine plural.",
+      "ar": "طَالِبَاتٌ جمع مؤنّث سالم."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word means male students (plural)?",
+      "ar": "أيُّ كلمة تعني طلّابًا (جمعًا)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبُونَ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَتَانِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَالِبُونَ is the sound masculine plural.",
+      "ar": "طَالِبُونَ جمع مذكّر سالم."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What happens to ة in the -āt plural?",
+      "ar": "ماذا يحدث لـ «ة» في جمع ـَات؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "It is dropped and -āt is added",
+        "ar": "تُحذف وتُضاف ـَات"
+       }
+      },
+      {
+       "text": {
+        "en": "It stays",
+        "ar": "تبقى"
+       }
+      },
+      {
+       "text": {
+        "en": "It becomes ن",
+        "ar": "تصبح نونًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Drop ة, then add ـَات.",
+      "ar": "تُحذف «ة» ثم تُضاف «ـَات»."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-number-03",
+   "level": "intermediate",
+   "module": "number",
+   "unit": "nouns-and-number",
+   "title": {
+    "en": "Broken plurals",
+    "ar": "جَمْعُ التَّكْسِير"
+   },
+   "objectives": [
+    {
+     "en": "Know that broken plurals change the word’s shape",
+     "ar": "معرفة أنّ جمع التكسير يغيّر بنية الكلمة"
+    },
+    {
+     "en": "Read four common broken plurals",
+     "ar": "قراءة أربعة جموع تكسير شائعة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-number-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Many nouns form the plural by changing the inside of the word: a broken plural. There is no single rule, so learn each plural with its singular: كِتَابٌ → كُتُبٌ “books”, قَلَمٌ → أَقْلَامٌ “pens”, بَيْتٌ → بُيُوتٌ “houses”, بَابٌ → أَبْوَابٌ “doors”.",
+     "ar": "تُكوِّن كثير من الأسماء جمعها بتغيير بنية الكلمة، ويُسمّى جمع التكسير. ولا توجد قاعدة واحدة، فيُحفظ كل جمع مع مفرده: كِتَابٌ ← كُتُبٌ، قَلَمٌ ← أَقْلَامٌ، بَيْتٌ ← بُيُوتٌ، بَابٌ ← أَبْوَابٌ."
+    },
+    {
+     "en": "When unsure, check the plural in a dictionary.",
+     "ar": "عند الشكّ، راجع الجمع في المعجم."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كُتُبٌ",
+     "tr": "kutubun",
+     "en": "books"
+    },
+    {
+     "ar": "أَقْلَامٌ",
+     "tr": "aqlāmun",
+     "en": "pens"
+    },
+    {
+     "ar": "بُيُوتٌ",
+     "tr": "buyūtun",
+     "en": "houses"
+    },
+    {
+     "ar": "أَبْوَابٌ",
+     "tr": "abwābun",
+     "en": "doors"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُتُبٌ",
+     "options": [
+      {
+       "text": "kutubun",
+       "ar": false
+      },
+      {
+       "text": "kitābun",
+       "ar": false
+      },
+      {
+       "text": "kitābāni",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كُتُبٌ is the plural of كِتَابٌ.",
+      "ar": "كُتُبٌ جمع كِتَابٌ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَقْلَامٌ",
+     "options": [
+      {
+       "text": "aqlāmun",
+       "ar": false
+      },
+      {
+       "text": "qalamun",
+       "ar": false
+      },
+      {
+       "text": "qalamāni",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَقْلَامٌ is the plural of قَلَمٌ.",
+      "ar": "أَقْلَامٌ جمع قَلَمٌ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بُيُوتٌ",
+     "options": [
+      {
+       "text": "buyūtun",
+       "ar": false
+      },
+      {
+       "text": "baytun",
+       "ar": false
+      },
+      {
+       "text": "baytāni",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "بُيُوتٌ is the plural of بَيْتٌ.",
+      "ar": "بُيُوتٌ جمع بَيْتٌ."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَبْوَابٌ",
+     "options": [
+      {
+       "text": "abwābun",
+       "ar": false
+      },
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bābāni",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَبْوَابٌ is the plural of بَابٌ.",
+      "ar": "أَبْوَابٌ جمع بَابٌ."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What is كُتُبٌ?",
+      "ar": "ما هي كُتُبٌ؟"
+     },
+     "promptAr": "كُتُبٌ",
+     "options": [
+      {
+       "text": {
+        "en": "The plural of كِتَابٌ (books)",
+        "ar": "جمع كِتَابٌ"
+       }
+      },
+      {
+       "text": {
+        "en": "The dual of كِتَابٌ",
+        "ar": "مثنّى كِتَابٌ"
+       }
+      },
+      {
+       "text": {
+        "en": "A feminine noun",
+        "ar": "اسم مؤنّث"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It is a broken plural: “books”.",
+      "ar": "هي جمع تكسير: «books»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which word means houses?",
+      "ar": "أيُّ كلمة تعني بيوتًا؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بُيُوتٌ",
+       "ar": true
+      },
+      {
+       "text": "بَيْتٌ",
+       "ar": true
+      },
+      {
+       "text": "بَيْتَانِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "بُيُوتٌ is the plural.",
+      "ar": "بُيُوتٌ هي الجمع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-number-04",
+   "level": "intermediate",
+   "module": "number",
+   "unit": "nouns-and-number",
+   "title": {
+    "en": "Review: dual and plural",
+    "ar": "مراجعة: المُثَنَّى وَالجَمْع"
+   },
+   "objectives": [
+    {
+     "en": "Tell singular, dual and plural apart",
+     "ar": "التمييز بين المفرد والمثنّى والجمع"
+    },
+    {
+     "en": "Use sun and moon letters in reading",
+     "ar": "قراءة «ال» مع الحروف الشمسية والقمرية"
+    }
+   ],
+   "prerequisites": [
+    "i-les-number-01",
+    "i-les-number-02",
+    "i-les-number-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Singular means one, dual means two, plural means more than two. Plurals can be sound (-ūna, -āt) or broken (a changed shape).",
+     "ar": "المفرد يدلّ على واحد، والمثنّى على اثنين، والجمع على أكثر من اثنين. والجمع إمّا سالم (-ūna، -āt) أو تكسير (بنية متغيّرة)."
+    },
+    {
+     "en": "Read each ending carefully: it tells you how many there are.",
+     "ar": "اقرأ كل نهاية بعناية، فهي تدلّ على العدد."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابٌ",
+     "tr": "kitābun",
+     "en": "a book"
+    },
+    {
+     "ar": "كِتَابَانِ",
+     "tr": "kitābāni",
+     "en": "two books"
+    },
+    {
+     "ar": "كُتُبٌ",
+     "tr": "kutubun",
+     "en": "books"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِتَابَانِ",
+     "options": [
+      {
+       "text": "kitābāni",
+       "ar": false
+      },
+      {
+       "text": "kitābun",
+       "ar": false
+      },
+      {
+       "text": "kutubun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-āni = two.",
+      "ar": "«-āni» = اثنان."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الشَّمْس",
+     "options": [
+      {
+       "text": "ash-shams",
+       "ar": false
+      },
+      {
+       "text": "al-shams",
+       "ar": false
+      },
+      {
+       "text": "shamsun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Sun letter: the ل is silent.",
+      "ar": "حرف شمسي: تسكت اللام."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word is plural?",
+      "ar": "أيُّ كلمة جمع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بَابٌ",
+       "ar": true
+      },
+      {
+       "text": "بَابَانِ",
+       "ar": true
+      },
+      {
+       "text": "أَبْوَابٌ",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "أَبْوَابٌ is a broken plural.",
+      "ar": "أَبْوَابٌ جمع تكسير."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is dual?",
+      "ar": "أيُّ كلمة مثنّى؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "قَلَمٌ",
+       "ar": true
+      },
+      {
+       "text": "قَلَمَانِ",
+       "ar": true
+      },
+      {
+       "text": "أَقْلَامٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "-āni marks the dual.",
+      "ar": "«-āni» علامة المثنّى."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word means female students?",
+      "ar": "أيُّ كلمة تعني طالبات؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبَةٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَاتٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبُونَ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَالِبَاتٌ is the sound feminine plural.",
+      "ar": "طَالِبَاتٌ جمع مؤنّث سالم."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Plural means…",
+      "ar": "الجمع يعني…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "more than two",
+        "ar": "أكثر من اثنين"
+       }
+      },
+      {
+       "text": {
+        "en": "exactly two",
+        "ar": "اثنين"
+       }
+      },
+      {
+       "text": {
+        "en": "one",
+        "ar": "واحدًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Plural = more than two.",
+      "ar": "الجمع = أكثر من اثنين."
+     }
+    }
+   ]
+  }
+ ]
+}
