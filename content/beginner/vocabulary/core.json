@@ -1,0 +1,293 @@
+{
+ "schema": 1,
+ "themes": [
+  {
+   "id": "b-animals",
+   "level": "beginner",
+   "title": {
+    "en": "Animals",
+    "ar": "الحَيَوَانَاتُ"
+   },
+   "emoji": "🐱",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-animals-1",
+     "ar": "قِطَّةٌ",
+     "en": "Cat",
+     "emoji": "🐱"
+    },
+    {
+     "id": "b-animals-2",
+     "ar": "كَلْبٌ",
+     "en": "Dog",
+     "emoji": "🐶"
+    },
+    {
+     "id": "b-animals-3",
+     "ar": "أَسَدٌ",
+     "en": "Lion",
+     "emoji": "🦁"
+    },
+    {
+     "id": "b-animals-4",
+     "ar": "فِيلٌ",
+     "en": "Elephant",
+     "emoji": "🐘"
+    },
+    {
+     "id": "b-animals-5",
+     "ar": "طَائِرٌ",
+     "en": "Bird",
+     "emoji": "🐦"
+    },
+    {
+     "id": "b-animals-6",
+     "ar": "سَمَكَةٌ",
+     "en": "Fish",
+     "emoji": "🐟"
+    }
+   ]
+  },
+  {
+   "id": "b-fruits",
+   "level": "beginner",
+   "title": {
+    "en": "Fruits",
+    "ar": "الفَوَاكِهُ"
+   },
+   "emoji": "🍎",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-fruits-1",
+     "ar": "تُفَّاحَةٌ",
+     "en": "Apple",
+     "emoji": "🍎"
+    },
+    {
+     "id": "b-fruits-2",
+     "ar": "مَوْزَةٌ",
+     "en": "Banana",
+     "emoji": "🍌"
+    },
+    {
+     "id": "b-fruits-3",
+     "ar": "بُرْتُقَالَةٌ",
+     "en": "Orange",
+     "emoji": "🍊"
+    },
+    {
+     "id": "b-fruits-4",
+     "ar": "عِنَبٌ",
+     "en": "Grapes",
+     "emoji": "🍇"
+    },
+    {
+     "id": "b-fruits-5",
+     "ar": "فَرَاوِلَةٌ",
+     "en": "Strawberry",
+     "emoji": "🍓"
+    },
+    {
+     "id": "b-fruits-6",
+     "ar": "بِطِّيخٌ",
+     "en": "Watermelon",
+     "emoji": "🍉"
+    }
+   ]
+  },
+  {
+   "id": "b-colors",
+   "level": "beginner",
+   "title": {
+    "en": "Colours",
+    "ar": "الأَلْوَانُ"
+   },
+   "emoji": "🎨",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-colors-1",
+     "ar": "أَحْمَرُ",
+     "en": "Red",
+     "emoji": "🔴"
+    },
+    {
+     "id": "b-colors-2",
+     "ar": "أَزْرَقُ",
+     "en": "Blue",
+     "emoji": "🔵"
+    },
+    {
+     "id": "b-colors-3",
+     "ar": "أَخْضَرُ",
+     "en": "Green",
+     "emoji": "🟢"
+    },
+    {
+     "id": "b-colors-4",
+     "ar": "أَصْفَرُ",
+     "en": "Yellow",
+     "emoji": "🟡"
+    },
+    {
+     "id": "b-colors-5",
+     "ar": "أَبْيَضُ",
+     "en": "White",
+     "emoji": "⚪"
+    },
+    {
+     "id": "b-colors-6",
+     "ar": "أَسْوَدُ",
+     "en": "Black",
+     "emoji": "⚫"
+    }
+   ]
+  },
+  {
+   "id": "b-body",
+   "level": "beginner",
+   "title": {
+    "en": "Body parts",
+    "ar": "جِسْمُ الإِنْسَانِ"
+   },
+   "emoji": "🧒",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-body-1",
+     "ar": "رَأْسٌ",
+     "en": "Head",
+     "emoji": "🗣️"
+    },
+    {
+     "id": "b-body-2",
+     "ar": "يَدٌ",
+     "en": "Hand",
+     "emoji": "✋"
+    },
+    {
+     "id": "b-body-3",
+     "ar": "عَيْنٌ",
+     "en": "Eye",
+     "emoji": "👁️"
+    },
+    {
+     "id": "b-body-4",
+     "ar": "أَنْفٌ",
+     "en": "Nose",
+     "emoji": "👃"
+    },
+    {
+     "id": "b-body-5",
+     "ar": "فَمٌ",
+     "en": "Mouth",
+     "emoji": "👄"
+    },
+    {
+     "id": "b-body-6",
+     "ar": "أُذُنٌ",
+     "en": "Ear",
+     "emoji": "👂"
+    }
+   ]
+  },
+  {
+   "id": "b-numbers",
+   "level": "beginner",
+   "title": {
+    "en": "Numbers",
+    "ar": "الأَرْقَامُ"
+   },
+   "emoji": "🔢",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-numbers-1",
+     "ar": "وَاحِدٌ",
+     "en": "One",
+     "emoji": "1️⃣"
+    },
+    {
+     "id": "b-numbers-2",
+     "ar": "اِثْنَانِ",
+     "en": "Two",
+     "emoji": "2️⃣"
+    },
+    {
+     "id": "b-numbers-3",
+     "ar": "ثَلَاثَةٌ",
+     "en": "Three",
+     "emoji": "3️⃣"
+    },
+    {
+     "id": "b-numbers-4",
+     "ar": "أَرْبَعَةٌ",
+     "en": "Four",
+     "emoji": "4️⃣"
+    },
+    {
+     "id": "b-numbers-5",
+     "ar": "خَمْسَةٌ",
+     "en": "Five",
+     "emoji": "5️⃣"
+    },
+    {
+     "id": "b-numbers-6",
+     "ar": "سِتَّةٌ",
+     "en": "Six",
+     "emoji": "6️⃣"
+    }
+   ]
+  },
+  {
+   "id": "b-home",
+   "level": "beginner",
+   "title": {
+    "en": "Home",
+    "ar": "البَيْتُ"
+   },
+   "emoji": "🏠",
+   "review": "migrated-original-unreviewed",
+   "items": [
+    {
+     "id": "b-home-1",
+     "ar": "بَابٌ",
+     "en": "Door",
+     "emoji": "🚪"
+    },
+    {
+     "id": "b-home-2",
+     "ar": "كُرْسِيٌّ",
+     "en": "Chair",
+     "emoji": "🪑"
+    },
+    {
+     "id": "b-home-3",
+     "ar": "كِتَابٌ",
+     "en": "Book",
+     "emoji": "📖"
+    },
+    {
+     "id": "b-home-4",
+     "ar": "قَلَمٌ",
+     "en": "Pen",
+     "emoji": "🖊️"
+    },
+    {
+     "id": "b-home-5",
+     "ar": "طَاوِلَةٌ",
+     "en": "Table",
+     "emoji": "🪑"
+    },
+    {
+     "id": "b-home-6",
+     "ar": "سَرِيرٌ",
+     "en": "Bed",
+     "emoji": "🛏️"
+    }
+   ]
+  }
+ ]
+}
