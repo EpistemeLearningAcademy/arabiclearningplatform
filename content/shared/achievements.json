@@ -156,6 +156,40 @@
     "level": "intermediate",
     "min": 1
    }
+  },
+  {
+   "id": "number-explorer",
+   "icon": "🔢",
+   "xp": 20,
+   "title": {
+    "en": "Number Explorer",
+    "ar": "مستكشف العدد"
+   },
+   "desc": {
+    "en": "Complete the dual and plural lessons.",
+    "ar": "أكمِل دروس المثنّى والجمع."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "number"
+   }
+  },
+  {
+   "id": "reading-champion",
+   "icon": "📚",
+   "xp": 20,
+   "title": {
+    "en": "Reading Champion",
+    "ar": "بطل القراءة"
+   },
+   "desc": {
+    "en": "Pass a reading comprehension quiz (70% or more).",
+    "ar": "انجح في اختبار فهم مقروء (٧٠٪ فأكثر)."
+   },
+   "rule": {
+    "type": "readingPassed",
+    "min": 1
+   }
   }
  ]
 }
