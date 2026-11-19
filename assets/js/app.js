@@ -10,13 +10,37 @@ const vocabItems = () => themes.flatMap(th => th.items);
 const allItems = () => [...letters, ...vocabItems()];
 
 // Safe DOM builder: text only via textContent, never innerHTML.
+
+// Safe DOM builder: supports nested arrays of HTML elements.
 function h(tag, a = {}, ...kids) {
   const e = document.createElement(tag);
+
+  // Apply attributes and event listeners.
   for (const [k, v] of Object.entries(a)) {
-    if (k === "class") e.className = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
-    else if (v === true) e.setAttribute(k, ""); else if (v !== false && v != null) e.setAttribute(k, v);
+    if (k === "class") {
+      e.className = v;
+    } else if (k.startsWith("on")) {
+      e.addEventListener(k.slice(2), v);
+    } else if (v === true) {
+      e.setAttribute(k, "");
+    } else if (v !== false && v != null) {
+      e.setAttribute(k, v);
+    }
   }
-  for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c));
+
+  // Recursively flatten nested arrays and append actual DOM elements.
+  for (const child of kids.flat(Infinity)) {
+    if (child == null || typeof child === "boolean") {
+      continue;
+    }
+
+    if (child instanceof Node) {
+      e.appendChild(child);
+    } else {
+      e.appendChild(document.createTextNode(String(child)));
+    }
+  }
+
   return e;
 }
 const ar = (txt, cls = "") => h("span", { class: "ar " + cls, lang: "ar", dir: "rtl" }, txt);
