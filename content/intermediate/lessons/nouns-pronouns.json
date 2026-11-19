@@ -1,0 +1,1012 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "i-les-nouns-01",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-pronouns",
+   "title": {
+    "en": "The definite article ال",
+    "ar": "أَدَاةُ التَّعْرِيف «ال»"
+   },
+   "objectives": [
+    {
+     "en": "Recognise ال at the start of a noun",
+     "ar": "التعرّف إلى «ال» في أول الاسم"
+    },
+    {
+     "en": "Turn an indefinite noun into a definite one",
+     "ar": "تحويل الاسم النكرة إلى معرفة"
+    }
+   ],
+   "prerequisites": [
+    "b-les-marks-04"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The definite article is ال (al-), written joined to the start of a noun. It means “the”. A definite noun drops its tanwīn: كِتَابٌ “a book” becomes الكِتَاب “the book”.",
+     "ar": "أداة التعريف هي «ال» وتُكتب متصلة بأول الاسم، وتعني «the». ويسقط التنوين من الاسم المعرَّف: كِتَابٌ ← الكِتَاب."
+    },
+    {
+     "en": "Before some letters (the “sun letters”) the ل is not pronounced. That comes in a later lesson; the examples here are words where it is pronounced.",
+     "ar": "قبل بعض الحروف (الحروف الشمسية) لا تُنطق اللام، وسيأتي ذلك في درس لاحق. أمثلة هذا الدرس تُنطق فيها اللام."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "الكِتَاب",
+     "tr": "al-kitāb",
+     "en": "the book"
+    },
+    {
+     "ar": "البَاب",
+     "tr": "al-bāb",
+     "en": "the door"
+    },
+    {
+     "ar": "القَلَم",
+     "tr": "al-qalam",
+     "en": "the pen"
+    },
+    {
+     "ar": "البَيْت",
+     "tr": "al-bayt",
+     "en": "the house"
+    },
+    {
+     "ar": "الفِيل",
+     "tr": "al-fīl",
+     "en": "the elephant"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الكِتَاب",
+     "options": [
+      {
+       "text": "al-kitāb",
+       "ar": false
+      },
+      {
+       "text": "kitābun",
+       "ar": false
+      },
+      {
+       "text": "bayt",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ال is read “al-”, so الكِتَاب is “al-kitāb”.",
+      "ar": "«ال» تُقرأ «al-»، فتُقرأ الكلمة «al-kitāb»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "البَاب",
+     "options": [
+      {
+       "text": "al-bāb",
+       "ar": false
+      },
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "al-bayt",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "البَاب is “al-bāb”.",
+      "ar": "البَاب تُقرأ «al-bāb»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means “the door”?",
+      "ar": "أيُّ كلمة تعني «the door»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "البَاب",
+       "ar": true
+      },
+      {
+       "text": "بَابٌ",
+       "ar": true
+      },
+      {
+       "text": "القَلَم",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "البَاب has ال, so it means “the door”.",
+      "ar": "البَاب فيها «ال» فتعني «the door»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does ال mean?",
+      "ar": "ماذا تعني «ال»؟"
+     },
+     "promptAr": "ال",
+     "options": [
+      {
+       "text": {
+        "en": "the",
+        "ar": "the"
+       }
+      },
+      {
+       "text": {
+        "en": "a",
+        "ar": "a"
+       }
+      },
+      {
+       "text": {
+        "en": "and",
+        "ar": "and"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ال is the definite article, “the”.",
+      "ar": "«ال» أداة التعريف، «the»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which noun is definite?",
+      "ar": "أيُّ اسم معرَّف؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كِتَابٌ",
+       "ar": true
+      },
+      {
+       "text": "الكِتَاب",
+       "ar": true
+      },
+      {
+       "text": "قَلَمٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "A noun with ال is definite and has no tanwīn.",
+      "ar": "الاسم الذي فيه «ال» معرَّف ولا تنوين فيه."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-nouns-02",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-pronouns",
+   "title": {
+    "en": "Masculine and feminine nouns",
+    "ar": "المُذَكَّرُ وَالمُؤَنَّث"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the feminine ending ة",
+     "ar": "التعرّف إلى علامة التأنيث «ة»"
+    },
+    {
+     "en": "Tell masculine and feminine pairs apart",
+     "ar": "التمييز بين المذكّر والمؤنّث"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Arabic nouns are masculine or feminine. Many feminine nouns end in ة (tāʾ marbūṭa). Adding it to a masculine word often gives the feminine: طَالِبٌ “a male student” → طَالِبَةٌ “a female student”.",
+     "ar": "الأسماء في العربية مذكّرة أو مؤنّثة. وكثير من الأسماء المؤنّثة ينتهي بتاء مربوطة «ة». وإضافتها إلى المذكّر تعطي غالبًا المؤنّث: طَالِبٌ ← طَالِبَةٌ."
+    },
+    {
+     "en": "This is a common pattern, not a rule without exceptions: some feminine nouns do not end in ة.",
+     "ar": "هذه قاعدة غالبة وليست بلا استثناء: بعض الأسماء المؤنّثة لا تنتهي بـ «ة»."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "طَالِبٌ",
+     "tr": "ṭālibun",
+     "en": "student (male)"
+    },
+    {
+     "ar": "طَالِبَةٌ",
+     "tr": "ṭālibatun",
+     "en": "student (female)"
+    },
+    {
+     "ar": "تِلْمِيذٌ",
+     "tr": "tilmīdhun",
+     "en": "pupil (male)"
+    },
+    {
+     "ar": "تِلْمِيذَةٌ",
+     "tr": "tilmīdhatun",
+     "en": "pupil (female)"
+    },
+    {
+     "ar": "قِطَّةٌ",
+     "tr": "qiṭṭatun",
+     "en": "cat (female)"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "طَالِبَةٌ",
+     "options": [
+      {
+       "text": "ṭālibatun",
+       "ar": false
+      },
+      {
+       "text": "ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "ṭālibin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The ة adds “-atun”: ṭālibatun.",
+      "ar": "التاء المربوطة تعطي «-atun»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word means a female student?",
+      "ar": "أيُّ كلمة تعني طالبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَالِبَةٌ ends with ة, the feminine ending.",
+      "ar": "طَالِبَةٌ تنتهي بـ «ة»، علامة التأنيث."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means a male pupil?",
+      "ar": "أيُّ كلمة تعني تلميذًا؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "تِلْمِيذٌ",
+       "ar": true
+      },
+      {
+       "text": "تِلْمِيذَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "تِلْمِيذٌ has no ة, so it is the masculine.",
+      "ar": "تِلْمِيذٌ بلا «ة» فهي مذكّر."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Many feminine nouns end with…",
+      "ar": "ينتهي كثير من الأسماء المؤنّثة بـ…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "ة (tāʾ marbūṭa)",
+        "ar": "ة (التاء المربوطة)"
+       }
+      },
+      {
+       "text": {
+        "en": "ا (alif)",
+        "ar": "ا (الألف)"
+       }
+      },
+      {
+       "text": {
+        "en": "ن (nūn)",
+        "ar": "ن (النون)"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ة is the common feminine ending.",
+      "ar": "التاء المربوطة علامة التأنيث الشائعة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word is feminine?",
+      "ar": "أيُّ كلمة مؤنّثة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "قَلَمٌ",
+       "ar": true
+      },
+      {
+       "text": "قِطَّةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "قِطَّةٌ ends with ة.",
+      "ar": "قِطَّةٌ تنتهي بـ «ة»."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-nouns-03",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-pronouns",
+   "title": {
+    "en": "Personal pronouns",
+    "ar": "الضَّمَائِرُ المُنْفَصِلَة"
+   },
+   "objectives": [
+    {
+     "en": "Read the pronouns I, you (m/f), he, she",
+     "ar": "قراءة الضمائر: أنا، أنتَ، أنتِ، هو، هي"
+    },
+    {
+     "en": "Choose the right pronoun for a person",
+     "ar": "اختيار الضمير المناسب"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-02"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Pronouns replace nouns. Arabic has different words for “you” to a man and to a woman: أَنْتَ (to a man) and أَنْتِ (to a woman). Only the final vowel changes.",
+     "ar": "الضمائر تحلّ محلّ الأسماء. وللمخاطَب في العربية ضميران: أَنْتَ للمذكّر وأَنْتِ للمؤنّث، ويتغيّر فيهما آخر الكلمة فقط."
+    },
+    {
+     "en": "The pronouns in this lesson are: أَنَا (I), أَنْتَ, أَنْتِ, هُوَ (he) and هِيَ (she).",
+     "ar": "ضمائر هذا الدرس: أَنَا، أَنْتَ، أَنْتِ، هُوَ، هِيَ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "أَنَا",
+     "tr": "ana",
+     "en": "I"
+    },
+    {
+     "ar": "أَنْتَ",
+     "tr": "anta",
+     "en": "you (to a man)"
+    },
+    {
+     "ar": "أَنْتِ",
+     "tr": "anti",
+     "en": "you (to a woman)"
+    },
+    {
+     "ar": "هُوَ",
+     "tr": "huwa",
+     "en": "he"
+    },
+    {
+     "ar": "هِيَ",
+     "tr": "hiya",
+     "en": "she"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَنَا",
+     "options": [
+      {
+       "text": "ana",
+       "ar": false
+      },
+      {
+       "text": "anta",
+       "ar": false
+      },
+      {
+       "text": "anti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَنَا is “ana”, meaning “I”.",
+      "ar": "أَنَا تُقرأ «ana» وتعني «I»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هُوَ",
+     "options": [
+      {
+       "text": "huwa",
+       "ar": false
+      },
+      {
+       "text": "hiya",
+       "ar": false
+      },
+      {
+       "text": "anta",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هُوَ is “huwa”, meaning “he”.",
+      "ar": "هُوَ تُقرأ «huwa»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هِيَ",
+     "options": [
+      {
+       "text": "huwa",
+       "ar": false
+      },
+      {
+       "text": "hiya",
+       "ar": false
+      },
+      {
+       "text": "anti",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "هِيَ is “hiya”, meaning “she”.",
+      "ar": "هِيَ تُقرأ «hiya»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which pronoun means “she”?",
+      "ar": "أيُّ ضمير يعني «she»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هُوَ",
+       "ar": true
+      },
+      {
+       "text": "هِيَ",
+       "ar": true
+      },
+      {
+       "text": "أَنَا",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "هِيَ means “she”.",
+      "ar": "هِيَ تعني «she»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "أَنْتَ is used for…",
+      "ar": "يُستعمل «أَنْتَ» مع…"
+     },
+     "promptAr": "أَنْتَ",
+     "options": [
+      {
+       "text": {
+        "en": "one man",
+        "ar": "رجل واحد"
+       }
+      },
+      {
+       "text": {
+        "en": "one woman",
+        "ar": "امرأة واحدة"
+       }
+      },
+      {
+       "text": {
+        "en": "yourself (I)",
+        "ar": "المتكلّم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَنْتَ (with fatḥa) addresses a man; أَنْتِ (with kasra) addresses a woman.",
+      "ar": "أَنْتَ بالفتحة للمذكّر، وأَنْتِ بالكسرة للمؤنّث."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-nouns-04",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-pronouns",
+   "title": {
+    "en": "Demonstratives: this",
+    "ar": "أَسْمَاءُ الإِشَارَة: هٰذَا وَهٰذِهِ"
+   },
+   "objectives": [
+    {
+     "en": "Use هٰذَا and هٰذِهِ correctly",
+     "ar": "استعمال هٰذَا وهٰذِهِ"
+    },
+    {
+     "en": "Read and understand simple sentences with “this is …”",
+     "ar": "قراءة جمل بسيطة مثل «this is …» وفهمها"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "“This” is هٰذَا for a masculine noun and هٰذِهِ for a feminine noun: هٰذَا كِتَابٌ “this is a book”; هٰذِهِ قِطَّةٌ “this is a cat”.",
+     "ar": "«this» هي هٰذَا مع المذكّر وهٰذِهِ مع المؤنّث: هٰذَا كِتَابٌ، هٰذِهِ قِطَّةٌ."
+    },
+    {
+     "en": "Arabic has no word for “is” in these sentences. You simply put the demonstrative and the noun together.",
+     "ar": "لا توجد كلمة تقابل «is» في هذه الجمل، بل يُوضَع اسم الإشارة بجانب الاسم."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "هٰذَا",
+     "tr": "hādhā",
+     "en": "this (masculine)"
+    },
+    {
+     "ar": "هٰذِهِ",
+     "tr": "hādhihi",
+     "en": "this (feminine)"
+    },
+    {
+     "ar": "هٰذَا كِتَابٌ",
+     "tr": "hādhā kitābun",
+     "en": "This is a book."
+    },
+    {
+     "ar": "هٰذِهِ قِطَّةٌ",
+     "tr": "hādhihi qiṭṭatun",
+     "en": "This is a cat."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هٰذَا",
+     "options": [
+      {
+       "text": "hādhā",
+       "ar": false
+      },
+      {
+       "text": "hādhihi",
+       "ar": false
+      },
+      {
+       "text": "hiya",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هٰذَا is “hādhā”.",
+      "ar": "هٰذَا تُقرأ «hādhā»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هٰذِهِ",
+     "options": [
+      {
+       "text": "hādhā",
+       "ar": false
+      },
+      {
+       "text": "hādhihi",
+       "ar": false
+      },
+      {
+       "text": "huwa",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "هٰذِهِ is “hādhihi”.",
+      "ar": "هٰذِهِ تُقرأ «hādhihi»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does هٰذَا كِتَابٌ mean?",
+      "ar": "ماذا تعني هٰذَا كِتَابٌ؟"
+     },
+     "promptAr": "هٰذَا كِتَابٌ",
+     "options": [
+      {
+       "text": {
+        "en": "This is a book.",
+        "ar": "هذا كتاب."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a cat.",
+        "ar": "هذه قطة."
+       }
+      },
+      {
+       "text": {
+        "en": "The book is big.",
+        "ar": "الكتاب كبير."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هٰذَا + كِتَابٌ = “This is a book.”",
+      "ar": "هٰذَا + كِتَابٌ = «This is a book»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which fits قِطَّةٌ (feminine)?",
+      "ar": "أيٌّ يناسب قِطَّةٌ (مؤنّث)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "قِطَّةٌ is feminine, so use هٰذِهِ.",
+      "ar": "قِطَّةٌ مؤنّثة فنستعمل هٰذِهِ."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which fits قَلَمٌ (masculine)?",
+      "ar": "أيٌّ يناسب قَلَمٌ (مذكّر)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "قَلَمٌ is masculine, so use هٰذَا.",
+      "ar": "قَلَمٌ مذكّر فنستعمل هٰذَا."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-nouns-05",
+   "level": "intermediate",
+   "module": "nouns-pronouns",
+   "unit": "nouns-and-pronouns",
+   "title": {
+    "en": "Review: nouns, pronouns, “this”",
+    "ar": "مراجعة: الأسماء والضمائر وأسماء الإشارة"
+   },
+   "objectives": [
+    {
+     "en": "Combine articles, gender, pronouns and demonstratives",
+     "ar": "الجمع بين التعريف والتذكير والتأنيث والضمائر وأسماء الإشارة"
+    },
+    {
+     "en": "Read simple Arabic phrases",
+     "ar": "قراءة عبارات عربية بسيطة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-nouns-01",
+    "i-les-nouns-02",
+    "i-les-nouns-03",
+    "i-les-nouns-04"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Use what you have learned: ال makes a noun definite, ة often marks feminine, pronouns name people, and هٰذَا / هٰذِهِ point to things.",
+     "ar": "لخّص ما تعلّمته: «ال» تعرّف الاسم، و«ة» تدلّ غالبًا على التأنيث، والضمائر تسمّي الأشخاص، وهٰذَا وهٰذِهِ يشيران إلى الأشياء."
+    },
+    {
+     "en": "Check each word before answering: is it masculine or feminine, definite or indefinite?",
+     "ar": "تأكّد من كل كلمة قبل الإجابة: هل هي مذكّرة أم مؤنّثة؟ معرَّفة أم نكرة؟"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "هٰذَا القَلَم",
+     "tr": "hādhā al-qalam",
+     "en": "this pen"
+    },
+    {
+     "ar": "هٰذِهِ طَالِبَةٌ",
+     "tr": "hādhihi ṭālibatun",
+     "en": "This is a (female) student."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الفِيل",
+     "options": [
+      {
+       "text": "al-fīl",
+       "ar": false
+      },
+      {
+       "text": "fīlun",
+       "ar": false
+      },
+      {
+       "text": "al-bayt",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ال is “al-”.",
+      "ar": "«ال» تُقرأ «al-»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هِيَ",
+     "options": [
+      {
+       "text": "huwa",
+       "ar": false
+      },
+      {
+       "text": "hiya",
+       "ar": false
+      },
+      {
+       "text": "ana",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "هِيَ is “she”.",
+      "ar": "هِيَ تعني «she»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does هٰذِهِ طَالِبَةٌ mean?",
+      "ar": "ماذا تعني هٰذِهِ طَالِبَةٌ؟"
+     },
+     "promptAr": "هٰذِهِ طَالِبَةٌ",
+     "options": [
+      {
+       "text": {
+        "en": "This is a (female) student.",
+        "ar": "هذه طالبة."
+       }
+      },
+      {
+       "text": {
+        "en": "This is a (male) student.",
+        "ar": "هذا طالب."
+       }
+      },
+      {
+       "text": {
+        "en": "She is the pen.",
+        "ar": "هي القلم."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هٰذِهِ is feminine, matching طَالِبَةٌ.",
+      "ar": "هٰذِهِ مؤنّثة وتناسب طَالِبَةٌ."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is definite?",
+      "ar": "أيُّ كلمة معرَّفة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بَابٌ",
+       "ar": true
+      },
+      {
+       "text": "البَاب",
+       "ar": true
+      },
+      {
+       "text": "قِطَّةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Only البَاب has ال.",
+      "ar": "«البَاب» وحدها فيها «ال»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word is feminine?",
+      "ar": "أيُّ كلمة مؤنّثة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "طَالِبَةٌ ends with ة.",
+      "ar": "طَالِبَةٌ تنتهي بـ «ة»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which fits كِتَابٌ?",
+      "ar": "أيٌّ يناسب كِتَابٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كِتَابٌ is masculine, so use هٰذَا.",
+      "ar": "كِتَابٌ مذكّر فنستعمل هٰذَا."
+     }
+    }
+   ]
+  }
+ ]
+}
