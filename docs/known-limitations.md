@@ -1,0 +1,14 @@
+# Known limitations (v2.0 foundation)
+- Only Level 1 vocabulary (36 words) and the alphabet exist. Levels 2 and 3 are shown as "Not built yet".
+- Alphabet module is partial: 28 letters, written forms and a recognition quiz. No sounds, vowels, tracing or letter-position drills yet. Letter names are standard but unreviewed.
+- No grammar, reading, writing, listening, conversation or sentence-builder modules yet.
+- No recorded audio. The Listen button uses the device's Arabic voice if present; otherwise it says so.
+- No achievements/badges, weekly challenges or certificates yet. XP, streak and mastery do work.
+- No teacher/parent portal. Profiles are local to one device and are not secure accounts.
+- Arabic content and Arabic UI strings need review by a qualified Arabic teacher.
+- Not tested in a real browser or on Android in this environment. See docs/testing-guide.md.
+- Lessons: 18 (5 Intermediate: definite article, gender, pronouns, “this”, review; plus 13 Beginner: letter positions; fatḥa, kasra, ḍamma, review; ā, ī, ū, review; sukūn, shaddah, tanwīn, review). Practice is multiple-choice. Explanations, objectives and feedback have English and Arabic versions, but the Arabic wording was written without a native-speaker review. No guided/independent-practice split or per-lesson assessment bank yet.
+- "Lesson complete" is a self-marked completion, separate from the practice score; a lesson does not set item mastery.
+- Not built yet: tracing, lessons on the six non-joining letters in words, hamza and tāʾ marbūṭa, and the other letters' position drill for non-joiners (the drill covers the 22 letters that join forward). Word examples in the long-vowel lessons (bāb, fīl, nūr) are dictionary forms.
+- Intermediate has only one module (nouns and pronouns). Sun letters, dual/plural, verbs and sentences are not built. Level 3 is not built.
+- Achievements: 9 badges, each worth 20 XP once. The Listening Star and Reading Champion badges are not included because listening and reading assessments do not exist yet. Letter Master (6 letters mastered) is our own definition of a "letter group"; edit `content/shared/achievements.json` to change it.
