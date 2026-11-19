@@ -1,0 +1,170 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "b-les-letters-01",
+   "level": "beginner",
+   "module": "alphabet",
+   "unit": "reading-signs",
+   "title": {
+    "en": "Letter positions",
+    "ar": "أشكال الحروف"
+   },
+   "objectives": [
+    {
+     "en": "Know that letters change shape at the start, middle and end of a word",
+     "ar": "معرفة أن شكل الحرف يتغيّر في أول الكلمة ووسطها وآخرها"
+    },
+    {
+     "en": "Recognise which letters do not join forward",
+     "ar": "معرفة الحروف التي لا تتصل بما بعدها"
+    }
+   ],
+   "prerequisites": [],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Most Arabic letters change shape depending on where they are in a word: alone, at the start, in the middle or at the end. The letter ب looks like بـ at the start, ـبـ in the middle and ـب at the end.",
+     "ar": "يتغيّر شكل معظم الحروف العربية بحسب موضعها في الكلمة: منفصلًا، أو في الأول، أو في الوسط، أو في الآخر. فالباء تُكتب بـ في الأول وـبـ في الوسط وـب في الآخر."
+    },
+    {
+     "en": "Six letters join only to the letter before them, not the one after: ا د ذ ر ز و. The next letter then starts a new shape.",
+     "ar": "ستة حروف تتصل بما قبلها فقط ولا تتصل بما بعدها: ا د ذ ر ز و، فيبدأ الحرف التالي بشكل جديد."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ب",
+     "tr": "alone",
+     "en": "alone"
+    },
+    {
+     "ar": "بـ",
+     "tr": "start",
+     "en": "start"
+    },
+    {
+     "ar": "ـبـ",
+     "tr": "middle",
+     "en": "middle"
+    },
+    {
+     "ar": "ـب",
+     "tr": "end",
+     "en": "end"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which form of ب is used at the start of a word?",
+      "ar": "أيُّ شكل للباء يُستعمل في أول الكلمة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بـ",
+       "ar": true
+      },
+      {
+       "text": "ـبـ",
+       "ar": true
+      },
+      {
+       "text": "ـب",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "At the start, the letter joins to the next letter only: بـ.",
+      "ar": "في الأول يتصل الحرف بما بعده فقط: بـ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which form of ب is used in the middle?",
+      "ar": "أيُّ شكل للباء يُستعمل في الوسط؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بـ",
+       "ar": true
+      },
+      {
+       "text": "ـبـ",
+       "ar": true
+      },
+      {
+       "text": "ـب",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "In the middle it joins on both sides: ـبـ.",
+      "ar": "في الوسط يتصل من الجانبين: ـبـ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which form of ب is used at the end?",
+      "ar": "أيُّ شكل للباء يُستعمل في الآخر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بـ",
+       "ar": true
+      },
+      {
+       "text": "ـبـ",
+       "ar": true
+      },
+      {
+       "text": "ـب",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "At the end it joins only to the letter before: ـب.",
+      "ar": "في الآخر يتصل بما قبله فقط: ـب."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which letter does not join to the letter after it?",
+      "ar": "أيُّ حرف لا يتصل بما بعده؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ب",
+       "ar": true
+      },
+      {
+       "text": "د",
+       "ar": true
+      },
+      {
+       "text": "ت",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "د is one of the six non-joining letters (ا د ذ ر ز و).",
+      "ar": "الدال من الحروف الستة التي لا تتصل بما بعدها (ا د ذ ر ز و)."
+     }
+    }
+   ]
+  }
+ ]
+}

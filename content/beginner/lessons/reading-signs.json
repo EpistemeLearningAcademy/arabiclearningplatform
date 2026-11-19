@@ -1,0 +1,904 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "b-les-marks-01",
+   "level": "beginner",
+   "module": "signs",
+   "unit": "reading-signs",
+   "title": {
+    "en": "Sukūn: no vowel",
+    "ar": "السُّكُون"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the sukūn above a letter",
+     "ar": "التعرّف إلى السكون فوق الحرف"
+    },
+    {
+     "en": "Read words that contain a sukūn",
+     "ar": "قراءة كلمات فيها سكون"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-08"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Sukūn is a small circle written above a letter. It means the letter has no vowel: مِنْ is read “min”, with the n closing the syllable.",
+     "ar": "السكون دائرة صغيرة تُكتب فوق الحرف، وتدلّ على أنّ الحرف لا حركة له: مِنْ تُقرأ «min» وتنتهي بالنون ساكنةً."
+    },
+    {
+     "en": "A letter with sukūn joins the vowel sound before it; it does not start a new syllable.",
+     "ar": "الحرف الساكن يتصل بالصوت الذي قبله ولا يبدأ مقطعًا جديدًا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "مِنْ",
+     "tr": "min",
+     "en": "from"
+    },
+    {
+     "ar": "هَلْ",
+     "tr": "hal",
+     "en": "(question word: “is/does…?”)"
+    },
+    {
+     "ar": "كَمْ",
+     "tr": "kam",
+     "en": "how many"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مِنْ",
+     "options": [
+      {
+       "text": "min",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The sukūn on nūn means no vowel after it, so مِنْ is “min”.",
+      "ar": "السكون على النون يعني أنه لا حركة بعدها، فتُقرأ «min»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "هَلْ",
+     "options": [
+      {
+       "text": "hal",
+       "ar": false
+      },
+      {
+       "text": "ha",
+       "ar": false
+      },
+      {
+       "text": "hil",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هَلْ is read “hal”.",
+      "ar": "هَلْ تُقرأ «hal»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَمْ",
+     "options": [
+      {
+       "text": "kam",
+       "ar": false
+      },
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "kum",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَمْ is read “kam”.",
+      "ar": "كَمْ تُقرأ «kam»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is read “min”?",
+      "ar": "أيُّ كلمة تُقرأ «min»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مِنْ",
+       "ar": true
+      },
+      {
+       "text": "هَلْ",
+       "ar": true
+      },
+      {
+       "text": "كَمْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مِنْ is read “min”.",
+      "ar": "مِنْ تُقرأ «min»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Where is the mark written?",
+      "ar": "أين تُكتب هذه العلامة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Above the letter",
+        "ar": "فوق الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "Below the letter",
+        "ar": "تحت الحرف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The mark is written above the letter.",
+      "ar": "العلامة تُكتب فوق الحرف."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does the sukūn show?",
+      "ar": "ماذا يدلّ السكون؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "No vowel on the letter",
+        "ar": "لا حركة على الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "A long vowel",
+        "ar": "حرف مدّ"
+       }
+      },
+      {
+       "text": {
+        "en": "A doubled letter",
+        "ar": "حرف مضاعف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Sukūn means the letter carries no vowel.",
+      "ar": "السكون يعني أنّ الحرف لا حركة له."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-marks-02",
+   "level": "beginner",
+   "module": "signs",
+   "unit": "reading-signs",
+   "title": {
+    "en": "Shaddah: doubled letter",
+    "ar": "الشَّدَّة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the shaddah above a letter",
+     "ar": "التعرّف إلى الشدّة فوق الحرف"
+    },
+    {
+     "en": "Read words with a doubled letter",
+     "ar": "قراءة كلمات فيها حرف مضاعف"
+    }
+   ],
+   "prerequisites": [
+    "b-les-marks-01"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Shaddah is a small sign above a letter showing that the letter is doubled: it is pronounced twice, once ending one syllable and once starting the next. أُمّ is read “umm”.",
+     "ar": "الشدّة علامة صغيرة تُكتب فوق الحرف وتدلّ على أنّه مضاعف: يُنطق مرتين، الأولى تُنهي مقطعًا والثانية تبدأ المقطع التالي. أُمّ تُقرأ «umm»."
+    },
+    {
+     "en": "When a letter has a shaddah and a vowel, the vowel mark is written with the shaddah.",
+     "ar": "إذا حملت الحرف شدّة وحركة، كُتبت الحركة معها."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "أُمّ",
+     "tr": "umm",
+     "en": "mother"
+    },
+    {
+     "ar": "جَدّ",
+     "tr": "jadd",
+     "en": "grandfather"
+    },
+    {
+     "ar": "كُلّ",
+     "tr": "kull",
+     "en": "all, every"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أُمّ",
+     "options": [
+      {
+       "text": "umm",
+       "ar": false
+      },
+      {
+       "text": "um",
+       "ar": false
+      },
+      {
+       "text": "uum",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The shaddah doubles the mīm: “umm”.",
+      "ar": "الشدّة تضاعف الميم: «umm»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "جَدّ",
+     "options": [
+      {
+       "text": "jadd",
+       "ar": false
+      },
+      {
+       "text": "jad",
+       "ar": false
+      },
+      {
+       "text": "jid",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The shaddah doubles the dāl: “jadd”.",
+      "ar": "الشدّة تضاعف الدال: «jadd»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُلّ",
+     "options": [
+      {
+       "text": "kull",
+       "ar": false
+      },
+      {
+       "text": "kul",
+       "ar": false
+      },
+      {
+       "text": "kil",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The shaddah doubles the lām: “kull”.",
+      "ar": "الشدّة تضاعف اللام: «kull»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is read “umm”?",
+      "ar": "أيُّ كلمة تُقرأ «umm»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أُمّ",
+       "ar": true
+      },
+      {
+       "text": "جَدّ",
+       "ar": true
+      },
+      {
+       "text": "كُلّ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أُمّ is read “umm”.",
+      "ar": "أُمّ تُقرأ «umm»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does the shaddah show?",
+      "ar": "ماذا تدلّ الشدّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The letter is doubled",
+        "ar": "الحرف مضاعف"
+       }
+      },
+      {
+       "text": {
+        "en": "The letter has no vowel",
+        "ar": "الحرف لا حركة له"
+       }
+      },
+      {
+       "text": {
+        "en": "A long vowel",
+        "ar": "حرف مدّ"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Shaddah doubles the letter.",
+      "ar": "الشدّة تضاعف الحرف."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Where is the mark written?",
+      "ar": "أين تُكتب هذه العلامة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Above the letter",
+        "ar": "فوق الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "Below the letter",
+        "ar": "تحت الحرف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The mark is written above the letter.",
+      "ar": "العلامة تُكتب فوق الحرف."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-marks-03",
+   "level": "beginner",
+   "module": "signs",
+   "unit": "reading-signs",
+   "title": {
+    "en": "Tanwīn: final “n” sound",
+    "ar": "التَّنْوِين"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the three tanwīn marks",
+     "ar": "التعرّف إلى علامات التنوين الثلاث"
+    },
+    {
+     "en": "Read nouns that end with tanwīn",
+     "ar": "قراءة أسماء تنتهي بتنوين"
+    }
+   ],
+   "prerequisites": [
+    "b-les-marks-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Tanwīn is a doubled vowel mark at the end of a noun. It adds an “n” sound and shows the noun is indefinite (“a book”). There are three: ḍammatān (-un), fatḥatān (-an) and kasratān (-in).",
+     "ar": "التنوين علامة حركة مضاعفة في آخر الاسم، تضيف صوت النون وتدلّ على أنّ الاسم نكرة (كتابٌ). وله ثلاث صور: ضمّتان (un) وفتحتان (an) وكسرتان (in)."
+    },
+    {
+     "en": "Say the final “n”, but do not write a nūn letter: كِتَابٌ is read “kitābun”.",
+     "ar": "يُنطق صوت النون في الآخر ولا يُكتب حرف نون: كِتَابٌ تُقرأ «kitābun»."
+    },
+    {
+     "en": "Fatḥatān is usually written on an alif (ـًا).",
+     "ar": "وتُكتب الفتحتان عادةً على ألف (ـًا)."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بَابٌ",
+     "tr": "bābun",
+     "en": "a door"
+    },
+    {
+     "ar": "بَابًا",
+     "tr": "bāban",
+     "en": "a door"
+    },
+    {
+     "ar": "بَابٍ",
+     "tr": "bābin",
+     "en": "a door"
+    },
+    {
+     "ar": "كِتَابٌ",
+     "tr": "kitābun",
+     "en": "a book"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابٌ",
+     "options": [
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bāban",
+       "ar": false
+      },
+      {
+       "text": "bābin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Ḍammatān gives “-un”.",
+      "ar": "الضمّتان تعطيان «-un»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابًا",
+     "options": [
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bāban",
+       "ar": false
+      },
+      {
+       "text": "bābin",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥatān gives “-an”.",
+      "ar": "الفتحتان تعطيان «-an»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابٍ",
+     "options": [
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bāban",
+       "ar": false
+      },
+      {
+       "text": "bābin",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Kasratān gives “-in”.",
+      "ar": "الكسرتان تعطيان «-in»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word has ḍammatān?",
+      "ar": "أيُّ كلمة فيها ضمّتان؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "بَابٌ",
+       "ar": true
+      },
+      {
+       "text": "بَابًا",
+       "ar": true
+      },
+      {
+       "text": "بَابٍ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "بَابٌ ends with ḍammatān.",
+      "ar": "بَابٌ تنتهي بضمّتين."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What sound does tanwīn add?",
+      "ar": "أيُّ صوت يضيفه التنوين؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "An “n” sound at the end",
+        "ar": "صوت نون في الآخر"
+       }
+      },
+      {
+       "text": {
+        "en": "A long vowel",
+        "ar": "حرف مدّ"
+       }
+      },
+      {
+       "text": {
+        "en": "A doubled letter",
+        "ar": "حرف مضاعف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Tanwīn adds a final “n” sound.",
+      "ar": "التنوين يضيف صوت نون في الآخر."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does كِتَابٌ mean?",
+      "ar": "ماذا تعني كِتَابٌ؟"
+     },
+     "promptAr": "كِتَابٌ",
+     "options": [
+      {
+       "text": {
+        "en": "a book",
+        "ar": "كتاب (نكرة)"
+       }
+      },
+      {
+       "text": {
+        "en": "the book",
+        "ar": "الكتاب"
+       }
+      },
+      {
+       "text": {
+        "en": "books",
+        "ar": "كتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Tanwīn marks an indefinite noun: “a book”.",
+      "ar": "التنوين يدلّ على الاسم النكرة: «كتاب»."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-marks-04",
+   "level": "beginner",
+   "module": "signs",
+   "unit": "reading-signs",
+   "title": {
+    "en": "Review: sukūn, shaddah, tanwīn",
+    "ar": "مراجعة: السكون والشدّة والتنوين"
+   },
+   "objectives": [
+    {
+     "en": "Tell the three signs apart",
+     "ar": "التمييز بين العلامات الثلاث"
+    },
+    {
+     "en": "Read words that carry them",
+     "ar": "قراءة كلمات تحمل هذه العلامات"
+    }
+   ],
+   "prerequisites": [
+    "b-les-marks-01",
+    "b-les-marks-02",
+    "b-les-marks-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Sukūn means no vowel, shaddah doubles a letter, and tanwīn adds a final “n” to an indefinite noun.",
+     "ar": "السكون يعني عدم وجود حركة، والشدّة تضاعف الحرف، والتنوين يضيف نونًا في آخر الاسم النكرة."
+    },
+    {
+     "en": "Read the signs carefully: they change how a word sounds.",
+     "ar": "اقرأ العلامات بعناية، فهي تغيّر نطق الكلمة."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "مِنْ",
+     "tr": "min",
+     "en": "from"
+    },
+    {
+     "ar": "أُمّ",
+     "tr": "umm",
+     "en": "mother"
+    },
+    {
+     "ar": "بَابٌ",
+     "tr": "bābun",
+     "en": "a door"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مِنْ",
+     "options": [
+      {
+       "text": "min",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Sukūn: no vowel after nūn.",
+      "ar": "السكون: لا حركة بعد النون."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أُمّ",
+     "options": [
+      {
+       "text": "umm",
+       "ar": false
+      },
+      {
+       "text": "um",
+       "ar": false
+      },
+      {
+       "text": "uum",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Shaddah doubles the mīm.",
+      "ar": "الشدّة تضاعف الميم."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابٌ",
+     "options": [
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bāban",
+       "ar": false
+      },
+      {
+       "text": "bābin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Ḍammatān gives “-un”.",
+      "ar": "الضمّتان تعطيان «-un»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَمْ",
+     "options": [
+      {
+       "text": "kam",
+       "ar": false
+      },
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "kum",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Sukūn on mīm: “kam”.",
+      "ar": "السكون على الميم: «kam»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُلّ",
+     "options": [
+      {
+       "text": "kull",
+       "ar": false
+      },
+      {
+       "text": "kul",
+       "ar": false
+      },
+      {
+       "text": "kil",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Shaddah doubles the lām.",
+      "ar": "الشدّة تضاعف اللام."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابًا",
+     "options": [
+      {
+       "text": "bābun",
+       "ar": false
+      },
+      {
+       "text": "bāban",
+       "ar": false
+      },
+      {
+       "text": "bābin",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥatān gives “-an”.",
+      "ar": "الفتحتان تعطيان «-an»."
+     }
+    }
+   ]
+  }
+ ]
+}

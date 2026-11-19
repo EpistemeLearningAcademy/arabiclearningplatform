@@ -1,0 +1,946 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "b-les-vowels-05",
+   "level": "beginner",
+   "module": "long-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Long vowel: ā (alif)",
+    "ar": "المدّ بالألف"
+   },
+   "objectives": [
+    {
+     "en": "Recognise ا as the lengthener of fatḥa",
+     "ar": "التعرّف إلى حرف ا بوصفه يمدّ الفتحة"
+    },
+    {
+     "en": "Tell short “a” from long “ā” when reading",
+     "ar": "التمييز بين «a» القصيرة و«ā» الطويلة عند القراءة"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-04"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A fatḥa followed by the letter alif (ا) makes a long “ā”, held about twice as long as short “a”: بَا is read “bā”.",
+     "ar": "إذا جاءت الألف (ا) بعد الفتحة صار الصوت «ā» طويلًا، ويُمَدّ نحو ضعف مدة الفتحة القصيرة: بَا تُقرأ «bā»."
+    },
+    {
+     "en": "Alif takes no vowel mark here; it only lengthens the fatḥa before it.",
+     "ar": "لا تحمل الألف هنا حركة، وإنما تمدّ الفتحة التي قبلها."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بَا",
+     "tr": "bā",
+     "en": "syllable"
+    },
+    {
+     "ar": "تَا",
+     "tr": "tā",
+     "en": "syllable"
+    },
+    {
+     "ar": "مَا",
+     "tr": "mā",
+     "en": "syllable"
+    },
+    {
+     "ar": "نَا",
+     "tr": "nā",
+     "en": "syllable"
+    },
+    {
+     "ar": "كَا",
+     "tr": "kā",
+     "en": "syllable"
+    },
+    {
+     "ar": "لَا",
+     "tr": "lā",
+     "en": "syllable"
+    },
+    {
+     "ar": "بَاب",
+     "tr": "bāb",
+     "en": "door"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَا",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bā",
+       "ar": false
+      },
+      {
+       "text": "bī",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥa followed by ا gives the long “ā”, so بَا is read “bā”, not “ba”.",
+      "ar": "بَا تُقرأ «bā» (صوت طويل)، وليست «ba»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تَا",
+     "options": [
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "tā",
+       "ar": false
+      },
+      {
+       "text": "tī",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥa followed by ا gives the long “ā”, so تَا is read “tā”, not “ta”.",
+      "ar": "تَا تُقرأ «tā» (صوت طويل)، وليست «ta»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَا",
+     "options": [
+      {
+       "text": "ma",
+       "ar": false
+      },
+      {
+       "text": "mā",
+       "ar": false
+      },
+      {
+       "text": "mī",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥa followed by ا gives the long “ā”, so مَا is read “mā”, not “ma”.",
+      "ar": "مَا تُقرأ «mā» (صوت طويل)، وليست «ma»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نَا",
+     "options": [
+      {
+       "text": "na",
+       "ar": false
+      },
+      {
+       "text": "nā",
+       "ar": false
+      },
+      {
+       "text": "nī",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥa followed by ا gives the long “ā”, so نَا is read “nā”, not “na”.",
+      "ar": "نَا تُقرأ «nā» (صوت طويل)، وليست «na»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَا",
+     "options": [
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "kā",
+       "ar": false
+      },
+      {
+       "text": "kī",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Fatḥa followed by ا gives the long “ā”, so كَا is read “kā”, not “ka”.",
+      "ar": "كَا تُقرأ «kā» (صوت طويل)، وليست «ka»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which letter lengthens the fatḥa?",
+      "ar": "أيُّ حرف يمدّ الفتحة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ا",
+       "ar": true
+      },
+      {
+       "text": "و",
+       "ar": true
+      },
+      {
+       "text": "ي",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The fatḥa is lengthened by ا.",
+      "ar": "تُمَدّ الفتحة بحرف ا."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-06",
+   "level": "beginner",
+   "module": "long-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Long vowel: ī (yāʾ)",
+    "ar": "المدّ بالياء"
+   },
+   "objectives": [
+    {
+     "en": "Recognise ي as the lengthener of kasra",
+     "ar": "التعرّف إلى حرف ي بوصفه يمدّ الكسرة"
+    },
+    {
+     "en": "Tell short “i” from long “ī” when reading",
+     "ar": "التمييز بين «i» القصيرة و«ī» الطويلة عند القراءة"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-05"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A kasra followed by the letter yāʾ (ي) makes a long “ī”: بِي is read “bī”.",
+     "ar": "إذا جاءت الياء (ي) بعد الكسرة صار الصوت «ī» طويلًا: بِي تُقرأ «bī»."
+    },
+    {
+     "en": "The yāʾ here has no vowel mark of its own; it lengthens the kasra before it.",
+     "ar": "لا تحمل الياء هنا حركة، وإنما تمدّ الكسرة التي قبلها."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بِي",
+     "tr": "bī",
+     "en": "syllable"
+    },
+    {
+     "ar": "تِي",
+     "tr": "tī",
+     "en": "syllable"
+    },
+    {
+     "ar": "مِي",
+     "tr": "mī",
+     "en": "syllable"
+    },
+    {
+     "ar": "نِي",
+     "tr": "nī",
+     "en": "syllable"
+    },
+    {
+     "ar": "كِي",
+     "tr": "kī",
+     "en": "syllable"
+    },
+    {
+     "ar": "لِي",
+     "tr": "lī",
+     "en": "syllable"
+    },
+    {
+     "ar": "فِيل",
+     "tr": "fīl",
+     "en": "elephant"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بِي",
+     "options": [
+      {
+       "text": "bi",
+       "ar": false
+      },
+      {
+       "text": "bī",
+       "ar": false
+      },
+      {
+       "text": "bā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra followed by ي gives the long “ī”, so بِي is read “bī”, not “bi”.",
+      "ar": "بِي تُقرأ «bī» (صوت طويل)، وليست «bi»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تِي",
+     "options": [
+      {
+       "text": "ti",
+       "ar": false
+      },
+      {
+       "text": "tī",
+       "ar": false
+      },
+      {
+       "text": "tā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra followed by ي gives the long “ī”, so تِي is read “tī”, not “ti”.",
+      "ar": "تِي تُقرأ «tī» (صوت طويل)، وليست «ti»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مِي",
+     "options": [
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mī",
+       "ar": false
+      },
+      {
+       "text": "mā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra followed by ي gives the long “ī”, so مِي is read “mī”, not “mi”.",
+      "ar": "مِي تُقرأ «mī» (صوت طويل)، وليست «mi»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نِي",
+     "options": [
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "nī",
+       "ar": false
+      },
+      {
+       "text": "nā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra followed by ي gives the long “ī”, so نِي is read “nī”, not “ni”.",
+      "ar": "نِي تُقرأ «nī» (صوت طويل)، وليست «ni»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِي",
+     "options": [
+      {
+       "text": "ki",
+       "ar": false
+      },
+      {
+       "text": "kī",
+       "ar": false
+      },
+      {
+       "text": "kā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra followed by ي gives the long “ī”, so كِي is read “kī”, not “ki”.",
+      "ar": "كِي تُقرأ «kī» (صوت طويل)، وليست «ki»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which letter lengthens the kasra?",
+      "ar": "أيُّ حرف يمدّ الكسرة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ا",
+       "ar": true
+      },
+      {
+       "text": "و",
+       "ar": true
+      },
+      {
+       "text": "ي",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "The kasra is lengthened by ي.",
+      "ar": "تُمَدّ الكسرة بحرف ي."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-07",
+   "level": "beginner",
+   "module": "long-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Long vowel: ū (wāw)",
+    "ar": "المدّ بالواو"
+   },
+   "objectives": [
+    {
+     "en": "Recognise و as the lengthener of ḍamma",
+     "ar": "التعرّف إلى حرف و بوصفه يمدّ الضمّة"
+    },
+    {
+     "en": "Tell short “u” from long “ū” when reading",
+     "ar": "التمييز بين «u» القصيرة و«ū» الطويلة عند القراءة"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-06"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A ḍamma followed by the letter wāw (و) makes a long “ū”: بُو is read “bū”.",
+     "ar": "إذا جاءت الواو (و) بعد الضمّة صار الصوت «ū» طويلًا: بُو تُقرأ «bū»."
+    },
+    {
+     "en": "The wāw here has no vowel mark of its own; it lengthens the ḍamma before it.",
+     "ar": "لا تحمل الواو هنا حركة، وإنما تمدّ الضمّة التي قبلها."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بُو",
+     "tr": "bū",
+     "en": "syllable"
+    },
+    {
+     "ar": "تُو",
+     "tr": "tū",
+     "en": "syllable"
+    },
+    {
+     "ar": "مُو",
+     "tr": "mū",
+     "en": "syllable"
+    },
+    {
+     "ar": "نُو",
+     "tr": "nū",
+     "en": "syllable"
+    },
+    {
+     "ar": "كُو",
+     "tr": "kū",
+     "en": "syllable"
+    },
+    {
+     "ar": "لُو",
+     "tr": "lū",
+     "en": "syllable"
+    },
+    {
+     "ar": "نُور",
+     "tr": "nūr",
+     "en": "light"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بُو",
+     "options": [
+      {
+       "text": "bu",
+       "ar": false
+      },
+      {
+       "text": "bū",
+       "ar": false
+      },
+      {
+       "text": "bā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Ḍamma followed by و gives the long “ū”, so بُو is read “bū”, not “bu”.",
+      "ar": "بُو تُقرأ «bū» (صوت طويل)، وليست «bu»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تُو",
+     "options": [
+      {
+       "text": "tu",
+       "ar": false
+      },
+      {
+       "text": "tū",
+       "ar": false
+      },
+      {
+       "text": "tā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Ḍamma followed by و gives the long “ū”, so تُو is read “tū”, not “tu”.",
+      "ar": "تُو تُقرأ «tū» (صوت طويل)، وليست «tu»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مُو",
+     "options": [
+      {
+       "text": "mu",
+       "ar": false
+      },
+      {
+       "text": "mū",
+       "ar": false
+      },
+      {
+       "text": "mā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Ḍamma followed by و gives the long “ū”, so مُو is read “mū”, not “mu”.",
+      "ar": "مُو تُقرأ «mū» (صوت طويل)، وليست «mu»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نُو",
+     "options": [
+      {
+       "text": "nu",
+       "ar": false
+      },
+      {
+       "text": "nū",
+       "ar": false
+      },
+      {
+       "text": "nā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Ḍamma followed by و gives the long “ū”, so نُو is read “nū”, not “nu”.",
+      "ar": "نُو تُقرأ «nū» (صوت طويل)، وليست «nu»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُو",
+     "options": [
+      {
+       "text": "ku",
+       "ar": false
+      },
+      {
+       "text": "kū",
+       "ar": false
+      },
+      {
+       "text": "kā",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Ḍamma followed by و gives the long “ū”, so كُو is read “kū”, not “ku”.",
+      "ar": "كُو تُقرأ «kū» (صوت طويل)، وليست «ku»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which letter lengthens the ḍamma?",
+      "ar": "أيُّ حرف يمدّ الضمّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ا",
+       "ar": true
+      },
+      {
+       "text": "و",
+       "ar": true
+      },
+      {
+       "text": "ي",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The ḍamma is lengthened by و.",
+      "ar": "تُمَدّ الضمّة بحرف و."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-08",
+   "level": "beginner",
+   "module": "long-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Review: short and long vowels",
+    "ar": "مراجعة: الحركات القصيرة والطويلة"
+   },
+   "objectives": [
+    {
+     "en": "Tell short vowels from long vowels",
+     "ar": "التمييز بين الحركات القصيرة والطويلة"
+    },
+    {
+     "en": "Read syllables with ā, ī and ū",
+     "ar": "قراءة مقاطع فيها ā وī وū"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-05",
+    "b-les-vowels-06",
+    "b-les-vowels-07"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Short vowels are brief. Long vowels (ā, ī, ū) are held longer and are written with alif, yāʾ or wāw after the matching short vowel.",
+     "ar": "الحركات القصيرة قصيرة، أما حروف المدّ (ā، ī، ū) فتُمَدّ أكثر وتُكتب بالألف أو الياء أو الواو بعد الحركة المناسبة."
+    },
+    {
+     "en": "Compare بَ and بَا: the same letter, a short “ba” and a long “bā”.",
+     "ar": "قارن بين بَ وبَا: الحرف نفسه، «ba» قصيرة و«bā» طويلة."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بَ",
+     "tr": "ba",
+     "en": "syllable"
+    },
+    {
+     "ar": "بَا",
+     "tr": "bā",
+     "en": "syllable"
+    },
+    {
+     "ar": "بِ",
+     "tr": "bi",
+     "en": "syllable"
+    },
+    {
+     "ar": "بِي",
+     "tr": "bī",
+     "en": "syllable"
+    },
+    {
+     "ar": "بُ",
+     "tr": "bu",
+     "en": "syllable"
+    },
+    {
+     "ar": "بُو",
+     "tr": "bū",
+     "en": "syllable"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَ",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bā",
+       "ar": false
+      },
+      {
+       "text": "bi",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "بَ is read “ba”.",
+      "ar": "بَ تُقرأ «ba»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تَا",
+     "options": [
+      {
+       "text": "tā",
+       "ar": false
+      },
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "ti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "تَا is read “tā”.",
+      "ar": "تَا تُقرأ «tā»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مِ",
+     "options": [
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mī",
+       "ar": false
+      },
+      {
+       "text": "ma",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مِ is read “mi”.",
+      "ar": "مِ تُقرأ «mi»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نِي",
+     "options": [
+      {
+       "text": "nī",
+       "ar": false
+      },
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "na",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "نِي is read “nī”.",
+      "ar": "نِي تُقرأ «nī»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُ",
+     "options": [
+      {
+       "text": "ku",
+       "ar": false
+      },
+      {
+       "text": "kū",
+       "ar": false
+      },
+      {
+       "text": "ka",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كُ is read “ku”.",
+      "ar": "كُ تُقرأ «ku»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لُو",
+     "options": [
+      {
+       "text": "lū",
+       "ar": false
+      },
+      {
+       "text": "lu",
+       "ar": false
+      },
+      {
+       "text": "la",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لُو is read “lū”.",
+      "ar": "لُو تُقرأ «lū»."
+     }
+    }
+   ]
+  }
+ ]
+}

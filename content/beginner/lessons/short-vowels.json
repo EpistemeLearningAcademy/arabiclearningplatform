@@ -1,0 +1,944 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "b-les-vowels-01",
+   "level": "beginner",
+   "module": "short-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Short vowel: fatḥa",
+    "ar": "الفَتْحَة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the fatḥa mark above a letter",
+     "ar": "التعرّف إلى علامة الفتحة فوق الحرف"
+    },
+    {
+     "en": "Read a letter with fatḥa as a short “a” syllable",
+     "ar": "قراءة الحرف مع الفتحة مقطعًا قصيرًا بصوت «a»"
+    }
+   ],
+   "prerequisites": [],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Arabic letters stand for consonants. Short vowels are small marks written with a letter that tell you which short sound follows it.",
+     "ar": "الحروف العربية تدلّ على الأصوات الصامتة، والحركات القصيرة علامات صغيرة تُكتب مع الحرف وتبيّن الصوت القصير الذي يلحقه."
+    },
+    {
+     "en": "Fatḥa is a small slanted stroke written above the letter. It gives a short “a” sound: بَ is read “ba”.",
+     "ar": "الفتحة خطّ صغير مائل يُكتب فوق الحرف، وتعطي صوت «a» قصيرًا: بَ تُقرأ «ba»."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بَ",
+     "tr": "ba",
+     "en": "syllable"
+    },
+    {
+     "ar": "تَ",
+     "tr": "ta",
+     "en": "syllable"
+    },
+    {
+     "ar": "مَ",
+     "tr": "ma",
+     "en": "syllable"
+    },
+    {
+     "ar": "نَ",
+     "tr": "na",
+     "en": "syllable"
+    },
+    {
+     "ar": "كَ",
+     "tr": "ka",
+     "en": "syllable"
+    },
+    {
+     "ar": "لَ",
+     "tr": "la",
+     "en": "syllable"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَ",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bi",
+       "ar": false
+      },
+      {
+       "text": "bu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa gives the short “a” sound, so بَ is read “ba”.",
+      "ar": "بَ تُقرأ «ba»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تَ",
+     "options": [
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "ti",
+       "ar": false
+      },
+      {
+       "text": "tu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa gives the short “a” sound, so تَ is read “ta”.",
+      "ar": "تَ تُقرأ «ta»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَ",
+     "options": [
+      {
+       "text": "ma",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa gives the short “a” sound, so مَ is read “ma”.",
+      "ar": "مَ تُقرأ «ma»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نَ",
+     "options": [
+      {
+       "text": "na",
+       "ar": false
+      },
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "nu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa gives the short “a” sound, so نَ is read “na”.",
+      "ar": "نَ تُقرأ «na»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَ",
+     "options": [
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "ki",
+       "ar": false
+      },
+      {
+       "text": "ku",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa gives the short “a” sound, so كَ is read “ka”.",
+      "ar": "كَ تُقرأ «ka»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Where is the mark written?",
+      "ar": "أين تُكتب هذه العلامة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Above the letter",
+        "ar": "فوق الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "Below the letter",
+        "ar": "تحت الحرف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The mark is written above the letter.",
+      "ar": "العلامة تُكتب فوق الحرف."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-02",
+   "level": "beginner",
+   "module": "short-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Short vowel: kasra",
+    "ar": "الكَسْرَة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the kasra mark below a letter",
+     "ar": "التعرّف إلى علامة الكسرة تحت الحرف"
+    },
+    {
+     "en": "Read a letter with kasra as a short “i” syllable",
+     "ar": "قراءة الحرف مع الكسرة مقطعًا قصيرًا بصوت «i»"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-01"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Arabic letters stand for consonants. Short vowels are small marks written with a letter that tell you which short sound follows it.",
+     "ar": "الحروف العربية تدلّ على الأصوات الصامتة، والحركات القصيرة علامات صغيرة تُكتب مع الحرف وتبيّن الصوت القصير الذي يلحقه."
+    },
+    {
+     "en": "Kasra is a small slanted stroke written below the letter. It gives a short “i” sound: بِ is read “bi”.",
+     "ar": "الكسرة خطّ صغير مائل يُكتب تحت الحرف، وتعطي صوت «i» قصيرًا: بِ تُقرأ «bi»."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بِ",
+     "tr": "bi",
+     "en": "syllable"
+    },
+    {
+     "ar": "تِ",
+     "tr": "ti",
+     "en": "syllable"
+    },
+    {
+     "ar": "مِ",
+     "tr": "mi",
+     "en": "syllable"
+    },
+    {
+     "ar": "نِ",
+     "tr": "ni",
+     "en": "syllable"
+    },
+    {
+     "ar": "كِ",
+     "tr": "ki",
+     "en": "syllable"
+    },
+    {
+     "ar": "لِ",
+     "tr": "li",
+     "en": "syllable"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بِ",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bi",
+       "ar": false
+      },
+      {
+       "text": "bu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra gives the short “i” sound, so بِ is read “bi”.",
+      "ar": "بِ تُقرأ «bi»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تِ",
+     "options": [
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "ti",
+       "ar": false
+      },
+      {
+       "text": "tu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra gives the short “i” sound, so تِ is read “ti”.",
+      "ar": "تِ تُقرأ «ti»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مِ",
+     "options": [
+      {
+       "text": "ma",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra gives the short “i” sound, so مِ is read “mi”.",
+      "ar": "مِ تُقرأ «mi»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نِ",
+     "options": [
+      {
+       "text": "na",
+       "ar": false
+      },
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "nu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra gives the short “i” sound, so نِ is read “ni”.",
+      "ar": "نِ تُقرأ «ni»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِ",
+     "options": [
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "ki",
+       "ar": false
+      },
+      {
+       "text": "ku",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Kasra gives the short “i” sound, so كِ is read “ki”.",
+      "ar": "كِ تُقرأ «ki»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Where is the mark written?",
+      "ar": "أين تُكتب هذه العلامة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Above the letter",
+        "ar": "فوق الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "Below the letter",
+        "ar": "تحت الحرف"
+       }
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The mark is written below the letter.",
+      "ar": "العلامة تُكتب تحت الحرف."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-03",
+   "level": "beginner",
+   "module": "short-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Short vowel: ḍamma",
+    "ar": "الضَّمَّة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the ḍamma mark above a letter",
+     "ar": "التعرّف إلى علامة الضمّة فوق الحرف"
+    },
+    {
+     "en": "Read a letter with ḍamma as a short “u” syllable",
+     "ar": "قراءة الحرف مع الضمّة مقطعًا قصيرًا بصوت «u»"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-02"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Arabic letters stand for consonants. Short vowels are small marks written with a letter that tell you which short sound follows it.",
+     "ar": "الحروف العربية تدلّ على الأصوات الصامتة، والحركات القصيرة علامات صغيرة تُكتب مع الحرف وتبيّن الصوت القصير الذي يلحقه."
+    },
+    {
+     "en": "Ḍamma is a small curl, like a tiny wāw, written above the letter. It gives a short “u” sound: بُ is read “bu”.",
+     "ar": "الضمّة علامة صغيرة تشبه واوًا صغيرة تُكتب فوق الحرف، وتعطي صوت «u» قصيرًا: بُ تُقرأ «bu»."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بُ",
+     "tr": "bu",
+     "en": "syllable"
+    },
+    {
+     "ar": "تُ",
+     "tr": "tu",
+     "en": "syllable"
+    },
+    {
+     "ar": "مُ",
+     "tr": "mu",
+     "en": "syllable"
+    },
+    {
+     "ar": "نُ",
+     "tr": "nu",
+     "en": "syllable"
+    },
+    {
+     "ar": "كُ",
+     "tr": "ku",
+     "en": "syllable"
+    },
+    {
+     "ar": "لُ",
+     "tr": "lu",
+     "en": "syllable"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بُ",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bi",
+       "ar": false
+      },
+      {
+       "text": "bu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Ḍamma gives the short “u” sound, so بُ is read “bu”.",
+      "ar": "بُ تُقرأ «bu»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تُ",
+     "options": [
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "ti",
+       "ar": false
+      },
+      {
+       "text": "tu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Ḍamma gives the short “u” sound, so تُ is read “tu”.",
+      "ar": "تُ تُقرأ «tu»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مُ",
+     "options": [
+      {
+       "text": "ma",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Ḍamma gives the short “u” sound, so مُ is read “mu”.",
+      "ar": "مُ تُقرأ «mu»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نُ",
+     "options": [
+      {
+       "text": "na",
+       "ar": false
+      },
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "nu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Ḍamma gives the short “u” sound, so نُ is read “nu”.",
+      "ar": "نُ تُقرأ «nu»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُ",
+     "options": [
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "ki",
+       "ar": false
+      },
+      {
+       "text": "ku",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Ḍamma gives the short “u” sound, so كُ is read “ku”.",
+      "ar": "كُ تُقرأ «ku»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Where is the mark written?",
+      "ar": "أين تُكتب هذه العلامة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Above the letter",
+        "ar": "فوق الحرف"
+       }
+      },
+      {
+       "text": {
+        "en": "Below the letter",
+        "ar": "تحت الحرف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The mark is written above the letter.",
+      "ar": "العلامة تُكتب فوق الحرف."
+     }
+    }
+   ]
+  },
+  {
+   "id": "b-les-vowels-04",
+   "level": "beginner",
+   "module": "short-vowels",
+   "unit": "reading-with-vowels",
+   "title": {
+    "en": "Review: three short vowels",
+    "ar": "مراجعة: الحركات الثلاث"
+   },
+   "objectives": [
+    {
+     "en": "Tell fatḥa, kasra and ḍamma apart",
+     "ar": "التمييز بين الفتحة والكسرة والضمّة"
+    },
+    {
+     "en": "Read letters carrying any of the three short vowels",
+     "ar": "قراءة حروف تحمل أيًّا من الحركات الثلاث"
+    }
+   ],
+   "prerequisites": [
+    "b-les-vowels-01",
+    "b-les-vowels-02",
+    "b-les-vowels-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Fatḥa (above, “a”), kasra (below, “i”) and ḍamma (above, “u”) change the sound of the same letter.",
+     "ar": "الفتحة (فوق الحرف، «a») والكسرة (تحت الحرف، «i») والضمّة (فوق الحرف، «u») تغيّر صوت الحرف نفسه."
+    },
+    {
+     "en": "Compare بَ بِ بُ: same letter, three different short vowels.",
+     "ar": "قارن بين بَ بِ بُ: الحرف نفسه وثلاث حركات قصيرة مختلفة."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "بَ",
+     "tr": "ba",
+     "en": "syllable"
+    },
+    {
+     "ar": "بِ",
+     "tr": "bi",
+     "en": "syllable"
+    },
+    {
+     "ar": "بُ",
+     "tr": "bu",
+     "en": "syllable"
+    },
+    {
+     "ar": "تَ",
+     "tr": "ta",
+     "en": "syllable"
+    },
+    {
+     "ar": "تِ",
+     "tr": "ti",
+     "en": "syllable"
+    },
+    {
+     "ar": "تُ",
+     "tr": "tu",
+     "en": "syllable"
+    },
+    {
+     "ar": "مَ",
+     "tr": "ma",
+     "en": "syllable"
+    },
+    {
+     "ar": "مِ",
+     "tr": "mi",
+     "en": "syllable"
+    },
+    {
+     "ar": "مُ",
+     "tr": "mu",
+     "en": "syllable"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَ",
+     "options": [
+      {
+       "text": "ba",
+       "ar": false
+      },
+      {
+       "text": "bi",
+       "ar": false
+      },
+      {
+       "text": "bu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "بَ is read “ba”.",
+      "ar": "بَ تُقرأ «ba»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تِ",
+     "options": [
+      {
+       "text": "ta",
+       "ar": false
+      },
+      {
+       "text": "ti",
+       "ar": false
+      },
+      {
+       "text": "tu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "تِ is read “ti”.",
+      "ar": "تِ تُقرأ «ti»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مُ",
+     "options": [
+      {
+       "text": "ma",
+       "ar": false
+      },
+      {
+       "text": "mi",
+       "ar": false
+      },
+      {
+       "text": "mu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "مُ is read “mu”.",
+      "ar": "مُ تُقرأ «mu»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نَ",
+     "options": [
+      {
+       "text": "na",
+       "ar": false
+      },
+      {
+       "text": "ni",
+       "ar": false
+      },
+      {
+       "text": "nu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "نَ is read “na”.",
+      "ar": "نَ تُقرأ «na»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِ",
+     "options": [
+      {
+       "text": "ka",
+       "ar": false
+      },
+      {
+       "text": "ki",
+       "ar": false
+      },
+      {
+       "text": "ku",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "كِ is read “ki”.",
+      "ar": "كِ تُقرأ «ki»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لُ",
+     "options": [
+      {
+       "text": "la",
+       "ar": false
+      },
+      {
+       "text": "li",
+       "ar": false
+      },
+      {
+       "text": "lu",
+       "ar": false
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "لُ is read “lu”.",
+      "ar": "لُ تُقرأ «lu»."
+     }
+    }
+   ]
+  }
+ ]
+}
