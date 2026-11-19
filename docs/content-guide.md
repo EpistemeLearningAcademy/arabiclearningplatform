@@ -20,3 +20,9 @@ Add the same key to both `content/translations/en.json` and `ar.json`, then use 
 
 # Adding a badge
 Edit `content/shared/achievements.json`. Copy a badge and change `id`, `icon`, `title`, `desc` (both en and ar), `xp` and `rule`. Rule types: `lessonsCompleted` (min), `learned` (set: vocab|letters, min), `mastered` (set, min), `moduleComplete` (module), `levelLessons` (level, min), `perfectQuiz` (minQuestions), `streak` (min). New rule types need a small change in `assets/js/gamification.js`.
+
+# Adding a reading passage
+1. Open `content/intermediate/reading/graded-01.json` (or create a new file there, list it under `"reading"` in `content/index.json` and in `PRECACHE` in `sw.js`).
+2. Copy a passage. Required: `id` (unique), `title` (en, ar), `lines` (each with `ar`, `tr`, `en`), `vocabulary`, `questions` (same format as lesson practice questions).
+3. Use only words learners have met. For a Classical Arabic passage set `"classical": true` so the app labels it; include its meaning and how it differs from MSA in the line notes.
+4. Bump `CACHE` in `sw.js`, commit, then run Settings -> Check lesson content.
