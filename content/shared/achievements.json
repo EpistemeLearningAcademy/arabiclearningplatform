@@ -190,6 +190,160 @@
     "type": "readingPassed",
     "min": 1
    }
+  },
+  {
+   "id": "verb-explorer",
+   "icon": "🏃",
+   "xp": 20,
+   "title": {
+    "en": "Verb Explorer",
+    "ar": "مستكشف الأفعال"
+   },
+   "desc": {
+    "en": "Complete the verbs and sentences lessons.",
+    "ar": "أكمِل دروس الأفعال والجمل."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "verbs"
+   }
+  },
+  {
+   "id": "sentence-builder",
+   "icon": "🧩",
+   "xp": 20,
+   "title": {
+    "en": "Sentence Builder",
+    "ar": "بنّاء الجمل"
+   },
+   "desc": {
+    "en": "Pass a Sentence builder round (70% or more).",
+    "ar": "انجح في جولة بناء الجمل (٧٠٪ فأكثر)."
+   },
+   "rule": {
+    "type": "builderPassed",
+    "min": 1
+   }
+  },
+  {
+   "id": "listening-star",
+   "icon": "🎧",
+   "xp": 20,
+   "title": {
+    "en": "Listening Star",
+    "ar": "نجم الاستماع"
+   },
+   "desc": {
+    "en": "Pass 2 listening quizzes (70% or more).",
+    "ar": "انجح في اختباري استماع (٧٠٪ فأكثر)."
+   },
+   "rule": {
+    "type": "listeningPassed",
+    "min": 2
+   }
+  },
+  {
+   "id": "describing-words",
+   "icon": "🎨",
+   "xp": 20,
+   "title": {
+    "en": "Describing Words",
+    "ar": "كلمات الوصف"
+   },
+   "desc": {
+    "en": "Complete the adjectives and prepositions lessons.",
+    "ar": "أكمِل دروس الصفات وحروف الجرّ."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "adjectives-prepositions"
+   }
+  },
+  {
+   "id": "level3-start",
+   "icon": "🏔️",
+   "xp": 20,
+   "title": {
+    "en": "Advanced Starter",
+    "ar": "بداية المتقدّم"
+   },
+   "desc": {
+    "en": "Complete your first Advanced lesson.",
+    "ar": "أكمِل أول درس في المستوى المتقدّم."
+   },
+   "rule": {
+    "type": "levelLessons",
+    "level": "advanced",
+    "min": 1
+   }
+  },
+  {
+   "id": "case-explorer",
+   "icon": "🧭",
+   "xp": 20,
+   "title": {
+    "en": "Case Explorer",
+    "ar": "مستكشف الإعراب"
+   },
+   "desc": {
+    "en": "Complete the case-endings lessons.",
+    "ar": "أكمِل دروس الإعراب."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "case"
+   }
+  },
+  {
+   "id": "root-finder",
+   "icon": "🌳",
+   "xp": 20,
+   "title": {
+    "en": "Root Finder",
+    "ar": "كاشف الجذور"
+   },
+   "desc": {
+    "en": "Complete the roots and patterns lessons.",
+    "ar": "أكمِل دروس الجذور والأوزان."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "morphology"
+   }
+  },
+  {
+   "id": "verb-master",
+   "icon": "⚙️",
+   "xp": 20,
+   "title": {
+    "en": "Verb Engineer",
+    "ar": "مهندس الأفعال"
+   },
+   "desc": {
+    "en": "Complete the Advanced verb-system lessons.",
+    "ar": "أكمِل دروس نظام الأفعال المتقدّمة."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "verbs-advanced"
+   }
+  },
+  {
+   "id": "careful-writer",
+   "icon": "✍️",
+   "xp": 20,
+   "title": {
+    "en": "Careful Writer",
+    "ar": "كاتب متأنٍّ"
+   },
+   "desc": {
+    "en": "Check 10 tracing attempts in the Writing studio.",
+    "ar": "تحقّق من ١٠ محاولات تتبّع في استوديو الكتابة."
+   },
+   "rule": {
+    "type": "tracingDone",
+    "min": 10
+   }
   }
  ]
 }
