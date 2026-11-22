@@ -1,0 +1,202 @@
+{
+ "schema": 1,
+ "prompts": [
+  {
+   "id": "w-family-01",
+   "level": "intermediate",
+   "title": {
+    "en": "Introduce your family",
+    "ar": "عَرِّفْ بِعَائِلَتِكَ"
+   },
+   "instruction": {
+    "en": "Write at least 3 sentences introducing people in your family. Use هٰذَا or هٰذِهِ, a possessive word such as أَبِي, and a describing word.",
+    "ar": "اكتب ٣ جمل على الأقل تعرّف فيها بأفراد عائلتك. استعمل هٰذَا أو هٰذِهِ، وكلمة فيها ضمير الملكية مثل أَبِي، وكلمة وصف."
+   },
+   "frames": [
+    "هٰذَا أَبِي …",
+    "هٰذِهِ أُمِّي …"
+   ],
+   "wordBank": [
+    {
+     "ar": "أَبِي",
+     "tr": "abī",
+     "en": "my father"
+    },
+    {
+     "ar": "أُمِّي",
+     "tr": "ummī",
+     "en": "my mother"
+    },
+    {
+     "ar": "أَخِي",
+     "tr": "akhī",
+     "en": "my brother"
+    },
+    {
+     "ar": "أُخْتِي",
+     "tr": "ukhtī",
+     "en": "my sister"
+    },
+    {
+     "ar": "كَبِيرٌ",
+     "tr": "kabīrun",
+     "en": "big"
+    },
+    {
+     "ar": "صَغِيرَةٌ",
+     "tr": "ṣaghīratun",
+     "en": "small (f)"
+    },
+    {
+     "ar": "جَمِيلَةٌ",
+     "tr": "jamīlatun",
+     "en": "beautiful (f)"
+    }
+   ],
+   "minSentences": 3,
+   "required": [
+    {
+     "label": {
+      "en": "Uses هٰذَا or هٰذِهِ",
+      "ar": "تستعمل هٰذَا أو هٰذِهِ"
+     },
+     "any": [
+      "هٰذَا",
+      "هٰذِهِ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a word for a family member (أَبِي, أُمِّي, أَخِي, أُخْتِي)",
+      "ar": "تستعمل كلمة من أفراد العائلة"
+     },
+     "any": [
+      "أَبِي",
+      "أُمِّي",
+      "أَخِي",
+      "أُخْتِي"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a describing word (كَبِيرٌ, صَغِيرَةٌ, جَمِيلَةٌ, طَالِبٌ …)",
+      "ar": "تستعمل كلمة وصف"
+     },
+     "any": [
+      "كَبِيرٌ",
+      "كَبِيرَةٌ",
+      "صَغِيرٌ",
+      "صَغِيرَةٌ",
+      "جَمِيلٌ",
+      "جَمِيلَةٌ",
+      "طَالِبٌ",
+      "طَالِبَةٌ"
+     ]
+    }
+   ],
+   "model": {
+    "ar": [
+     "هٰذَا أَبِي.",
+     "هُوَ كَبِيرٌ.",
+     "هٰذِهِ أُمِّي.",
+     "هِيَ جَمِيلَةٌ.",
+     "هٰذِهِ أُخْتِي.",
+     "هِيَ صَغِيرَةٌ."
+    ],
+    "en": [
+     "This is my father.",
+     "He is big.",
+     "This is my mother.",
+     "She is beautiful.",
+     "This is my sister.",
+     "She is small."
+    ]
+   },
+   "review": "unreviewed"
+  },
+  {
+   "id": "w-where-01",
+   "level": "intermediate",
+   "title": {
+    "en": "Where is it?",
+    "ar": "أَيْنَ هُوَ؟"
+   },
+   "instruction": {
+    "en": "Write at least 3 sentences: ask where something is, then answer. Use أَيْنَ, a preposition (فِي, عَلَى, إِلَى, مِنْ) and a noun with ال.",
+    "ar": "اكتب ٣ جمل على الأقل: اسأل عن مكان شيء ثم أجب. استعمل أَيْنَ وحرف جرّ (فِي، عَلَى، إِلَى، مِنْ) واسمًا فيه «ال»."
+   },
+   "frames": [
+    "أَيْنَ الكِتَابُ؟",
+    "الكِتَابُ عَلَى …"
+   ],
+   "wordBank": [
+    {
+     "ar": "الكِتَابُ",
+     "tr": "al-kitābu",
+     "en": "the book"
+    },
+    {
+     "ar": "القَلَمُ",
+     "tr": "al-qalamu",
+     "en": "the pen"
+    },
+    {
+     "ar": "الطَّاوِلَةُ",
+     "tr": "aṭ-ṭāwilatu",
+     "en": "the table"
+    },
+    {
+     "ar": "البَيْتُ",
+     "tr": "al-baytu",
+     "en": "the house"
+    }
+   ],
+   "minSentences": 3,
+   "required": [
+    {
+     "label": {
+      "en": "Uses أَيْنَ",
+      "ar": "تستعمل أَيْنَ"
+     },
+     "any": [
+      "أَيْنَ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a preposition (فِي, عَلَى, إِلَى, مِنْ)",
+      "ar": "تستعمل حرف جرّ"
+     },
+     "any": [
+      "فِي",
+      "عَلَى",
+      "إِلَى",
+      "مِنْ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a noun with ال",
+      "ar": "تستعمل اسمًا فيه «ال»"
+     },
+     "pattern": "al"
+    }
+   ],
+   "model": {
+    "ar": [
+     "أَيْنَ الكِتَابُ؟",
+     "الكِتَابُ عَلَى الطَّاوِلَةِ.",
+     "أَيْنَ القَلَمُ؟",
+     "القَلَمُ فِي البَيْتِ."
+    ],
+    "en": [
+     "Where is the book?",
+     "The book is on the table.",
+     "Where is the pen?",
+     "The pen is in the house."
+    ]
+   },
+   "review": "unreviewed"
+  }
+ ]
+}
