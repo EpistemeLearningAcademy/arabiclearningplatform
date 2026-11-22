@@ -1,0 +1,1215 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "i-les-adj-01",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Adjectives and agreement",
+    "ar": "الصِّفَةُ وَالمُطَابَقَة"
+   },
+   "objectives": [
+    {
+     "en": "Place adjectives after the noun",
+     "ar": "وضع الصفة بعد الاسم"
+    },
+    {
+     "en": "Match gender and definiteness",
+     "ar": "المطابقة في التذكير والتأنيث والتعريف"
+    }
+   ],
+   "prerequisites": [
+    "i-les-verbs-05"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "An adjective comes after the noun and agrees with it in gender and in being definite or indefinite: كِتَابٌ كَبِيرٌ “a big book”; قِطَّةٌ كَبِيرَةٌ “a big cat” (the feminine takes ة); الكِتَابُ الكَبِيرُ “the big book” (both have ال).",
+     "ar": "تأتي الصفة بعد الاسم وتطابقه في التذكير والتأنيث وفي التعريف والتنكير: كِتَابٌ كَبِيرٌ، قِطَّةٌ كَبِيرَةٌ (المؤنّث بالتاء المربوطة)، الكِتَابُ الكَبِيرُ (كلاهما بـ «ال»)."
+    },
+    {
+     "en": "Common adjectives: كَبِيرٌ big, صَغِيرٌ small, جَدِيدٌ new, جَمِيلٌ beautiful.",
+     "ar": "من الصفات الشائعة: كَبِيرٌ، صَغِيرٌ، جَدِيدٌ، جَمِيلٌ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابٌ كَبِيرٌ",
+     "tr": "kitābun kabīrun",
+     "en": "a big book"
+    },
+    {
+     "ar": "قِطَّةٌ صَغِيرَةٌ",
+     "tr": "qiṭṭatun ṣaghīratun",
+     "en": "a small cat"
+    },
+    {
+     "ar": "بَيْتٌ جَدِيدٌ",
+     "tr": "baytun jadīdun",
+     "en": "a new house"
+    },
+    {
+     "ar": "طَاوِلَةٌ جَمِيلَةٌ",
+     "tr": "ṭāwilatun jamīlatun",
+     "en": "a beautiful table"
+    },
+    {
+     "ar": "الكِتَابُ الكَبِيرُ",
+     "tr": "al-kitābu l-kabīru",
+     "en": "the big book"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "قِطَّةٌ صَغِيرَةٌ",
+     "options": [
+      {
+       "text": "qiṭṭatun ṣaghīratun",
+       "ar": false
+      },
+      {
+       "text": "qiṭṭatun ṣaghīrun",
+       "ar": false
+      },
+      {
+       "text": "baytun ṣaghīratun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The adjective takes ة to agree with the feminine noun.",
+      "ar": "تأخذ الصفة «ة» لتطابق الاسم المؤنّث."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does بَيْتٌ جَدِيدٌ mean?",
+      "ar": "ماذا تعني بَيْتٌ جَدِيدٌ؟"
+     },
+     "promptAr": "بَيْتٌ جَدِيدٌ",
+     "options": [
+      {
+       "text": {
+        "en": "a new house",
+        "ar": "بيت جديد"
+       }
+      },
+      {
+       "text": {
+        "en": "a big house",
+        "ar": "بيت كبير"
+       }
+      },
+      {
+       "text": {
+        "en": "a new table",
+        "ar": "طاولة جديدة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "جَدِيدٌ means new.",
+      "ar": "جَدِيدٌ تعني new."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which adjective fits طَاوِلَةٌ (feminine)?",
+      "ar": "أيُّ صفة تناسب طَاوِلَةٌ (مؤنّث)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "جَمِيلٌ",
+       "ar": true
+      },
+      {
+       "text": "جَمِيلَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "A feminine noun takes a feminine adjective (ة).",
+      "ar": "الاسم المؤنّث يأخذ صفة مؤنّثة (ة)."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which adjective fits كِتَابٌ (masculine)?",
+      "ar": "أيُّ صفة تناسب كِتَابٌ (مذكّر)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَبِيرٌ",
+       "ar": true
+      },
+      {
+       "text": "كَبِيرَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "No ة for the masculine.",
+      "ar": "لا «ة» مع المذكّر."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Where does the adjective go?",
+      "ar": "أين تأتي الصفة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "After the noun",
+        "ar": "بعد الاسم"
+       }
+      },
+      {
+       "text": {
+        "en": "Before the noun",
+        "ar": "قبل الاسم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Arabic adjectives follow the noun.",
+      "ar": "الصفة في العربية تأتي بعد الاسم."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-adj-02",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Phrase or sentence?",
+    "ar": "عِبَارَةٌ أَمْ جُمْلَة؟"
+   },
+   "objectives": [
+    {
+     "en": "Tell “the big book” from “the book is big”",
+     "ar": "التمييز بين «الكتاب الكبير» و«الكتاب كبير»"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-01"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "If the noun and adjective are both definite, you get a phrase: الكِتَابُ الكَبِيرُ “the big book”. If the noun is definite and the adjective is not, you get a sentence: الكِتَابُ كَبِيرٌ “The book is big.”",
+     "ar": "إذا كان الاسم والصفة معرّفين فهما عبارة: الكِتَابُ الكَبِيرُ. وإذا كان الاسم معرّفًا والصفة نكرة فهما جملة: الكِتَابُ كَبِيرٌ."
+    },
+    {
+     "en": "With هٰذَا: هٰذَا كِتَابٌ كَبِيرٌ “This is a big book.” but هٰذَا الكِتَابُ كَبِيرٌ “This book is big.”",
+     "ar": "مع هٰذَا: هٰذَا كِتَابٌ كَبِيرٌ، لكن هٰذَا الكِتَابُ كَبِيرٌ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "الكِتَابُ الكَبِيرُ",
+     "tr": "al-kitābu l-kabīru",
+     "en": "the big book (phrase)"
+    },
+    {
+     "ar": "الكِتَابُ كَبِيرٌ",
+     "tr": "al-kitābu kabīrun",
+     "en": "The book is big. (sentence)"
+    },
+    {
+     "ar": "هٰذَا كِتَابٌ كَبِيرٌ",
+     "tr": "hādhā kitābun kabīrun",
+     "en": "This is a big book."
+    },
+    {
+     "ar": "هٰذَا الكِتَابُ كَبِيرٌ",
+     "tr": "hādhā l-kitābu kabīrun",
+     "en": "This book is big."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does الكِتَابُ كَبِيرٌ mean?",
+      "ar": "ماذا تعني الكِتَابُ كَبِيرٌ؟"
+     },
+     "promptAr": "الكِتَابُ كَبِيرٌ",
+     "options": [
+      {
+       "text": {
+        "en": "The book is big.",
+        "ar": "الكتاب كبير."
+       }
+      },
+      {
+       "text": {
+        "en": "the big book",
+        "ar": "الكتاب الكبير"
+       }
+      },
+      {
+       "text": {
+        "en": "a big book",
+        "ar": "كتاب كبير"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Definite noun + indefinite adjective = sentence.",
+      "ar": "اسم معرَّف + صفة نكرة = جملة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does الكِتَابُ الكَبِيرُ mean?",
+      "ar": "ماذا تعني الكِتَابُ الكَبِيرُ؟"
+     },
+     "promptAr": "الكِتَابُ الكَبِيرُ",
+     "options": [
+      {
+       "text": {
+        "en": "the big book",
+        "ar": "الكتاب الكبير"
+       }
+      },
+      {
+       "text": {
+        "en": "The book is big.",
+        "ar": "الكتاب كبير."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Both definite = phrase.",
+      "ar": "كلاهما معرّف = عبارة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which one is a complete sentence?",
+      "ar": "أيُّها جملة كاملة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الكِتَابُ الكَبِيرُ",
+       "ar": true
+      },
+      {
+       "text": "الكِتَابُ كَبِيرٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "الكِتَابُ كَبِيرٌ says something about the book.",
+      "ar": "الكِتَابُ كَبِيرٌ تخبر عن الكتاب."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does هٰذَا كِتَابٌ كَبِيرٌ mean?",
+      "ar": "ماذا تعني هٰذَا كِتَابٌ كَبِيرٌ؟"
+     },
+     "promptAr": "هٰذَا كِتَابٌ كَبِيرٌ",
+     "options": [
+      {
+       "text": {
+        "en": "This is a big book.",
+        "ar": "هذا كتاب كبير."
+       }
+      },
+      {
+       "text": {
+        "en": "This book is big.",
+        "ar": "هذا الكتاب كبير."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The noun كِتَابٌ is indefinite here.",
+      "ar": "كِتَابٌ نكرة هنا."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الكِتَابُ كَبِيرٌ",
+     "options": [
+      {
+       "text": "al-kitābu kabīrun",
+       "ar": false
+      },
+      {
+       "text": "al-kitābu l-kabīru",
+       "ar": false
+      },
+      {
+       "text": "kitābun kabīrun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Only the noun has ال.",
+      "ar": "الاسم وحده فيه «ال»."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-adj-03",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Prepositions",
+    "ar": "حُرُوفُ الجَرّ"
+   },
+   "objectives": [
+    {
+     "en": "Read and use فِي مِنْ إِلَى عَلَى",
+     "ar": "قراءة فِي ومِنْ وإِلَى وعَلَى واستعمالها"
+    },
+    {
+     "en": "Notice the kasra on the noun after a preposition",
+     "ar": "ملاحظة الكسرة على الاسم بعد حرف الجر"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Prepositions are small words placed before a noun: فِي “in”, مِنْ “from”, إِلَى “to”, عَلَى “on”. The noun after a preposition ends with kasra (or kasratān): فِي البَيْتِ “in the house”, فِي بَيْتٍ “in a house”. This ending is the genitive case, studied in Level 3.",
+     "ar": "حروف الجرّ كلمات صغيرة تأتي قبل الاسم: فِي، مِنْ، إِلَى، عَلَى. والاسم بعدها ينتهي بكسرة (أو كسرتين): فِي البَيْتِ، فِي بَيْتٍ. وهذا الإعراب هو الجرّ، وسندرسه في المستوى الثالث."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "فِي البَيْتِ",
+     "tr": "fī l-bayti",
+     "en": "in the house"
+    },
+    {
+     "ar": "فِي بَيْتٍ",
+     "tr": "fī baytin",
+     "en": "in a house"
+    },
+    {
+     "ar": "إِلَى البَيْتِ",
+     "tr": "ilā l-bayti",
+     "en": "to the house"
+    },
+    {
+     "ar": "مِنْ بَيْتٍ",
+     "tr": "min baytin",
+     "en": "from a house"
+    },
+    {
+     "ar": "عَلَى الطَّاوِلَةِ",
+     "tr": "ʿalā ṭ-ṭāwilati",
+     "en": "on the table"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "فِي البَيْتِ",
+     "options": [
+      {
+       "text": "fī l-bayti",
+       "ar": false
+      },
+      {
+       "text": "fī baytun",
+       "ar": false
+      },
+      {
+       "text": "min al-bayti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "فِي is “fī”, and the noun ends with kasra.",
+      "ar": "فِي تُقرأ «fī» والاسم بعدها بكسرة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does إِلَى mean?",
+      "ar": "ماذا تعني إِلَى؟"
+     },
+     "promptAr": "إِلَى",
+     "options": [
+      {
+       "text": {
+        "en": "to",
+        "ar": "إلى"
+       }
+      },
+      {
+       "text": {
+        "en": "from",
+        "ar": "من"
+       }
+      },
+      {
+       "text": {
+        "en": "in",
+        "ar": "في"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "إِلَى means “to”.",
+      "ar": "إِلَى تعني «to»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means “on”?",
+      "ar": "أيُّ كلمة تعني «on»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "فِي",
+       "ar": true
+      },
+      {
+       "text": "مِنْ",
+       "ar": true
+      },
+      {
+       "text": "عَلَى",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "عَلَى means “on”.",
+      "ar": "عَلَى تعني «on»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which ending does a noun take after a preposition?",
+      "ar": "أيُّ حركة يأخذها الاسم بعد حرف الجر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Kasra (ـِ)",
+        "ar": "كسرة (ـِ)"
+       }
+      },
+      {
+       "text": {
+        "en": "Ḍamma (ـُ)",
+        "ar": "ضمّة (ـُ)"
+       }
+      },
+      {
+       "text": {
+        "en": "Fatḥa (ـَ)",
+        "ar": "فتحة (ـَ)"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It is the genitive: kasra.",
+      "ar": "هو الجرّ: كسرة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does عَلَى الطَّاوِلَةِ mean?",
+      "ar": "ماذا تعني عَلَى الطَّاوِلَةِ؟"
+     },
+     "promptAr": "عَلَى الطَّاوِلَةِ",
+     "options": [
+      {
+       "text": {
+        "en": "on the table",
+        "ar": "على الطاولة"
+       }
+      },
+      {
+       "text": {
+        "en": "in the house",
+        "ar": "في البيت"
+       }
+      },
+      {
+       "text": {
+        "en": "to the table",
+        "ar": "إلى الطاولة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "عَلَى = on.",
+      "ar": "عَلَى = on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-adj-04",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Possessives: my, your, his, her",
+    "ar": "الإِضَافَةُ إِلَى الضَّمَائِر"
+   },
+   "objectives": [
+    {
+     "en": "Attach ـِي ـكَ ـهُ ـهَا to a noun",
+     "ar": "إلحاق ـِي ـكَ ـهُ ـهَا بالاسم"
+    },
+    {
+     "en": "Understand what happens to ال and tanwīn",
+     "ar": "فهم ما يحدث لـ «ال» والتنوين"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Add a pronoun ending to a noun to show who owns it: ـِي “my”, ـكَ “your (to a man)”, ـهُ “his”, ـهَا “her”: كِتَابِي “my book”, كِتَابُكَ “your book”, كِتَابُهُ “his book”, كِتَابُهَا “her book”. The noun loses its tanwīn and takes no ال.",
+     "ar": "نضيف ضميرًا متصلًا إلى الاسم لنبيّن المالك: ـِي، ـكَ، ـهُ، ـهَا: كِتَابِي، كِتَابُكَ، كِتَابُهُ، كِتَابُهَا. ويسقط التنوين ولا تُستعمل «ال»."
+    },
+    {
+     "en": "Notice كِتَابِي: the letter before ـي takes kasra.",
+     "ar": "في كِتَابِي تأتي كسرة قبل ياء المتكلّم."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابِي",
+     "tr": "kitābī",
+     "en": "my book"
+    },
+    {
+     "ar": "كِتَابُكَ",
+     "tr": "kitābuka",
+     "en": "your book (to a man)"
+    },
+    {
+     "ar": "كِتَابُهُ",
+     "tr": "kitābuhu",
+     "en": "his book"
+    },
+    {
+     "ar": "كِتَابُهَا",
+     "tr": "kitābuhā",
+     "en": "her book"
+    },
+    {
+     "ar": "بَيْتِي",
+     "tr": "baytī",
+     "en": "my house"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كِتَابِي",
+     "options": [
+      {
+       "text": "kitābī",
+       "ar": false
+      },
+      {
+       "text": "kitābuhu",
+       "ar": false
+      },
+      {
+       "text": "kitābuka",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـِي = my.",
+      "ar": "ـِي = لي."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word means “her book”?",
+      "ar": "أيُّ كلمة تعني «her book»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كِتَابُهُ",
+       "ar": true
+      },
+      {
+       "text": "كِتَابُهَا",
+       "ar": true
+      },
+      {
+       "text": "كِتَابِي",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "ـهَا = her.",
+      "ar": "ـهَا = لها."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does كِتَابُكَ mean?",
+      "ar": "ماذا تعني كِتَابُكَ؟"
+     },
+     "promptAr": "كِتَابُكَ",
+     "options": [
+      {
+       "text": {
+        "en": "your book (to a man)",
+        "ar": "كتابك"
+       }
+      },
+      {
+       "text": {
+        "en": "my book",
+        "ar": "كتابي"
+       }
+      },
+      {
+       "text": {
+        "en": "his book",
+        "ar": "كتابه"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـكَ = your (to a man).",
+      "ar": "ـكَ = لك (مذكّر)."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which ending means “his”?",
+      "ar": "أيُّ نهاية تعني «his»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـهُ",
+       "ar": true
+      },
+      {
+       "text": "ـهَا",
+       "ar": true
+      },
+      {
+       "text": "ـِي",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـهُ = his.",
+      "ar": "ـهُ = له."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What happens to the tanwīn when a possessive ending is added?",
+      "ar": "ماذا يحدث للتنوين عند إضافة ضمير الملكية؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "It is dropped",
+        "ar": "يسقط"
+       }
+      },
+      {
+       "text": {
+        "en": "It stays",
+        "ar": "يبقى"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كِتَابٌ → كِتَابِي: no tanwīn.",
+      "ar": "كِتَابٌ ← كِتَابِي: لا تنوين."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-adj-05",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Question words",
+    "ar": "أَدَوَاتُ الِاسْتِفْهَام"
+   },
+   "objectives": [
+    {
+     "en": "Read and use مَنْ مَا أَيْنَ هَلْ",
+     "ar": "قراءة مَنْ ومَا وأَيْنَ وهَلْ واستعمالها"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-04"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Question words come first: مَنْ “who?”, مَا “what?”, أَيْنَ “where?”, and هَلْ begins yes/no questions. مَنْ هٰذَا؟ “Who is this?” مَا هٰذَا؟ “What is this?” أَيْنَ الكِتَابُ؟ “Where is the book?” هَلْ هٰذَا كِتَابٌ؟ “Is this a book?”",
+     "ar": "تأتي أدوات الاستفهام في أول الجملة: مَنْ، مَا، أَيْنَ، وتبدأ هَلْ أسئلة نعم/لا. مَنْ هٰذَا؟ مَا هٰذَا؟ أَيْنَ الكِتَابُ؟ هَلْ هٰذَا كِتَابٌ؟"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "مَنْ هٰذَا؟",
+     "tr": "man hādhā?",
+     "en": "Who is this?"
+    },
+    {
+     "ar": "مَا هٰذَا؟",
+     "tr": "mā hādhā?",
+     "en": "What is this?"
+    },
+    {
+     "ar": "أَيْنَ الكِتَابُ؟",
+     "tr": "ayna l-kitābu?",
+     "en": "Where is the book?"
+    },
+    {
+     "ar": "هَلْ هٰذَا كِتَابٌ؟",
+     "tr": "hal hādhā kitābun?",
+     "en": "Is this a book?"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَنْ",
+     "options": [
+      {
+       "text": "man",
+       "ar": false
+      },
+      {
+       "text": "mā",
+       "ar": false
+      },
+      {
+       "text": "hal",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَنْ is “man”: who.",
+      "ar": "مَنْ تُقرأ «man»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does أَيْنَ mean?",
+      "ar": "ماذا تعني أَيْنَ؟"
+     },
+     "promptAr": "أَيْنَ",
+     "options": [
+      {
+       "text": {
+        "en": "where",
+        "ar": "أين"
+       }
+      },
+      {
+       "text": {
+        "en": "who",
+        "ar": "من"
+       }
+      },
+      {
+       "text": {
+        "en": "what",
+        "ar": "ما"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَيْنَ = where.",
+      "ar": "أَيْنَ = where."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word asks “what?”",
+      "ar": "أيُّ كلمة تسأل «what»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَا",
+       "ar": true
+      },
+      {
+       "text": "مَنْ",
+       "ar": true
+      },
+      {
+       "text": "أَيْنَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَا = what.",
+      "ar": "مَا = what."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does هَلْ هٰذَا كِتَابٌ؟ ask?",
+      "ar": "عمّ تسأل هَلْ هٰذَا كِتَابٌ؟"
+     },
+     "promptAr": "هَلْ هٰذَا كِتَابٌ؟",
+     "options": [
+      {
+       "text": {
+        "en": "Is this a book?",
+        "ar": "هل هذا كتاب؟"
+       }
+      },
+      {
+       "text": {
+        "en": "Who is this?",
+        "ar": "من هذا؟"
+       }
+      },
+      {
+       "text": {
+        "en": "Where is the book?",
+        "ar": "أين الكتاب؟"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "هَلْ opens a yes/no question.",
+      "ar": "هَلْ تفتح سؤال نعم/لا."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word asks about a person?",
+      "ar": "أيُّ كلمة تسأل عن شخص؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَنْ",
+       "ar": true
+      },
+      {
+       "text": "مَا",
+       "ar": true
+      },
+      {
+       "text": "أَيْنَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَنْ = who.",
+      "ar": "مَنْ = who."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-adj-06",
+   "level": "intermediate",
+   "module": "adjectives-prepositions",
+   "unit": "describing-and-locating",
+   "title": {
+    "en": "Review: describing and locating",
+    "ar": "مراجعة: الوصف والمكان"
+   },
+   "objectives": [
+    {
+     "en": "Combine adjectives, prepositions, possessives and questions",
+     "ar": "الجمع بين الصفات وحروف الجر والملكية والاستفهام"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-01",
+    "i-les-adj-02",
+    "i-les-adj-03",
+    "i-les-adj-04",
+    "i-les-adj-05"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Check agreement, then the small words: prepositions come before nouns, possessive endings attach to nouns, question words begin sentences.",
+     "ar": "تحقّق من المطابقة ثم من الكلمات الصغيرة: حروف الجرّ قبل الأسماء، وضمائر الملكية متصلة بالأسماء، وأدوات الاستفهام في أول الجملة."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابِي عَلَى الطَّاوِلَةِ",
+     "tr": "kitābī ʿalā ṭ-ṭāwilati",
+     "en": "My book is on the table."
+    },
+    {
+     "ar": "أَيْنَ بَيْتُكَ؟",
+     "tr": "ayna baytuka?",
+     "en": "Where is your house?"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does كِتَابِي عَلَى الطَّاوِلَةِ mean?",
+      "ar": "ماذا تعني كِتَابِي عَلَى الطَّاوِلَةِ؟"
+     },
+     "promptAr": "كِتَابِي عَلَى الطَّاوِلَةِ",
+     "options": [
+      {
+       "text": {
+        "en": "My book is on the table.",
+        "ar": "كتابي على الطاولة."
+       }
+      },
+      {
+       "text": {
+        "en": "Her book is in the house.",
+        "ar": "كتابها في البيت."
+       }
+      },
+      {
+       "text": {
+        "en": "Where is my book?",
+        "ar": "أين كتابي؟"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كِتَابِي = my book; عَلَى = on.",
+      "ar": "كِتَابِي = كتابي؛ عَلَى = على."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which adjective fits قِطَّةٌ?",
+      "ar": "أيُّ صفة تناسب قِطَّةٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "صَغِيرٌ",
+       "ar": true
+      },
+      {
+       "text": "صَغِيرَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Feminine noun, feminine adjective.",
+      "ar": "اسم مؤنّث وصفة مؤنّثة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which means “where”?",
+      "ar": "أيُّ كلمة تعني «where»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَيْنَ",
+       "ar": true
+      },
+      {
+       "text": "مَنْ",
+       "ar": true
+      },
+      {
+       "text": "هَلْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَيْنَ = where.",
+      "ar": "أَيْنَ = where."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does أَيْنَ بَيْتُكَ؟ mean?",
+      "ar": "ماذا تعني أَيْنَ بَيْتُكَ؟"
+     },
+     "promptAr": "أَيْنَ بَيْتُكَ؟",
+     "options": [
+      {
+       "text": {
+        "en": "Where is your house?",
+        "ar": "أين بيتك؟"
+       }
+      },
+      {
+       "text": {
+        "en": "Who is your house?",
+        "ar": "من بيتك؟"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَيْنَ + بَيْتُكَ.",
+      "ar": "أَيْنَ + بَيْتُكَ."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "فِي بَيْتٍ",
+     "options": [
+      {
+       "text": "fī baytin",
+       "ar": false
+      },
+      {
+       "text": "fī baytun",
+       "ar": false
+      },
+      {
+       "text": "fī l-bayti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Kasratān after فِي.",
+      "ar": "كسرتان بعد فِي."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which is a sentence, not a phrase?",
+      "ar": "أيُّها جملة لا عبارة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الكِتَابُ الجَدِيدُ",
+       "ar": true
+      },
+      {
+       "text": "الكِتَابُ جَدِيدٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Definite noun + indefinite adjective.",
+      "ar": "اسم معرَّف + صفة نكرة."
+     }
+    }
+   ]
+  }
+ ]
+}

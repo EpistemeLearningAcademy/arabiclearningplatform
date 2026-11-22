@@ -1,0 +1,1114 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "i-les-verbs-01",
+   "level": "intermediate",
+   "module": "verbs",
+   "unit": "verbs-and-sentences",
+   "title": {
+    "en": "Past tense: he and she",
+    "ar": "الفِعْلُ المَاضِي"
+   },
+   "objectives": [
+    {
+     "en": "Read past verbs for “he” and “she”",
+     "ar": "قراءة الأفعال الماضية للمذكّر والمؤنّث"
+    },
+    {
+     "en": "Add ـتْ for “she”",
+     "ar": "إضافة «ـتْ» للمؤنّثة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-number-04"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The past tense tells what happened. The simplest form means “he did”: كَتَبَ “he wrote”. For “she”, add ـتْ: كَتَبَتْ “she wrote”.",
+     "ar": "الفعل الماضي يدلّ على ما حدث. أبسط صيغة تعني «هو»: كَتَبَ. وللمؤنّثة «هي» نضيف «ـتْ»: كَتَبَتْ."
+    },
+    {
+     "en": "Learn each verb as a whole word: ذَهَبَ “he went”, أَكَلَ “he ate”, شَرِبَ “he drank”.",
+     "ar": "يُحفظ كل فعل كلمةً كاملة: ذَهَبَ، أَكَلَ، شَرِبَ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَ",
+     "tr": "kataba",
+     "en": "he wrote"
+    },
+    {
+     "ar": "كَتَبَتْ",
+     "tr": "katabat",
+     "en": "she wrote"
+    },
+    {
+     "ar": "ذَهَبَ",
+     "tr": "dhahaba",
+     "en": "he went"
+    },
+    {
+     "ar": "ذَهَبَتْ",
+     "tr": "dhahabat",
+     "en": "she went"
+    },
+    {
+     "ar": "أَكَلَ",
+     "tr": "akala",
+     "en": "he ate"
+    },
+    {
+     "ar": "شَرِبَ",
+     "tr": "shariba",
+     "en": "he drank"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَتَبَ",
+     "options": [
+      {
+       "text": "kataba",
+       "ar": false
+      },
+      {
+       "text": "katabat",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَتَبَ is “kataba”: he wrote.",
+      "ar": "كَتَبَ تُقرأ «kataba»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَتَبَتْ",
+     "options": [
+      {
+       "text": "kataba",
+       "ar": false
+      },
+      {
+       "text": "katabat",
+       "ar": false
+      },
+      {
+       "text": "taktubu",
+       "ar": false
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The ending ـتْ makes it “she”: katabat.",
+      "ar": "النهاية «ـتْ» تجعلها للمؤنّثة: «katabat»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "ذَهَبَ",
+     "options": [
+      {
+       "text": "dhahaba",
+       "ar": false
+      },
+      {
+       "text": "dhahabat",
+       "ar": false
+      },
+      {
+       "text": "yadhhabu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ذَهَبَ is “dhahaba”.",
+      "ar": "ذَهَبَ تُقرأ «dhahaba»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does أَكَلَ mean?",
+      "ar": "ماذا تعني أَكَلَ؟"
+     },
+     "promptAr": "أَكَلَ",
+     "options": [
+      {
+       "text": {
+        "en": "he ate",
+        "ar": "أكل"
+       }
+      },
+      {
+       "text": {
+        "en": "he drank",
+        "ar": "شرب"
+       }
+      },
+      {
+       "text": {
+        "en": "he went",
+        "ar": "ذهب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَكَلَ means “he ate”.",
+      "ar": "أَكَلَ تعني «he ate»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word means “she wrote”?",
+      "ar": "أيُّ كلمة تعني «she wrote»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَتْ",
+       "ar": true
+      },
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The ending ـتْ marks “she”.",
+      "ar": "النهاية «ـتْ» علامة المؤنّثة."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does ـتْ at the end of a past verb show?",
+      "ar": "ماذا تدلّ «ـتْ» في آخر الفعل الماضي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The doer is “she”",
+        "ar": "الفاعل «هي»"
+       }
+      },
+      {
+       "text": {
+        "en": "The verb is a question",
+        "ar": "الفعل سؤال"
+       }
+      },
+      {
+       "text": {
+        "en": "The doer is “they”",
+        "ar": "الفاعل «هم»"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتْ marks “she” in the past.",
+      "ar": "«ـتْ» تدلّ على «هي» في الماضي."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-verbs-02",
+   "level": "intermediate",
+   "module": "verbs",
+   "unit": "verbs-and-sentences",
+   "title": {
+    "en": "Present tense: he, she, I",
+    "ar": "الفِعْلُ المُضَارِع"
+   },
+   "objectives": [
+    {
+     "en": "Recognise the prefixes يَـ تَـ أَـ",
+     "ar": "التعرّف إلى حروف المضارعة يَـ تَـ أَـ"
+    },
+    {
+     "en": "Read common present verbs",
+     "ar": "قراءة أفعال مضارعة شائعة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-verbs-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The present tense tells what happens now or usually. It begins with a prefix: يَـ for “he”, تَـ for “she”, أَـ for “I”: يَكْتُبُ “he writes”, تَكْتُبُ “she writes”, أَكْتُبُ “I write”.",
+     "ar": "المضارع يدلّ على ما يحدث الآن أو عادةً، ويبدأ بحرف: «يَ» للغائب، و«تَ» للغائبة، و«أَ» للمتكلّم: يَكْتُبُ، تَكْتُبُ، أَكْتُبُ."
+    },
+    {
+     "en": "Note: تَكْتُبُ can also mean “you (to a man) write”; the sentence tells you which.",
+     "ar": "ملاحظة: تَكْتُبُ قد تعني أيضًا «أنتَ تكتب»، ويحدّد السياق المقصود."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "يَكْتُبُ",
+     "tr": "yaktubu",
+     "en": "he writes"
+    },
+    {
+     "ar": "تَكْتُبُ",
+     "tr": "taktubu",
+     "en": "she writes"
+    },
+    {
+     "ar": "أَكْتُبُ",
+     "tr": "aktubu",
+     "en": "I write"
+    },
+    {
+     "ar": "يَذْهَبُ",
+     "tr": "yadhhabu",
+     "en": "he goes"
+    },
+    {
+     "ar": "يَأْكُلُ",
+     "tr": "yaʾkulu",
+     "en": "he eats"
+    },
+    {
+     "ar": "يَشْرَبُ",
+     "tr": "yashrabu",
+     "en": "he drinks"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَكْتُبُ",
+     "options": [
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      },
+      {
+       "text": "taktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَـ marks “he” in the present.",
+      "ar": "«يَـ» للغائب في المضارع."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَكْتُبُ",
+     "options": [
+      {
+       "text": "aktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ marks “I”.",
+      "ar": "«أَـ» للمتكلّم."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which prefix means “I”?",
+      "ar": "أيُّ حرف مضارعة يدلّ على «I»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَـ",
+       "ar": true
+      },
+      {
+       "text": "يَـ",
+       "ar": true
+      },
+      {
+       "text": "تَـ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ is the “I” prefix.",
+      "ar": "«أَـ» للمتكلّم."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does يَذْهَبُ mean?",
+      "ar": "ماذا تعني يَذْهَبُ؟"
+     },
+     "promptAr": "يَذْهَبُ",
+     "options": [
+      {
+       "text": {
+        "en": "he goes",
+        "ar": "يذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "he went",
+        "ar": "ذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "she goes",
+        "ar": "تذهب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَـ = he; present tense.",
+      "ar": "«يَـ» = هو؛ مضارع."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word means “he writes”?",
+      "ar": "أيُّ كلمة تعني «he writes»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "أَكْتُبُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَكْتُبُ is present, “he writes”.",
+      "ar": "يَكْتُبُ مضارع: «he writes»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What tense is يَشْرَبُ?",
+      "ar": "ما زمن يَشْرَبُ؟"
+     },
+     "promptAr": "يَشْرَبُ",
+     "options": [
+      {
+       "text": {
+        "en": "Present",
+        "ar": "المضارع"
+       }
+      },
+      {
+       "text": {
+        "en": "Past",
+        "ar": "الماضي"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Prefix يَـ shows the present tense.",
+      "ar": "الحرف «يَـ» يدلّ على المضارع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-verbs-03",
+   "level": "intermediate",
+   "module": "verbs",
+   "unit": "verbs-and-sentences",
+   "title": {
+    "en": "Verbal and nominal sentences",
+    "ar": "الجُمْلَةُ الفِعْلِيَّةُ وَالِاسْمِيَّة"
+   },
+   "objectives": [
+    {
+     "en": "Tell verbal and nominal sentences apart",
+     "ar": "التمييز بين الجملة الفعلية والاسمية"
+    },
+    {
+     "en": "Read simple sentences with a verb and a doer",
+     "ar": "قراءة جمل بسيطة فيها فعل وفاعل"
+    }
+   ],
+   "prerequisites": [
+    "i-les-verbs-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A verbal sentence starts with a verb: ذَهَبَ الوَلَدُ “The boy went.” A nominal sentence starts with a noun: الوَلَدُ طَالِبٌ “The boy is a student.”",
+     "ar": "الجملة الفعلية تبدأ بفعل: ذَهَبَ الوَلَدُ. والجملة الاسمية تبدأ باسم: الوَلَدُ طَالِبٌ."
+    },
+    {
+     "en": "The doer after the verb ends with ḍamma here. The reasons for case endings come in the grammar lessons.",
+     "ar": "الاسم بعد الفعل (الفاعل) ينتهي هنا بضمّة، وأسباب الإعراب ستأتي في دروس القواعد."
+    },
+    {
+     "en": "Arabic also allows الوَلَدُ ذَهَبَ, but we practise verb-first here.",
+     "ar": "تجيز العربية أيضًا: الوَلَدُ ذَهَبَ، لكننا نتدرّب هنا على الفعل أولًا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ذَهَبَ الوَلَدُ",
+     "tr": "dhahaba al-waladu",
+     "en": "The boy went."
+    },
+    {
+     "ar": "يَكْتُبُ الوَلَدُ",
+     "tr": "yaktubu al-waladu",
+     "en": "The boy writes."
+    },
+    {
+     "ar": "الوَلَدُ طَالِبٌ",
+     "tr": "al-waladu ṭālibun",
+     "en": "The boy is a student."
+    },
+    {
+     "ar": "هٰذَا بَيْتٌ",
+     "tr": "hādhā baytun",
+     "en": "This is a house."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does ذَهَبَ الوَلَدُ mean?",
+      "ar": "ماذا تعني ذَهَبَ الوَلَدُ؟"
+     },
+     "promptAr": "ذَهَبَ الوَلَدُ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy went.",
+        "ar": "ذهب الولد."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy goes.",
+        "ar": "الولد يذهب."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy is a student.",
+        "ar": "الولد طالب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ذَهَبَ is past: “went”.",
+      "ar": "ذَهَبَ ماضٍ: «went»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which sentence starts with a verb?",
+      "ar": "أيُّ جملة تبدأ بفعل؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ذَهَبَ الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ذَهَبَ is a verb, so this is a verbal sentence.",
+      "ar": "ذَهَبَ فعل، فهي جملة فعلية."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which sentence starts with a noun?",
+      "ar": "أيُّ جملة تبدأ باسم؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ذَهَبَ الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "الوَلَدُ is a noun, so this is a nominal sentence.",
+      "ar": "الوَلَدُ اسم، فهي جملة اسمية."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does الوَلَدُ طَالِبٌ mean?",
+      "ar": "ماذا تعني الوَلَدُ طَالِبٌ؟"
+     },
+     "promptAr": "الوَلَدُ طَالِبٌ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy is a student.",
+        "ar": "الولد طالب."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy went.",
+        "ar": "ذهب الولد."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy writes.",
+        "ar": "يكتب الولد."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "No word for “is” is needed.",
+      "ar": "لا حاجة إلى كلمة تقابل «is»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَكْتُبُ الوَلَدُ",
+     "options": [
+      {
+       "text": "yaktubu al-waladu",
+       "ar": false
+      },
+      {
+       "text": "kataba al-waladu",
+       "ar": false
+      },
+      {
+       "text": "al-waladu yaktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Verb first, then the doer.",
+      "ar": "الفعل أولًا ثم الفاعل."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-verbs-04",
+   "level": "intermediate",
+   "module": "verbs",
+   "unit": "verbs-and-sentences",
+   "title": {
+    "en": "Negating the present: لَا",
+    "ar": "النَّفْيُ بِـ «لَا»"
+   },
+   "objectives": [
+    {
+     "en": "Negate a present verb with لَا",
+     "ar": "نفي الفعل المضارع بـ «لَا»"
+    },
+    {
+     "en": "Read and understand negative sentences",
+     "ar": "قراءة جمل منفية وفهمها"
+    }
+   ],
+   "prerequisites": [
+    "i-les-verbs-03"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "To negate a present-tense verb, put لَا before it: يَذْهَبُ الوَلَدُ “the boy goes” → لَا يَذْهَبُ الوَلَدُ “the boy does not go”.",
+     "ar": "لنفي الفعل المضارع نضع «لَا» قبله: يَذْهَبُ الوَلَدُ ← لَا يَذْهَبُ الوَلَدُ."
+    },
+    {
+     "en": "Negating past verbs uses other words (such as مَا); that comes later.",
+     "ar": "ونفي الماضي يكون بأدوات أخرى (مثل «مَا»)، وسيأتي لاحقًا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "لَا يَكْتُبُ",
+     "tr": "lā yaktubu",
+     "en": "he does not write"
+    },
+    {
+     "ar": "لَا يَذْهَبُ",
+     "tr": "lā yadhhabu",
+     "en": "he does not go"
+    },
+    {
+     "ar": "لَا أَشْرَبُ",
+     "tr": "lā ashrabu",
+     "en": "I do not drink"
+    },
+    {
+     "ar": "لَا يَأْكُلُ الوَلَدُ",
+     "tr": "lā yaʾkulu al-waladu",
+     "en": "The boy does not eat."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لَا يَكْتُبُ",
+     "options": [
+      {
+       "text": "lā yaktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا is read “lā”.",
+      "ar": "«لَا» تُقرأ «lā»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does لَا يَذْهَبُ mean?",
+      "ar": "ماذا تعني لَا يَذْهَبُ؟"
+     },
+     "promptAr": "لَا يَذْهَبُ",
+     "options": [
+      {
+       "text": {
+        "en": "he does not go",
+        "ar": "لا يذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "he went",
+        "ar": "ذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "he goes",
+        "ar": "يذهب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا + present = does not.",
+      "ar": "«لَا» + المضارع = النفي."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word negates a present verb?",
+      "ar": "أيُّ كلمة تنفي المضارع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "لَا",
+       "ar": true
+      },
+      {
+       "text": "هَلْ",
+       "ar": true
+      },
+      {
+       "text": "مِنْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا negates the present.",
+      "ar": "«لَا» تنفي المضارع."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which sentence means “The boy does not eat”?",
+      "ar": "أيُّ جملة تعني «The boy does not eat»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "لَا يَأْكُلُ الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "يَأْكُلُ الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "أَكَلَ الوَلَدُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا before the present verb يَأْكُلُ.",
+      "ar": "«لَا» قبل المضارع يَأْكُلُ."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لَا أَشْرَبُ",
+     "options": [
+      {
+       "text": "lā ashrabu",
+       "ar": false
+      },
+      {
+       "text": "lā yashrabu",
+       "ar": false
+      },
+      {
+       "text": "ashrabu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ = I, so “lā ashrabu”.",
+      "ar": "«أَـ» = أنا: «lā ashrabu»."
+     }
+    }
+   ]
+  },
+  {
+   "id": "i-les-verbs-05",
+   "level": "intermediate",
+   "module": "verbs",
+   "unit": "verbs-and-sentences",
+   "title": {
+    "en": "Review: verbs and sentences",
+    "ar": "مراجعة: الأفعال والجمل"
+   },
+   "objectives": [
+    {
+     "en": "Combine past, present, negation and sentence types",
+     "ar": "الجمع بين الماضي والمضارع والنفي وأنواع الجمل"
+    },
+    {
+     "en": "Read short sentences",
+     "ar": "قراءة جمل قصيرة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-verbs-01",
+    "i-les-verbs-02",
+    "i-les-verbs-03",
+    "i-les-verbs-04"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Check the form of each verb: past (كَتَبَ), present (يَكْتُبُ) or negated (لَا يَكْتُبُ). Then check whether the sentence starts with a verb or a noun.",
+     "ar": "تأكّد من صيغة كل فعل: ماضٍ (كَتَبَ) أو مضارع (يَكْتُبُ) أو منفي (لَا يَكْتُبُ). ثم انظر هل تبدأ الجملة بفعل أم باسم."
+    },
+    {
+     "en": "Then try the Sentence builder on the home screen.",
+     "ar": "ثم جرّب «بناء الجمل» في الشاشة الرئيسية."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَتْ",
+     "tr": "katabat",
+     "en": "she wrote"
+    },
+    {
+     "ar": "أَكْتُبُ",
+     "tr": "aktubu",
+     "en": "I write"
+    },
+    {
+     "ar": "لَا يَذْهَبُ الوَلَدُ",
+     "tr": "lā yadhhabu al-waladu",
+     "en": "The boy does not go."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَتَبَتْ",
+     "options": [
+      {
+       "text": "katabat",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      },
+      {
+       "text": "taktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتْ marks “she” in the past.",
+      "ar": "«ـتْ» للمؤنّثة في الماضي."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَكْتُبُ",
+     "options": [
+      {
+       "text": "aktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ = I.",
+      "ar": "«أَـ» = أنا."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does لَا يَذْهَبُ الوَلَدُ mean?",
+      "ar": "ماذا تعني لَا يَذْهَبُ الوَلَدُ؟"
+     },
+     "promptAr": "لَا يَذْهَبُ الوَلَدُ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy does not go.",
+        "ar": "الولد لا يذهب."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy went.",
+        "ar": "ذهب الولد."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy is a student.",
+        "ar": "الولد طالب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا + present verb = does not.",
+      "ar": "«لَا» + المضارع = النفي."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is a past verb?",
+      "ar": "أيُّ كلمة فعل ماضٍ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَكَلَ",
+       "ar": true
+      },
+      {
+       "text": "يَأْكُلُ",
+       "ar": true
+      },
+      {
+       "text": "لَا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَكَلَ is past: “he ate”.",
+      "ar": "أَكَلَ ماضٍ: «he ate»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which sentence is nominal?",
+      "ar": "أيُّ جملة اسمية؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ذَهَبَ الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "It starts with a noun.",
+      "ar": "تبدأ باسم."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does يَشْرَبُ mean?",
+      "ar": "ماذا تعني يَشْرَبُ؟"
+     },
+     "promptAr": "يَشْرَبُ",
+     "options": [
+      {
+       "text": {
+        "en": "he drinks",
+        "ar": "يشرب"
+       }
+      },
+      {
+       "text": {
+        "en": "he drank",
+        "ar": "شرب"
+       }
+      },
+      {
+       "text": {
+        "en": "he ate",
+        "ar": "أكل"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Present: he drinks.",
+      "ar": "مضارع: يشرب."
+     }
+    }
+   ]
+  }
+ ]
+}
