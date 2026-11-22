@@ -1,0 +1,350 @@
+{
+ "schema": 1,
+ "passages": [
+  {
+   "id": "r-adv-02",
+   "level": "advanced",
+   "classical": false,
+   "title": {
+    "en": "The student’s day",
+    "ar": "يَوْمُ الطَّالِبِ"
+   },
+   "lines": [
+    {
+     "ar": "ذَهَبَ الطَّالِبُ إِلَى المَدْرَسَةِ.",
+     "tr": "dhahaba ṭ-ṭālibu ilā l-madrasati.",
+     "en": "The student went to the school."
+    },
+    {
+     "ar": "كَتَبَ الدَّرْسَ ثُمَّ أَكَلَ التُّفَّاحَةَ.",
+     "tr": "kataba d-darsa thumma akala t-tuffāḥata.",
+     "en": "He wrote the lesson, then ate the apple."
+    },
+    {
+     "ar": "سَيَذْهَبُ إِلَى البَيْتِ.",
+     "tr": "sayadhhabu ilā l-bayti.",
+     "en": "He will go to the house."
+    },
+    {
+     "ar": "لَمْ يَكْتُبْ دَرْسًا فِي البَيْتِ.",
+     "tr": "lam yaktub darsan fī l-bayti.",
+     "en": "He did not write a lesson at home."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "مَدْرَسَة",
+     "tr": "madrasa",
+     "en": "school"
+    },
+    {
+     "ar": "ثُمَّ",
+     "tr": "thumma",
+     "en": "then"
+    },
+    {
+     "ar": "سَيَذْهَبُ",
+     "tr": "sayadhhabu",
+     "en": "he will go"
+    },
+    {
+     "ar": "لَمْ يَكْتُبْ",
+     "tr": "lam yaktub",
+     "en": "he did not write"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What did he do first?",
+      "ar": "ماذا فعل أولًا؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Went to school",
+        "ar": "ذهب إلى المدرسة"
+       }
+      },
+      {
+       "text": {
+        "en": "Ate an apple",
+        "ar": "أكل التفاحة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Line 1.",
+      "ar": "السطر الأول."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word means “then”?",
+      "ar": "أيُّ كلمة تعني «then»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ثُمَّ",
+       "ar": true
+      },
+      {
+       "text": "أَوْ",
+       "ar": true
+      },
+      {
+       "text": "وَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ثُمَّ links two actions in order.",
+      "ar": "ثُمَّ تربط فعلين متتابعين."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does سَيَذْهَبُ mean?",
+      "ar": "ماذا تعني سَيَذْهَبُ؟"
+     },
+     "promptAr": "سَيَذْهَبُ",
+     "options": [
+      {
+       "text": {
+        "en": "he will go",
+        "ar": "سيذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "he went",
+        "ar": "ذهب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَـ + present = future.",
+      "ar": "سَـ + المضارع = المستقبل."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "In line 4, which word shows the negated past?",
+      "ar": "في السطر الرابع، أيُّ أداة تنفي الماضي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "لَمْ",
+       "ar": true
+      },
+      {
+       "text": "فِي",
+       "ar": true
+      },
+      {
+       "text": "دَرْسًا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَمْ + jussive.",
+      "ar": "لَمْ + المجزوم."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "In line 2, which word is the object of كَتَبَ?",
+      "ar": "في السطر الثاني، أيُّ كلمة مفعول به لـ كَتَبَ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الدَّرْسَ",
+       "ar": true
+      },
+      {
+       "text": "ثُمَّ",
+       "ar": true
+      },
+      {
+       "text": "أَكَلَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "الدَّرْسَ is accusative.",
+      "ar": "الدَّرْسَ منصوب."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  },
+  {
+   "id": "r-adv-03",
+   "level": "advanced",
+   "classical": false,
+   "title": {
+    "en": "The lesson and the door",
+    "ar": "الدَّرْسُ وَالبَابُ"
+   },
+   "lines": [
+    {
+     "ar": "كُتِبَ الدَّرْسُ.",
+     "tr": "kutiba d-darsu.",
+     "en": "The lesson was written."
+    },
+    {
+     "ar": "فُتِحَ البَابُ.",
+     "tr": "futiḥa l-bābu.",
+     "en": "The door was opened."
+    },
+    {
+     "ar": "يُكْتَبُ الدَّرْسُ فِي الكِتَابِ.",
+     "tr": "yuktabu d-darsu fī l-kitābi.",
+     "en": "The lesson is written in the book."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "كُتِبَ",
+     "tr": "kutiba",
+     "en": "was written"
+    },
+    {
+     "ar": "فُتِحَ",
+     "tr": "futiḥa",
+     "en": "was opened"
+    },
+    {
+     "ar": "يُكْتَبُ",
+     "tr": "yuktabu",
+     "en": "is written"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which verb is past passive?",
+      "ar": "أيُّ فعل ماضٍ مبني للمجهول؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كُتِبَ",
+       "ar": true
+      },
+      {
+       "text": "يُكْتَبُ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍamma + kasra.",
+      "ar": "ضمّة + كسرة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does فُتِحَ البَابُ mean?",
+      "ar": "ماذا تعني فُتِحَ البَابُ؟"
+     },
+     "promptAr": "فُتِحَ البَابُ",
+     "options": [
+      {
+       "text": {
+        "en": "The door was opened.",
+        "ar": "فُتح الباب."
+       }
+      },
+      {
+       "text": {
+        "en": "He opened the door.",
+        "ar": "فتح الباب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Passive: no doer mentioned.",
+      "ar": "مبني للمجهول: لا فاعل مذكور."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In line 3, which word is genitive?",
+      "ar": "في السطر الثالث، أيُّ كلمة مجرورة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الكِتَابِ",
+       "ar": true
+      },
+      {
+       "text": "الدَّرْسُ",
+       "ar": true
+      },
+      {
+       "text": "يُكْتَبُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After فِي.",
+      "ar": "بعد فِي."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What case is الدَّرْسُ in line 1?",
+      "ar": "ما حالة الدَّرْسُ في السطر الأول؟"
+     },
+     "promptAr": "الدَّرْسُ",
+     "options": [
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Accusative",
+        "ar": "منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The object became the subject.",
+      "ar": "صار المفعول نائب فاعل."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  }
+ ]
+}
