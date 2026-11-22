@@ -1,0 +1,217 @@
+{
+ "schema": 1,
+ "prompts": [
+  {
+   "id": "w-day-01",
+   "level": "advanced",
+   "title": {
+    "en": "What the boy did",
+    "ar": "مَاذَا فَعَلَ الوَلَدُ؟"
+   },
+   "instruction": {
+    "en": "Write at least 3 sentences about a boy’s day. Use a past verb, ثُمَّ, and a negation or future (لَمْ, لَنْ or سَـ / سَوْفَ).",
+    "ar": "اكتب ٣ جمل على الأقل عن يوم ولد. استعمل فعلًا ماضيًا وثُمَّ ونفيًا أو مستقبلًا (لَمْ أو لَنْ أو سَـ / سَوْفَ)."
+   },
+   "frames": [
+    "ذَهَبَ الوَلَدُ …",
+    "ثُمَّ …"
+   ],
+   "wordBank": [
+    {
+     "ar": "ذَهَبَ",
+     "tr": "dhahaba",
+     "en": "he went"
+    },
+    {
+     "ar": "كَتَبَ",
+     "tr": "kataba",
+     "en": "he wrote"
+    },
+    {
+     "ar": "أَكَلَ",
+     "tr": "akala",
+     "en": "he ate"
+    },
+    {
+     "ar": "لَمْ",
+     "tr": "lam",
+     "en": "did not (+ jussive)"
+    },
+    {
+     "ar": "سَيَذْهَبُ",
+     "tr": "sayadhhabu",
+     "en": "he will go"
+    }
+   ],
+   "minSentences": 3,
+   "required": [
+    {
+     "label": {
+      "en": "Uses a past verb (ذَهَبَ, كَتَبَ, أَكَلَ, شَرِبَ …)",
+      "ar": "تستعمل فعلًا ماضيًا"
+     },
+     "any": [
+      "ذَهَبَ",
+      "كَتَبَ",
+      "أَكَلَ",
+      "شَرِبَ",
+      "فَتَحَ",
+      "قَالَ",
+      "مَشَى",
+      "وَصَلَ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses ثُمَّ",
+      "ar": "تستعمل ثُمَّ"
+     },
+     "any": [
+      "ثُمَّ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a negation or future (لَمْ, لَنْ, سَوْفَ, لَا)",
+      "ar": "تستعمل نفيًا أو مستقبلًا"
+     },
+     "any": [
+      "لَمْ",
+      "لَنْ",
+      "سَوْفَ",
+      "لَا"
+     ]
+    }
+   ],
+   "model": {
+    "ar": [
+     "ذَهَبَ الوَلَدُ إِلَى البَيْتِ.",
+     "كَتَبَ الدَّرْسَ ثُمَّ أَكَلَ التُّفَّاحَةَ.",
+     "لَمْ يَشْرَبْ وَلَمْ يَذْهَبْ إِلَى المَدْرَسَةِ."
+    ],
+    "en": [
+     "The boy went to the house.",
+     "He wrote the lesson, then ate the apple.",
+     "He did not drink and did not go to school."
+    ]
+   },
+   "review": "unreviewed"
+  },
+  {
+   "id": "w-essay-01",
+   "level": "advanced",
+   "title": {
+    "en": "A short essay: my day",
+    "ar": "مَقَالَةٌ قَصِيرَةٌ: يَوْمِي"
+   },
+   "instruction": {
+    "en": "Write a short essay of at least 6 sentences about your day: an introduction, two or three sentences in the middle, and a closing sentence. Use a past verb, ثُمَّ, a preposition, and a future verb.",
+    "ar": "اكتب مقالة قصيرة من ٦ جمل على الأقل عن يومك: مقدّمة، ثم جملتان أو ثلاث في الوسط، ثم خاتمة. استعمل فعلًا ماضيًا وثُمَّ وحرف جرّ وفعلًا مستقبلًا."
+   },
+   "frames": [
+    "أَنَا …",
+    "ذَهَبْتُ إِلَى …",
+    "ثُمَّ …",
+    "سَأَذْهَبُ …"
+   ],
+   "wordBank": [
+    {
+     "ar": "ذَهَبْتُ",
+     "tr": "dhahabtu",
+     "en": "I went"
+    },
+    {
+     "ar": "كَتَبْتُ",
+     "tr": "katabtu",
+     "en": "I wrote"
+    },
+    {
+     "ar": "أَكَلْتُ",
+     "tr": "akaltu",
+     "en": "I ate"
+    },
+    {
+     "ar": "سَأَذْهَبُ",
+     "tr": "saʾadhhabu",
+     "en": "I will go"
+    },
+    {
+     "ar": "المَدْرَسَةُ",
+     "tr": "al-madrasatu",
+     "en": "the school"
+    }
+   ],
+   "minSentences": 6,
+   "required": [
+    {
+     "label": {
+      "en": "Uses a past verb (ذَهَبْتُ, كَتَبْتُ, أَكَلْتُ …)",
+      "ar": "تستعمل فعلًا ماضيًا"
+     },
+     "any": [
+      "ذَهَبْتُ",
+      "كَتَبْتُ",
+      "أَكَلْتُ",
+      "شَرِبْتُ",
+      "ذَهَبَ",
+      "كَتَبَ",
+      "أَكَلَ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses ثُمَّ",
+      "ar": "تستعمل ثُمَّ"
+     },
+     "any": [
+      "ثُمَّ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a preposition (فِي, عَلَى, إِلَى, مِنْ)",
+      "ar": "تستعمل حرف جرّ"
+     },
+     "any": [
+      "فِي",
+      "عَلَى",
+      "إِلَى",
+      "مِنْ"
+     ]
+    },
+    {
+     "label": {
+      "en": "Uses a future verb (سَأَذْهَبُ, سَيَذْهَبُ, سَوْفَ …)",
+      "ar": "تستعمل فعلًا مستقبلًا"
+     },
+     "any": [
+      "سَأَذْهَبُ",
+      "سَأَكْتُبُ",
+      "سَيَذْهَبُ",
+      "سَيَكْتُبُ",
+      "سَوْفَ"
+     ]
+    }
+   ],
+   "model": {
+    "ar": [
+     "أَنَا طَالِبٌ.",
+     "ذَهَبْتُ إِلَى المَدْرَسَةِ.",
+     "كَتَبْتُ الدَّرْسَ فِي الكِتَابِ.",
+     "ثُمَّ أَكَلْتُ التُّفَّاحَةَ.",
+     "سَأَذْهَبُ إِلَى البَيْتِ.",
+     "المَدْرَسَةُ جَمِيلَةٌ."
+    ],
+    "en": [
+     "I am a student.",
+     "I went to school.",
+     "I wrote the lesson in the book.",
+     "Then I ate the apple.",
+     "I will go home.",
+     "The school is beautiful."
+    ]
+   },
+   "review": "unreviewed"
+  }
+ ]
+}
