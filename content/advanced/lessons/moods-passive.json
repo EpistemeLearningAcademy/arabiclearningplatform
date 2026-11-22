@@ -1,0 +1,1289 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "a-les-mood-01",
+   "level": "advanced",
+   "module": "moods",
+   "unit": "moods-and-commands",
+   "title": {
+    "en": "The three moods of the present verb",
+    "ar": "حَالَاتُ الفِعْلِ المُضَارِع"
+   },
+   "objectives": [
+    {
+     "en": "Name the indicative, subjunctive and jussive",
+     "ar": "تسمية الرفع والنصب والجزم"
+    },
+    {
+     "en": "Know which particles trigger each",
+     "ar": "معرفة الأدوات التي تسبّب كل حالة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-particles-02"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The present verb has three moods, shown by its last vowel. Indicative (the normal form): يَكْتُبُ yaktubu, with ḍamma. Subjunctive, after أَنْ “to / that” and لَنْ: يَكْتُبَ yaktuba, with fatḥa. Jussive, after لَمْ and the prohibition لَا: يَكْتُبْ yaktub, with sukūn.",
+     "ar": "للفعل المضارع ثلاث حالات تظهر في آخره: الرفع (ضمّة) يَكْتُبُ، والنصب (فتحة) بعد أَنْ ولَنْ: يَكْتُبَ، والجزم (سكون) بعد لَمْ ولَا الناهية: يَكْتُبْ."
+    },
+    {
+     "en": "Example: أُرِيدُ أَنْ أَكْتُبَ “I want to write”. Note: for forms like يَكْتُبُونَ the ending also changes (the final nūn drops in the subjunctive and jussive); that is not covered here.",
+     "ar": "مثال: أُرِيدُ أَنْ أَكْتُبَ. ملاحظة: في صيغ مثل يَكْتُبُونَ تتغيّر النهاية أيضًا (تسقط النون في النصب والجزم)، وهو ما لا نتناوله هنا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "يَكْتُبُ",
+     "tr": "yaktubu",
+     "en": "indicative (he writes)"
+    },
+    {
+     "ar": "أَنْ يَكْتُبَ",
+     "tr": "an yaktuba",
+     "en": "subjunctive (that he write)"
+    },
+    {
+     "ar": "لَنْ يَكْتُبَ",
+     "tr": "lan yaktuba",
+     "en": "subjunctive (he will not write)"
+    },
+    {
+     "ar": "لَمْ يَكْتُبْ",
+     "tr": "lam yaktub",
+     "en": "jussive (he did not write)"
+    },
+    {
+     "ar": "أُرِيدُ أَنْ أَكْتُبَ",
+     "tr": "urīdu an aktuba",
+     "en": "I want to write"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which ending shows the subjunctive?",
+      "ar": "أيُّ نهاية تدلّ على النصب؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـَ",
+       "ar": true
+      },
+      {
+       "text": "ـُ",
+       "ar": true
+      },
+      {
+       "text": "ـْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Subjunctive = fatḥa.",
+      "ar": "النصب = فتحة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which particle is followed by the jussive?",
+      "ar": "أيُّ أداة يأتي بعدها الجزم؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "لَمْ",
+       "ar": true
+      },
+      {
+       "text": "لَنْ",
+       "ar": true
+      },
+      {
+       "text": "أَنْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After لَمْ the verb has sukūn.",
+      "ar": "بعد لَمْ يكون الفعل ساكنًا."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَكْتُبْ",
+     "options": [
+      {
+       "text": "yaktub",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktuba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The sukūn gives “yaktub”.",
+      "ar": "السكون يعطي «yaktub»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does أُرِيدُ أَنْ أَكْتُبَ mean?",
+      "ar": "ماذا تعني أُرِيدُ أَنْ أَكْتُبَ؟"
+     },
+     "promptAr": "أُرِيدُ أَنْ أَكْتُبَ",
+     "options": [
+      {
+       "text": {
+        "en": "I want to write",
+        "ar": "أريد أن أكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "I wrote",
+        "ar": "كتبتُ"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَنْ + subjunctive.",
+      "ar": "أَنْ + المضارع المنصوب."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "After لَنْ the verb ends with…",
+      "ar": "بعد لَنْ ينتهي الفعل بـ…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "fatḥa",
+        "ar": "فتحة"
+       }
+      },
+      {
+       "text": {
+        "en": "ḍamma",
+        "ar": "ضمّة"
+       }
+      },
+      {
+       "text": {
+        "en": "sukūn",
+        "ar": "سكون"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَنْ takes the subjunctive.",
+      "ar": "لَنْ تنصب المضارع."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What mood is يَكْتُبُ?",
+      "ar": "ما حالة يَكْتُبُ؟"
+     },
+     "promptAr": "يَكْتُبُ",
+     "options": [
+      {
+       "text": {
+        "en": "Indicative",
+        "ar": "مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Jussive",
+        "ar": "مجزوم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍamma = indicative.",
+      "ar": "الضمّة = الرفع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-mood-02",
+   "level": "advanced",
+   "module": "moods",
+   "unit": "moods-and-commands",
+   "title": {
+    "en": "Negation in every tense",
+    "ar": "النَّفْيُ فِي الأَزْمِنَة"
+   },
+   "objectives": [
+    {
+     "en": "Choose the right negative word for past, present and future",
+     "ar": "اختيار أداة النفي المناسبة للماضي والمضارع والمستقبل"
+    }
+   ],
+   "prerequisites": [
+    "a-les-mood-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Past: لَمْ + jussive, or مَا + past verb: لَمْ يَكْتُبْ / مَا كَتَبَ “he did not write”. Present: لَا + indicative: لَا يَكْتُبُ “he does not write”. Future: لَنْ + subjunctive: لَنْ يَكْتُبَ “he will not write”.",
+     "ar": "الماضي: لَمْ + المضارع المجزوم أو مَا + الماضي: لَمْ يَكْتُبْ / مَا كَتَبَ. المضارع: لَا + المضارع المرفوع: لَا يَكْتُبُ. المستقبل: لَنْ + المضارع المنصوب: لَنْ يَكْتُبَ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "لَمْ يَكْتُبْ",
+     "tr": "lam yaktub",
+     "en": "he did not write"
+    },
+    {
+     "ar": "مَا كَتَبَ",
+     "tr": "mā kataba",
+     "en": "he did not write"
+    },
+    {
+     "ar": "لَا يَكْتُبُ",
+     "tr": "lā yaktubu",
+     "en": "he does not write"
+    },
+    {
+     "ar": "لَنْ يَكْتُبَ",
+     "tr": "lan yaktuba",
+     "en": "he will not write"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which word negates the future?",
+      "ar": "أيُّ أداة تنفي المستقبل؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "لَنْ",
+        "ar": "لَنْ"
+       }
+      },
+      {
+       "text": {
+        "en": "لَمْ",
+        "ar": "لَمْ"
+       }
+      },
+      {
+       "text": {
+        "en": "لَا",
+        "ar": "لَا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَنْ = will not.",
+      "ar": "لَنْ = لن."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word + jussive means “did not”?",
+      "ar": "أيُّ أداة مع المجزوم تعني «did not»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "لَمْ",
+       "ar": true
+      },
+      {
+       "text": "لَنْ",
+       "ar": true
+      },
+      {
+       "text": "لَا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَمْ + jussive.",
+      "ar": "لَمْ + المجزوم."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does لَنْ يَكْتُبَ mean?",
+      "ar": "ماذا تعني لَنْ يَكْتُبَ؟"
+     },
+     "promptAr": "لَنْ يَكْتُبَ",
+     "options": [
+      {
+       "text": {
+        "en": "he will not write",
+        "ar": "لن يكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he did not write",
+        "ar": "لم يكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he does not write",
+        "ar": "لا يكتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَنْ = future negation.",
+      "ar": "لَنْ = نفي المستقبل."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does مَا كَتَبَ mean?",
+      "ar": "ماذا تعني مَا كَتَبَ؟"
+     },
+     "promptAr": "مَا كَتَبَ",
+     "options": [
+      {
+       "text": {
+        "en": "he did not write",
+        "ar": "ما كتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he wrote",
+        "ar": "كتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَا + past = did not.",
+      "ar": "مَا + الماضي = النفي."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لَمْ يَذْهَبْ",
+     "options": [
+      {
+       "text": "lam yadhhab",
+       "ar": false
+      },
+      {
+       "text": "lam yadhhabu",
+       "ar": false
+      },
+      {
+       "text": "lan yadhhaba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَمْ + sukūn.",
+      "ar": "لَمْ + سكون."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-mood-03",
+   "level": "advanced",
+   "module": "moods",
+   "unit": "moods-and-commands",
+   "title": {
+    "en": "The imperative: commands",
+    "ar": "فِعْلُ الأَمْر"
+   },
+   "objectives": [
+    {
+     "en": "Form and read commands",
+     "ar": "تكوين الأمر وقراءته"
+    },
+    {
+     "en": "Form a negative command with لَا",
+     "ar": "تكوين النهي بـ لَا"
+    }
+   ],
+   "prerequisites": [
+    "a-les-mood-02"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The imperative is made from the present verb: drop the prefix, add a starting alif with a vowel, and end with a sukūn: يَكْتُبُ → اُكْتُبْ “write!” (to a man); يَذْهَبُ → اِذْهَبْ “go!”. The starting vowel depends on the verb: learn it with the verb. To a woman add ـِي (اُكْتُبِي); to men add ـُوا (اُكْتُبُوا).",
+     "ar": "يُصاغ الأمر من المضارع: نحذف حرف المضارعة ونضيف همزة وصل بحركة وننهي الفعل بالسكون: يَكْتُبُ ← اُكْتُبْ، يَذْهَبُ ← اِذْهَبْ. وحركة البداية تتبع الفعل، فتُحفظ معه. وللمخاطَبة نضيف ـِي (اُكْتُبِي) وللجماعة ـُوا (اُكْتُبُوا)."
+    },
+    {
+     "en": "A negative command uses لَا + jussive: لَا تَكْتُبْ “do not write”. The verb كُلْ “eat!” is irregular.",
+     "ar": "النهي يكون بـ لَا + المضارع المجزوم: لَا تَكْتُبْ. والفعل كُلْ «كُل» أمر غير قياسي."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "اُكْتُبْ",
+     "tr": "uktub",
+     "en": "write! (to a man)"
+    },
+    {
+     "ar": "اُكْتُبِي",
+     "tr": "uktubī",
+     "en": "write! (to a woman)"
+    },
+    {
+     "ar": "اُكْتُبُوا",
+     "tr": "uktubū",
+     "en": "write! (to men)"
+    },
+    {
+     "ar": "اِذْهَبْ",
+     "tr": "idhhab",
+     "en": "go!"
+    },
+    {
+     "ar": "كُلْ",
+     "tr": "kul",
+     "en": "eat!"
+    },
+    {
+     "ar": "لَا تَكْتُبْ",
+     "tr": "lā taktub",
+     "en": "do not write"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "اُكْتُبْ",
+     "options": [
+      {
+       "text": "uktub",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The command: uktub.",
+      "ar": "الأمر: uktub."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "اِذْهَبْ",
+     "options": [
+      {
+       "text": "idhhab",
+       "ar": false
+      },
+      {
+       "text": "yadhhabu",
+       "ar": false
+      },
+      {
+       "text": "dhahaba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "اِذْهَبْ is “idhhab”.",
+      "ar": "اِذْهَبْ تُقرأ «idhhab»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which means “write!” (to a woman)?",
+      "ar": "أيُّ كلمة تعني «write!» للمخاطَبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "اُكْتُبْ",
+       "ar": true
+      },
+      {
+       "text": "اُكْتُبِي",
+       "ar": true
+      },
+      {
+       "text": "اُكْتُبُوا",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "ـِي addresses a woman.",
+      "ar": "ـِي للمخاطَبة."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does لَا تَكْتُبْ mean?",
+      "ar": "ماذا تعني لَا تَكْتُبْ؟"
+     },
+     "promptAr": "لَا تَكْتُبْ",
+     "options": [
+      {
+       "text": {
+        "en": "do not write",
+        "ar": "لا تكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "write!",
+        "ar": "اكتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا + jussive = prohibition.",
+      "ar": "لَا + المجزوم = النهي."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How does an imperative end (to one man)?",
+      "ar": "بمَ ينتهي الأمر للمفرد المذكّر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "with a sukūn",
+        "ar": "بالسكون"
+       }
+      },
+      {
+       "text": {
+        "en": "with ḍamma",
+        "ar": "بالضمّة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "اُكْتُبْ ends with sukūn.",
+      "ar": "اُكْتُبْ ينتهي بسكون."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which command is irregular?",
+      "ar": "أيُّ أمر غير قياسي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كُلْ",
+       "ar": true
+      },
+      {
+       "text": "اُكْتُبْ",
+       "ar": true
+      },
+      {
+       "text": "اِذْهَبْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كُلْ is irregular.",
+      "ar": "كُلْ غير قياسي."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-passive-01",
+   "level": "advanced",
+   "module": "passive",
+   "unit": "passive-voice",
+   "title": {
+    "en": "The passive voice",
+    "ar": "المَبْنِيُّ لِلْمَجْهُول"
+   },
+   "objectives": [
+    {
+     "en": "Form the past and present passive",
+     "ar": "تكوين الماضي والمضارع المبنيين للمجهول"
+    },
+    {
+     "en": "See what happens to the object",
+     "ar": "ملاحظة ما يحدث للمفعول به"
+    }
+   ],
+   "prerequisites": [
+    "a-les-mood-03"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The passive is used when the doer is unknown or not mentioned. Past: فُعِلَ (ḍamma on the first letter, kasra on the second): كَتَبَ → كُتِبَ “was written”; فَتَحَ → فُتِحَ “was opened”. Present: يُفْعَلُ (ḍamma on the prefix, fatḥa on the second letter): يَكْتُبُ → يُكْتَبُ “is written”.",
+     "ar": "يُستعمل المبني للمجهول إذا جُهل الفاعل أو لم يُذكر. الماضي على وزن فُعِلَ (ضمّ الأول وكسر ما قبل الآخر): كَتَبَ ← كُتِبَ، فَتَحَ ← فُتِحَ. والمضارع على وزن يُفْعَلُ (ضمّ حرف المضارعة وفتح ما قبل الآخر): يَكْتُبُ ← يُكْتَبُ."
+    },
+    {
+     "en": "The object becomes the subject and is nominative: كَتَبَ الوَلَدُ الدَّرْسَ → كُتِبَ الدَّرْسُ “The lesson was written.”",
+     "ar": "يصير المفعول به نائب فاعل مرفوعًا: كَتَبَ الوَلَدُ الدَّرْسَ ← كُتِبَ الدَّرْسُ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كُتِبَ",
+     "tr": "kutiba",
+     "en": "was written"
+    },
+    {
+     "ar": "فُتِحَ",
+     "tr": "futiḥa",
+     "en": "was opened"
+    },
+    {
+     "ar": "يُكْتَبُ",
+     "tr": "yuktabu",
+     "en": "is written"
+    },
+    {
+     "ar": "كُتِبَ الدَّرْسُ",
+     "tr": "kutiba d-darsu",
+     "en": "The lesson was written."
+    },
+    {
+     "ar": "فُتِحَ البَابُ",
+     "tr": "futiḥa l-bābu",
+     "en": "The door was opened."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كُتِبَ",
+     "options": [
+      {
+       "text": "kutiba",
+       "ar": false
+      },
+      {
+       "text": "kataba",
+       "ar": false
+      },
+      {
+       "text": "yuktabu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍamma then kasra: kutiba.",
+      "ar": "ضمّة ثم كسرة: kutiba."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يُكْتَبُ",
+     "options": [
+      {
+       "text": "yuktabu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "kutiba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍamma on the prefix, fatḥa on the second letter.",
+      "ar": "ضمّة على الحرف الأول وفتحة على ما قبل الآخر."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does فُتِحَ البَابُ mean?",
+      "ar": "ماذا تعني فُتِحَ البَابُ؟"
+     },
+     "promptAr": "فُتِحَ البَابُ",
+     "options": [
+      {
+       "text": {
+        "en": "The door was opened.",
+        "ar": "فُتح الباب."
+       }
+      },
+      {
+       "text": {
+        "en": "He opened the door.",
+        "ar": "فتح الباب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "A passive verb: the doer is not mentioned.",
+      "ar": "فعل مبني للمجهول: لم يُذكر الفاعل."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which verb is passive?",
+      "ar": "أيُّ فعل مبني للمجهول؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كُتِبَ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "كَاتَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كُتِبَ has ḍamma + kasra.",
+      "ar": "كُتِبَ فيه ضمّة وكسرة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "In كُتِبَ الدَّرْسُ, what case is الدَّرْسُ?",
+      "ar": "في كُتِبَ الدَّرْسُ، ما حالة الدَّرْسُ؟"
+     },
+     "promptAr": "الدَّرْسُ",
+     "options": [
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Accusative",
+        "ar": "منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It is now the subject.",
+      "ar": "صار نائب فاعل مرفوعًا."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which is the present passive?",
+      "ar": "أيُّ كلمة مضارع مبني للمجهول؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "يُكْتَبُ",
+       "ar": true
+      },
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "كُتِبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يُـ with fatḥa on the second letter.",
+      "ar": "يُـ مع فتحة ما قبل الآخر."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-09",
+   "level": "advanced",
+   "module": "derived-forms",
+   "unit": "verb-system",
+   "title": {
+    "en": "Derived forms VI to IX",
+    "ar": "الأَوْزَانُ المَزِيدَةُ: VI إِلَى IX"
+   },
+   "objectives": [
+    {
+     "en": "Recognise forms VI, VII, VIII and IX",
+     "ar": "التعرّف إلى الأوزان VI وVII وVIII وIX"
+    }
+   ],
+   "prerequisites": [
+    "a-les-passive-01"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Form VI تَفَاعَلَ often shows doing something with others: تَعَاوَنَ “he cooperated”. Form VII اِنْفَعَلَ often shows something happening to the subject: اِنْكَسَرَ “it broke”. Form VIII اِفْتَعَلَ: اِنْتَظَرَ “he waited”. Form IX اِفْعَلَّ is used for colours and defects: اِحْمَرَّ “it turned red”.",
+     "ar": "الوزن السادس تَفَاعَلَ يدلّ غالبًا على المشاركة: تَعَاوَنَ. والسابع اِنْفَعَلَ يدلّ غالبًا على أنّ شيئًا حدث للفاعل: اِنْكَسَرَ. والثامن اِفْتَعَلَ: اِنْتَظَرَ. والتاسع اِفْعَلَّ للألوان والعيوب: اِحْمَرَّ."
+    },
+    {
+     "en": "These are typical tendencies, not strict rules. Learn each verb with its meaning.",
+     "ar": "هذه اتجاهات غالبة وليست قواعد صارمة، فيُحفظ كل فعل مع معناه."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "تَعَاوَنَ",
+     "tr": "taʿāwana",
+     "en": "Form VI: he cooperated"
+    },
+    {
+     "ar": "اِنْكَسَرَ",
+     "tr": "inkasara",
+     "en": "Form VII: it broke"
+    },
+    {
+     "ar": "اِنْتَظَرَ",
+     "tr": "intaẓara",
+     "en": "Form VIII: he waited"
+    },
+    {
+     "ar": "اِحْمَرَّ",
+     "tr": "iḥmarra",
+     "en": "Form IX: it turned red"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "اِحْمَرَّ",
+     "options": [
+      {
+       "text": "iḥmarra",
+       "ar": false
+      },
+      {
+       "text": "iḥmara",
+       "ar": false
+      },
+      {
+       "text": "aḥmara",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The shaddah doubles the last root letter: iḥmarra.",
+      "ar": "الشدّة تضاعف آخر الجذر: iḥmarra."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does اِنْكَسَرَ mean?",
+      "ar": "ماذا تعني اِنْكَسَرَ؟"
+     },
+     "promptAr": "اِنْكَسَرَ",
+     "options": [
+      {
+       "text": {
+        "en": "it broke",
+        "ar": "انكسر"
+       }
+      },
+      {
+       "text": {
+        "en": "he broke it",
+        "ar": "كسره"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form VII: something happens to the subject.",
+      "ar": "الوزن السابع: حدث شيء للفاعل."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does اِنْتَظَرَ mean?",
+      "ar": "ماذا تعني اِنْتَظَرَ؟"
+     },
+     "promptAr": "اِنْتَظَرَ",
+     "options": [
+      {
+       "text": {
+        "en": "he waited",
+        "ar": "انتظر"
+       }
+      },
+      {
+       "text": {
+        "en": "he saw",
+        "ar": "رأى"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form VIII of ن ظ ر.",
+      "ar": "الوزن الثامن من ن ظ ر."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which verb is Form IX (doubled last letter)?",
+      "ar": "أيُّ فعل على الوزن التاسع (آخره مشدّد)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "اِحْمَرَّ",
+       "ar": true
+      },
+      {
+       "text": "اِنْكَسَرَ",
+       "ar": true
+      },
+      {
+       "text": "تَعَاوَنَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "اِحْمَرَّ ends with a doubled letter.",
+      "ar": "اِحْمَرَّ آخره مشدّد."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which verb is Form VI (ta- … ā)?",
+      "ar": "أيُّ فعل على الوزن السادس؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "تَعَاوَنَ",
+       "ar": true
+      },
+      {
+       "text": "اِنْتَظَرَ",
+       "ar": true
+      },
+      {
+       "text": "اِنْكَسَرَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "تَعَاوَنَ: تَ + ا after the first letter.",
+      "ar": "تَعَاوَنَ: تَ + ألف بعد الفاء."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-grammar-review",
+   "level": "advanced",
+   "module": "grammar-review",
+   "unit": "moods-and-commands",
+   "title": {
+    "en": "Review: moods, commands, passive, forms",
+    "ar": "مراجعة: الحالات والأمر والمبني للمجهول والأوزان"
+   },
+   "objectives": [
+    {
+     "en": "Combine the advanced verb topics",
+     "ar": "الجمع بين موضوعات الأفعال المتقدّمة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-mood-01",
+    "a-les-mood-02",
+    "a-les-mood-03",
+    "a-les-passive-01",
+    "a-les-verb-09"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Check each verb: Is it a command? Passive? Which mood follows the particle? Which form?",
+     "ar": "تحقّق من كل فعل: أهو أمر؟ مبني للمجهول؟ أيّ حالة تلي الأداة؟ على أي وزن هو؟"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "لَمْ يَكْتُبْ",
+     "tr": "lam yaktub",
+     "en": "he did not write"
+    },
+    {
+     "ar": "كُتِبَ",
+     "tr": "kutiba",
+     "en": "was written"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does لَمْ يَكْتُبْ mean?",
+      "ar": "ماذا تعني لَمْ يَكْتُبْ؟"
+     },
+     "promptAr": "لَمْ يَكْتُبْ",
+     "options": [
+      {
+       "text": {
+        "en": "he did not write",
+        "ar": "لم يكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he will not write",
+        "ar": "لن يكتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَمْ + jussive = did not.",
+      "ar": "لَمْ + المجزوم = النفي."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which is a command?",
+      "ar": "أيُّ كلمة أمر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "اُكْتُبْ",
+       "ar": true
+      },
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "كُتِبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "اُكْتُبْ is the imperative.",
+      "ar": "اُكْتُبْ فعل أمر."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which is passive?",
+      "ar": "أيُّ كلمة مبنية للمجهول؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "يُكْتَبُ",
+       "ar": true
+      },
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "اُكْتُبْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يُـ … َ pattern.",
+      "ar": "وزن يُـ … َ."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "After لَنْ the verb ends with…",
+      "ar": "بعد لَنْ ينتهي الفعل بـ…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "fatḥa",
+        "ar": "فتحة"
+       }
+      },
+      {
+       "text": {
+        "en": "sukūn",
+        "ar": "سكون"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Subjunctive.",
+      "ar": "منصوب."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does اِنْتَظَرَ mean?",
+      "ar": "ماذا تعني اِنْتَظَرَ؟"
+     },
+     "promptAr": "اِنْتَظَرَ",
+     "options": [
+      {
+       "text": {
+        "en": "he waited",
+        "ar": "انتظر"
+       }
+      },
+      {
+       "text": {
+        "en": "he cooperated",
+        "ar": "تعاون"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form VIII.",
+      "ar": "الوزن الثامن."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "لَا تَكْتُبْ",
+     "options": [
+      {
+       "text": "lā taktub",
+       "ar": false
+      },
+      {
+       "text": "lā yaktubu",
+       "ar": false
+      },
+      {
+       "text": "lan taktuba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَا + jussive.",
+      "ar": "لَا + المجزوم."
+     }
+    }
+   ]
+  }
+ ]
+}
