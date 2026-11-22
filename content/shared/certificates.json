@@ -1,0 +1,66 @@
+{
+ "schema": 1,
+ "certificates": [
+  {
+   "id": "cert-reading-foundations",
+   "title": {
+    "en": "Arabic Reading Foundations",
+    "ar": "أساسيات القراءة العربية"
+   },
+   "modules": [
+    "alphabet",
+    "short-vowels",
+    "long-vowels",
+    "signs"
+   ]
+  },
+  {
+   "id": "cert-intermediate-nouns",
+   "title": {
+    "en": "Intermediate: Nouns, Number and Description",
+    "ar": "المتوسط: الأسماء والعدد والوصف"
+   },
+   "modules": [
+    "nouns-pronouns",
+    "number",
+    "adjectives-prepositions"
+   ]
+  },
+  {
+   "id": "cert-intermediate-verbs",
+   "title": {
+    "en": "Intermediate: Verbs and Sentences",
+    "ar": "المتوسط: الأفعال والجمل"
+   },
+   "modules": [
+    "verbs"
+   ]
+  },
+  {
+   "id": "cert-advanced-grammar",
+   "title": {
+    "en": "Advanced: Grammar and Morphology Foundations",
+    "ar": "المتقدّم: أسس النحو والصرف"
+   },
+   "modules": [
+    "case",
+    "morphology",
+    "verbs-advanced",
+    "particles"
+   ]
+  },
+  {
+   "id": "cert-advanced-verbs2",
+   "title": {
+    "en": "Advanced: Moods, Commands, Passive and Derived Forms",
+    "ar": "المتقدّم: الحالات والأمر والمبني للمجهول والأوزان"
+   },
+   "modules": [
+    "moods",
+    "passive",
+    "derived-forms",
+    "grammar-review"
+   ]
+  }
+ ]
+}

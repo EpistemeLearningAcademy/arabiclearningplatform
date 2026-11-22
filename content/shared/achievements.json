@@ -344,6 +344,40 @@
     "type": "tracingDone",
     "min": 10
    }
+  },
+  {
+   "id": "mood-master",
+   "icon": "🎚️",
+   "xp": 20,
+   "title": {
+    "en": "Mood Master",
+    "ar": "سيّد الحالات"
+   },
+   "desc": {
+    "en": "Complete the moods and commands lessons.",
+    "ar": "أكمِل دروس الحالات والأمر."
+   },
+   "rule": {
+    "type": "moduleComplete",
+    "module": "moods"
+   }
+  },
+  {
+   "id": "paragraph-writer",
+   "icon": "📝",
+   "xp": 20,
+   "title": {
+    "en": "Paragraph Writer",
+    "ar": "كاتب الفقرات"
+   },
+   "desc": {
+    "en": "Complete 3 guided writing tasks with every checklist item met.",
+    "ar": "أكمِل ٣ مهامّ كتابة موجّهة مع تحقيق كل بنود القائمة."
+   },
+   "rule": {
+    "type": "writingDone",
+    "min": 3
+   }
   }
  ]
 }

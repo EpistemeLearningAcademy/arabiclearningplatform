@@ -1,0 +1,102 @@
+{
+ "schema": 1,
+ "challenges": [
+  {
+   "id": "c-lessons",
+   "xp": 30,
+   "target": 2,
+   "title": {
+    "en": "Lesson Week",
+    "ar": "أسبوع الدروس"
+   },
+   "desc": {
+    "en": "Complete 2 lessons this week.",
+    "ar": "أكمِل درسين هذا الأسبوع."
+   },
+   "rule": {
+    "type": "lessonsCompleted"
+   }
+  },
+  {
+   "id": "c-quizzes",
+   "xp": 30,
+   "target": 3,
+   "title": {
+    "en": "Quiz Streak",
+    "ar": "سلسلة الاختبارات"
+   },
+   "desc": {
+    "en": "Pass 3 quizzes (70% or more) this week.",
+    "ar": "انجح في ٣ اختبارات (٧٠٪ فأكثر) هذا الأسبوع."
+   },
+   "rule": {
+    "type": "quizzesPassed"
+   }
+  },
+  {
+   "id": "c-days",
+   "xp": 30,
+   "target": 4,
+   "title": {
+    "en": "Daily Habit",
+    "ar": "عادة يومية"
+   },
+   "desc": {
+    "en": "Learn on 4 different days this week.",
+    "ar": "تعلّم في ٤ أيام مختلفة هذا الأسبوع."
+   },
+   "rule": {
+    "type": "daysActive"
+   }
+  },
+  {
+   "id": "c-perfect",
+   "xp": 30,
+   "target": 1,
+   "title": {
+    "en": "Sharp Mind",
+    "ar": "ذهن متّقد"
+   },
+   "desc": {
+    "en": "Score 100% on a quiz of 5 or more questions.",
+    "ar": "احصل على ١٠٠٪ في اختبار من ٥ أسئلة أو أكثر."
+   },
+   "rule": {
+    "type": "perfectQuiz",
+    "minQuestions": 5
+   }
+  },
+  {
+   "id": "c-reading",
+   "xp": 30,
+   "target": 1,
+   "title": {
+    "en": "Weekly Reader",
+    "ar": "قارئ الأسبوع"
+   },
+   "desc": {
+    "en": "Pass a reading comprehension quiz.",
+    "ar": "انجح في اختبار فهم مقروء."
+   },
+   "rule": {
+    "type": "readingPassed"
+   }
+  },
+  {
+   "id": "c-builder",
+   "xp": 30,
+   "target": 1,
+   "title": {
+    "en": "Sentence Smith",
+    "ar": "حدّاد الجمل"
+   },
+   "desc": {
+    "en": "Pass a Sentence builder round.",
+    "ar": "انجح في جولة من بناء الجمل."
+   },
+   "rule": {
+    "type": "builderPassed"
+   }
+  }
+ ]
+}
