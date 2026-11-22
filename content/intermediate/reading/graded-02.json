@@ -1,0 +1,388 @@
+{
+ "schema": 1,
+ "passages": [
+  {
+   "id": "r-family-01",
+   "level": "intermediate",
+   "classical": false,
+   "title": {
+    "en": "My family",
+    "ar": "عَائِلَتِي"
+   },
+   "lines": [
+    {
+     "ar": "هٰذَا أَبِي.",
+     "tr": "hādhā abī.",
+     "en": "This is my father."
+    },
+    {
+     "ar": "هٰذِهِ أُمِّي.",
+     "tr": "hādhihi ummī.",
+     "en": "This is my mother."
+    },
+    {
+     "ar": "هٰذَا أَخِي.",
+     "tr": "hādhā akhī.",
+     "en": "This is my brother."
+    },
+    {
+     "ar": "أَخِي طَالِبٌ.",
+     "tr": "akhī ṭālibun.",
+     "en": "My brother is a student."
+    },
+    {
+     "ar": "هٰذِهِ أُخْتِي.",
+     "tr": "hādhihi ukhtī.",
+     "en": "This is my sister."
+    },
+    {
+     "ar": "أُخْتِي صَغِيرَةٌ.",
+     "tr": "ukhtī ṣaghīratun.",
+     "en": "My sister is small."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "أَبِي",
+     "tr": "abī",
+     "en": "my father"
+    },
+    {
+     "ar": "أُمِّي",
+     "tr": "ummī",
+     "en": "my mother"
+    },
+    {
+     "ar": "أَخِي",
+     "tr": "akhī",
+     "en": "my brother"
+    },
+    {
+     "ar": "أُخْتِي",
+     "tr": "ukhtī",
+     "en": "my sister"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which word means “my mother”?",
+      "ar": "أيُّ كلمة تعني «my mother»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَبِي",
+       "ar": true
+      },
+      {
+       "text": "أُمِّي",
+       "ar": true
+      },
+      {
+       "text": "أَخِي",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Line 2: أُمِّي.",
+      "ar": "السطر الثاني: أُمِّي."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Who is a student?",
+      "ar": "من الطالب؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "My brother",
+        "ar": "أخي"
+       }
+      },
+      {
+       "text": {
+        "en": "My sister",
+        "ar": "أختي"
+       }
+      },
+      {
+       "text": {
+        "en": "My father",
+        "ar": "أبي"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Line 4: أَخِي طَالِبٌ.",
+      "ar": "السطر الرابع: أَخِي طَالِبٌ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which demonstrative goes with أُخْتِي (feminine)?",
+      "ar": "أيُّ اسم إشارة مع أُخْتِي؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "هٰذَا",
+       "ar": true
+      },
+      {
+       "text": "هٰذِهِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "A feminine noun takes هٰذِهِ.",
+      "ar": "المؤنّث يأخذ هٰذِهِ."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does the ـِي ending mean here?",
+      "ar": "ماذا تعني النهاية ـِي هنا؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "my",
+        "ar": "لي"
+       }
+      },
+      {
+       "text": {
+        "en": "his",
+        "ar": "له"
+       }
+      },
+      {
+       "text": {
+        "en": "her",
+        "ar": "لها"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـِي = my.",
+      "ar": "ـِي = ياء المتكلّم."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does أُخْتِي صَغِيرَةٌ mean?",
+      "ar": "ماذا تعني أُخْتِي صَغِيرَةٌ؟"
+     },
+     "promptAr": "أُخْتِي صَغِيرَةٌ",
+     "options": [
+      {
+       "text": {
+        "en": "My sister is small.",
+        "ar": "أختي صغيرة."
+       }
+      },
+      {
+       "text": {
+        "en": "My brother is small.",
+        "ar": "أخي صغير."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "صَغِيرَةٌ is feminine and matches أُخْتِي.",
+      "ar": "صَغِيرَةٌ مؤنّثة وتطابق أُخْتِي."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  },
+  {
+   "id": "r-cat-01",
+   "level": "intermediate",
+   "classical": false,
+   "title": {
+    "en": "Where is the cat?",
+    "ar": "أَيْنَ القِطَّةُ؟"
+   },
+   "lines": [
+    {
+     "ar": "هٰذِهِ قِطَّةٌ صَغِيرَةٌ.",
+     "tr": "hādhihi qiṭṭatun ṣaghīratun.",
+     "en": "This is a small cat."
+    },
+    {
+     "ar": "القِطَّةُ جَمِيلَةٌ.",
+     "tr": "al-qiṭṭatu jamīlatun.",
+     "en": "The cat is beautiful."
+    },
+    {
+     "ar": "أَيْنَ القِطَّةُ؟",
+     "tr": "ayna l-qiṭṭatu?",
+     "en": "Where is the cat?"
+    },
+    {
+     "ar": "القِطَّةُ فِي البَيْتِ.",
+     "tr": "al-qiṭṭatu fī l-bayti.",
+     "en": "The cat is in the house."
+    },
+    {
+     "ar": "القِطَّةُ عَلَى الطَّاوِلَةِ.",
+     "tr": "al-qiṭṭatu ʿalā ṭ-ṭāwilati.",
+     "en": "The cat is on the table."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "قِطَّةٌ",
+     "tr": "qiṭṭatun",
+     "en": "cat"
+    },
+    {
+     "ar": "جَمِيلَةٌ",
+     "tr": "jamīlatun",
+     "en": "beautiful"
+    },
+    {
+     "ar": "أَيْنَ",
+     "tr": "ayna",
+     "en": "where"
+    },
+    {
+     "ar": "فِي",
+     "tr": "fī",
+     "en": "in"
+    },
+    {
+     "ar": "عَلَى",
+     "tr": "ʿalā",
+     "en": "on"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Where is the cat?",
+      "ar": "أين القطّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "In the house and on the table",
+        "ar": "في البيت وعلى الطاولة"
+       }
+      },
+      {
+       "text": {
+        "en": "Only outside",
+        "ar": "في الخارج فقط"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Lines 4 and 5.",
+      "ar": "السطران الرابع والخامس."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word means “where”?",
+      "ar": "أيُّ كلمة تعني «where»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَيْنَ",
+       "ar": true
+      },
+      {
+       "text": "مَنْ",
+       "ar": true
+      },
+      {
+       "text": "مَا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Line 3 starts with أَيْنَ.",
+      "ar": "السطر الثالث يبدأ بـ أَيْنَ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means “on”?",
+      "ar": "أيُّ كلمة تعني «on»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "فِي",
+       "ar": true
+      },
+      {
+       "text": "عَلَى",
+       "ar": true
+      },
+      {
+       "text": "إِلَى",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "عَلَى = on.",
+      "ar": "عَلَى = on."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does القِطَّةُ جَمِيلَةٌ mean?",
+      "ar": "ماذا تعني القِطَّةُ جَمِيلَةٌ؟"
+     },
+     "promptAr": "القِطَّةُ جَمِيلَةٌ",
+     "options": [
+      {
+       "text": {
+        "en": "The cat is beautiful.",
+        "ar": "القطّة جميلة."
+       }
+      },
+      {
+       "text": {
+        "en": "A beautiful cat",
+        "ar": "قطّة جميلة"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Definite noun + indefinite adjective = sentence.",
+      "ar": "اسم معرَّف + صفة نكرة = جملة."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  }
+ ]
+}
