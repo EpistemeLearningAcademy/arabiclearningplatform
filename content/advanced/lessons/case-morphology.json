@@ -1,0 +1,1639 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "a-les-case-01",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "Case endings: an introduction",
+    "ar": "الإِعْرَابُ: مُقَدِّمَة"
+   },
+   "objectives": [
+    {
+     "en": "Name the three cases and their vowels",
+     "ar": "تسمية الحالات الثلاث وحركاتها"
+    },
+    {
+     "en": "Read nouns in all three cases",
+     "ar": "قراءة الأسماء في الحالات الثلاث"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-06"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Case shows a noun’s job in the sentence. Arabic has three cases, shown by the last vowel: nominative (marfūʿ, ḍamma), accusative (manṣūb, fatḥa) and genitive (majrūr, kasra). This applies to regular singular nouns; some nouns behave differently.",
+     "ar": "الإعراب يبيّن وظيفة الاسم في الجملة، وللأسماء ثلاث حالات تظهر في آخرها: الرفع (ضمّة) والنصب (فتحة) والجرّ (كسرة). وهذا في الأسماء المفردة المنصرفة؛ وبعض الأسماء لها أحكام أخرى."
+    },
+    {
+     "en": "Indefinite nouns show case with tanwīn: كِتَابٌ، كِتَابًا، كِتَابٍ. Definite nouns show it with a single vowel: الكِتَابُ، الكِتَابَ، الكِتَابِ.",
+     "ar": "النكرة تُعرَب بالتنوين: كِتَابٌ، كِتَابًا، كِتَابٍ. والمعرفة تُعرَب بحركة واحدة: الكِتَابُ، الكِتَابَ، الكِتَابِ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كِتَابٌ / الكِتَابُ",
+     "tr": "kitābun / al-kitābu",
+     "en": "nominative"
+    },
+    {
+     "ar": "كِتَابًا / الكِتَابَ",
+     "tr": "kitāban / al-kitāba",
+     "en": "accusative"
+    },
+    {
+     "ar": "كِتَابٍ / الكِتَابِ",
+     "tr": "kitābin / al-kitābi",
+     "en": "genitive"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which ending shows the nominative?",
+      "ar": "أيُّ نهاية تدلّ على الرفع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـُ",
+       "ar": true
+      },
+      {
+       "text": "ـَ",
+       "ar": true
+      },
+      {
+       "text": "ـِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Nominative = ḍamma.",
+      "ar": "الرفع = ضمّة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which ending shows the genitive?",
+      "ar": "أيُّ نهاية تدلّ على الجرّ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـُ",
+       "ar": true
+      },
+      {
+       "text": "ـَ",
+       "ar": true
+      },
+      {
+       "text": "ـِ",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "Genitive = kasra.",
+      "ar": "الجرّ = كسرة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which case is الكِتَابَ?",
+      "ar": "ما حالة الكِتَابَ؟"
+     },
+     "promptAr": "الكِتَابَ",
+     "options": [
+      {
+       "text": {
+        "en": "Accusative",
+        "ar": "منصوب"
+       }
+      },
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Genitive",
+        "ar": "مجرور"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa = accusative.",
+      "ar": "الفتحة = النصب."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which indefinite noun is nominative?",
+      "ar": "أيُّ نكرة مرفوعة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كِتَابٌ",
+       "ar": true
+      },
+      {
+       "text": "كِتَابًا",
+       "ar": true
+      },
+      {
+       "text": "كِتَابٍ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍammatān = nominative.",
+      "ar": "الضمّتان = الرفع."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الكِتَابِ",
+     "options": [
+      {
+       "text": "al-kitābi",
+       "ar": false
+      },
+      {
+       "text": "al-kitābu",
+       "ar": false
+      },
+      {
+       "text": "al-kitāba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Kasra: al-kitābi (genitive).",
+      "ar": "كسرة: «al-kitābi» (جرّ)."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does case show?",
+      "ar": "ماذا يبيّن الإعراب؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The noun’s job in the sentence",
+        "ar": "وظيفة الاسم في الجملة"
+       }
+      },
+      {
+       "text": {
+        "en": "The noun’s colour",
+        "ar": "لون الاسم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Case marks a noun’s function.",
+      "ar": "الإعراب يبيّن وظيفة الاسم."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-case-02",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "The nominative: doer, subject, predicate",
+    "ar": "المَرْفُوع"
+   },
+   "objectives": [
+    {
+     "en": "Find the doer, subject and predicate",
+     "ar": "تحديد الفاعل والمبتدأ والخبر"
+    }
+   ],
+   "prerequisites": [
+    "a-les-case-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The nominative (marfūʿ) is used for the doer of a verb (الفَاعِل), and for the two parts of a nominal sentence: the subject (المُبْتَدَأ) and the predicate (الخَبَر). All three end with ḍamma.",
+     "ar": "المرفوع يكون للفاعل بعد الفعل، وللمبتدأ والخبر في الجملة الاسمية. وكلها تنتهي بضمّة."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ذَهَبَ الوَلَدُ",
+     "tr": "dhahaba al-waladu",
+     "en": "doer: الوَلَدُ"
+    },
+    {
+     "ar": "الوَلَدُ طَالِبٌ",
+     "tr": "al-waladu ṭālibun",
+     "en": "subject: الوَلَدُ; predicate: طَالِبٌ"
+    },
+    {
+     "ar": "الكِتَابُ كَبِيرٌ",
+     "tr": "al-kitābu kabīrun",
+     "en": "subject: الكِتَابُ; predicate: كَبِيرٌ"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "In ذَهَبَ الوَلَدُ, which word is the doer?",
+      "ar": "في ذَهَبَ الوَلَدُ، أيُّ كلمة هي الفاعل؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "ذَهَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The doer comes after the verb.",
+      "ar": "الفاعل يأتي بعد الفعل."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "In الوَلَدُ طَالِبٌ, which word is the predicate (الخَبَر)?",
+      "ar": "في الوَلَدُ طَالِبٌ، أيُّ كلمة هي الخبر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The predicate says something about the subject.",
+      "ar": "الخبر يخبر عن المبتدأ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In الكِتَابُ كَبِيرٌ, which word is the subject (المُبْتَدَأ)?",
+      "ar": "في الكِتَابُ كَبِيرٌ، أيُّ كلمة هي المبتدأ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَبِيرٌ",
+       "ar": true
+      },
+      {
+       "text": "الكِتَابُ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "الكِتَابُ is what the sentence is about.",
+      "ar": "الكِتَابُ هو ما تتحدّث عنه الجملة."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What case are the subject and predicate in?",
+      "ar": "في أيّ حالة المبتدأ والخبر؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوعان"
+       }
+      },
+      {
+       "text": {
+        "en": "Accusative",
+        "ar": "منصوبان"
+       }
+      },
+      {
+       "text": {
+        "en": "Genitive",
+        "ar": "مجروران"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Both are nominative.",
+      "ar": "كلاهما مرفوع."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الوَلَدُ طَالِبٌ",
+     "options": [
+      {
+       "text": "al-waladu ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "al-walada ṭāliban",
+       "ar": false
+      },
+      {
+       "text": "al-waladi ṭālibin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Both words take ḍamma.",
+      "ar": "كلتا الكلمتين بضمّة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-case-03",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "The accusative: the object",
+    "ar": "المَنْصُوب: المَفْعُولُ بِهِ"
+   },
+   "objectives": [
+    {
+     "en": "Find the object of a verb",
+     "ar": "تحديد المفعول به"
+    },
+    {
+     "en": "Read accusative endings",
+     "ar": "قراءة علامات النصب"
+    }
+   ],
+   "prerequisites": [
+    "a-les-case-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The direct object (المَفْعُول بِهِ) is accusative (manṣūb): كَتَبَ الوَلَدُ الدَّرْسَ “The boy wrote the lesson.” الوَلَدُ is nominative (the doer) and الدَّرْسَ is accusative (the object).",
+     "ar": "المفعول به منصوب: كَتَبَ الوَلَدُ الدَّرْسَ. الوَلَدُ فاعل مرفوع، والدَّرْسَ مفعول به منصوب."
+    },
+    {
+     "en": "An indefinite accusative noun takes tanwīn fatḥa, usually written on an alif: كَتَبَ الوَلَدُ دَرْسًا “The boy wrote a lesson.”",
+     "ar": "والنكرة المنصوبة تأخذ تنوين الفتح، وتُكتب عادةً على ألف: كَتَبَ الوَلَدُ دَرْسًا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَ الوَلَدُ الدَّرْسَ",
+     "tr": "kataba al-waladu d-darsa",
+     "en": "The boy wrote the lesson."
+    },
+    {
+     "ar": "أَكَلَ الوَلَدُ التُّفَّاحَةَ",
+     "tr": "akala al-waladu t-tuffāḥata",
+     "en": "The boy ate the apple."
+    },
+    {
+     "ar": "كَتَبَ الوَلَدُ دَرْسًا",
+     "tr": "kataba al-waladu darsan",
+     "en": "The boy wrote a lesson."
+    },
+    {
+     "ar": "يَكْتُبُ الوَلَدُ الدَّرْسَ",
+     "tr": "yaktubu al-waladu d-darsa",
+     "en": "The boy writes the lesson."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "In كَتَبَ الوَلَدُ الدَّرْسَ, which word is the object?",
+      "ar": "في كَتَبَ الوَلَدُ الدَّرْسَ، أيُّ كلمة هي المفعول به؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الدَّرْسَ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "الدَّرْسَ receives the action and has fatḥa.",
+      "ar": "الدَّرْسَ وقع عليه الفعل وفيه فتحة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which ending marks a definite accusative noun?",
+      "ar": "أيُّ نهاية تدلّ على المنصوب المعرَّف؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Fatḥa (ـَ)",
+        "ar": "فتحة (ـَ)"
+       }
+      },
+      {
+       "text": {
+        "en": "Ḍamma (ـُ)",
+        "ar": "ضمّة (ـُ)"
+       }
+      },
+      {
+       "text": {
+        "en": "Kasra (ـِ)",
+        "ar": "كسرة (ـِ)"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Fatḥa = accusative.",
+      "ar": "الفتحة = النصب."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الدَّرْسَ",
+     "options": [
+      {
+       "text": "ad-darsa",
+       "ar": false
+      },
+      {
+       "text": "ad-darsu",
+       "ar": false
+      },
+      {
+       "text": "ad-darsi",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـَ is read “-a”.",
+      "ar": "«ـَ» تُقرأ «-a»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does أَكَلَ الوَلَدُ التُّفَّاحَةَ mean?",
+      "ar": "ماذا تعني أَكَلَ الوَلَدُ التُّفَّاحَةَ؟"
+     },
+     "promptAr": "أَكَلَ الوَلَدُ التُّفَّاحَةَ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy ate the apple.",
+        "ar": "أكل الولد التفاحة."
+       }
+      },
+      {
+       "text": {
+        "en": "The apple ate the boy.",
+        "ar": "أكلت التفاحة الولد."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The doer is الوَلَدُ (nominative); the object is التُّفَّاحَةَ (accusative).",
+      "ar": "الفاعل الوَلَدُ (مرفوع) والمفعول التُّفَّاحَةَ (منصوب)."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which indefinite noun is accusative?",
+      "ar": "أيُّ نكرة منصوبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "دَرْسٌ",
+       "ar": true
+      },
+      {
+       "text": "دَرْسًا",
+       "ar": true
+      },
+      {
+       "text": "دَرْسٍ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Tanwīn fatḥa = accusative.",
+      "ar": "تنوين الفتح = النصب."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-case-04",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "The genitive: after prepositions and in iḍāfa",
+    "ar": "المَجْرُور وَالإِضَافَة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise genitive nouns",
+     "ar": "التعرّف إلى الأسماء المجرورة"
+    },
+    {
+     "en": "Form and read an iḍāfa",
+     "ar": "تكوين الإضافة وقراءتها"
+    }
+   ],
+   "prerequisites": [
+    "a-les-case-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The genitive (majrūr) is used after prepositions: فِي البَيْتِ. It is also used in the iḍāfa, a possession link between two nouns: كِتَابُ الوَلَدِ “the boy’s book”.",
+     "ar": "المجرور يأتي بعد حرف الجرّ: فِي البَيْتِ. ويأتي أيضًا في الإضافة، وهي ربط بين اسمين: كِتَابُ الوَلَدِ."
+    },
+    {
+     "en": "In an iḍāfa the first noun has no ال and no tanwīn; the second noun is genitive.",
+     "ar": "في الإضافة لا يأخذ الاسم الأول «ال» ولا تنوينًا، والاسم الثاني مجرور."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "فِي البَيْتِ",
+     "tr": "fī l-bayti",
+     "en": "in the house"
+    },
+    {
+     "ar": "كِتَابُ الوَلَدِ",
+     "tr": "kitābu l-waladi",
+     "en": "the boy’s book"
+    },
+    {
+     "ar": "بَابُ البَيْتِ",
+     "tr": "bābu l-bayti",
+     "en": "the door of the house"
+    },
+    {
+     "ar": "قَلَمُ الطَّالِبِ",
+     "tr": "qalamu ṭ-ṭālibi",
+     "en": "the student’s pen"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does كِتَابُ الوَلَدِ mean?",
+      "ar": "ماذا تعني كِتَابُ الوَلَدِ؟"
+     },
+     "promptAr": "كِتَابُ الوَلَدِ",
+     "options": [
+      {
+       "text": {
+        "en": "the boy’s book",
+        "ar": "كتاب الولد"
+       }
+      },
+      {
+       "text": {
+        "en": "the book’s boy",
+        "ar": "ولد الكتاب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "First noun = thing owned; second = owner.",
+      "ar": "الأول المملوك والثاني المالك."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "In كِتَابُ الوَلَدِ, which word is genitive?",
+      "ar": "في كِتَابُ الوَلَدِ، أيُّ كلمة مجرورة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كِتَابُ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "الوَلَدِ ends with kasra.",
+      "ar": "الوَلَدِ تنتهي بكسرة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In an iḍāfa, the first noun has…",
+      "ar": "الاسم الأول في الإضافة…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "no ال and no tanwīn",
+        "ar": "بلا «ال» وبلا تنوين"
+       }
+      },
+      {
+       "text": {
+        "en": "ال",
+        "ar": "فيه «ال»"
+       }
+      },
+      {
+       "text": {
+        "en": "tanwīn",
+        "ar": "فيه تنوين"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It loses ال and tanwīn.",
+      "ar": "لا «ال» ولا تنوين."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "بَابُ البَيْتِ",
+     "options": [
+      {
+       "text": "bābu l-bayti",
+       "ar": false
+      },
+      {
+       "text": "bābi l-baytu",
+       "ar": false
+      },
+      {
+       "text": "bābun al-bayti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "First noun ḍamma, second kasra.",
+      "ar": "الأول بضمّة والثاني بكسرة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word is genitive in فِي البَيْتِ?",
+      "ar": "أيُّ كلمة مجرورة في فِي البَيْتِ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "فِي",
+       "ar": true
+      },
+      {
+       "text": "البَيْتِ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "The noun after a preposition is genitive.",
+      "ar": "الاسم بعد حرف الجرّ مجرور."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-case-05",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "Dual and plural by case",
+    "ar": "المُثَنَّى وَالجَمْعُ وَالإِعْرَاب"
+   },
+   "objectives": [
+    {
+     "en": "Read dual and sound masculine plural in each case",
+     "ar": "قراءة المثنّى وجمع المذكّر السالم في الحالات"
+    }
+   ],
+   "prerequisites": [
+    "a-les-case-04"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Dual: -āni (nominative), -ayni (accusative and genitive): ذَهَبَ الطَّالِبَانِ “the two students went”; كَتَبَ الوَلَدُ الدَّرْسَيْنِ “the boy wrote the two lessons”.",
+     "ar": "المثنّى: «ـَانِ» في الرفع و«ـَيْنِ» في النصب والجرّ: ذَهَبَ الطَّالِبَانِ؛ كَتَبَ الوَلَدُ الدَّرْسَيْنِ."
+    },
+    {
+     "en": "Sound masculine plural: -ūna (nominative), -īna (accusative and genitive): ذَهَبَ الطَّالِبُونَ; كِتَابُ الطَّالِبِينَ “the students’ book”. (The sound feminine plural follows different rules, not covered here.)",
+     "ar": "جمع المذكّر السالم: «ـُونَ» في الرفع و«ـِينَ» في النصب والجرّ: ذَهَبَ الطَّالِبُونَ؛ كِتَابُ الطَّالِبِينَ. (وجمع المؤنّث السالم له أحكام أخرى لا نتناولها هنا.)"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ذَهَبَ الطَّالِبَانِ",
+     "tr": "dhahaba ṭ-ṭālibāni",
+     "en": "the two students went"
+    },
+    {
+     "ar": "كَتَبَ الوَلَدُ الدَّرْسَيْنِ",
+     "tr": "kataba l-waladu d-darsayni",
+     "en": "the boy wrote the two lessons"
+    },
+    {
+     "ar": "ذَهَبَ الطَّالِبُونَ",
+     "tr": "dhahaba ṭ-ṭālibūna",
+     "en": "the students went"
+    },
+    {
+     "ar": "كِتَابُ الطَّالِبِينَ",
+     "tr": "kitābu ṭ-ṭālibīna",
+     "en": "the students’ book"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الطَّالِبَانِ",
+     "options": [
+      {
+       "text": "aṭ-ṭālibāni",
+       "ar": false
+      },
+      {
+       "text": "aṭ-ṭālibayni",
+       "ar": false
+      },
+      {
+       "text": "aṭ-ṭālibūna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-āni = dual, nominative.",
+      "ar": "«-āni» = مثنّى مرفوع."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الدَّرْسَيْنِ",
+     "options": [
+      {
+       "text": "ad-darsayni",
+       "ar": false
+      },
+      {
+       "text": "ad-darsāni",
+       "ar": false
+      },
+      {
+       "text": "ad-darsūna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-ayni = dual, accusative or genitive.",
+      "ar": "«-ayni» = مثنّى منصوب أو مجرور."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which dual ending is nominative?",
+      "ar": "أيُّ نهاية للمثنّى تدلّ على الرفع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـَانِ",
+       "ar": true
+      },
+      {
+       "text": "ـَيْنِ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-āni.",
+      "ar": "«ـَانِ»."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Complete: كِتَابُ ___ (the students’ book)",
+      "ar": "أكمل: كِتَابُ ___ (the students’ book)"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "الطَّالِبِينَ",
+        "ar": "الطَّالِبِينَ"
+       }
+      },
+      {
+       "text": {
+        "en": "الطَّالِبُونَ",
+        "ar": "الطَّالِبُونَ"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After an iḍāfa noun the plural is genitive: -īna.",
+      "ar": "بعد المضاف يكون الجمع مجرورًا: «-īna»."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which ending is sound masculine plural, nominative?",
+      "ar": "أيُّ نهاية لجمع المذكّر السالم المرفوع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "-ūna (ـُونَ)",
+        "ar": "ـُونَ"
+       }
+      },
+      {
+       "text": {
+        "en": "-īna (ـِينَ)",
+        "ar": "ـِينَ"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-ūna is nominative.",
+      "ar": "«-ūna» للرفع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-case-06",
+   "level": "advanced",
+   "module": "case",
+   "unit": "case-endings",
+   "title": {
+    "en": "Review: analysing sentences",
+    "ar": "مراجعة: إِعْرَابُ الجُمَل"
+   },
+   "objectives": [
+    {
+     "en": "Name the case and function of words in short sentences",
+     "ar": "تسمية حالة الكلمات ووظيفتها في جمل قصيرة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-case-01",
+    "a-les-case-02",
+    "a-les-case-03",
+    "a-les-case-04",
+    "a-les-case-05"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "For each word, ask: Is it a doer or subject/predicate (nominative)? An object (accusative)? After a preposition or the second noun of an iḍāfa (genitive)?",
+     "ar": "لكل كلمة اسأل: هل هي فاعل أو مبتدأ/خبر (مرفوع)؟ أم مفعول به (منصوب)؟ أم بعد حرف جرّ أو مضاف إليه (مجرور)؟"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَ الوَلَدُ الدَّرْسَ",
+     "tr": "kataba l-waladu d-darsa",
+     "en": "الوَلَدُ nominative (doer); الدَّرْسَ accusative (object)"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "In كَتَبَ الوَلَدُ الدَّرْسَ, what is الدَّرْسَ?",
+      "ar": "في كَتَبَ الوَلَدُ الدَّرْسَ، ما إعراب الدَّرْسَ؟"
+     },
+     "promptAr": "الدَّرْسَ",
+     "options": [
+      {
+       "text": {
+        "en": "Accusative object",
+        "ar": "مفعول به منصوب"
+       }
+      },
+      {
+       "text": {
+        "en": "Nominative doer",
+        "ar": "فاعل مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Genitive",
+        "ar": "مجرور"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It receives the action and ends with fatḥa.",
+      "ar": "وقع عليه الفعل وينتهي بفتحة."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "In كَتَبَ الوَلَدُ الدَّرْسَ, what is الوَلَدُ?",
+      "ar": "في كَتَبَ الوَلَدُ الدَّرْسَ، ما إعراب الوَلَدُ؟"
+     },
+     "promptAr": "الوَلَدُ",
+     "options": [
+      {
+       "text": {
+        "en": "Nominative doer",
+        "ar": "فاعل مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Accusative object",
+        "ar": "مفعول به منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The doer is nominative.",
+      "ar": "الفاعل مرفوع."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In فِي البَيْتِ, what is البَيْتِ?",
+      "ar": "في فِي البَيْتِ، ما إعراب البَيْتِ؟"
+     },
+     "promptAr": "البَيْتِ",
+     "options": [
+      {
+       "text": {
+        "en": "Genitive (after a preposition)",
+        "ar": "مجرور بحرف الجر"
+       }
+      },
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوع"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After فِي the noun is genitive.",
+      "ar": "بعد فِي يكون الاسم مجرورًا."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "In كِتَابُ الوَلَدِ, what is الوَلَدِ?",
+      "ar": "في كِتَابُ الوَلَدِ، ما إعراب الوَلَدِ؟"
+     },
+     "promptAr": "الوَلَدِ",
+     "options": [
+      {
+       "text": {
+        "en": "Genitive (second noun of an iḍāfa)",
+        "ar": "مضاف إليه مجرور"
+       }
+      },
+      {
+       "text": {
+        "en": "Accusative",
+        "ar": "منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The second noun in iḍāfa is genitive.",
+      "ar": "الاسم الثاني في الإضافة مجرور."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "In الكِتَابُ كَبِيرٌ, what is كَبِيرٌ?",
+      "ar": "في الكِتَابُ كَبِيرٌ، ما إعراب كَبِيرٌ؟"
+     },
+     "promptAr": "كَبِيرٌ",
+     "options": [
+      {
+       "text": {
+        "en": "Predicate, nominative",
+        "ar": "خبر مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Object, accusative",
+        "ar": "مفعول به منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It is the predicate.",
+      "ar": "هو الخبر."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "In ذَهَبَ الطَّالِبَانِ, what is الطَّالِبَانِ?",
+      "ar": "في ذَهَبَ الطَّالِبَانِ، ما إعراب الطَّالِبَانِ؟"
+     },
+     "promptAr": "الطَّالِبَانِ",
+     "options": [
+      {
+       "text": {
+        "en": "Dual doer, nominative",
+        "ar": "فاعل مثنّى مرفوع"
+       }
+      },
+      {
+       "text": {
+        "en": "Dual object, accusative",
+        "ar": "مفعول به مثنّى منصوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "-āni marks the dual nominative.",
+      "ar": "«-āni» للمثنّى المرفوع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-morph-01",
+   "level": "advanced",
+   "module": "morphology",
+   "unit": "roots-and-patterns",
+   "title": {
+    "en": "Roots",
+    "ar": "الجَذْر"
+   },
+   "objectives": [
+    {
+     "en": "Understand that words are built from roots",
+     "ar": "فهم أنّ الكلمات تُبنى من جذور"
+    },
+    {
+     "en": "Find the root of familiar words",
+     "ar": "استخراج جذر كلمات مألوفة"
+    }
+   ],
+   "prerequisites": [
+    "i-les-adj-06"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Most Arabic words are built from a root, usually three consonants that carry a core meaning. From ك‑ت‑ب (writing): كَتَبَ “he wrote”, كِتَابٌ “book”, كَاتِبٌ “writer”, مَكْتَبَةٌ “library”. Another root, د‑ر‑س (studying): دَرَسَ “he studied”, دَرْسٌ “lesson”, مَدْرَسَةٌ “school”, مُدَرِّسٌ “teacher”.",
+     "ar": "تُبنى معظم الكلمات العربية من جذر، وهو غالبًا ثلاثة أحرف تحمل المعنى الأساسي. من الجذر (ك ت ب): كَتَبَ، كِتَابٌ، كَاتِبٌ، مَكْتَبَةٌ. ومن الجذر (د ر س): دَرَسَ، دَرْسٌ، مَدْرَسَةٌ، مُدَرِّسٌ."
+    },
+    {
+     "en": "A root gives the general idea; the exact meaning of each word still has to be learned.",
+     "ar": "الجذر يعطي الفكرة العامة، ويبقى معنى كل كلمة بحاجة إلى تعلّم."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَ كِتَابٌ كَاتِبٌ مَكْتَبَةٌ",
+     "tr": "kataba, kitābun, kātibun, maktabatun",
+     "en": "root ك ت ب: wrote, book, writer, library"
+    },
+    {
+     "ar": "دَرَسَ دَرْسٌ مَدْرَسَةٌ مُدَرِّسٌ",
+     "tr": "darasa, darsun, madrasatun, mudarrisun",
+     "en": "root د ر س: studied, lesson, school, teacher"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What is the root of كَاتِبٌ?",
+      "ar": "ما جذر كَاتِبٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ك ت ب",
+       "ar": true
+      },
+      {
+       "text": "د ر س",
+       "ar": true
+      },
+      {
+       "text": "ط ل ب",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَاتِبٌ comes from ك ت ب.",
+      "ar": "كَاتِبٌ من الجذر ك ت ب."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What is the root of مَدْرَسَةٌ?",
+      "ar": "ما جذر مَدْرَسَةٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ك ت ب",
+       "ar": true
+      },
+      {
+       "text": "د ر س",
+       "ar": true
+      },
+      {
+       "text": "ط ل ب",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "مَدْرَسَةٌ comes from د ر س.",
+      "ar": "مَدْرَسَةٌ من الجذر د ر س."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How many letters does a typical root have?",
+      "ar": "كم حرفًا في الجذر عادةً؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Three",
+        "ar": "ثلاثة"
+       }
+      },
+      {
+       "text": {
+        "en": "Five",
+        "ar": "خمسة"
+       }
+      },
+      {
+       "text": {
+        "en": "One",
+        "ar": "واحد"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Most roots have three consonants.",
+      "ar": "لمعظم الجذور ثلاثة أحرف."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word shares the root of كِتَابٌ?",
+      "ar": "أيُّ كلمة تشارك كِتَابٌ جذرها؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَكْتَبَةٌ",
+       "ar": true
+      },
+      {
+       "text": "مَدْرَسَةٌ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَكْتَبَةٌ is also from ك ت ب.",
+      "ar": "مَكْتَبَةٌ أيضًا من ك ت ب."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَدْرَسَةٌ",
+     "options": [
+      {
+       "text": "madrasatun",
+       "ar": false
+      },
+      {
+       "text": "madrasun",
+       "ar": false
+      },
+      {
+       "text": "mudarrisun",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَدْرَسَةٌ is “madrasatun”.",
+      "ar": "مَدْرَسَةٌ تُقرأ «madrasatun»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What does مُدَرِّسٌ mean?",
+      "ar": "ماذا تعني مُدَرِّسٌ؟"
+     },
+     "promptAr": "مُدَرِّسٌ",
+     "options": [
+      {
+       "text": {
+        "en": "teacher",
+        "ar": "معلّم"
+       }
+      },
+      {
+       "text": {
+        "en": "school",
+        "ar": "مدرسة"
+       }
+      },
+      {
+       "text": {
+        "en": "lesson",
+        "ar": "درس"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مُدَرِّسٌ means teacher.",
+      "ar": "مُدَرِّسٌ تعني teacher."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-morph-02",
+   "level": "advanced",
+   "module": "morphology",
+   "unit": "roots-and-patterns",
+   "title": {
+    "en": "Word patterns",
+    "ar": "الوَزْن"
+   },
+   "objectives": [
+    {
+     "en": "Know that patterns add meaning to a root",
+     "ar": "معرفة أنّ الأوزان تضيف معنى إلى الجذر"
+    },
+    {
+     "en": "Recognise three common patterns",
+     "ar": "التعرّف إلى ثلاثة أوزان شائعة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-morph-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A pattern (wazn) is a shape that words fit into. The letters ف ع ل stand for the three root letters. The pattern فَاعِلٌ means the doer: كَاتِبٌ “writer”, طَالِبٌ “student (one who seeks)”. The pattern مَفْعَلَةٌ often means a place: مَكْتَبَةٌ “library”, مَدْرَسَةٌ “school”. The pattern مَفْعُولٌ means the thing done: مَكْتُوبٌ “written”.",
+     "ar": "الوزن قالب تدخل فيه الكلمات، ويُرمز إلى حروف الجذر الثلاثة بالحروف ف ع ل. وزن فَاعِلٌ يدلّ على من يفعل: كَاتِبٌ، طَالِبٌ. ووزن مَفْعَلَةٌ يدلّ غالبًا على المكان: مَكْتَبَةٌ، مَدْرَسَةٌ. ووزن مَفْعُولٌ يدلّ على ما وقع عليه الفعل: مَكْتُوبٌ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَاتِبٌ",
+     "tr": "kātibun",
+     "en": "writer (pattern فَاعِلٌ)"
+    },
+    {
+     "ar": "طَالِبٌ",
+     "tr": "ṭālibun",
+     "en": "student (pattern فَاعِلٌ)"
+    },
+    {
+     "ar": "مَكْتَبَةٌ",
+     "tr": "maktabatun",
+     "en": "library (pattern مَفْعَلَةٌ)"
+    },
+    {
+     "ar": "مَدْرَسَةٌ",
+     "tr": "madrasatun",
+     "en": "school (pattern مَفْعَلَةٌ)"
+    },
+    {
+     "ar": "مَكْتُوبٌ",
+     "tr": "maktūbun",
+     "en": "written (pattern مَفْعُولٌ)"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which pattern means the doer?",
+      "ar": "أيُّ وزن يدلّ على الفاعل؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "فَاعِلٌ",
+       "ar": true
+      },
+      {
+       "text": "مَفْعُولٌ",
+       "ar": true
+      },
+      {
+       "text": "مَفْعَلَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "فَاعِلٌ = the doer.",
+      "ar": "فَاعِلٌ = من يفعل."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which word fits مَفْعُولٌ (the thing done)?",
+      "ar": "أيُّ كلمة على وزن مَفْعُولٌ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَكْتُوبٌ",
+       "ar": true
+      },
+      {
+       "text": "كَاتِبٌ",
+       "ar": true
+      },
+      {
+       "text": "مَكْتَبَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَكْتُوبٌ means “written”.",
+      "ar": "مَكْتُوبٌ تعني «written»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does مَكْتَبَةٌ mean?",
+      "ar": "ماذا تعني مَكْتَبَةٌ؟"
+     },
+     "promptAr": "مَكْتَبَةٌ",
+     "options": [
+      {
+       "text": {
+        "en": "library",
+        "ar": "مكتبة"
+       }
+      },
+      {
+       "text": {
+        "en": "writer",
+        "ar": "كاتب"
+       }
+      },
+      {
+       "text": {
+        "en": "written",
+        "ar": "مكتوب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "A place for books.",
+      "ar": "مكان الكتب."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which word is a place noun?",
+      "ar": "أيُّ كلمة اسم مكان؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَدْرَسَةٌ",
+       "ar": true
+      },
+      {
+       "text": "كَاتِبٌ",
+       "ar": true
+      },
+      {
+       "text": "مَكْتُوبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَدْرَسَةٌ = a place for study.",
+      "ar": "مَدْرَسَةٌ = مكان الدراسة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which word means a writer (doer)?",
+      "ar": "أيُّ كلمة تعني الكاتب (الفاعل)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَاتِبٌ",
+       "ar": true
+      },
+      {
+       "text": "مَكْتُوبٌ",
+       "ar": true
+      },
+      {
+       "text": "مَكْتَبَةٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَاتِبٌ is the doer of writing.",
+      "ar": "كَاتِبٌ هو من يكتب."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What do ف ع ل stand for in patterns?",
+      "ar": "ماذا ترمز ف ع ل في الأوزان؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The three root letters",
+        "ar": "حروف الجذر الثلاثة"
+       }
+      },
+      {
+       "text": {
+        "en": "The letters of the alphabet",
+        "ar": "حروف الهجاء"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "They are placeholders for the root.",
+      "ar": "هي رموز لحروف الجذر."
+     }
+    }
+   ]
+  }
+ ]
+}

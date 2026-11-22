@@ -1,0 +1,2167 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "a-les-verb-01",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Past tense: all the endings",
+    "ar": "تَصْرِيفُ الفِعْلِ المَاضِي"
+   },
+   "objectives": [
+    {
+     "en": "Read the past endings for I, you, he, she, we, they",
+     "ar": "قراءة نهايات الماضي"
+    },
+    {
+     "en": "Choose the ending that matches the doer",
+     "ar": "اختيار النهاية المناسبة للفاعل"
+    }
+   ],
+   "prerequisites": [
+    "a-les-morph-02"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "To show who did the action, add an ending to the past verb: ـتُ (I), ـتَ (you, to a man), ـتِ (you, to a woman), no ending (he), ـتْ (she), ـنَا (we), ـُوا (they, men). The final alif in كَتَبُوا is written but not pronounced.",
+     "ar": "لبيان الفاعل نضيف إلى الفعل الماضي نهاية: ـتُ (أنا)، ـتَ (أنتَ)، ـتِ (أنتِ)، بلا زيادة (هو)، ـتْ (هي)، ـنَا (نحن)، ـُوا (هم). والألف في آخر كَتَبُوا تُكتب ولا تُنطق."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبْتُ",
+     "tr": "katabtu",
+     "en": "I wrote"
+    },
+    {
+     "ar": "كَتَبْتَ",
+     "tr": "katabta",
+     "en": "you wrote (to a man)"
+    },
+    {
+     "ar": "كَتَبْتِ",
+     "tr": "katabti",
+     "en": "you wrote (to a woman)"
+    },
+    {
+     "ar": "كَتَبَ",
+     "tr": "kataba",
+     "en": "he wrote"
+    },
+    {
+     "ar": "كَتَبَتْ",
+     "tr": "katabat",
+     "en": "she wrote"
+    },
+    {
+     "ar": "كَتَبْنَا",
+     "tr": "katabnā",
+     "en": "we wrote"
+    },
+    {
+     "ar": "كَتَبُوا",
+     "tr": "katabū",
+     "en": "they (men) wrote"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَتَبْتُ",
+     "options": [
+      {
+       "text": "katabtu",
+       "ar": false
+      },
+      {
+       "text": "katabta",
+       "ar": false
+      },
+      {
+       "text": "katabti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتُ = I.",
+      "ar": "ـتُ = أنا."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَتَبْنَا",
+     "options": [
+      {
+       "text": "katabnā",
+       "ar": false
+      },
+      {
+       "text": "katabū",
+       "ar": false
+      },
+      {
+       "text": "katabat",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـنَا = we.",
+      "ar": "ـنَا = نحن."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which means “you (to a woman) wrote”?",
+      "ar": "أيُّ كلمة تعني «you (to a woman) wrote»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَتَبْتَ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبْتِ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبْتُ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "ـتِ (kasra) addresses a woman.",
+      "ar": "ـتِ (بالكسرة) للمخاطَبة."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does كَتَبْتُ mean?",
+      "ar": "ماذا تعني كَتَبْتُ؟"
+     },
+     "promptAr": "كَتَبْتُ",
+     "options": [
+      {
+       "text": {
+        "en": "I wrote",
+        "ar": "كتبتُ"
+       }
+      },
+      {
+       "text": {
+        "en": "we wrote",
+        "ar": "كتبنا"
+       }
+      },
+      {
+       "text": {
+        "en": "she wrote",
+        "ar": "كتبت"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتُ marks “I”.",
+      "ar": "ـتُ علامة المتكلّم."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which ending means “we”?",
+      "ar": "أيُّ نهاية تعني «we»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـنَا",
+       "ar": true
+      },
+      {
+       "text": "ـتُ",
+       "ar": true
+      },
+      {
+       "text": "ـُوا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـنَا = we.",
+      "ar": "ـنَا = نحن."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Is the last alif of كَتَبُوا pronounced?",
+      "ar": "هل تُنطق الألف الأخيرة في كَتَبُوا؟"
+     },
+     "promptAr": "كَتَبُوا",
+     "options": [
+      {
+       "text": {
+        "en": "No, it is silent",
+        "ar": "لا، لا تُنطق"
+       }
+      },
+      {
+       "text": {
+        "en": "Yes",
+        "ar": "نعم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "It is written but silent: katabū.",
+      "ar": "تُكتب ولا تُنطق: katabū."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-02",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Present tense: all the forms",
+    "ar": "تَصْرِيفُ الفِعْلِ المُضَارِع"
+   },
+   "objectives": [
+    {
+     "en": "Read present forms with their prefixes and endings",
+     "ar": "قراءة صيغ المضارع بحروفها ونهاياتها"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-01"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The present tense uses prefixes: أَـ (I), نَـ (we), تَـ (you, or she), يَـ (he, they). Some forms also take an ending: ـِينَ (you, to a woman) and ـُونَ (they, men).",
+     "ar": "المضارع يبدأ بحروف: أَـ (أنا)، نَـ (نحن)، تَـ (أنتَ أو هي)، يَـ (هو أو هم). وبعض الصيغ تأخذ نهاية: ـِينَ (أنتِ) و ـُونَ (هم)."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "أَكْتُبُ",
+     "tr": "aktubu",
+     "en": "I write"
+    },
+    {
+     "ar": "تَكْتُبُ",
+     "tr": "taktubu",
+     "en": "you write (to a man) / she writes"
+    },
+    {
+     "ar": "تَكْتُبِينَ",
+     "tr": "taktubīna",
+     "en": "you write (to a woman)"
+    },
+    {
+     "ar": "يَكْتُبُ",
+     "tr": "yaktubu",
+     "en": "he writes"
+    },
+    {
+     "ar": "نَكْتُبُ",
+     "tr": "naktubu",
+     "en": "we write"
+    },
+    {
+     "ar": "يَكْتُبُونَ",
+     "tr": "yaktubūna",
+     "en": "they (men) write"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "نَكْتُبُ",
+     "options": [
+      {
+       "text": "naktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "aktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "نَـ = we.",
+      "ar": "نَـ = نحن."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "تَكْتُبِينَ",
+     "options": [
+      {
+       "text": "taktubīna",
+       "ar": false
+      },
+      {
+       "text": "taktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubūna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـِينَ marks “you” to a woman.",
+      "ar": "ـِينَ للمخاطَبة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَكْتُبُونَ",
+     "options": [
+      {
+       "text": "yaktubūna",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "taktubīna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَـ … ـُونَ = they (men).",
+      "ar": "يَـ … ـُونَ = هم."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which prefix means “we”?",
+      "ar": "أيُّ حرف مضارعة يعني «we»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "نَـ",
+       "ar": true
+      },
+      {
+       "text": "يَـ",
+       "ar": true
+      },
+      {
+       "text": "أَـ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "نَـ = we.",
+      "ar": "نَـ = نحن."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does تَكْتُبِينَ mean?",
+      "ar": "ماذا تعني تَكْتُبِينَ؟"
+     },
+     "promptAr": "تَكْتُبِينَ",
+     "options": [
+      {
+       "text": {
+        "en": "you (to a woman) write",
+        "ar": "تكتبين"
+       }
+      },
+      {
+       "text": {
+        "en": "she writes",
+        "ar": "تكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "we write",
+        "ar": "نكتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The ending ـِينَ marks a woman addressed.",
+      "ar": "ـِينَ للمخاطَبة."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which means “they (men) write”?",
+      "ar": "أيُّ كلمة تعني «they (men) write»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "يَكْتُبُونَ",
+       "ar": true
+      },
+      {
+       "text": "يَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "نَكْتُبُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَـ + ـُونَ.",
+      "ar": "يَـ + ـُونَ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-03",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Weak verbs: an overview",
+    "ar": "الفِعْلُ المُعْتَلّ"
+   },
+   "objectives": [
+    {
+     "en": "Know what a weak verb is",
+     "ar": "معرفة الفعل المعتل"
+    },
+    {
+     "en": "Tell the three types apart",
+     "ar": "التمييز بين الأنواع الثلاثة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-02"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A weak verb has و, ي or ا as one of its three root letters. These letters can change or disappear. Verbs without them are sound verbs. Three groups, by the position of the weak letter: first (وَصَلَ → يَصِلُ), middle (قَالَ → يَقُولُ), last (مَشَى → يَمْشِي).",
+     "ar": "الفعل المعتل فيه حرف علّة (و أو ي أو ا) في جذره، وقد يتغيّر أو يسقط. وما خلا منها فهو فعل صحيح. وأنواعه بحسب موضع حرف العلّة: أول (وَصَلَ ← يَصِلُ)، وسط (قَالَ ← يَقُولُ)، آخر (مَشَى ← يَمْشِي)."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "وَصَلَ / يَصِلُ",
+     "tr": "waṣala / yaṣilu",
+     "en": "he arrived / he arrives (weak first letter)"
+    },
+    {
+     "ar": "قَالَ / يَقُولُ",
+     "tr": "qāla / yaqūlu",
+     "en": "he said / he says (weak middle letter)"
+    },
+    {
+     "ar": "مَشَى / يَمْشِي",
+     "tr": "mashā / yamshī",
+     "en": "he walked / he walks (weak last letter)"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Which verb has a weak first letter?",
+      "ar": "أيُّ فعل أول جذره حرف علّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      },
+      {
+       "text": "قَالَ",
+       "ar": true
+      },
+      {
+       "text": "مَشَى",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَصَلَ: root و ص ل.",
+      "ar": "وَصَلَ: الجذر و ص ل."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "Which verb has a weak middle letter?",
+      "ar": "أيُّ فعل وسط جذره حرف علّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      },
+      {
+       "text": "قَالَ",
+       "ar": true
+      },
+      {
+       "text": "مَشَى",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "قَالَ: root ق و ل.",
+      "ar": "قَالَ: الجذر ق و ل."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which verb has a weak last letter?",
+      "ar": "أيُّ فعل آخر جذره حرف علّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      },
+      {
+       "text": "قَالَ",
+       "ar": true
+      },
+      {
+       "text": "مَشَى",
+       "ar": true
+      }
+     ],
+     "answer": 2,
+     "explanation": {
+      "en": "مَشَى: root م ش ي.",
+      "ar": "مَشَى: الجذر م ش ي."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What is a verb with no weak letters called?",
+      "ar": "ماذا يُسمّى الفعل الذي لا حرف علّة فيه؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "A sound verb",
+        "ar": "فعل صحيح"
+       }
+      },
+      {
+       "text": {
+        "en": "A weak verb",
+        "ar": "فعل معتل"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Like كَتَبَ: a sound verb.",
+      "ar": "مثل كَتَبَ: فعل صحيح."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَقُولُ",
+     "options": [
+      {
+       "text": "yaqūlu",
+       "ar": false
+      },
+      {
+       "text": "yaqulu",
+       "ar": false
+      },
+      {
+       "text": "qāla",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَقُولُ is “yaqūlu”.",
+      "ar": "يَقُولُ تُقرأ «yaqūlu»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَصِلُ",
+     "options": [
+      {
+       "text": "yaṣilu",
+       "ar": false
+      },
+      {
+       "text": "waṣala",
+       "ar": false
+      },
+      {
+       "text": "yaṣulu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The و drops in the present: يَصِلُ.",
+      "ar": "تسقط الواو في المضارع: يَصِلُ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-04",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Hollow verbs: قَالَ",
+    "ar": "الفِعْلُ الأَجْوَف"
+   },
+   "objectives": [
+    {
+     "en": "Read قَالَ in the past and present",
+     "ar": "قراءة قَالَ في الماضي والمضارع"
+    },
+    {
+     "en": "Notice the shortening in قُلْتُ",
+     "ar": "ملاحظة التقصير في قُلْتُ"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-03"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "In the past, the weak middle letter shows as a long ā: قَالَ “he said”, قَالَتْ “she said”. Before an ending that begins with a sukūn, such as ـتُ, the vowel is shortened: قُلْتُ “I said”. In the present: يَقُولُ “he says”, أَقُولُ “I say”.",
+     "ar": "في الماضي يظهر حرف العلّة في الوسط ألفًا طويلة: قَالَ، قَالَتْ. وقبل نهاية ساكنة مثل ـتُ تُقصَّر الحركة: قُلْتُ. وفي المضارع: يَقُولُ، أَقُولُ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "قَالَ",
+     "tr": "qāla",
+     "en": "he said"
+    },
+    {
+     "ar": "قَالَتْ",
+     "tr": "qālat",
+     "en": "she said"
+    },
+    {
+     "ar": "قُلْتُ",
+     "tr": "qultu",
+     "en": "I said"
+    },
+    {
+     "ar": "يَقُولُ",
+     "tr": "yaqūlu",
+     "en": "he says"
+    },
+    {
+     "ar": "أَقُولُ",
+     "tr": "aqūlu",
+     "en": "I say"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "قَالَ",
+     "options": [
+      {
+       "text": "qāla",
+       "ar": false
+      },
+      {
+       "text": "qala",
+       "ar": false
+      },
+      {
+       "text": "qultu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "قَالَ is “qāla”.",
+      "ar": "قَالَ تُقرأ «qāla»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "قُلْتُ",
+     "options": [
+      {
+       "text": "qultu",
+       "ar": false
+      },
+      {
+       "text": "qāltu",
+       "ar": false
+      },
+      {
+       "text": "yaqūlu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The long ā is shortened: qultu.",
+      "ar": "تُقصَّر الألف: «qultu»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَقُولُ",
+     "options": [
+      {
+       "text": "yaqūlu",
+       "ar": false
+      },
+      {
+       "text": "qāla",
+       "ar": false
+      },
+      {
+       "text": "aqūlu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَـ = he.",
+      "ar": "يَـ = هو."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does قُلْتُ mean?",
+      "ar": "ماذا تعني قُلْتُ؟"
+     },
+     "promptAr": "قُلْتُ",
+     "options": [
+      {
+       "text": {
+        "en": "I said",
+        "ar": "قلتُ"
+       }
+      },
+      {
+       "text": {
+        "en": "he said",
+        "ar": "قال"
+       }
+      },
+      {
+       "text": {
+        "en": "I say",
+        "ar": "أقول"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتُ marks “I”, past.",
+      "ar": "ـتُ للمتكلّم في الماضي."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which means “she said”?",
+      "ar": "أيُّ كلمة تعني «she said»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "قَالَ",
+       "ar": true
+      },
+      {
+       "text": "قَالَتْ",
+       "ar": true
+      },
+      {
+       "text": "قُلْتُ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "ـتْ marks “she”.",
+      "ar": "ـتْ للمؤنّثة."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Why is it قُلْتُ and not قَالْتُ?",
+      "ar": "لماذا قُلْتُ وليس قَالْتُ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The long vowel is shortened before ـتُ",
+        "ar": "تُقصَّر الحركة قبل ـتُ"
+       }
+      },
+      {
+       "text": {
+        "en": "It is a different verb",
+        "ar": "هو فعل مختلف"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Hollow verbs shorten before a sukūn ending.",
+      "ar": "الأجوف يُقصَّر قبل النهاية الساكنة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-05",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Defective verbs: مَشَى",
+    "ar": "الفِعْلُ النَّاقِص"
+   },
+   "objectives": [
+    {
+     "en": "Read مَشَى in the past and present",
+     "ar": "قراءة مَشَى في الماضي والمضارع"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-04"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "With a weak last letter, the past of “he” ends with a long ā written ى: مَشَى “he walked”. For “she” the ending drops: مَشَتْ. With ـتُ the ي shows: مَشَيْتُ “I walked”. In the present the verb ends with a long ī: يَمْشِي “he walks”, أَمْشِي “I walk”.",
+     "ar": "إذا كان آخر الجذر حرف علّة ينتهي الماضي للمفرد المذكّر بألف مقصورة: مَشَى. وللمؤنّثة تسقط الألف: مَشَتْ. ومع ـتُ تظهر الياء: مَشَيْتُ. وفي المضارع ينتهي الفعل بياء طويلة: يَمْشِي، أَمْشِي."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "مَشَى",
+     "tr": "mashā",
+     "en": "he walked"
+    },
+    {
+     "ar": "مَشَتْ",
+     "tr": "mashat",
+     "en": "she walked"
+    },
+    {
+     "ar": "مَشَيْتُ",
+     "tr": "mashaytu",
+     "en": "I walked"
+    },
+    {
+     "ar": "يَمْشِي",
+     "tr": "yamshī",
+     "en": "he walks"
+    },
+    {
+     "ar": "أَمْشِي",
+     "tr": "amshī",
+     "en": "I walk"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَشَى",
+     "options": [
+      {
+       "text": "mashā",
+       "ar": false
+      },
+      {
+       "text": "mashī",
+       "ar": false
+      },
+      {
+       "text": "mashat",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The ending ى is a long ā.",
+      "ar": "الألف المقصورة تُنطق ā."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "مَشَيْتُ",
+     "options": [
+      {
+       "text": "mashaytu",
+       "ar": false
+      },
+      {
+       "text": "mashat",
+       "ar": false
+      },
+      {
+       "text": "amshī",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The ي shows before ـتُ.",
+      "ar": "تظهر الياء قبل ـتُ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَمْشِي",
+     "options": [
+      {
+       "text": "yamshī",
+       "ar": false
+      },
+      {
+       "text": "mashā",
+       "ar": false
+      },
+      {
+       "text": "amshī",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "A present verb with a final long ī.",
+      "ar": "مضارع ينتهي بياء طويلة."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does مَشَتْ mean?",
+      "ar": "ماذا تعني مَشَتْ؟"
+     },
+     "promptAr": "مَشَتْ",
+     "options": [
+      {
+       "text": {
+        "en": "she walked",
+        "ar": "مشت"
+       }
+      },
+      {
+       "text": {
+        "en": "he walked",
+        "ar": "مشى"
+       }
+      },
+      {
+       "text": {
+        "en": "I walked",
+        "ar": "مشيتُ"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتْ marks “she”.",
+      "ar": "ـتْ للمؤنّثة."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which means “I walk”?",
+      "ar": "أيُّ كلمة تعني «I walk»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَمْشِي",
+       "ar": true
+      },
+      {
+       "text": "مَشَيْتُ",
+       "ar": true
+      },
+      {
+       "text": "يَمْشِي",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ + the present stem.",
+      "ar": "أَـ + المضارع."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-06",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Assimilated verbs: وَصَلَ",
+    "ar": "الفِعْلُ المِثَال"
+   },
+   "objectives": [
+    {
+     "en": "Read وَصَلَ in the past and present",
+     "ar": "قراءة وَصَلَ في الماضي والمضارع"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-05"
+   ],
+   "minutes": 8,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "With a weak first letter, the و stays in the past: وَصَلَ “he arrived”, وَصَلْتُ “I arrived”. In the present of many such verbs the و drops: يَصِلُ “he arrives”, أَصِلُ “I arrive”.",
+     "ar": "إذا كان أول الجذر حرف علّة بقيت الواو في الماضي: وَصَلَ، وَصَلْتُ. وفي مضارع كثير من هذه الأفعال تسقط الواو: يَصِلُ، أَصِلُ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "وَصَلَ",
+     "tr": "waṣala",
+     "en": "he arrived"
+    },
+    {
+     "ar": "وَصَلَتْ",
+     "tr": "waṣalat",
+     "en": "she arrived"
+    },
+    {
+     "ar": "وَصَلْتُ",
+     "tr": "waṣaltu",
+     "en": "I arrived"
+    },
+    {
+     "ar": "يَصِلُ",
+     "tr": "yaṣilu",
+     "en": "he arrives"
+    },
+    {
+     "ar": "أَصِلُ",
+     "tr": "aṣilu",
+     "en": "I arrive"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "وَصَلَ",
+     "options": [
+      {
+       "text": "waṣala",
+       "ar": false
+      },
+      {
+       "text": "yaṣilu",
+       "ar": false
+      },
+      {
+       "text": "waṣaltu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَصَلَ is “waṣala”.",
+      "ar": "وَصَلَ تُقرأ «waṣala»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَصِلُ",
+     "options": [
+      {
+       "text": "yaṣilu",
+       "ar": false
+      },
+      {
+       "text": "waṣala",
+       "ar": false
+      },
+      {
+       "text": "aṣilu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The و has dropped.",
+      "ar": "سقطت الواو."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What does أَصِلُ mean?",
+      "ar": "ماذا تعني أَصِلُ؟"
+     },
+     "promptAr": "أَصِلُ",
+     "options": [
+      {
+       "text": {
+        "en": "I arrive",
+        "ar": "أصل"
+       }
+      },
+      {
+       "text": {
+        "en": "I arrived",
+        "ar": "وصلتُ"
+       }
+      },
+      {
+       "text": {
+        "en": "he arrives",
+        "ar": "يصل"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَـ = I, present.",
+      "ar": "أَـ = أنا، مضارع."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which means “I arrived”?",
+      "ar": "أيُّ كلمة تعني «I arrived»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "وَصَلْتُ",
+       "ar": true
+      },
+      {
+       "text": "أَصِلُ",
+       "ar": true
+      },
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ـتُ = I, past.",
+      "ar": "ـتُ = أنا، ماضٍ."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What happens to the و in the present of وَصَلَ?",
+      "ar": "ماذا يحدث للواو في مضارع وَصَلَ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "It drops",
+        "ar": "تسقط"
+       }
+      },
+      {
+       "text": {
+        "en": "It stays",
+        "ar": "تبقى"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "يَصِلُ has no و.",
+      "ar": "يَصِلُ بلا واو."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-07",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Derived verb forms",
+    "ar": "الأَوْزَانُ المَزِيدَة"
+   },
+   "objectives": [
+    {
+     "en": "Recognise forms I, II, III, IV, V and X",
+     "ar": "التعرّف إلى الأوزان I وII وIII وIV وV وX"
+    },
+    {
+     "en": "Link a derived verb to its root",
+     "ar": "ربط الفعل المزيد بجذره"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-06"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "From one root, Arabic builds related verbs by changing the pattern. These are called forms (numbered I–X). Typical examples: Form I كَتَبَ “he wrote”; II دَرَّسَ “he taught” (middle letter doubled; often “make/intensify”); III كَاتَبَ “he corresponded with” (long ā after the first letter; interaction); IV أَخْرَجَ “he took out” (from خَرَجَ “he went out”; often causative); V تَعَلَّمَ “he learned”; X اِسْتَخْرَجَ “he extracted”.",
+     "ar": "من الجذر الواحد تُبنى أفعال مرتبطة بتغيير الوزن، وتُسمّى الأوزان (من I إلى X). أمثلة: الأول كَتَبَ؛ الثاني دَرَّسَ (تشديد الحرف الأوسط)؛ الثالث كَاتَبَ (ألف بعد الفاء)؛ الرابع أَخْرَجَ (من خَرَجَ)؛ الخامس تَعَلَّمَ؛ العاشر اِسْتَخْرَجَ."
+    },
+    {
+     "en": "The meanings above are typical tendencies, not strict rules. Learn each verb with its meaning.",
+     "ar": "المعاني المذكورة غالبة وليست قواعد صارمة، فيُحفظ كل فعل مع معناه."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَتَبَ",
+     "tr": "kataba",
+     "en": "Form I: he wrote"
+    },
+    {
+     "ar": "دَرَّسَ",
+     "tr": "darrasa",
+     "en": "Form II: he taught"
+    },
+    {
+     "ar": "كَاتَبَ",
+     "tr": "kātaba",
+     "en": "Form III: he corresponded with"
+    },
+    {
+     "ar": "أَخْرَجَ",
+     "tr": "akhraja",
+     "en": "Form IV: he took out"
+    },
+    {
+     "ar": "تَعَلَّمَ",
+     "tr": "taʿallama",
+     "en": "Form V: he learned"
+    },
+    {
+     "ar": "اِسْتَخْرَجَ",
+     "tr": "istakhraja",
+     "en": "Form X: he extracted"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "دَرَّسَ",
+     "options": [
+      {
+       "text": "darrasa",
+       "ar": false
+      },
+      {
+       "text": "darasa",
+       "ar": false
+      },
+      {
+       "text": "kātaba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The shaddah doubles the rāʾ: darrasa.",
+      "ar": "الشدّة تضاعف الراء: darrasa."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does دَرَّسَ mean?",
+      "ar": "ماذا تعني دَرَّسَ؟"
+     },
+     "promptAr": "دَرَّسَ",
+     "options": [
+      {
+       "text": {
+        "en": "he taught",
+        "ar": "درّس"
+       }
+      },
+      {
+       "text": {
+        "en": "he studied",
+        "ar": "درس"
+       }
+      },
+      {
+       "text": {
+        "en": "he wrote",
+        "ar": "كتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form II of د ر س: “he taught”.",
+      "ar": "الوزن الثاني من د ر س: «he taught»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which verb is Form II (middle letter doubled)?",
+      "ar": "أيُّ فعل على الوزن الثاني (الحرف الأوسط مشدّد)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "دَرَّسَ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "كَاتَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "دَرَّسَ has a shaddah on the middle letter.",
+      "ar": "دَرَّسَ فيه شدّة على الحرف الأوسط."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which verb is Form III (long ā after the first letter)?",
+      "ar": "أيُّ فعل على الوزن الثالث (ألف بعد الفاء)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَاتَبَ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "أَخْرَجَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَاتَبَ: ك + ا + ت + ب.",
+      "ar": "كَاتَبَ: ك + ا + ت + ب."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does أَخْرَجَ mean?",
+      "ar": "ماذا تعني أَخْرَجَ؟"
+     },
+     "promptAr": "أَخْرَجَ",
+     "options": [
+      {
+       "text": {
+        "en": "he took out",
+        "ar": "أخرج"
+       }
+      },
+      {
+       "text": {
+        "en": "he went out",
+        "ar": "خرج"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form IV of خ ر ج: “he took out”.",
+      "ar": "الوزن الرابع من خ ر ج: «he took out»."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Are the typical meanings of the forms strict rules?",
+      "ar": "هل المعاني الغالبة للأوزان قواعد صارمة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "No, learn each verb",
+        "ar": "لا، يُحفظ كل فعل"
+       }
+      },
+      {
+       "text": {
+        "en": "Yes, always",
+        "ar": "نعم، دائمًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "They are tendencies.",
+      "ar": "هي اتجاهات غالبة."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-verb-08",
+   "level": "advanced",
+   "module": "verbs-advanced",
+   "unit": "verb-system",
+   "title": {
+    "en": "Review: the verb system",
+    "ar": "مراجعة: نِظَامُ الأَفْعَال"
+   },
+   "objectives": [
+    {
+     "en": "Combine conjugation, weak verbs and derived forms",
+     "ar": "الجمع بين التصريف والمعتل والمزيد"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-01",
+    "a-les-verb-02",
+    "a-les-verb-03",
+    "a-les-verb-04",
+    "a-les-verb-05",
+    "a-les-verb-06",
+    "a-les-verb-07"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "For each verb ask: which root? which tense? which doer (prefix or ending)? is a root letter weak? which form?",
+     "ar": "اسأل عن كل فعل: ما جذره؟ ما زمنه؟ من فاعله (حرف أو نهاية)؟ هل في جذره حرف علّة؟ على أي وزن هو؟"
+    }
+   ],
+   "examples": [
+    {
+     "ar": "قُلْتُ",
+     "tr": "qultu",
+     "en": "I said (hollow, past)"
+    },
+    {
+     "ar": "يَمْشِي",
+     "tr": "yamshī",
+     "en": "he walks (defective, present)"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does قُلْتُ mean?",
+      "ar": "ماذا تعني قُلْتُ؟"
+     },
+     "promptAr": "قُلْتُ",
+     "options": [
+      {
+       "text": {
+        "en": "I said",
+        "ar": "قلتُ"
+       }
+      },
+      {
+       "text": {
+        "en": "he says",
+        "ar": "يقول"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Hollow verb, past, “I”.",
+      "ar": "أجوف، ماضٍ، للمتكلّم."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "يَكْتُبُونَ",
+     "options": [
+      {
+       "text": "yaktubūna",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      },
+      {
+       "text": "katabū",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "They (men) write.",
+      "ar": "هم يكتبون."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which verb has a weak last letter?",
+      "ar": "أيُّ فعل آخر جذره حرف علّة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "مَشَى",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      },
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "مَشَى: م ش ي.",
+      "ar": "مَشَى: م ش ي."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which means “we wrote”?",
+      "ar": "أيُّ كلمة تعني «we wrote»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "كَتَبْنَا",
+       "ar": true
+      },
+      {
+       "text": "نَكْتُبُ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبُوا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Past + ـنَا.",
+      "ar": "ماضٍ + ـنَا."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does تَعَلَّمَ mean?",
+      "ar": "ماذا تعني تَعَلَّمَ؟"
+     },
+     "promptAr": "تَعَلَّمَ",
+     "options": [
+      {
+       "text": {
+        "en": "he learned",
+        "ar": "تعلّم"
+       }
+      },
+      {
+       "text": {
+        "en": "he taught",
+        "ar": "علّم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Form V: he learned.",
+      "ar": "الوزن الخامس: تعلّم."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "Which drops its و in the present?",
+      "ar": "أيُّ فعل تسقط واوه في المضارع؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "وَصَلَ",
+       "ar": true
+      },
+      {
+       "text": "قَالَ",
+       "ar": true
+      },
+      {
+       "text": "مَشَى",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَصَلَ → يَصِلُ.",
+      "ar": "وَصَلَ ← يَصِلُ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-particles-01",
+   "level": "advanced",
+   "module": "particles",
+   "unit": "particles-and-future",
+   "title": {
+    "en": "Linking words: وَ، ثُمَّ، أَوْ",
+    "ar": "حُرُوفُ العَطْف"
+   },
+   "objectives": [
+    {
+     "en": "Join words and sentences",
+     "ar": "الربط بين الكلمات والجمل"
+    },
+    {
+     "en": "Read short complex sentences",
+     "ar": "قراءة جمل مركّبة قصيرة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-verb-08"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Linking words join words or sentences: وَ “and” (written attached to the next word), ثُمَّ “then”, أَوْ “or”. A word joined by وَ takes the same case as the word before it: هٰذَا الكِتَابُ كَبِيرٌ وَجَمِيلٌ “This book is big and beautiful.”",
+     "ar": "حروف العطف تربط بين كلمات أو جمل: وَ (تُكتب متصلة بما بعدها)، ثُمَّ، أَوْ. والكلمة المعطوفة تتبع ما قبلها في الإعراب: هٰذَا الكِتَابُ كَبِيرٌ وَجَمِيلٌ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "هٰذَا الكِتَابُ كَبِيرٌ وَجَمِيلٌ",
+     "tr": "hādhā l-kitābu kabīrun wa-jamīlun",
+     "en": "This book is big and beautiful."
+    },
+    {
+     "ar": "ذَهَبَ الوَلَدُ ثُمَّ كَتَبَ الدَّرْسَ",
+     "tr": "dhahaba l-waladu thumma kataba d-darsa",
+     "en": "The boy went, then wrote the lesson."
+    },
+    {
+     "ar": "يَكْتُبُ الوَلَدُ أَوْ يَأْكُلُ",
+     "tr": "yaktubu l-waladu aw yaʾkulu",
+     "en": "The boy writes or eats."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "What does وَ mean?",
+      "ar": "ماذا تعني وَ؟"
+     },
+     "promptAr": "وَ",
+     "options": [
+      {
+       "text": {
+        "en": "and",
+        "ar": "و"
+       }
+      },
+      {
+       "text": {
+        "en": "or",
+        "ar": "أو"
+       }
+      },
+      {
+       "text": {
+        "en": "then",
+        "ar": "ثم"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَ = and.",
+      "ar": "وَ = and."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does ثُمَّ mean?",
+      "ar": "ماذا تعني ثُمَّ؟"
+     },
+     "promptAr": "ثُمَّ",
+     "options": [
+      {
+       "text": {
+        "en": "then",
+        "ar": "ثم"
+       }
+      },
+      {
+       "text": {
+        "en": "and",
+        "ar": "و"
+       }
+      },
+      {
+       "text": {
+        "en": "or",
+        "ar": "أو"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ثُمَّ = then.",
+      "ar": "ثُمَّ = then."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word means “or”?",
+      "ar": "أيُّ كلمة تعني «or»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "أَوْ",
+       "ar": true
+      },
+      {
+       "text": "وَ",
+       "ar": true
+      },
+      {
+       "text": "ثُمَّ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "أَوْ = or.",
+      "ar": "أَوْ = or."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does ذَهَبَ الوَلَدُ ثُمَّ كَتَبَ الدَّرْسَ mean?",
+      "ar": "ماذا تعني ذَهَبَ الوَلَدُ ثُمَّ كَتَبَ الدَّرْسَ؟"
+     },
+     "promptAr": "ذَهَبَ الوَلَدُ ثُمَّ كَتَبَ الدَّرْسَ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy went, then wrote the lesson.",
+        "ar": "ذهب الولد ثم كتب الدرس."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy writes or eats.",
+        "ar": "يكتب الولد أو يأكل."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Two actions in order.",
+      "ar": "فعلان متتابعان."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَبِيرٌ وَجَمِيلٌ",
+     "options": [
+      {
+       "text": "kabīrun wa-jamīlun",
+       "ar": false
+      },
+      {
+       "text": "kabīrun jamīlun",
+       "ar": false
+      },
+      {
+       "text": "kabīran wa-jamīlan",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَ joins the two adjectives.",
+      "ar": "وَ تربط الصفتين."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-particles-02",
+   "level": "advanced",
+   "module": "particles",
+   "unit": "particles-and-future",
+   "title": {
+    "en": "The future: سَـ، سَوْفَ، لَنْ",
+    "ar": "المُسْتَقْبَل"
+   },
+   "objectives": [
+    {
+     "en": "Form the future with سَـ and سَوْفَ",
+     "ar": "تكوين المستقبل بـ سَـ وسَوْفَ"
+    },
+    {
+     "en": "Negate the future with لَنْ",
+     "ar": "نفي المستقبل بـ لَنْ"
+    }
+   ],
+   "prerequisites": [
+    "a-les-particles-01"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Put سَـ (attached) or سَوْفَ before a present verb to make it future: يَذْهَبُ “he goes” → سَيَذْهَبُ / سَوْفَ يَذْهَبُ “he will go”. لَنْ negates the future: لَنْ يَذْهَبَ “he will not go”; the verb then ends with fatḥa (a mood not studied here).",
+     "ar": "نضع سَـ (متصلة) أو سَوْفَ قبل المضارع ليدلّ على المستقبل: يَذْهَبُ ← سَيَذْهَبُ / سَوْفَ يَذْهَبُ. وتنفي لَنْ المستقبل: لَنْ يَذْهَبَ، ويأتي الفعل بعدها بفتحة (نصب)، وهو ما لا ندرسه هنا."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "سَيَذْهَبُ",
+     "tr": "sayadhhabu",
+     "en": "he will go"
+    },
+    {
+     "ar": "سَوْفَ يَكْتُبُ",
+     "tr": "sawfa yaktubu",
+     "en": "he will write"
+    },
+    {
+     "ar": "لَنْ يَذْهَبَ",
+     "tr": "lan yadhhaba",
+     "en": "he will not go"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "سَيَذْهَبُ",
+     "options": [
+      {
+       "text": "sayadhhabu",
+       "ar": false
+      },
+      {
+       "text": "yadhhabu",
+       "ar": false
+      },
+      {
+       "text": "dhahaba",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَـ + present = future.",
+      "ar": "سَـ + المضارع = المستقبل."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does سَيَكْتُبُ mean?",
+      "ar": "ماذا تعني سَيَكْتُبُ؟"
+     },
+     "promptAr": "سَيَكْتُبُ",
+     "options": [
+      {
+       "text": {
+        "en": "he will write",
+        "ar": "سيكتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he wrote",
+        "ar": "كتب"
+       }
+      },
+      {
+       "text": {
+        "en": "he writes",
+        "ar": "يكتب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Future.",
+      "ar": "مستقبل."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which word makes a verb future?",
+      "ar": "أيُّ كلمة تجعل الفعل مستقبلًا؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "سَوْفَ",
+       "ar": true
+      },
+      {
+       "text": "لَا",
+       "ar": true
+      },
+      {
+       "text": "هَلْ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَوْفَ = will.",
+      "ar": "سَوْفَ = will."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does لَنْ يَذْهَبَ mean?",
+      "ar": "ماذا تعني لَنْ يَذْهَبَ؟"
+     },
+     "promptAr": "لَنْ يَذْهَبَ",
+     "options": [
+      {
+       "text": {
+        "en": "he will not go",
+        "ar": "لن يذهب"
+       }
+      },
+      {
+       "text": {
+        "en": "he does not go",
+        "ar": "لا يذهب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَنْ negates the future.",
+      "ar": "لَنْ تنفي المستقبل."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "Which means “he will eat”?",
+      "ar": "أيُّ كلمة تعني «he will eat»؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "سَيَأْكُلُ",
+       "ar": true
+      },
+      {
+       "text": "أَكَلَ",
+       "ar": true
+      },
+      {
+       "text": "لَا يَأْكُلُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَـ + يَأْكُلُ.",
+      "ar": "سَـ + يَأْكُلُ."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "سَوْفَ يَكْتُبُ",
+     "options": [
+      {
+       "text": "sawfa yaktubu",
+       "ar": false
+      },
+      {
+       "text": "sayaktubu",
+       "ar": false
+      },
+      {
+       "text": "yaktubu",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "سَوْفَ is read “sawfa”.",
+      "ar": "سَوْفَ تُقرأ «sawfa»."
+     }
+    }
+   ]
+  }
+ ]
+}
