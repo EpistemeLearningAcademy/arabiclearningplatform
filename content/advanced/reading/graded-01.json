@@ -1,0 +1,213 @@
+{
+ "schema": 1,
+ "passages": [
+  {
+   "id": "r-adv-01",
+   "level": "advanced",
+   "classical": false,
+   "title": {
+    "en": "The boy at home",
+    "ar": "الوَلَدُ فِي البَيْتِ"
+   },
+   "lines": [
+    {
+     "ar": "ذَهَبَ الوَلَدُ إِلَى البَيْتِ.",
+     "tr": "dhahaba l-waladu ilā l-bayti.",
+     "en": "The boy went to the house."
+    },
+    {
+     "ar": "كَتَبَ الوَلَدُ الدَّرْسَ.",
+     "tr": "kataba l-waladu d-darsa.",
+     "en": "The boy wrote the lesson."
+    },
+    {
+     "ar": "أَكَلَ الوَلَدُ التُّفَّاحَةَ.",
+     "tr": "akala l-waladu t-tuffāḥata.",
+     "en": "The boy ate the apple."
+    },
+    {
+     "ar": "كِتَابُ الوَلَدِ عَلَى الطَّاوِلَةِ.",
+     "tr": "kitābu l-waladi ʿalā ṭ-ṭāwilati.",
+     "en": "The boy’s book is on the table."
+    }
+   ],
+   "vocabulary": [
+    {
+     "ar": "ذَهَبَ",
+     "tr": "dhahaba",
+     "en": "he went"
+    },
+    {
+     "ar": "كَتَبَ",
+     "tr": "kataba",
+     "en": "he wrote"
+    },
+    {
+     "ar": "أَكَلَ",
+     "tr": "akala",
+     "en": "he ate"
+    },
+    {
+     "ar": "الدَّرْس",
+     "tr": "ad-dars",
+     "en": "the lesson"
+    },
+    {
+     "ar": "التُّفَّاحَة",
+     "tr": "at-tuffāḥa",
+     "en": "the apple"
+    }
+   ],
+   "questions": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "Where did the boy go?",
+      "ar": "إلى أين ذهب الولد؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "To the house",
+        "ar": "إلى البيت"
+       }
+      },
+      {
+       "text": {
+        "en": "To the table",
+        "ar": "إلى الطاولة"
+       }
+      },
+      {
+       "text": {
+        "en": "To the book",
+        "ar": "إلى الكتاب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Line 1: إِلَى البَيْتِ.",
+      "ar": "السطر الأول: إِلَى البَيْتِ."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "In line 2, which word is the object?",
+      "ar": "في السطر الثاني، أيُّ كلمة هي المفعول به؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الدَّرْسَ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "كَتَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "الدَّرْسَ is accusative: the thing written.",
+      "ar": "الدَّرْسَ منصوب: ما كُتب."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "What did the boy eat?",
+      "ar": "ماذا أكل الولد؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "The apple",
+        "ar": "التفاحة"
+       }
+      },
+      {
+       "text": {
+        "en": "The lesson",
+        "ar": "الدرس"
+       }
+      },
+      {
+       "text": {
+        "en": "The book",
+        "ar": "الكتاب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Line 3: التُّفَّاحَةَ.",
+      "ar": "السطر الثالث: التُّفَّاحَةَ."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does كِتَابُ الوَلَدِ mean?",
+      "ar": "ماذا تعني كِتَابُ الوَلَدِ؟"
+     },
+     "promptAr": "كِتَابُ الوَلَدِ",
+     "options": [
+      {
+       "text": {
+        "en": "the boy’s book",
+        "ar": "كتاب الولد"
+       }
+      },
+      {
+       "text": {
+        "en": "the book’s boy",
+        "ar": "ولد الكتاب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "An iḍāfa: the first noun is owned by the second.",
+      "ar": "إضافة: الأول مملوك للثاني."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "In line 1, which word is genitive?",
+      "ar": "في السطر الأول، أيُّ كلمة مجرورة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "البَيْتِ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "ذَهَبَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After إِلَى the noun is genitive.",
+      "ar": "بعد إِلَى يكون الاسم مجرورًا."
+     }
+    }
+   ],
+   "review": "unreviewed"
+  }
+ ]
+}
