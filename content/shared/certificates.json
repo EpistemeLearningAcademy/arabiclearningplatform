@@ -61,6 +61,16 @@
     "derived-forms",
     "grammar-review"
    ]
+  },
+  {
+   "id": "cert-advanced-structures",
+   "title": {
+    "en": "Advanced: Sentence Structures",
+    "ar": "المتقدّم: بُنَى الجُمَل"
+   },
+   "modules": [
+    "grammar-2"
+   ]
   }
  ]
 }
