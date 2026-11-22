@@ -45,6 +45,28 @@ export function buildPositionQuiz(pool, tr, lg, count = 6) {
       options: shuffle([it, ...wrong].map(o => ({ text: nm(o), isAr: lg === "ar", ok: o.id === it.id }))) };
   });
 }
+export function buildListeningQuiz(pool, tr, count = 6) {
+  if (pool.length < 4) return [];
+  return shuffle(pool).slice(0, count).map(it => ({ itemId: it.id + ":listen", type: "listen", heading: tr("listenQ"), promptKind: "listen", ar: it.ar, en: "", emoji: "", answer: it.ar,
+    options: shuffle([it, ...shuffle(pool.filter(o => o.id !== it.id && o.ar !== it.ar)).slice(0, 3)]).map(o => ({ text: o.ar, isAr: true, ok: o.id === it.id })) }));
+}
+// Sentence builder helpers: tiles are shuffled so they never already form a correct answer.
+export const checkOrder = (answers, picked) => answers.some(a => a.length === picked.length && a.every((w, i) => w === picked[i]));
+export function scramble(answers) {
+  const tokens = answers[0];
+  for (let k = 0; k < 20; k++) { const s = shuffle(tokens); if (s.length < 2 || !checkOrder(answers, s)) return s; }
+  return shuffle(tokens);
+}
+// Tracing feedback from two RGBA pixel buffers (same size): the guide mask and the learner's ink.
+// Measures coverage only; it cannot judge stroke order or shape.
+export function traceStats(mask, ink) {
+  let m = 0, cov = 0, k = 0;
+  for (let i = 3; i < mask.length; i += 4) {
+    const a = mask[i] > 40, b = ink[i] > 40;
+    if (a) m++; if (b) k++; if (a && b) cov++;
+  }
+  return k === 0 ? null : { covered: m ? Math.round((cov / m) * 100) : 0, onLetter: Math.round((cov / k) * 100) };
+}
 export const scoreQuiz = qs => {
   const correct = qs.filter(q => q.chosen !== undefined && q.options[q.chosen].ok).length;
   const pct = qs.length ? Math.round((correct / qs.length) * 100) : 0;

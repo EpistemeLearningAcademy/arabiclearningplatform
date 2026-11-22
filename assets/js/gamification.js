@@ -12,6 +12,9 @@ export function evaluate(P, catalog, c) {
     levelLessons: r => done.filter(l => l.level === r.level).length >= r.min,
     perfectQuiz: r => pr.attempts.some(a => a.total >= r.minQuestions && a.pct === 100),
     readingPassed: r => Object.values(pr.reading || {}).filter(x => x.passed).length >= r.min,
+    listeningPassed: r => pr.attempts.filter(a => a.topic === "listening" && a.pct >= 70).length >= r.min,
+    builderPassed: r => !!(pr.builder && pr.builder.passed) && r.min <= 1,
+    tracingDone: r => Object.values(pr.tracing || {}).reduce((n, x) => n + (x.count || 0), 0) >= r.min,
     streak: r => pr.streak.count >= r.min };
   return catalog.filter(a => !got[a.id] && rules[a.rule.type] && rules[a.rule.type](a.rule));
 }

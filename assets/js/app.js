@@ -1,52 +1,30 @@
 import { t, setLang, savedLang, lang } from "./i18n.js";
 import * as S from "./storage.js";
-import { POLICY, itemState, buildQuiz, buildLessonQuiz, buildPositionQuiz, letterForms, scoreQuiz, recordAnswers, touchStreak, revisionList } from "./engine.js";
+import { POLICY, itemState, buildQuiz, buildLessonQuiz, buildPositionQuiz, buildListeningQuiz, scramble, checkOrder, shuffle, traceStats, letterForms, scoreQuiz, recordAnswers, touchStreak, revisionList } from "./engine.js";
 import { evaluate } from "./gamification.js";
-import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading } from "./validators.js";
+import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading, validateSentences } from "./validators.js";
 
 const app = document.getElementById("app");
-let themes = [], passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
+let themes = [], sentences = [], sfiles = {}, passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
 const vocabItems = () => themes.flatMap(th => th.items);
 const allItems = () => [...letters, ...vocabItems()];
 
 // Safe DOM builder: text only via textContent, never innerHTML.
-
-// Safe DOM builder: supports nested arrays of HTML elements.
 function h(tag, a = {}, ...kids) {
   const e = document.createElement(tag);
-
-  // Apply attributes and event listeners.
   for (const [k, v] of Object.entries(a)) {
-    if (k === "class") {
-      e.className = v;
-    } else if (k.startsWith("on")) {
-      e.addEventListener(k.slice(2), v);
-    } else if (v === true) {
-      e.setAttribute(k, "");
-    } else if (v !== false && v != null) {
-      e.setAttribute(k, v);
-    }
+    if (k === "class") e.className = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v === true) e.setAttribute(k, ""); else if (v !== false && v != null) e.setAttribute(k, v);
   }
-
-  // Recursively flatten nested arrays and append actual DOM elements.
-  for (const child of kids.flat(Infinity)) {
-    if (child == null || typeof child === "boolean") {
-      continue;
-    }
-
-    if (child instanceof Node) {
-      e.appendChild(child);
-    } else {
-      e.appendChild(document.createTextNode(String(child)));
-    }
-  }
-
+  for (const c of kids.flat(Infinity)) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c));
   return e;
 }
 const ar = (txt, cls = "") => h("span", { class: "ar " + cls, lang: "ar", dir: "rtl" }, txt);
 const btn = (label, fn, cls = "") => h("button", { class: cls, type: "button", onclick: fn }, label);
 const bar = pct => h("div", { class: "bar", role: "progressbar", "aria-valuenow": Math.round(pct), "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${pct}%` }));
 const loc = o => (typeof o === "string" ? o : (o && (o[lang()] || o.en)) || "");
+const lq = id => (P.progress.lessons || {})[id] || {};
+const rq = id => (P.progress.reading || {})[id] || {};
 const rp = id => ((P.progress.reading ||= {})[id] ||= {});
 const lp = id => ((P.progress.lessons ||= {})[id] ||= {});
 const title = th => (lang() === "ar" ? th.title.ar : th.title.en);
@@ -108,16 +86,21 @@ function homeView() {
   shell([h("h1", {}, `${P.avatar} ${P.name}`), h("h2", {}, t("level1")),
     h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
     h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("library") }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
+    h("div", { class: "grid" },
+      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: startBuilder }, h("span", { class: "emoji" }, "🧩"), h("strong", {}, t("builder")), h("small", {}, t("builderIntro"))),
+      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: () => go("listening") }, h("span", { class: "emoji" }, "🎧"), h("strong", {}, t("listening")), h("small", {}, t("listeningIntro"))),
+      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: () => go("writing") }, h("span", { class: "emoji" }, "✍️"), h("strong", {}, t("writing")), h("small", {}, t("writingIntro")))),
     h("p", { class: "muted" }, t("themes")),
     h("div", { class: "grid" }, tiles), btn(t("practiceAll"), () => startQuiz(vocabItems()), "primary"),
     h("h2", {}, t("lessons")), P.progress.lastLesson && lessons.find(l => l.id === P.progress.lastLesson) ? btn("▶ " + t("resume"), () => go("lesson", { l: lessons.find(l => l.id === P.progress.lastLesson) }), "gold") : null,
     lessons.filter(l => l.level === "beginner").map(lessonRow),
     h("h2", {}, t("level2")), lessons.some(l => l.level === "intermediate") ? lessons.filter(l => l.level === "intermediate").map(lessonRow) : h("p", { class: "badge" }, t("soon")),
-    h("h2", {}, t("level3")), h("p", { class: "badge" }, t("soon")),
+    h("h2", {}, t("level3")), lessons.some(l => l.level === "advanced") ? lessons.filter(l => l.level === "advanced").map(lessonRow) : h("p", { class: "badge" }, t("soon")),
     h("p", { class: "note" }, t("review.note"))]);
 }
 
 // ---------- Flashcards ----------
+const hasArabicVoice = () => !!(window.speechSynthesis && speechSynthesis.getVoices().some(v => v.lang.startsWith("ar")));
 function speak(text) {
   const v = window.speechSynthesis && speechSynthesis.getVoices().find(x => x.lang.startsWith("ar"));
   if (!v) return flash(t("noVoice"));
@@ -133,7 +116,7 @@ function themeView() {
       ctx.flip ? h("strong", { dir: "ltr" }, it.en) : h("small", { class: "muted" }, t("tapFlip"))),
     h("div", { class: "row" }, btn("🔊 " + t("listen"), () => speak(it.ar)), btn(learned ? t("learnedDone") : "⭐ " + t("markLearned"), async () => {
       if (learned) return; markSeen(it); P.progress.items[it.id].learned = true; P.progress.xp += POLICY.xpLearn; touchStreak(P.progress); await save(); render(); }, learned ? "" : "gold")),
-    h("small", { class: "muted" }, t("voiceNote")),
+    h("small", { class: "muted" }, t("voiceNote")), h("div", { class: "row", style: "margin-top:.6rem" }, btn("✍️ " + t("traceLetter"), () => go("trace", { texts: [{ label: it.en, text: it.ar }], k: 0, back: "theme", backCtx: { th, i: ctx.i, flip: false } }))),
     h("div", { class: "row sb", style: "margin-top:1rem" },
       btn("← " + t("prev"), () => go("theme", { th, i: (ctx.i - 1 + th.items.length) % th.items.length, flip: false })),
       btn(t("next") + " →", () => go("theme", { th, i: (ctx.i + 1) % th.items.length, flip: false }), "primary")),
@@ -141,11 +124,75 @@ function themeView() {
 }
 function markSeen(it) { const m = P.progress.items; (m[it.id] ||= { correct: 0, wrong: 0 }).seen = true; save(); }
 
+// ---------- Writing studio (tracing) ----------
+const letterTexts = l => letterForms(l).map(([k, f]) => ({ label: t(k), text: f }));
+function writingView() {
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("writing")), h("p", { class: "muted" }, t("writingIntro")), h("h3", {}, t("writingLetters")),
+    h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(70px,1fr))" }, letters.map(l => h("button", { class: "card tile", style: "min-height:76px;margin:0", type: "button", onclick: () => go("trace", { texts: letterTexts(l), k: 0, back: "writing", backCtx: {} }) }, ar(l.ar, "big")))),
+    h("h3", {}, t("writingWords")), h("div", { class: "grid" }, vocabItems().map(it => h("button", { class: "card tile", style: "min-height:76px;margin:0", type: "button", onclick: () => go("trace", { texts: [{ label: it.en, text: it.ar }], k: 0, back: "writing", backCtx: {} }) }, ar(it.ar), h("small", { dir: "ltr" }, it.en)))),
+    h("p", { class: "note" }, t("traceNote"))]);
+}
+function traceView() {
+  const c = ctx, cur = c.texts[c.k], W = 600, H = 360, mk = () => { const x = document.createElement("canvas"); x.width = W; x.height = H; return x; };
+  const canvas = h("canvas", { width: W, height: H, role: "img", "aria-label": t("traceCanvas"), style: "width:100%;touch-action:none;background:#fff;border:2px solid var(--line);border-radius:14px" });
+  const ink = mk(), mask = mk(), g = canvas.getContext("2d"), ig = ink.getContext("2d"), mg = mask.getContext("2d"), out = h("div", { role: "status" });
+  let show = true, drawing = false, last = null;
+  const paint = (x, color) => { x.save(); x.fillStyle = color; x.textAlign = "center"; x.textBaseline = "middle"; x.direction = "rtl";
+    const f = s => `${s}px "Noto Naskh Arabic","Amiri","Geeza Pro",serif`; let s = 240; x.font = f(s); const w = x.measureText(cur.text).width;
+    if (w > W - 40) { s = Math.floor((s * (W - 40)) / w); x.font = f(s); } x.fillText(cur.text, W / 2, H / 2); x.restore(); };
+  const draw = () => { g.clearRect(0, 0, W, H); if (show) paint(g, "#E6E0CC"); g.drawImage(ink, 0, 0); };
+  paint(mg, "#000"); ig.lineWidth = 12; ig.lineCap = "round"; ig.lineJoin = "round"; ig.strokeStyle = "#0B3D2E";
+  const pt = e => { const r = canvas.getBoundingClientRect(); return [((e.clientX - r.left) * W) / r.width, ((e.clientY - r.top) * H) / r.height]; };
+  canvas.addEventListener("pointerdown", e => { drawing = true; canvas.setPointerCapture(e.pointerId); last = pt(e); ig.beginPath(); ig.moveTo(...last); ig.lineTo(last[0] + 0.1, last[1]); ig.stroke(); draw(); e.preventDefault(); });
+  canvas.addEventListener("pointermove", e => { if (!drawing) return; const p = pt(e); ig.beginPath(); ig.moveTo(...last); ig.lineTo(...p); ig.stroke(); last = p; draw(); });
+  for (const ev of ["pointerup", "pointercancel"]) canvas.addEventListener(ev, () => { drawing = false; });
+  const guideBtn = btn(t("hideGuide"), () => { show = !show; guideBtn.textContent = show ? t("hideGuide") : t("showGuide"); draw(); });
+  const check = async () => {
+    const st = traceStats(mg.getImageData(0, 0, W, H).data, ig.getImageData(0, 0, W, H).data);
+    if (!st) return out.replaceChildren(h("p", { class: "note" }, t("traceFirst")));
+    out.replaceChildren(h("p", {}, t("coverage", { n: st.covered })), h("p", {}, t("onLetter", { n: st.onLetter })));
+    const tr = (P.progress.tracing ||= {}), e = (tr[cur.text] ||= { count: 0 }); e.count++; e.last = Date.now(); touchStreak(P.progress); await save();
+  };
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go(c.back, c.backCtx || {})), h("strong", {}, cur.label)),
+    c.texts.length > 1 ? h("div", { class: "row" }, c.texts.map((x, i) => h("button", { type: "button", class: i === c.k ? "primary" : "", onclick: () => go("trace", { ...c, k: i }) }, x.label))) : null,
+    canvas, h("div", { class: "row", style: "margin-top:.6rem" }, guideBtn, btn(t("clearInk"), () => { ig.clearRect(0, 0, W, H); out.replaceChildren(); draw(); }), btn(t("checkTrace"), check, "primary")), out, h("p", { class: "note" }, t("traceNote"))]);
+  draw();
+}
+
+// ---------- Listening lab ----------
+function listeningView() {
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("listening")), h("p", { class: "muted" }, t("listeningIntro")),
+    hasArabicVoice() ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(vocabItems(), t), qi: 0, topic: "listening" }), "primary") : h("p", { class: "note" }, t("noVoice")),
+    h("p", { class: "note" }, t("listenNote"))]);
+}
+
+// ---------- Sentence builder ----------
+function startBuilder() { go("builder", { set: shuffle(sentences).slice(0, 6), i: 0, picked: [], pool: null, checked: false, ok: [] }); }
+function builderView() {
+  const { set, i } = ctx, s = set[i]; ctx.pool ||= scramble(s.answers);
+  const words = ctx.picked.map(k => ctx.pool[k]), full = ctx.picked.length === ctx.pool.length, good = ctx.checked && ctx.ok[i], last = i === set.length - 1;
+  const chip = (k, fn) => h("button", { type: "button", lang: "ar", dir: "rtl", class: "ar", disabled: ctx.checked, onclick: fn }, ctx.pool[k]);
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("q", { i: i + 1, n: set.length }))), bar((i / set.length) * 100),
+    h("h2", {}, t("builder")), h("p", {}, t("builderPrompt", { s: s.meaning })), h("p", { class: "muted" }, t("builderIntro")),
+    h("div", { class: "card row", dir: "rtl", style: "min-height:76px" }, ctx.picked.map(k => chip(k, () => { ctx.picked.splice(ctx.picked.indexOf(k), 1); render(); }))),
+    h("div", { class: "row", dir: "rtl" }, ctx.pool.map((_, k) => ctx.picked.includes(k) ? null : chip(k, () => { ctx.picked.push(k); render(); }))),
+    h("div", { class: "row", style: "margin-top:.8rem" }, btn(t("checkAnswer"), () => { ctx.checked = true; ctx.ok[i] = checkOrder(s.answers, words); render(); }, "primary"), btn(t("clear"), () => { ctx.picked = []; render(); })),
+    ctx.checked ? h("div", { role: "status" }, h("p", {}, good ? "✅ " + t("correct") : "❌ " + t("builderWrong", { s: s.answers[0].join(" ") })), s.answers.length > 1 ? h("p", { class: "note" }, t("alsoOk")) : null,
+      btn(last ? t("finish") : t("nextSentence"), () => (last ? finishBuilder() : go("builder", { ...ctx, i: i + 1, picked: [], pool: null, checked: false })), "primary")) : null]);
+  if (!full || ctx.checked) for (const b of app.querySelectorAll("button.primary")) if (b.textContent === t("checkAnswer")) b.disabled = true;
+}
+async function finishBuilder() {
+  const { set, ok } = ctx, correct = ok.filter(Boolean).length, total = set.length, pct = Math.round((correct / total) * 100), passed = pct >= POLICY.pass;
+  const b = (P.progress.builder ||= {}), first = !b.passed; b.best = Math.max(b.best || 0, pct); b.attempts = (b.attempts || 0) + 1; if (passed) b.passed = true;
+  const xp = first ? correct * POLICY.xpPerCorrect : 0; P.progress.xp += xp; touchStreak(P.progress);
+  P.progress.attempts.push({ topic: "builder", ts: Date.now(), correct, total, pct }); await save(); go("result", { res: { correct, total, pct, passed }, xp, qs: [] });
+}
+
 // ---------- Reading library ----------
 function libraryView() {
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("library")), h("p", { class: "muted" }, t("libraryIntro")),
     passages.map(p => h("button", { class: "card row sb", style: "width:100%", type: "button", onclick: () => go("passage", { p, show: false }) }, h("span", {}, loc(p.title)),
-      h("span", { class: "badge" }, rp(p.id).passed ? "✓" : rp(p.id).best != null ? rp(p.id).best + "%" : "•")))]);
+      h("span", { class: "badge" }, rq(p.id).passed ? "✓" : rq(p.id).best != null ? rq(p.id).best + "%" : "•")))]);
 }
 function passageView() {
   const p = ctx.p, r = rp(p.id);
@@ -177,20 +224,20 @@ function letterView() {
     h("div", { class: "card flash" }, h("span", { style: "font-size:5rem", class: "ar", lang: "ar", dir: "rtl" }, l.ar), ar(l.nameAr), h("strong", { dir: "ltr" }, l.en)),
     h("h3", {}, t("forms")), h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(110px,1fr))" },
       forms(l).map(([k, f]) => h("div", { class: "card tile", style: "min-height:90px;margin:0" }, ar(f, "big"), h("small", {}, t(k))))),
-    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")), h("div", { class: "row" }, learnBtn(l)),
+    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")), h("div", { class: "row" }, learnBtn(l), btn("✍️ " + t("traceLetter"), () => go("trace", { texts: letterTexts(l), k: 0, back: "letter", backCtx: { i: ctx.i } }))),
     h("div", { class: "row sb", style: "margin-top:1rem" }, btn("← " + t("prev"), () => go("letter", { i: (ctx.i - 1 + n) % n })), btn(t("next") + " →", () => go("letter", { i: (ctx.i + 1) % n }), "primary"))]);
 }
 
 // ---------- Lessons ----------
 function lessonRow(l) {
   return h("button", { class: "card row sb", style: "width:100%", type: "button", onclick: () => go("lesson", { l }) }, h("span", {}, loc(l.title)),
-    h("span", { class: "badge" }, lp(l.id).completed ? "✓" : lp(l.id).best != null ? lp(l.id).best + "%" : "•"));
+    h("span", { class: "badge" }, lq(l.id).completed ? "✓" : lq(l.id).best != null ? lq(l.id).best + "%" : "•"));
 }
 function lessonView() {
   const l = ctx.l, i = lessons.indexOf(l), st = lp(l.id), P2 = P.progress;
   if (P2.lastLesson !== l.id) { P2.lastLesson = l.id; save(); }
   const book = (P2.bookmarks ||= []), marked = book.includes(l.id);
-  const need = (l.prerequisites || []).filter(r => !lp(r).completed).map(r => lessons.find(x => x.id === r)).filter(Boolean);
+  const need = (l.prerequisites || []).filter(r => !lq(r).completed).map(r => lessons.find(x => x.id === r)).filter(Boolean);
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("seen", { i: i + 1, n: lessons.length }))),
     h("h1", {}, loc(l.title)), h("span", { class: "badge" }, `${l.minutes} min`),
     need.length ? h("p", { class: "note" }, t("tryFirst", { t: need.map(x => loc(x.title)).join(", ") })) : null,
@@ -216,7 +263,7 @@ function quizView() {
   const last = qi === qs.length - 1;
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("q", { i: qi + 1, n: qs.length }))),
     bar((qi / qs.length) * 100), h("h2", {}, q.heading || t("question." + q.type)),
-    q.promptKind === "none" ? null : h("div", { class: "card flash" }, q.promptKind === "emoji" ? h("span", { class: "emoji big", "aria-hidden": "true" }, q.emoji) : q.promptKind === "text" ? h("strong", { class: "big", dir: "ltr" }, q.en) : ar(q.ar, "big")),
+    q.promptKind === "none" ? null : h("div", { class: "card flash" }, q.promptKind === "listen" ? h("button", { type: "button", class: "gold", style: "min-height:88px;font-size:2.4rem", "aria-label": t("listen"), onclick: () => speak(q.ar) }, "🔊") : q.promptKind === "emoji" ? h("span", { class: "emoji big", "aria-hidden": "true" }, q.emoji) : q.promptKind === "text" ? h("strong", { class: "big", dir: "ltr" }, q.en) : ar(q.ar, "big")),
     h("div", { class: "opts" }, opts),
     answered ? h("div", { role: "status" }, h("p", {}, q.options[q.chosen].ok ? "✅ " + t("correct") : "❌ " + t("wrong", { a: q.answer })), q.explanation ? h("p", { class: "note" }, q.explanation) : null,
       btn(last ? t("finish") : t("check"), () => (last ? finishQuiz() : go("quiz", { ...ctx, qi: qi + 1 })), "primary")) : null]);
@@ -244,7 +291,7 @@ function dashView() {
   const stat = (v, k) => h("div", { class: "card tile" }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
   shell([h("h1", {}, t("dashboard")),
     h("div", { class: "grid" }, stat(pr.xp, "xp"), stat(pr.streak.count, "streak"), stat(`${mastered}/${items.length}`, "mastered"), stat(pr.attempts.length, "attempts")),
-    h("p", {}, t("passagesRead", { n: passages.filter(p => rp(p.id).passed).length, m: passages.length })), h("p", {}, t("lessonsDone", { n: lessons.filter(l => lp(l.id).completed).length, m: lessons.length })), h("p", {}, t("learnedCount", { n: learned, m: items.length })), bar((learned / items.length) * 100),
+    h("p", {}, t("passagesRead", { n: passages.filter(p => rq(p.id).passed).length, m: passages.length })), h("p", {}, t("lessonsDone", { n: lessons.filter(l => lq(l.id).completed).length, m: lessons.length })), h("p", {}, t("learnedCount", { n: learned, m: items.length })), bar((learned / items.length) * 100),
     h("h2", {}, t("revision")), rev.length ? rev.map(x => h("div", { class: "card row sb" }, h("span", {}, x.i.emoji + " ", ar(x.i.ar)), h("span", { class: "badge" }, t("state." + x.s)))) : h("p", { class: "muted" }, t("noRevision")),
     h("h2", {}, t("attempts")), pr.attempts.length ? [...pr.attempts].reverse().slice(0, 8).map(a => h("div", { class: "card row sb" }, h("span", {}, new Date(a.ts).toLocaleDateString()), h("strong", {}, `${a.correct}/${a.total} · ${a.pct}%`))) : h("p", { class: "muted" }, t("noAttempts")),
     h("h2", {}, t("achievements")), h("div", { class: "grid" }, catalog.map(a => { const got = (pr.achievements || {})[a.id];
@@ -266,7 +313,7 @@ function settingsView() {
       btn(t("export"), () => { const a = h("a", { href: URL.createObjectURL(new Blob([S.exportJSON(P)], { type: "application/json" })), download: `kalimati-${P.name}.json` }); a.click(); }),
       btn(t("import"), () => file.click()), file),
     h("div", { class: "row", style: "margin-top:1rem" }, btn(t("checkContent"), () => {
-      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
+      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles), ...validateSentences(sfiles)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
     h("div", { style: "margin-top:2rem" }, btn(t("delete"), async () => { if (!confirm(t("confirmDelete"))) return; await S.deleteProfile(P.id); P = null; S.setCurrentId(null); go("profiles"); }, "danger")),
     h("p", { class: "note" }, t("localNote")), h("p", { class: "muted" }, t("org"))]);
 }
@@ -276,7 +323,7 @@ function applySize() { document.body.classList.remove("size-l", "size-xl"); cons
 
 // ---------- Router ----------
 function render() {
-  const views = { library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
+  const views = { trace: traceView, writing: writingView, builder: builderView, listening: listeningView, library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
   if (!P && view !== "profiles") view = "profiles";
   views[view]();
 }
@@ -292,6 +339,8 @@ async function boot() {
     for (const f of idx.lessons || []) lsFiles[f] = await (await fetch("content/" + f)).json();
     for (const f of idx.reading || []) rdFiles[f] = await (await fetch("content/" + f)).json();
     passages = Object.values(rdFiles).flatMap(d => d.passages);
+    for (const f of idx.sentences || []) sfiles[f] = await (await fetch("content/" + f)).json();
+    sentences = Object.values(sfiles).flatMap(d => d.sentences);
     if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;
     lessons = Object.values(lsFiles).flatMap(d => d.lessons);
     letters = Object.values(lfiles).flatMap(d => d.letters).map(l => ({ ...l, kind: "letter", emoji: "" }));
@@ -303,4 +352,5 @@ async function boot() {
 const net = () => { const s = document.getElementById("status"); if (!navigator.onLine) { s.textContent = t("offline"); s.hidden = false; } else s.hidden = true; };
 addEventListener("online", net); addEventListener("offline", net);
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+if (window.speechSynthesis && speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", () => { if (view === "listening") render(); });
 boot().then(net);

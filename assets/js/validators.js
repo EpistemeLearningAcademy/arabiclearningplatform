@@ -1,6 +1,6 @@
 // Content checks for vocabulary files. Returns an array of problem strings (empty = OK).
 export function validateAchievements(cat) {
-  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak", "readingPassed"];
+  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak", "readingPassed", "listeningPassed", "builderPassed", "tracingDone"];
   for (const a of cat || []) {
     if (!a.id || ids.has(a.id)) errs.push(`achievement id missing or duplicate (${a.id})`); else ids.add(a.id);
     if (!a.title || !a.title.en || !a.title.ar || !a.desc || !a.desc.en || !a.desc.ar) errs.push(`${a.id}: missing en/ar title or desc`);
@@ -22,6 +22,22 @@ export function validateReading(files) {
         if (!Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer) || q.answer < 0 || q.answer >= q.options.length) errs.push(`${w}/${q.id}: bad options or answer index`);
         if (!q.explanation) errs.push(`${w}/${q.id}: missing explanation`);
       }
+    }
+  }
+  return errs;
+}
+export function validateSentences(files) {
+  const errs = [], ids = new Set();
+  for (const [name, d] of Object.entries(files)) {
+    if (!d || !Array.isArray(d.sentences)) { errs.push(`${name}: missing "sentences" array`); continue; }
+    for (const s of d.sentences) {
+      const w = `${name}/${s.id || "?"}`;
+      if (!s.id || ids.has(s.id)) errs.push(`${w}: id missing or duplicate`); else ids.add(s.id);
+      if (!s.meaning) errs.push(`${w}: missing meaning`);
+      if (!Array.isArray(s.answers) || !s.answers.length || s.answers.some(a => !Array.isArray(a) || a.length < 2)) { errs.push(`${w}: answers must be lists of 2+ words`); continue; }
+      const key = a => [...a].sort().join("|");
+      if (s.answers[0].length === 2 && s.answers.length > 1) errs.push(`${w}: two-word sentence with both orders accepted is too easy (any order is correct)`);
+      if (s.answers.some(a => key(a) !== key(s.answers[0]))) errs.push(`${w}: alternative answers must use the same words`);
     }
   }
   return errs;
