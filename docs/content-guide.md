@@ -29,3 +29,10 @@ Edit `content/shared/achievements.json`. Copy a badge and change `id`, `icon`, `
 
 # Adding sentence-builder sentences
 Edit `content/intermediate/sentences/builder-01.json`. Each sentence needs `id`, `meaning` (English) and `answers`: a list of accepted word orders, each a list of fully vowelled Arabic words. All accepted orders must use the same words. Do not accept both orders of a two-word sentence (the checker rejects this, because any arrangement would then be correct).
+
+# Editing weekly challenges and certificates
+`content/shared/challenges.json`: each challenge has `id`, `title`, `desc` (en and ar), `xp`, `target` (a whole number) and `rule.type` (lessonsCompleted, quizzesPassed, daysActive, perfectQuiz, readingPassed, builderPassed, listeningPassed). Keep at least 3 challenges; 3 are shown each week and rotate automatically. Avoid listeningPassed unless every learner has an Arabic voice on their device.
+`content/shared/certificates.json`: each certificate has `id`, `title` (en and ar) and `modules`, a list of lesson `module` names from the lesson files. A certificate is earned when all lessons in those modules are completed and their practice passed at 70%+. The checker (Settings -> Check lesson content) warns about unknown modules.
+
+# Adding a guided-writing prompt
+Edit `content/intermediate/writing/prompts.json` or `content/advanced/writing/prompts.json` (new files must be listed under `"writing"` in `content/index.json` and in `PRECACHE` in `sw.js`). Each prompt: `id`, `level`, `title` and `instruction` (en and ar), `frames` (sentence starters), `wordBank`, `minSentences`, `required` (each check has a `label` in en and ar and either `any`, a list of accepted words, or `pattern: "al"` for a noun with ال) and `model` (equal-length `ar` and `en` line lists). Matching ignores vowel marks and alef variants. The checker rejects a prompt whose fields are missing; also confirm your own model answer passes the checklist.
