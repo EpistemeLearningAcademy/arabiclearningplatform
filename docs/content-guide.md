@@ -26,3 +26,6 @@ Edit `content/shared/achievements.json`. Copy a badge and change `id`, `icon`, `
 2. Copy a passage. Required: `id` (unique), `title` (en, ar), `lines` (each with `ar`, `tr`, `en`), `vocabulary`, `questions` (same format as lesson practice questions).
 3. Use only words learners have met. For a Classical Arabic passage set `"classical": true` so the app labels it; include its meaning and how it differs from MSA in the line notes.
 4. Bump `CACHE` in `sw.js`, commit, then run Settings -> Check lesson content.
+
+# Adding sentence-builder sentences
+Edit `content/intermediate/sentences/builder-01.json`. Each sentence needs `id`, `meaning` (English) and `answers`: a list of accepted word orders, each a list of fully vowelled Arabic words. All accepted orders must use the same words. Do not accept both orders of a two-word sentence (the checker rejects this, because any arrangement would then be correct).
