@@ -1,0 +1,151 @@
+{
+ "schema": 1,
+ "sentences": [
+  {
+   "id": "s-01",
+   "level": "intermediate",
+   "meaning": "He is a student.",
+   "answers": [
+    [
+     "هُوَ",
+     "طَالِبٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-02",
+   "level": "intermediate",
+   "meaning": "The boy does not eat.",
+   "answers": [
+    [
+     "لَا",
+     "يَأْكُلُ",
+     "الوَلَدُ"
+    ],
+    [
+     "الوَلَدُ",
+     "لَا",
+     "يَأْكُلُ"
+    ]
+   ]
+  },
+  {
+   "id": "s-03",
+   "level": "intermediate",
+   "meaning": "This is a book.",
+   "answers": [
+    [
+     "هٰذَا",
+     "كِتَابٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-04",
+   "level": "intermediate",
+   "meaning": "I am a student.",
+   "answers": [
+    [
+     "أَنَا",
+     "طَالِبٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-05",
+   "level": "intermediate",
+   "meaning": "The boy does not go.",
+   "answers": [
+    [
+     "لَا",
+     "يَذْهَبُ",
+     "الوَلَدُ"
+    ],
+    [
+     "الوَلَدُ",
+     "لَا",
+     "يَذْهَبُ"
+    ]
+   ]
+  },
+  {
+   "id": "s-06",
+   "level": "intermediate",
+   "meaning": "She is a (female) student.",
+   "answers": [
+    [
+     "هِيَ",
+     "طَالِبَةٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-07",
+   "level": "intermediate",
+   "meaning": "This is a cat.",
+   "answers": [
+    [
+     "هٰذِهِ",
+     "قِطَّةٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-08",
+   "level": "intermediate",
+   "meaning": "The boy is a student.",
+   "answers": [
+    [
+     "الوَلَدُ",
+     "طَالِبٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-09",
+   "level": "intermediate",
+   "meaning": "A big book.",
+   "answers": [
+    [
+     "كِتَابٌ",
+     "كَبِيرٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-10",
+   "level": "intermediate",
+   "meaning": "The book is big.",
+   "answers": [
+    [
+     "الكِتَابُ",
+     "كَبِيرٌ"
+    ]
+   ]
+  },
+  {
+   "id": "s-11",
+   "level": "intermediate",
+   "meaning": "The boy is in the house.",
+   "answers": [
+    [
+     "الوَلَدُ",
+     "فِي",
+     "البَيْتِ"
+    ]
+   ]
+  },
+  {
+   "id": "s-12",
+   "level": "intermediate",
+   "meaning": "My book is on the table.",
+   "answers": [
+    [
+     "كِتَابِي",
+     "عَلَى",
+     "الطَّاوِلَةِ"
+    ]
+   ]
+  }
+ ]
+}
