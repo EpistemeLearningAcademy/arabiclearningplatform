@@ -26,3 +26,5 @@ label{display:block;font-weight:600;margin-block:.8rem .3rem}
 nav.tabs{position:fixed;inset-block-end:0;inset-inline:0;display:flex;background:var(--g);padding:.3rem;gap:.3rem}
 nav.tabs button{flex:1;background:transparent;color:#fff;border-color:transparent}nav.tabs button[aria-current=page]{background:var(--gold);color:var(--g)}
 @media (prefers-reduced-motion:no-preference){.card,button{transition:transform .15s}button:active{transform:scale(.97)}}
+table{width:100%;border-collapse:collapse;margin-block:.6rem}th,td{border-bottom:1px solid var(--line);padding:.4rem .5rem;text-align:start;vertical-align:top}th{font-weight:600;width:45%}
+@media print{nav.tabs,button,#status{display:none!important}body{background:#fff}main{padding:0;max-width:none}.card{break-inside:avoid}}
