@@ -82,11 +82,13 @@ export function recordAnswers(progress, qs) {
   }
 }
 
+export const localDay = ms => { const d = new Date(ms); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
 export function touchStreak(progress) {
-  const today = new Date().toISOString().slice(0, 10), s = progress.streak;
+  const now = Date.now(), today = localDay(now), s = progress.streak, days = (progress.days ||= []);
+  if (!days.includes(today)) { days.push(today); if (days.length > 90) days.shift(); }
   if (s.last === today) return;
-  const y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
-  s.count = s.last === y ? s.count + 1 : 1; s.last = today;
+  const yd = new Date(now); yd.setDate(yd.getDate() - 1);
+  s.count = s.last === localDay(yd.getTime()) ? s.count + 1 : 1; s.last = today;
 }
 
 // Revision list: weakest states first, then oldest practice.

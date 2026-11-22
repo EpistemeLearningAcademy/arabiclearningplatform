@@ -1,6 +1,6 @@
 // Content checks for vocabulary files. Returns an array of problem strings (empty = OK).
 export function validateAchievements(cat) {
-  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak", "readingPassed", "listeningPassed", "builderPassed", "tracingDone"];
+  const errs = [], ids = new Set(), TYPES = ["lessonsCompleted", "learned", "mastered", "moduleComplete", "levelLessons", "perfectQuiz", "streak", "readingPassed", "listeningPassed", "builderPassed", "tracingDone", "writingDone"];
   for (const a of cat || []) {
     if (!a.id || ids.has(a.id)) errs.push(`achievement id missing or duplicate (${a.id})`); else ids.add(a.id);
     if (!a.title || !a.title.en || !a.title.ar || !a.desc || !a.desc.en || !a.desc.ar) errs.push(`${a.id}: missing en/ar title or desc`);
@@ -90,6 +90,45 @@ export function validateVocab(files) {
         if (!it.id || ids.has(it.id)) errs.push(`${w}: item id missing or duplicate (${it.id})`); else ids.add(it.id);
         if (!it.ar || !it.en) errs.push(`${w}/${it.id}: missing ar or en`);
       }
+    }
+  }
+  return errs;
+}
+
+export function validateChallenges(list) {
+  const errs = [], ids = new Set(), T = ["lessonsCompleted", "quizzesPassed", "daysActive", "perfectQuiz", "readingPassed", "builderPassed", "listeningPassed"];
+  for (const c of list || []) {
+    if (!c.id || ids.has(c.id)) errs.push(`challenge id missing or duplicate (${c.id})`); else ids.add(c.id);
+    if (!c.title || !c.title.en || !c.title.ar || !c.desc || !c.desc.en || !c.desc.ar) errs.push(`${c.id}: missing en/ar title or desc`);
+    if (!Number.isInteger(c.target) || c.target < 1) errs.push(`${c.id}: target must be a whole number of 1 or more`);
+    if (!c.rule || !T.includes(c.rule.type)) errs.push(`${c.id}: unknown rule type`);
+  }
+  if ((list || []).length < 3) errs.push("need at least 3 challenges to rotate");
+  return errs;
+}
+export function validateCertificates(list, lessons) {
+  const errs = [], ids = new Set();
+  for (const c of list || []) {
+    if (!c.id || ids.has(c.id)) errs.push(`certificate id missing or duplicate (${c.id})`); else ids.add(c.id);
+    if (!c.title || !c.title.en || !c.title.ar) errs.push(`${c.id}: missing en/ar title`);
+    if (!Array.isArray(c.modules) || !c.modules.length) errs.push(`${c.id}: needs modules`);
+    else for (const m of c.modules) if (!lessons.some(l => l.module === m)) errs.push(`${c.id}: no lessons in module "${m}"`);
+  }
+  return errs;
+}
+
+export function validateWriting(files) {
+  const errs = [], ids = new Set();
+  for (const [name, d] of Object.entries(files)) {
+    if (!d || !Array.isArray(d.prompts)) { errs.push(`${name}: missing "prompts" array`); continue; }
+    for (const p of d.prompts) {
+      const w = `${name}/${p.id || "?"}`;
+      if (!p.id || ids.has(p.id)) errs.push(`${w}: id missing or duplicate`); else ids.add(p.id);
+      if (!p.title || !p.title.en || !p.title.ar || !p.instruction || !p.instruction.en || !p.instruction.ar) errs.push(`${w}: missing en/ar title or instruction`);
+      if (!Number.isInteger(p.minSentences) || p.minSentences < 1) errs.push(`${w}: minSentences must be 1 or more`);
+      if (!Array.isArray(p.required) || !p.required.length) errs.push(`${w}: needs required checks`);
+      for (const r of p.required || []) if (!r.label || !r.label.en || !r.label.ar || (!r.pattern && !(Array.isArray(r.any) && r.any.length))) errs.push(`${w}: a required check needs label (en, ar) and any[] or pattern`);
+      if (!p.model || !Array.isArray(p.model.ar) || !p.model.ar.length || !Array.isArray(p.model.en) || p.model.en.length !== p.model.ar.length) errs.push(`${w}: model needs equal-length ar and en lines`);
     }
   }
   return errs;

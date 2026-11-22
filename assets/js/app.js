@@ -1,11 +1,13 @@
 import { t, setLang, savedLang, lang } from "./i18n.js";
 import * as S from "./storage.js";
 import { POLICY, itemState, buildQuiz, buildLessonQuiz, buildPositionQuiz, buildListeningQuiz, scramble, checkOrder, shuffle, traceStats, letterForms, scoreQuiz, recordAnswers, touchStreak, revisionList } from "./engine.js";
-import { evaluate } from "./gamification.js";
-import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading, validateSentences } from "./validators.js";
+import { evaluate, weekStart, weekKey, pickChallenges, challengeProgress, certProgress, certsEarned } from "./gamification.js";
+import { summarize, assignmentDone, toCSV } from "./reports.js";
+import { checkWriting, compareCopy } from "./writing.js";
+import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading, validateSentences, validateChallenges, validateCertificates, validateWriting } from "./validators.js";
 
 const app = document.getElementById("app");
-let themes = [], sentences = [], sfiles = {}, passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
+let themes = [], wprompts = [], wfiles = {}, challenges = [], certs = [], sentences = [], sfiles = {}, passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
 const vocabItems = () => themes.flatMap(th => th.items);
 const allItems = () => [...letters, ...vocabItems()];
 
@@ -31,9 +33,14 @@ const title = th => (lang() === "ar" ? th.title.ar : th.title.en);
 
 async function save() {
   try {
+    const msgs = [], pr = P.progress;
     const won = evaluate(P, catalog, { lessons, vocabIds: vocabItems().map(i => i.id), letterIds: letters.map(l => l.id) });
-    if (won.length) { const pr = P.progress; pr.achievements ||= {}; for (const a of won) { pr.achievements[a.id] = Date.now(); pr.xp += a.xp; }
-      flash("🏅 " + won.map(a => t("newBadge", { t: loc(a.title), n: a.xp })).join(" · ")); }
+    if (won.length) { pr.achievements ||= {}; for (const a of won) { pr.achievements[a.id] = Date.now(); pr.xp += a.xp; msgs.push(t("newBadge", { t: loc(a.title), n: a.xp })); } }
+    const ws = weekStart(), wk = weekKey(ws);
+    if (!pr.weekly || pr.weekly.week !== wk) pr.weekly = { week: wk, claimed: {} };
+    for (const c of pickChallenges(challenges, ws)) if (!pr.weekly.claimed[c.id] && challengeProgress(P, c, ws) >= c.target) { pr.weekly.claimed[c.id] = Date.now(); pr.xp += c.xp; msgs.push(t("newChallenge", { t: loc(c.title), n: c.xp })); }
+    for (const c of certsEarned(P, certs, lessons)) { (pr.certificates ||= {})[c.id] = Date.now(); msgs.push(t("newCert", { t: loc(c.title) })); }
+    if (msgs.length) flash("🏅 " + msgs.join(" · "));
     await S.saveProfile(P);
   } catch { flash(t("storageError")); }
 }
@@ -72,7 +79,7 @@ async function profilesView(creating) {
   shell([h("div", { class: "row sb" }, h("h1", {}, t("who")), langToggle()),
     list.map(p => h("button", { class: "card tile", style: "width:100%;flex-direction:row;justify-content:flex-start", type: "button",
       onclick: () => { P = p; S.setCurrentId(p.id); go("home"); } }, h("span", { class: "emoji" }, p.avatar), h("strong", {}, p.name))),
-    btn("+ " + t("newProfile"), () => go("profiles", { creating: true }), "gold"), h("p", { class: "note" }, t("localNote"))]);
+    h("div", { class: "row" }, btn("+ " + t("newProfile"), () => go("profiles", { creating: true }), "gold"), btn(t("centre"), openCentre)), h("p", { class: "note" }, t("localNote"))]);
 }
 
 // ---------- Home / themes ----------
@@ -83,7 +90,7 @@ function homeView() {
       h("span", { class: "emoji" }, th.emoji), ar(th.title.ar), lang() === "en" ? h("span", {}, th.title.en) : null,
       h("small", {}, t("learnedCount", { n, m: th.items.length })));
   });
-  shell([h("h1", {}, `${P.avatar} ${P.name}`), h("h2", {}, t("level1")),
+  shell([h("h1", {}, `${P.avatar} ${P.name}`), assignedBlock(), h("h2", {}, t("level1")),
     h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
     h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("library") }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
     h("div", { class: "grid" },
@@ -130,6 +137,9 @@ function writingView() {
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("writing")), h("p", { class: "muted" }, t("writingIntro")), h("h3", {}, t("writingLetters")),
     h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(70px,1fr))" }, letters.map(l => h("button", { class: "card tile", style: "min-height:76px;margin:0", type: "button", onclick: () => go("trace", { texts: letterTexts(l), k: 0, back: "writing", backCtx: {} }) }, ar(l.ar, "big")))),
     h("h3", {}, t("writingWords")), h("div", { class: "grid" }, vocabItems().map(it => h("button", { class: "card tile", style: "min-height:76px;margin:0", type: "button", onclick: () => go("trace", { texts: [{ label: it.en, text: it.ar }], k: 0, back: "writing", backCtx: {} }) }, ar(it.ar), h("small", { dir: "ltr" }, it.en)))),
+    h("h3", {}, t("copyTyping")), h("p", { class: "muted" }, t("copyIntro")), btn(t("copyTyping"), startCopy, "primary"),
+    h("h3", {}, t("guidedWriting")), wprompts.map(w => h("button", { class: "card row sb", style: "width:100%", type: "button", onclick: () => go("prompt", { w, show: false }) }, h("span", {}, loc(w.title)),
+      h("span", { class: "badge" }, ((P.progress.writing || {})[w.id] || {}).ok ? "✓" : "•"))),
     h("p", { class: "note" }, t("traceNote"))]);
 }
 function traceView() {
@@ -157,6 +167,46 @@ function traceView() {
     c.texts.length > 1 ? h("div", { class: "row" }, c.texts.map((x, i) => h("button", { type: "button", class: i === c.k ? "primary" : "", onclick: () => go("trace", { ...c, k: i }) }, x.label))) : null,
     canvas, h("div", { class: "row", style: "margin-top:.6rem" }, guideBtn, btn(t("clearInk"), () => { ig.clearRect(0, 0, W, H); out.replaceChildren(); draw(); }), btn(t("checkTrace"), check, "primary")), out, h("p", { class: "note" }, t("traceNote"))]);
   draw();
+}
+
+// ---------- Copy typing & guided writing ----------
+function startCopy() {
+  const pool = [...sentences.map(s => ({ ar: s.answers[0].join(" ") + ".", en: s.meaning })), ...passages.flatMap(p => p.lines.map(l => ({ ar: l.ar, en: l.en })))];
+  go("copy", { set: shuffle(pool).slice(0, 6), i: 0, strict: false, checked: false, ok: [], typed: "" });
+}
+function copyView() {
+  const { set, i } = ctx, it = set[i], last = i === set.length - 1;
+  const input = h("input", { id: "cp", type: "text", dir: "rtl", lang: "ar", autocomplete: "off", autocapitalize: "off", spellcheck: "false", placeholder: t("typeHere"), value: ctx.typed, disabled: ctx.checked });
+  const strict = h("input", { type: "checkbox", id: "st", checked: ctx.strict, disabled: ctx.checked, style: "width:auto;min-height:auto", onchange: e => { ctx.strict = e.target.checked; } });
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("writing")), h("span", {}, t("q", { i: i + 1, n: set.length }))), bar((i / set.length) * 100),
+    h("h2", {}, t("copyTyping")), h("p", { class: "muted" }, t("copyIntro")), h("div", { class: "card flash" }, ar(it.ar, "big"), h("small", { dir: "ltr", class: "muted" }, it.en)),
+    input, h("label", { for: "st", class: "row" }, strict, t("vowelsToo")),
+    h("div", { class: "row", style: "margin-top:.6rem" }, btn(t("checkAnswer"), () => { ctx.typed = input.value; ctx.ok[i] = compareCopy(input.value, it.ar, ctx.strict); ctx.checked = true; render(); }, "primary")),
+    ctx.checked ? h("div", { role: "status" }, h("p", {}, ctx.ok[i] ? "✅ " + t("correct") : "❌ " + t("copyWrong", { s: it.ar })),
+      btn(last ? t("finish") : t("nextSentence"), () => (last ? finishCopy() : go("copy", { ...ctx, i: i + 1, checked: false, typed: "" })), "primary")) : null]);
+  if (ctx.checked) for (const b of app.querySelectorAll("button.primary")) if (b.textContent === t("checkAnswer")) b.disabled = true;
+}
+async function finishCopy() {
+  const { set, ok } = ctx, correct = ok.filter(Boolean).length, total = set.length, pct = Math.round((correct / total) * 100), passed = pct >= POLICY.pass;
+  const b = ((P.progress.copy ||= {})), first = !b.passed; b.best = Math.max(b.best || 0, pct); b.attempts = (b.attempts || 0) + 1; if (passed) b.passed = true;
+  const xp = first ? correct * POLICY.xpPerCorrect : 0; P.progress.xp += xp; touchStreak(P.progress);
+  P.progress.attempts.push({ topic: "writing", ts: Date.now(), correct, total, pct }); await save(); go("result", { res: { correct, total, pct, passed }, xp, qs: [] });
+}
+function promptView() {
+  const w = ctx.w, saved = (P.progress.writing || {})[w.id] || {};
+  const area = h("textarea", { id: "wt", dir: "rtl", lang: "ar", rows: 7, "aria-label": t("writeHere"), placeholder: t("writeHere"), style: "width:100%;font:inherit;padding:.7rem;border:2px solid var(--line);border-radius:12px" }, saved.text || "");
+  const out = h("div", { role: "status" });
+  const check = async () => {
+    const res = checkWriting(area.value, w), items = res.items.map(i => i.key === "sentences" ? { ok: i.ok, text: t("chkSentences", { n: i.n, c: i.c }) } : { ok: i.ok, text: loc(i.label) });
+    out.replaceChildren(h("h3", {}, t("checklist")), h("ul", { style: "list-style:none;padding:0" }, items.map(i => h("li", {}, (i.ok ? "✅ " : "⬜ ") + i.text))), h("p", {}, t("wordsN", { n: res.words })), h("p", { class: "muted" }, t("draftSaved")));
+    const rec = ((P.progress.writing ||= {})[w.id] ||= {}); rec.text = area.value.slice(0, 4000); rec.ts = Date.now(); rec.ok = rec.ok || res.ok; rec.words = res.words; touchStreak(P.progress); await save();
+  };
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("writing"))), h("h1", {}, loc(w.title)), h("p", {}, loc(w.instruction)),
+    w.wordBank.length ? [h("h3", {}, t("wordBank")), h("div", { class: "row" }, w.wordBank.map(b => h("span", { class: "badge" }, ar(b.ar), ` ${b.en}`)))] : null,
+    w.frames.length ? [h("h3", {}, t("frames")), h("div", {}, w.frames.map(f => h("p", {}, ar(f))))] : null,
+    area, h("div", { class: "row", style: "margin-top:.6rem" }, btn(t("checkWriting"), check, "primary"), btn(ctx.show ? t("hideModel") : t("showModel"), () => { ctx.show = !ctx.show; saved.text = area.value; (P.progress.writing ||= {})[w.id] = { ...((P.progress.writing || {})[w.id] || {}), text: area.value.slice(0, 4000) }; render(); })), out,
+    ctx.show ? h("div", { class: "card" }, h("h3", {}, t("modelAnswer")), w.model.ar.map((l, k) => h("div", {}, ar(l), h("small", { dir: "ltr", class: "muted", style: "display:block" }, w.model.en[k])))) : null,
+    h("p", { class: "note" }, t("writingNote"))]);
 }
 
 // ---------- Listening lab ----------
@@ -205,6 +255,82 @@ function passageView() {
     btn(t("answerQs"), () => go("quiz", { qs: buildLessonQuiz({ id: p.id, practice: p.questions }, lang()), qi: 0, passageId: p.id }), "primary"), h("p", { class: "muted" }, t("voiceNote"))]);
 }
 
+// ---------- Weekly challenges, certificates ----------
+function challengeBlock() {
+  const ws = weekStart(), wk = P.progress.weekly && P.progress.weekly.week === weekKey(ws) ? P.progress.weekly : { claimed: {} };
+  return [h("h2", {}, t("challenges")), pickChallenges(challenges, ws).map(c => { const n = Math.min(challengeProgress(P, c, ws), c.target), done = !!wk.claimed[c.id];
+    return h("div", { class: "card" }, h("div", { class: "row sb" }, h("strong", {}, loc(c.title)), h("span", { class: "badge" }, done ? t("challengeClaimed") : t("challengeXp", { n: c.xp }))),
+      h("p", { class: "muted" }, loc(c.desc)), bar((n / c.target) * 100), h("small", {}, t("challengeProgress", { n, m: c.target }))); })];
+}
+function certsView() {
+  const got = P.progress.certificates || {};
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("dashboard"))), h("h1", {}, t("certificates")), h("p", { class: "muted" }, t("certIntro")),
+    certs.map(c => { const pg = certProgress(P, c, lessons);
+      return h("div", { class: "card" }, h("strong", {}, loc(c.title)), got[c.id] ? [h("p", {}, t("certEarned", { d: new Date(got[c.id]).toLocaleDateString() })), btn(t("viewCert"), () => go("cert", { c }), "primary")]
+        : [h("p", { class: "muted" }, t("certLocked")), bar(pg.total ? (pg.done / pg.total) * 100 : 0), h("small", {}, `${pg.done} / ${pg.total}`), h("p", {}, h("small", {}, t("requirement", { m: c.modules.join(", ") })))]); })]);
+}
+function certView() {
+  const c = ctx.c, when = (P.progress.certificates || {})[c.id];
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("certs")), btn("🖨 " + t("printBtn"), () => window.print(), "primary")),
+    h("div", { class: "card cert", style: "text-align:center;border:4px double var(--gold);padding:2rem 1rem" }, h("small", {}, t("org")), h("h1", {}, t("certTitleLine")), h("p", {}, t("certThat")), h("h2", {}, P.name),
+      h("p", {}, t("certCompleted")), h("h2", {}, loc(c.title)), h("p", {}, t("dateLine", { d: when ? new Date(when).toLocaleDateString() : "" })), h("small", { class: "muted" }, t("certFoot")))]);
+}
+
+// ---------- Parent & teacher centre (local to this device) ----------
+async function openCentre() {
+  try { const list = await S.allProfiles(); go("centre", { profiles: list.map(p => (P && p.id === P.id ? P : p)) }); } catch { flash(t("storageError")); }
+}
+const dayLabel = ms => (ms ? new Date(ms).toLocaleDateString() : t("never"));
+function centreView() {
+  const list = ctx.profiles || [];
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go(P ? "settings" : "profiles"))), h("h1", {}, t("centre")), h("p", { class: "note" }, t("centreIntro")), h("h2", {}, t("learnersHere")),
+    list.length ? list.map(p => { const s = summarize(p, lessons);
+      return h("div", { class: "card" }, h("strong", {}, `${p.avatar} ${p.name}`), h("p", { class: "muted" }, t("summaryLine", { n: s.done, m: s.total, x: s.xp, d: dayLabel(s.last) })),
+        btn(t("openLearner"), () => go("centreLearner", { p }), "primary")); }) : h("p", { class: "muted" }, t("noLearners"))]);
+}
+function assignInfo(a) {
+  if (a.type === "lesson") { const l = lessons.find(x => x.id === a.target); return { title: l ? loc(l.title) : a.target, open: () => l && go("lesson", { l }) }; }
+  if (a.type === "passage") { const p = passages.find(x => x.id === a.target); return { title: p ? loc(p.title) : a.target, open: () => p && go("passage", { p, show: false }) }; }
+  return { title: t("builder"), open: startBuilder };
+}
+const isOverdue = a => !!a.due && a.due < weekKey(Date.now());
+function assignedBlock() {
+  const open = (P.progress.assignments || []).filter(a => !assignmentDone(P, a)); if (!open.length) return null;
+  return h("div", {}, h("h2", {}, t("assignedToYou")), open.map(a => { const info = assignInfo(a);
+    return h("button", { class: "card row sb", style: "width:100%", type: "button", onclick: info.open }, h("span", {}, info.title, a.note ? h("small", { class: "muted", style: "display:block" }, a.note) : null),
+      a.due ? h("span", { class: "badge" }, isOverdue(a) ? t("overdue") : t("due", { d: a.due })) : null); }));
+}
+function centreLearnerView() {
+  const p = ctx.p, s = summarize(p, lessons), asg = p.progress.assignments || [];
+  const type = h("select", { id: "at" }, ["lesson", "passage", "builder"].map(k => h("option", { value: k }, t("type." + k)))), target = h("select", { id: "ag" });
+  const fill = () => target.replaceChildren(...(type.value === "lesson" ? lessons.map(l => h("option", { value: l.id }, loc(l.title))) : type.value === "passage" ? passages.map(x => h("option", { value: x.id }, loc(x.title))) : [h("option", { value: "builder" }, t("builder"))]));
+  type.addEventListener("change", fill); fill();
+  const due = h("input", { type: "date", id: "ad" }), note = h("input", { id: "an", maxlength: 120 });
+  const stat = (v, k) => h("div", { class: "card tile", style: "margin:0;min-height:80px" }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => openCentre())), h("h1", {}, `${p.avatar} ${p.name}`),
+    h("div", { class: "grid" }, stat(`${s.done}/${s.total}`, "lessonsDoneN"), stat(s.xp, "xp"), stat(s.avg == null ? "–" : s.avg + "%", "avgScore"), stat(s.streak, "streakDays")),
+    h("div", { class: "row", style: "margin-top:.6rem" }, btn("📄 " + t("report"), () => go("report", { p }), "primary")),
+    h("h2", {}, t("assignments")), asg.length ? asg.map(a => { const info = assignInfo(a), d = assignmentDone(p, a);
+      return h("div", { class: "card row sb" }, h("span", {}, info.title, a.due ? h("small", { class: "muted", style: "display:block" }, t("due", { d: a.due })) : null),
+        h("span", { class: "row" }, h("span", { class: "badge" }, d ? t("done") : isOverdue(a) ? t("overdue") : t("status.open")),
+          btn(t("removeAssign"), async () => { p.progress.assignments = asg.filter(x => x.id !== a.id); await S.saveProfile(p); go("centreLearner", { p }); }, "danger"))); }) : h("p", { class: "muted" }, t("noAssignments")),
+    h("h3", {}, t("assignNew")), h("label", { for: "at" }, t("assignType")), type, h("label", { for: "ag" }, t("assignTarget")), target, h("label", { for: "ad" }, t("assignDue")), due, h("label", { for: "an" }, t("assignNote")), note,
+    h("div", { style: "margin-top:1rem" }, btn(t("assignBtn"), async () => { (p.progress.assignments ||= []).push({ id: crypto.randomUUID(), type: type.value, target: target.value, due: due.value || "", note: note.value.trim().slice(0, 120), created: Date.now() });
+      await S.saveProfile(p); go("centreLearner", { p }); }, "gold"))]);
+}
+function reportView() {
+  const p = ctx.p, s = summarize(p, lessons), L = p.progress.lessons || {}, att = [...(p.progress.attempts || [])].reverse().slice(0, 10);
+  const row = (a, b) => h("tr", {}, h("th", { scope: "row" }, a), h("td", {}, b));
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("centreLearner", { p })), h("span", { class: "row" }, btn("🖨 " + t("printBtn"), () => window.print(), "primary"),
+      btn(t("exportCsv"), () => { const a = h("a", { href: URL.createObjectURL(new Blob([toCSV(p, lessons)], { type: "text/csv" })), download: `kalimati-report-${p.name}.csv` }); a.click(); }))),
+    h("h1", {}, `${t("report")}: ${p.name}`), h("p", { class: "muted" }, new Date().toLocaleDateString()),
+    h("table", {}, h("tbody", {}, row(t("lessonsDoneN"), `${s.done} / ${s.total}`), row(t("xp"), s.xp), row(t("avgScore"), s.avg == null ? "–" : s.avg + "%"), row(t("quizAttempts"), s.attempts), row(t("streakDays"), s.streak), row(t("badgesN"), s.badges), row(t("certsN"), s.certs), row(t("recentAttempts"), att.length ? att.map(a => `${new Date(a.ts).toLocaleDateString()} ${a.topic || ""} ${a.correct}/${a.total}`).join(" · ") : t("none")))),
+    h("h3", {}, t("weakLessons")), h("p", {}, s.weak.length ? s.weak.map(l => `${loc(l.title)} (${L[l.id].best}%)`).join("; ") : t("none")),
+    h("h3", {}, t("lessonsStatus")), h("table", {}, h("tbody", {}, lessons.map(l => row(loc(l.title), L[l.id] ? (L[l.id].completed ? t("status.completed") : t("status.open")) + (L[l.id].best != null ? ` · ${L[l.id].best}%` : "") : t("state.notStarted"))))),
+    h("h3", {}, t("assignments")), h("p", {}, (p.progress.assignments || []).length ? p.progress.assignments.map(a => `${assignInfo(a).title}: ${assignmentDone(p, a) ? t("done") : t("status.open")}${a.note ? " (" + a.note + ")" : ""}`).join("; ") : t("none")),
+    h("p", { class: "note" }, t("reportNote"))]);
+}
+
 // ---------- Alphabet ----------
 const forms = letterForms;
 function learnBtn(it) {
@@ -249,7 +375,7 @@ function lessonView() {
     h("div", { class: "row" }, btn(t("startPractice"), () => go("quiz", { qs: buildLessonQuiz(l, lang()), qi: 0, lessonId: l.id }), "primary"),
       btn(marked ? t("bookmarked") : "☆ " + t("bookmark"), async () => { marked ? book.splice(book.indexOf(l.id), 1) : book.push(l.id); await save(); render(); })),
     h("div", { class: "row", style: "margin-top:.7rem" }, btn(st.completed ? t("completed") : t("complete"), async () => { if (st.completed) return;
-      st.completed = true; P2.xp += POLICY.xpLearn; touchStreak(P2); await save(); render(); }, st.completed ? "" : "gold")), h("small", { class: "muted" }, t("completeNote")),
+      st.completed = true; st.completedAt = Date.now(); P2.xp += POLICY.xpLearn; touchStreak(P2); await save(); render(); }, st.completed ? "" : "gold")), h("small", { class: "muted" }, t("completeNote")),
     h("div", { class: "row sb", style: "margin-top:1rem" }, i > 0 ? btn("← " + t("prev"), () => go("lesson", { l: lessons[i - 1] })) : h("span"),
       i < lessons.length - 1 ? btn(t("next") + " →", () => go("lesson", { l: lessons[i + 1] }), "primary") : h("span"))]);
 }
@@ -295,7 +421,8 @@ function dashView() {
     h("h2", {}, t("revision")), rev.length ? rev.map(x => h("div", { class: "card row sb" }, h("span", {}, x.i.emoji + " ", ar(x.i.ar)), h("span", { class: "badge" }, t("state." + x.s)))) : h("p", { class: "muted" }, t("noRevision")),
     h("h2", {}, t("attempts")), pr.attempts.length ? [...pr.attempts].reverse().slice(0, 8).map(a => h("div", { class: "card row sb" }, h("span", {}, new Date(a.ts).toLocaleDateString()), h("strong", {}, `${a.correct}/${a.total} · ${a.pct}%`))) : h("p", { class: "muted" }, t("noAttempts")),
     h("h2", {}, t("achievements")), h("div", { class: "grid" }, catalog.map(a => { const got = (pr.achievements || {})[a.id];
-      return h("div", { class: "card tile", style: "margin:0" + (got ? "" : ";opacity:.55") }, h("span", { class: "emoji" }, got ? a.icon : "🔒"), h("strong", {}, loc(a.title)), h("small", {}, loc(a.desc))); }))]);
+      return h("div", { class: "card tile", style: "margin:0" + (got ? "" : ";opacity:.55") }, h("span", { class: "emoji" }, got ? a.icon : "🔒"), h("strong", {}, loc(a.title)), h("small", {}, loc(a.desc))); })),
+    challengeBlock(), h("h2", {}, t("certificates")), btn("🎓 " + t("certificates"), () => go("certs"))]);
 }
 
 // ---------- Settings ----------
@@ -309,11 +436,11 @@ function settingsView() {
   shell([h("h1", {}, t("settings")), h("div", { class: "row sb" }, h("span", {}, t("language")), langToggle()),
     h("label", { for: "md" }, t("mode")), modeSel, h("label", { for: "sz" }, t("textSize")), sizeSel,
     h("div", { class: "row", style: "margin-top:1rem" },
-      btn(t("switch"), () => { P = null; S.setCurrentId(null); go("profiles"); }),
+      btn(t("centre"), openCentre), btn(t("switch"), () => { P = null; S.setCurrentId(null); go("profiles"); }),
       btn(t("export"), () => { const a = h("a", { href: URL.createObjectURL(new Blob([S.exportJSON(P)], { type: "application/json" })), download: `kalimati-${P.name}.json` }); a.click(); }),
       btn(t("import"), () => file.click()), file),
     h("div", { class: "row", style: "margin-top:1rem" }, btn(t("checkContent"), () => {
-      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles), ...validateSentences(sfiles)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
+      const e = [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles), ...validateSentences(sfiles), ...validateChallenges(challenges), ...validateCertificates(certs, lessons), ...validateWriting(wfiles)]; out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: allItems().length }))); })), out,
     h("div", { style: "margin-top:2rem" }, btn(t("delete"), async () => { if (!confirm(t("confirmDelete"))) return; await S.deleteProfile(P.id); P = null; S.setCurrentId(null); go("profiles"); }, "danger")),
     h("p", { class: "note" }, t("localNote")), h("p", { class: "muted" }, t("org"))]);
 }
@@ -323,8 +450,8 @@ function applySize() { document.body.classList.remove("size-l", "size-xl"); cons
 
 // ---------- Router ----------
 function render() {
-  const views = { trace: traceView, writing: writingView, builder: builderView, listening: listeningView, library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
-  if (!P && view !== "profiles") view = "profiles";
+  const views = { copy: copyView, prompt: promptView, centre: centreView, centreLearner: centreLearnerView, report: reportView, certs: certsView, cert: certView, trace: traceView, writing: writingView, builder: builderView, listening: listeningView, library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
+  if (!P && !["profiles", "centre", "centreLearner", "report"].includes(view)) view = "profiles";
   views[view]();
 }
 
@@ -341,6 +468,10 @@ async function boot() {
     passages = Object.values(rdFiles).flatMap(d => d.passages);
     for (const f of idx.sentences || []) sfiles[f] = await (await fetch("content/" + f)).json();
     sentences = Object.values(sfiles).flatMap(d => d.sentences);
+    for (const f of idx.writing || []) wfiles[f] = await (await fetch("content/" + f)).json();
+    wprompts = Object.values(wfiles).flatMap(d => d.prompts);
+    if (idx.challenges) challenges = (await (await fetch("content/" + idx.challenges)).json()).challenges;
+    if (idx.certificates) certs = (await (await fetch("content/" + idx.certificates)).json()).certificates;
     if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;
     lessons = Object.values(lsFiles).flatMap(d => d.lessons);
     letters = Object.values(lfiles).flatMap(d => d.letters).map(l => ({ ...l, kind: "letter", emoji: "" }));
