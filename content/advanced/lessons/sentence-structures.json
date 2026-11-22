@@ -1,0 +1,1191 @@
+{
+ "schema": 1,
+ "lessons": [
+  {
+   "id": "a-les-g2-01",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "The sound feminine plural by case",
+    "ar": "جَمْعُ المُؤَنَّثِ السَّالِمُ وَالإِعْرَاب"
+   },
+   "objectives": [
+    {
+     "en": "Read the sound feminine plural in each case",
+     "ar": "قراءة جمع المؤنّث السالم في الحالات"
+    },
+    {
+     "en": "Know that its accusative takes kasra",
+     "ar": "معرفة أنّ نصبه بالكسرة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-grammar-review"
+   ],
+   "minutes": 10,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "The sound feminine plural (-āt) ends in ـَاتٌ in the nominative. In the genitive and the accusative it takes kasra: ـَاتِ / ـَاتٍ. So its accusative is NOT marked with fatḥa.",
+     "ar": "جمع المؤنّث السالم يُرفع بالضمّة: ـَاتٌ، ويُجرّ بالكسرة: ـَاتِ. ويُنصب أيضًا بالكسرة لا بالفتحة."
+    },
+    {
+     "en": "Compare: ذَهَبَتِ الطَّالِبَاتُ (nominative); كِتَابُ الطَّالِبَاتِ (genitive); أَكَلَ الوَلَدُ التُّفَّاحَاتِ “The boy ate the apples” (accusative, with kasra).",
+     "ar": "قارن: ذَهَبَتِ الطَّالِبَاتُ (رفع)؛ كِتَابُ الطَّالِبَاتِ (جرّ)؛ أَكَلَ الوَلَدُ التُّفَّاحَاتِ (نصب بالكسرة)."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ذَهَبَتِ الطَّالِبَاتُ",
+     "tr": "dhahabati ṭ-ṭālibātu",
+     "en": "The female students went."
+    },
+    {
+     "ar": "كِتَابُ الطَّالِبَاتِ",
+     "tr": "kitābu ṭ-ṭālibāti",
+     "en": "the female students’ book"
+    },
+    {
+     "ar": "أَكَلَ الوَلَدُ التُّفَّاحَاتِ",
+     "tr": "akala l-waladu t-tuffāḥāti",
+     "en": "The boy ate the apples."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الطَّالِبَاتُ",
+     "options": [
+      {
+       "text": "aṭ-ṭālibātu",
+       "ar": false
+      },
+      {
+       "text": "aṭ-ṭālibāti",
+       "ar": false
+      },
+      {
+       "text": "aṭ-ṭālibūna",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "ḍamma: nominative.",
+      "ar": "الضمّة: رفع."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "التُّفَّاحَاتِ",
+     "options": [
+      {
+       "text": "at-tuffāḥāti",
+       "ar": false
+      },
+      {
+       "text": "at-tuffāḥātu",
+       "ar": false
+      },
+      {
+       "text": "at-tuffāḥata",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Accusative of this plural takes kasra.",
+      "ar": "نصب هذا الجمع بالكسرة."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which ending marks the accusative of the sound feminine plural?",
+      "ar": "أيُّ نهاية تدلّ على نصب جمع المؤنّث السالم؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ـَاتِ",
+       "ar": true
+      },
+      {
+       "text": "ـَاتَ",
+       "ar": true
+      },
+      {
+       "text": "ـَاتُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Kasra, not fatḥa.",
+      "ar": "الكسرة لا الفتحة."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does أَكَلَ الوَلَدُ التُّفَّاحَاتِ mean?",
+      "ar": "ماذا تعني أَكَلَ الوَلَدُ التُّفَّاحَاتِ؟"
+     },
+     "promptAr": "أَكَلَ الوَلَدُ التُّفَّاحَاتِ",
+     "options": [
+      {
+       "text": {
+        "en": "The boy ate the apples.",
+        "ar": "أكل الولد التفاحات."
+       }
+      },
+      {
+       "text": {
+        "en": "The apples ate the boy.",
+        "ar": "أكلت التفاحات الولد."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "التُّفَّاحَاتِ is the object.",
+      "ar": "التُّفَّاحَاتِ مفعول به."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "In كِتَابُ الطَّالِبَاتِ, what case is الطَّالِبَاتِ?",
+      "ar": "في كِتَابُ الطَّالِبَاتِ، ما حالة الطَّالِبَاتِ؟"
+     },
+     "promptAr": "الطَّالِبَاتِ",
+     "options": [
+      {
+       "text": {
+        "en": "Genitive",
+        "ar": "مجرور"
+       }
+      },
+      {
+       "text": {
+        "en": "Nominative",
+        "ar": "مرفوع"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Second noun of an iḍāfa.",
+      "ar": "مضاف إليه مجرور."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-g2-02",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "كَانَ and its sisters",
+    "ar": "كَانَ وَأَخَوَاتُهَا"
+   },
+   "objectives": [
+    {
+     "en": "Use كَانَ and لَيْسَ before a nominal sentence",
+     "ar": "استعمال كَانَ ولَيْسَ قبل الجملة الاسمية"
+    },
+    {
+     "en": "Put the predicate in the accusative",
+     "ar": "نصب الخبر"
+    }
+   ],
+   "prerequisites": [
+    "a-les-g2-01"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "كَانَ “was” goes before a nominal sentence. The subject stays nominative and the predicate becomes accusative: الوَلَدُ طَالِبٌ → كَانَ الوَلَدُ طَالِبًا “The boy was a student.” لَيْسَ “is not” works the same way: لَيْسَ الوَلَدُ طَالِبًا “The boy is not a student.”",
+     "ar": "تدخل كَانَ على الجملة الاسمية فيبقى المبتدأ مرفوعًا (اسم كان) ويصير الخبر منصوبًا: الوَلَدُ طَالِبٌ ← كَانَ الوَلَدُ طَالِبًا. وتعمل لَيْسَ عملها: لَيْسَ الوَلَدُ طَالِبًا."
+    },
+    {
+     "en": "With a feminine subject the verb agrees: كَانَتِ الطَّالِبَةُ صَغِيرَةً “The student was small.”",
+     "ar": "ومع المؤنّث تطابق الفعل: كَانَتِ الطَّالِبَةُ صَغِيرَةً."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَانَ الوَلَدُ طَالِبًا",
+     "tr": "kāna l-waladu ṭāliban",
+     "en": "The boy was a student."
+    },
+    {
+     "ar": "كَانَتِ الطَّالِبَةُ صَغِيرَةً",
+     "tr": "kānati ṭ-ṭālibatu ṣaghīratan",
+     "en": "The student was small."
+    },
+    {
+     "ar": "لَيْسَ الوَلَدُ طَالِبًا",
+     "tr": "laysa l-waladu ṭāliban",
+     "en": "The boy is not a student."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "كَانَ الوَلَدُ طَالِبًا",
+     "options": [
+      {
+       "text": "kāna l-waladu ṭāliban",
+       "ar": false
+      },
+      {
+       "text": "kāna l-waladu ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "kāna l-walada ṭāliban",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The predicate is accusative: ṭāliban.",
+      "ar": "الخبر منصوب: ṭāliban."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "What does لَيْسَ الوَلَدُ طَالِبًا mean?",
+      "ar": "ماذا تعني لَيْسَ الوَلَدُ طَالِبًا؟"
+     },
+     "promptAr": "لَيْسَ الوَلَدُ طَالِبًا",
+     "options": [
+      {
+       "text": {
+        "en": "The boy is not a student.",
+        "ar": "الولد ليس طالبًا."
+       }
+      },
+      {
+       "text": {
+        "en": "The boy was a student.",
+        "ar": "كان الولد طالبًا."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَيْسَ negates a nominal sentence.",
+      "ar": "لَيْسَ تنفي الجملة الاسمية."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "In كَانَ الوَلَدُ طَالِبًا, which word is accusative?",
+      "ar": "في كَانَ الوَلَدُ طَالِبًا، أيُّ كلمة منصوبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبًا",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "كَانَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The predicate of كَانَ.",
+      "ar": "خبر كان."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In كَانَ الوَلَدُ طَالِبًا, which word is the subject (nominative)?",
+      "ar": "في كَانَ الوَلَدُ طَالِبًا، أيُّ كلمة مرفوعة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الوَلَدُ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبًا",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The subject keeps ḍamma.",
+      "ar": "الاسم يبقى مرفوعًا."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does كَانَتِ الطَّالِبَةُ صَغِيرَةً mean?",
+      "ar": "ماذا تعني كَانَتِ الطَّالِبَةُ صَغِيرَةً؟"
+     },
+     "promptAr": "كَانَتِ الطَّالِبَةُ صَغِيرَةً",
+     "options": [
+      {
+       "text": {
+        "en": "The student (f) was small.",
+        "ar": "كانت الطالبة صغيرة."
+       }
+      },
+      {
+       "text": {
+        "en": "The student (f) is big.",
+        "ar": "الطالبة كبيرة."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The verb agrees with the feminine subject.",
+      "ar": "الفعل يطابق الفاعل المؤنّث."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-g2-03",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "إِنَّ and its sisters",
+    "ar": "إِنَّ وَأَخَوَاتُهَا"
+   },
+   "objectives": [
+    {
+     "en": "Use إِنَّ and لٰكِنَّ before a nominal sentence",
+     "ar": "استعمال إِنَّ ولٰكِنَّ قبل الجملة الاسمية"
+    },
+    {
+     "en": "Put the subject in the accusative",
+     "ar": "نصب الاسم"
+    }
+   ],
+   "prerequisites": [
+    "a-les-g2-02"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "إِنَّ “indeed” goes before a nominal sentence. The opposite of كَانَ: the subject becomes accusative and the predicate stays nominative: الوَلَدُ طَالِبٌ → إِنَّ الوَلَدَ طَالِبٌ “Indeed, the boy is a student.”",
+     "ar": "تدخل إِنَّ على الجملة الاسمية فينصب المبتدأ (اسم إنّ) ويبقى الخبر مرفوعًا: الوَلَدُ طَالِبٌ ← إِنَّ الوَلَدَ طَالِبٌ."
+    },
+    {
+     "en": "لٰكِنَّ “but” works the same way, often with an attached pronoun: الكِتَابُ كَبِيرٌ لٰكِنَّهُ جَمِيلٌ “The book is big, but it is beautiful.”",
+     "ar": "وتعمل لٰكِنَّ عملها، وكثيرًا ما يتصل بها ضمير: الكِتَابُ كَبِيرٌ لٰكِنَّهُ جَمِيلٌ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "إِنَّ الوَلَدَ طَالِبٌ",
+     "tr": "inna l-walada ṭālibun",
+     "en": "Indeed, the boy is a student."
+    },
+    {
+     "ar": "إِنَّ الكِتَابَ كَبِيرٌ",
+     "tr": "inna l-kitāba kabīrun",
+     "en": "Indeed, the book is big."
+    },
+    {
+     "ar": "الكِتَابُ كَبِيرٌ لٰكِنَّهُ جَمِيلٌ",
+     "tr": "al-kitābu kabīrun lākinnahu jamīlun",
+     "en": "The book is big, but it is beautiful."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "إِنَّ الوَلَدَ طَالِبٌ",
+     "options": [
+      {
+       "text": "inna l-walada ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "inna l-waladu ṭālibun",
+       "ar": false
+      },
+      {
+       "text": "inna l-walada ṭāliban",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "After إِنَّ the subject is accusative.",
+      "ar": "بعد إِنَّ يُنصب الاسم."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "In إِنَّ الوَلَدَ طَالِبٌ, which word is accusative?",
+      "ar": "في إِنَّ الوَلَدَ طَالِبٌ، أيُّ كلمة منصوبة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الوَلَدَ",
+       "ar": true
+      },
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The noun of إِنَّ.",
+      "ar": "اسم إنّ."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "In إِنَّ الوَلَدَ طَالِبٌ, which word stays nominative?",
+      "ar": "في إِنَّ الوَلَدَ طَالِبٌ، أيُّ كلمة تبقى مرفوعة؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "طَالِبٌ",
+       "ar": true
+      },
+      {
+       "text": "الوَلَدَ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The predicate keeps ḍamma.",
+      "ar": "الخبر يبقى مرفوعًا."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "What does إِنَّ الكِتَابَ كَبِيرٌ mean?",
+      "ar": "ماذا تعني إِنَّ الكِتَابَ كَبِيرٌ؟"
+     },
+     "promptAr": "إِنَّ الكِتَابَ كَبِيرٌ",
+     "options": [
+      {
+       "text": {
+        "en": "Indeed, the book is big.",
+        "ar": "إنّ الكتاب كبير."
+       }
+      },
+      {
+       "text": {
+        "en": "The book was big.",
+        "ar": "كان الكتاب كبيرًا."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "إِنَّ adds emphasis.",
+      "ar": "إِنَّ للتوكيد."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does لٰكِنَّ mean?",
+      "ar": "ماذا تعني لٰكِنَّ؟"
+     },
+     "promptAr": "لٰكِنَّ",
+     "options": [
+      {
+       "text": {
+        "en": "but",
+        "ar": "لكنّ"
+       }
+      },
+      {
+       "text": {
+        "en": "because",
+        "ar": "لأنّ"
+       }
+      },
+      {
+       "text": {
+        "en": "or",
+        "ar": "أو"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لٰكِنَّ = but.",
+      "ar": "لٰكِنَّ = but."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-g2-04",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "Relative pronouns: الَّذِي and الَّتِي",
+    "ar": "الِاسْمُ المَوْصُول"
+   },
+   "objectives": [
+    {
+     "en": "Choose الَّذِي or الَّتِي to match the noun",
+     "ar": "اختيار الَّذِي أو الَّتِي بحسب الاسم"
+    },
+    {
+     "en": "Read short relative clauses",
+     "ar": "قراءة جمل الصلة القصيرة"
+    }
+   ],
+   "prerequisites": [
+    "a-les-g2-03"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "A relative pronoun links a clause to a definite noun and matches its gender: الَّذِي (masculine) and الَّتِي (feminine). هٰذَا الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ “This is the boy who wrote the lesson.” الطَّالِبَةُ الَّتِي كَتَبَتِ الدَّرْسَ “the (female) student who wrote the lesson.”",
+     "ar": "يربط الاسم الموصول جملة الصلة باسم معرفة ويطابقه: الَّذِي للمذكّر والَّتِي للمؤنّث: هٰذَا الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ؛ الطَّالِبَةُ الَّتِي كَتَبَتِ الدَّرْسَ."
+    },
+    {
+     "en": "If the noun is indefinite, no relative pronoun is used: وَلَدٌ كَتَبَ الدَّرْسَ “a boy who wrote the lesson”.",
+     "ar": "وإذا كان الاسم نكرة فلا يُستعمل اسم موصول: وَلَدٌ كَتَبَ الدَّرْسَ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ",
+     "tr": "al-waladu lladhī kataba d-darsa",
+     "en": "the boy who wrote the lesson"
+    },
+    {
+     "ar": "الطَّالِبَةُ الَّتِي كَتَبَتِ الدَّرْسَ",
+     "tr": "aṭ-ṭālibatu llatī katabati d-darsa",
+     "en": "the (female) student who wrote the lesson"
+    },
+    {
+     "ar": "وَلَدٌ كَتَبَ الدَّرْسَ",
+     "tr": "waladun kataba d-darsa",
+     "en": "a boy who wrote the lesson"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الَّذِي",
+     "options": [
+      {
+       "text": "alladhī",
+       "ar": false
+      },
+      {
+       "text": "allatī",
+       "ar": false
+      },
+      {
+       "text": "hādhā",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "الَّذِي is “alladhī” (masculine).",
+      "ar": "الَّذِي تُقرأ «alladhī»."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "الَّتِي",
+     "options": [
+      {
+       "text": "allatī",
+       "ar": false
+      },
+      {
+       "text": "alladhī",
+       "ar": false
+      },
+      {
+       "text": "hādhihi",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "الَّتِي is “allatī” (feminine).",
+      "ar": "الَّتِي تُقرأ «allatī»."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which fits الطَّالِبَةُ (feminine)?",
+      "ar": "أيٌّ يناسب الطَّالِبَةُ (مؤنّث)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الَّذِي",
+       "ar": true
+      },
+      {
+       "text": "الَّتِي",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Feminine noun: الَّتِي.",
+      "ar": "اسم مؤنّث: الَّتِي."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which fits الوَلَدُ (masculine)?",
+      "ar": "أيٌّ يناسب الوَلَدُ (مذكّر)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الَّذِي",
+       "ar": true
+      },
+      {
+       "text": "الَّتِي",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Masculine noun: الَّذِي.",
+      "ar": "اسم مذكّر: الَّذِي."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ mean?",
+      "ar": "ماذا تعني الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ؟"
+     },
+     "promptAr": "الوَلَدُ الَّذِي كَتَبَ الدَّرْسَ",
+     "options": [
+      {
+       "text": {
+        "en": "the boy who wrote the lesson",
+        "ar": "الولد الذي كتب الدرس"
+       }
+      },
+      {
+       "text": {
+        "en": "the boy will write the lesson",
+        "ar": "الولد سيكتب الدرس"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The clause describes the boy.",
+      "ar": "الجملة تصف الولد."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "When is no relative pronoun used?",
+      "ar": "متى لا يُستعمل اسم موصول؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "When the noun is indefinite",
+        "ar": "إذا كان الاسم نكرة"
+       }
+      },
+      {
+       "text": {
+        "en": "When the noun is feminine",
+        "ar": "إذا كان الاسم مؤنّثًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "وَلَدٌ كَتَبَ الدَّرْسَ.",
+      "ar": "وَلَدٌ كَتَبَ الدَّرْسَ."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-g2-05",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "Numbers 3 to 5 with counted nouns",
+    "ar": "العَدَدُ مِنْ ثَلَاثَةٍ إِلَى خَمْسَةٍ"
+   },
+   "objectives": [
+    {
+     "en": "Match the number’s gender to the noun (opposite)",
+     "ar": "مخالفة العدد للمعدود"
+    },
+    {
+     "en": "Use a plural genitive noun after the number",
+     "ar": "استعمال المعدود جمعًا مجرورًا"
+    }
+   ],
+   "prerequisites": [
+    "a-les-g2-04"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "With 3 to 10 the number takes the opposite gender to the counted noun: a masculine noun takes a number ending in ة, a feminine noun takes a number without ة. The counted noun is plural and genitive: ثَلَاثَةُ كُتُبٍ “three books” (كِتَابٌ is masculine); ثَلَاثُ قِطَطٍ “three cats” (قِطَّةٌ is feminine).",
+     "ar": "مع الأعداد من ٣ إلى ١٠ يخالف العدد المعدود في التذكير والتأنيث: المعدود المذكّر مع عدد بالتاء المربوطة، والمؤنّث مع عدد بلا تاء. والمعدود جمع مجرور: ثَلَاثَةُ كُتُبٍ، ثَلَاثُ قِطَطٍ."
+    },
+    {
+     "en": "For 1 and 2 the noun is singular: كِتَابٌ وَاحِدٌ “one book”, كِتَابَانِ اثْنَانِ “two books”.",
+     "ar": "ومع ١ و٢ يكون المعدود مفردًا: كِتَابٌ وَاحِدٌ، كِتَابَانِ اثْنَانِ."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "ثَلَاثَةُ كُتُبٍ",
+     "tr": "thalāthatu kutubin",
+     "en": "three books"
+    },
+    {
+     "ar": "أَرْبَعَةُ أَقْلَامٍ",
+     "tr": "arbaʿatu aqlāmin",
+     "en": "four pens"
+    },
+    {
+     "ar": "خَمْسَةُ أَبْوَابٍ",
+     "tr": "khamsatu abwābin",
+     "en": "five doors"
+    },
+    {
+     "ar": "ثَلَاثُ قِطَطٍ",
+     "tr": "thalāthu qiṭaṭin",
+     "en": "three cats"
+    },
+    {
+     "ar": "خَمْسُ طَاوِلَاتٍ",
+     "tr": "khamsu ṭāwilātin",
+     "en": "five tables"
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "ثَلَاثَةُ كُتُبٍ",
+     "options": [
+      {
+       "text": "thalāthatu kutubin",
+       "ar": false
+      },
+      {
+       "text": "thalāthu kutubin",
+       "ar": false
+      },
+      {
+       "text": "thalāthatu kitābin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Masculine noun, number with ة.",
+      "ar": "معدود مذكّر: عدد بالتاء."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "ثَلَاثُ قِطَطٍ",
+     "options": [
+      {
+       "text": "thalāthu qiṭaṭin",
+       "ar": false
+      },
+      {
+       "text": "thalāthatu qiṭaṭin",
+       "ar": false
+      },
+      {
+       "text": "thalāthu qiṭṭatin",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Feminine noun, number without ة.",
+      "ar": "معدود مؤنّث: عدد بلا تاء."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which number goes with قِطَّةٌ (feminine)?",
+      "ar": "أيُّ عدد يناسب قِطَّةٌ (مؤنّث)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ثَلَاثُ",
+       "ar": true
+      },
+      {
+       "text": "ثَلَاثَةُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Opposite gender: no ة.",
+      "ar": "المخالفة: بلا تاء."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which number goes with كِتَابٌ (masculine)?",
+      "ar": "أيُّ عدد يناسب كِتَابٌ (مذكّر)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ثَلَاثُ",
+       "ar": true
+      },
+      {
+       "text": "ثَلَاثَةُ",
+       "ar": true
+      }
+     ],
+     "answer": 1,
+     "explanation": {
+      "en": "Opposite gender: with ة.",
+      "ar": "المخالفة: بالتاء."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does خَمْسَةُ أَبْوَابٍ mean?",
+      "ar": "ماذا تعني خَمْسَةُ أَبْوَابٍ؟"
+     },
+     "promptAr": "خَمْسَةُ أَبْوَابٍ",
+     "options": [
+      {
+       "text": {
+        "en": "five doors",
+        "ar": "خمسة أبواب"
+       }
+      },
+      {
+       "text": {
+        "en": "four doors",
+        "ar": "أربعة أبواب"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "خَمْسَةٌ = five.",
+      "ar": "خَمْسَةٌ = five."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "What is the counted noun after 3–10?",
+      "ar": "كيف يكون المعدود بعد ٣–١٠؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "Plural and genitive",
+        "ar": "جمع مجرور"
+       }
+      },
+      {
+       "text": {
+        "en": "Singular and nominative",
+        "ar": "مفرد مرفوع"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كُتُبٍ is a plural, in the genitive.",
+      "ar": "كُتُبٍ جمع مجرور."
+     }
+    }
+   ]
+  },
+  {
+   "id": "a-les-g2-06",
+   "level": "advanced",
+   "module": "grammar-2",
+   "unit": "sentence-structures",
+   "title": {
+    "en": "Review: sentence structures",
+    "ar": "مراجعة: بُنَى الجُمَل"
+   },
+   "objectives": [
+    {
+     "en": "Combine كان, إنّ, relative clauses and numbers",
+     "ar": "الجمع بين كان وإنّ والموصول والعدد"
+    }
+   ],
+   "prerequisites": [
+    "a-les-g2-01",
+    "a-les-g2-02",
+    "a-les-g2-03",
+    "a-les-g2-04",
+    "a-les-g2-05"
+   ],
+   "minutes": 12,
+   "review": "unreviewed",
+   "explanation": [
+    {
+     "en": "Ask: does a particle (كَانَ or إِنَّ) come first? Then check which word is accusative. For numbers, match the opposite gender.",
+     "ar": "اسأل: هل تتقدّم أداة (كَانَ أو إِنَّ)؟ ثم انظر أيّ كلمة منصوبة. وفي العدد خالف بين العدد والمعدود."
+    }
+   ],
+   "examples": [
+    {
+     "ar": "كَانَ الوَلَدُ طَالِبًا",
+     "tr": "kāna l-waladu ṭāliban",
+     "en": "The boy was a student."
+    },
+    {
+     "ar": "إِنَّ الوَلَدَ طَالِبٌ",
+     "tr": "inna l-walada ṭālibun",
+     "en": "Indeed, the boy is a student."
+    }
+   ],
+   "practice": [
+    {
+     "id": "q1",
+     "prompt": {
+      "en": "After كَانَ, the predicate is…",
+      "ar": "بعد كَانَ يكون الخبر…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "accusative",
+        "ar": "منصوبًا"
+       }
+      },
+      {
+       "text": {
+        "en": "nominative",
+        "ar": "مرفوعًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "كَانَ: predicate accusative.",
+      "ar": "كان: الخبر منصوب."
+     }
+    },
+    {
+     "id": "q2",
+     "prompt": {
+      "en": "After إِنَّ, the subject is…",
+      "ar": "بعد إِنَّ يكون الاسم…"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": {
+        "en": "accusative",
+        "ar": "منصوبًا"
+       }
+      },
+      {
+       "text": {
+        "en": "nominative",
+        "ar": "مرفوعًا"
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "إِنَّ: subject accusative.",
+      "ar": "إنّ: الاسم منصوب."
+     }
+    },
+    {
+     "id": "q3",
+     "prompt": {
+      "en": "Which relative pronoun fits الطَّالِبَةُ?",
+      "ar": "أيُّ اسم موصول يناسب الطَّالِبَةُ؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "الَّتِي",
+       "ar": true
+      },
+      {
+       "text": "الَّذِي",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Feminine.",
+      "ar": "مؤنّث."
+     }
+    },
+    {
+     "id": "q4",
+     "prompt": {
+      "en": "Which number goes with قَلَمٌ (masculine)?",
+      "ar": "أيُّ عدد يناسب قَلَمٌ (مذكّر)؟"
+     },
+     "promptAr": "",
+     "options": [
+      {
+       "text": "ثَلَاثَةُ",
+       "ar": true
+      },
+      {
+       "text": "ثَلَاثُ",
+       "ar": true
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "Masculine noun: number with ة.",
+      "ar": "معدود مذكّر: عدد بتاء."
+     }
+    },
+    {
+     "id": "q5",
+     "prompt": {
+      "en": "What does لَيْسَ الوَلَدُ طَالِبًا mean?",
+      "ar": "ماذا تعني لَيْسَ الوَلَدُ طَالِبًا؟"
+     },
+     "promptAr": "لَيْسَ الوَلَدُ طَالِبًا",
+     "options": [
+      {
+       "text": {
+        "en": "The boy is not a student.",
+        "ar": "الولد ليس طالبًا."
+       }
+      },
+      {
+       "text": {
+        "en": "Indeed, the boy is a student.",
+        "ar": "إنّ الولد طالب."
+       }
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "لَيْسَ = is not.",
+      "ar": "لَيْسَ = is not."
+     }
+    },
+    {
+     "id": "q6",
+     "prompt": {
+      "en": "How do you read this?",
+      "ar": "كيف تقرأ هذا؟"
+     },
+     "promptAr": "أَكَلَ الوَلَدُ التُّفَّاحَاتِ",
+     "options": [
+      {
+       "text": "akala l-waladu t-tuffāḥāti",
+       "ar": false
+      },
+      {
+       "text": "akala l-waladu t-tuffāḥātu",
+       "ar": false
+      },
+      {
+       "text": "akala l-waladi t-tuffāḥāti",
+       "ar": false
+      }
+     ],
+     "answer": 0,
+     "explanation": {
+      "en": "The sound feminine plural accusative takes kasra.",
+      "ar": "نصب جمع المؤنّث السالم بالكسرة."
+     }
+    }
+   ]
+  }
+ ]
+}
