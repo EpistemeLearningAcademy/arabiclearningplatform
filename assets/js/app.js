@@ -2,12 +2,13 @@ import { t, setLang, savedLang, lang } from "./i18n.js";
 import * as S from "./storage.js";
 import { POLICY, itemState, buildQuiz, buildLessonQuiz, buildPositionQuiz, buildListeningQuiz, scramble, checkOrder, shuffle, traceStats, letterForms, scoreQuiz, recordAnswers, touchStreak, revisionList } from "./engine.js";
 import { evaluate, weekStart, weekKey, pickChallenges, challengeProgress, certProgress, certsEarned } from "./gamification.js";
-import { summarize, assignmentDone, toCSV } from "./reports.js";
+import { summarize, assignmentDone, toCSV, certSerial, registerCSV } from "./reports.js";
+import { play, loadAudioManifest, hasAudio, audioSource, audioIds, hasArabicVoice } from "./audio.js";
 import { checkWriting, compareCopy } from "./writing.js";
 import { validateVocab, validateLetters, validateLessons, validateAchievements, validateReading, validateSentences, validateChallenges, validateCertificates, validateWriting } from "./validators.js";
 
 const app = document.getElementById("app");
-let themes = [], wprompts = [], wfiles = {}, challenges = [], certs = [], sentences = [], sfiles = {}, passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
+let settings = {}, brandDef = {}, imgs = {}, brandImgs = {}, imgFiles = {}, themes = [], wprompts = [], wfiles = {}, challenges = [], certs = [], sentences = [], sfiles = {}, passages = [], rdFiles = {}, catalog = [], lessons = [], lsFiles = {}, letters = [], lfiles = {}, files = {}, P = null, view = "home", ctx = {};
 const vocabItems = () => themes.flatMap(th => th.items);
 const allItems = () => [...letters, ...vocabItems()];
 
@@ -68,7 +69,7 @@ async function profilesView(creating) {
     const name = h("input", { id: "n", maxlength: 40, autocomplete: "off" });
     const age = h("select", { id: "a" }, ["child", "teen", "adult"].map(k => h("option", { value: k }, t("age." + k))));
     const mode = h("select", { id: "m" }, ["young", "standard"].map(k => h("option", { value: k }, t("mode." + k))));
-    return shell([h("h1", {}, t("newProfile")),
+    return shell([hero(), h("div", { class: "row sb" }, h("h1", {}, t("newProfile")), langToggle()),
       h("label", { for: "n" }, t("name")), name, h("label", { for: "a" }, t("ageGroup")), age, h("label", { for: "m" }, t("mode")), mode,
       h("div", { class: "row", style: "margin-top:1rem" },
         btn(t("create"), async () => { const nm = name.value.trim(); if (!nm) return name.focus();
@@ -76,27 +77,27 @@ async function profilesView(creating) {
         list.length ? btn(t("cancel"), () => go("profiles")) : null),
       h("p", { class: "note" }, t("localNote"))]);
   }
-  shell([h("div", { class: "row sb" }, h("h1", {}, t("who")), langToggle()),
-    list.map(p => h("button", { class: "card tile", style: "width:100%;flex-direction:row;justify-content:flex-start", type: "button",
-      onclick: () => { P = p; S.setCurrentId(p.id); go("home"); } }, h("span", { class: "emoji" }, p.avatar), h("strong", {}, p.name))),
-    h("div", { class: "row" }, btn("+ " + t("newProfile"), () => go("profiles", { creating: true }), "gold"), btn(t("centre"), openCentre)), h("p", { class: "note" }, t("localNote"))]);
+  shell([hero(), h("div", { class: "row sb" }, h("h2", {}, t("who")), langToggle()),
+    h("div", { class: "grid" }, list.map((p, i) => h("button", { class: `card tile lc${i % 6}`, type: "button", onclick: () => { P = p; S.setCurrentId(p.id); go("home"); } }, h("span", { class: "avatar" }, p.avatar), h("strong", {}, p.name)))),
+    h("div", { class: "row" }, btn("+ " + t("newProfile"), () => go("profiles", { creating: true }), "gold"), btn(t("centre"), openCentre), btn("🛠 " + t("admin"), openAdmin)), h("p", { class: "note" }, t("localNote"))]);
 }
 
 // ---------- Home / themes ----------
 function homeView() {
-  const pr = P.progress, tiles = themes.map(th => {
+  const pr = P.progress, tiles = themes.map((th, ti) => {
     const n = th.items.filter(i => pr.items[i.id]?.seen && pr.items[i.id].learned).length;
-    return h("button", { class: "card tile", type: "button", onclick: () => go("theme", { th, i: 0, flip: false }) },
+    return h("button", { class: `card tile t${ti % 6}`, type: "button", onclick: () => go("theme", { th, i: 0, flip: false }) },
       h("span", { class: "emoji" }, th.emoji), ar(th.title.ar), lang() === "en" ? h("span", {}, th.title.en) : null,
       h("small", {}, t("learnedCount", { n, m: th.items.length })));
   });
-  shell([h("h1", {}, `${P.avatar} ${P.name}`), assignedBlock(), h("h2", {}, t("level1")),
-    h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
-    h("button", { class: "card tile", style: "width:100%", type: "button", onclick: () => go("library") }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
+  shell([homeHero(t("welcomeBack")), assignedBlock(), h("h2", {}, t("level1")),
+    h("button", { class: "card tile t0", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
+    h("button", { class: "card tile t1", style: "width:100%", type: "button", onclick: () => go("library"), "data-mod": "library" }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
     h("div", { class: "grid" },
-      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: startBuilder }, h("span", { class: "emoji" }, "🧩"), h("strong", {}, t("builder")), h("small", {}, t("builderIntro"))),
-      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: () => go("listening") }, h("span", { class: "emoji" }, "🎧"), h("strong", {}, t("listening")), h("small", {}, t("listeningIntro"))),
-      h("button", { class: "card tile", style: "margin:0", type: "button", onclick: () => go("writing") }, h("span", { class: "emoji" }, "✍️"), h("strong", {}, t("writing")), h("small", {}, t("writingIntro")))),
+      h("button", { class: "card tile t5", style: "margin:0", type: "button", onclick: startBuilder, "data-mod": "builder" }, h("span", { class: "emoji" }, "🧩"), h("strong", {}, t("builder")), h("small", {}, t("builderIntro"))),
+      h("button", { class: "card tile t4", style: "margin:0", type: "button", onclick: () => go("listening"), "data-mod": "listening" }, h("span", { class: "emoji" }, "🎧"), h("strong", {}, t("listening")), h("small", {}, t("listeningIntro"))),
+      h("button", { class: "card tile t2", style: "margin:0", type: "button", onclick: () => go("writing"), "data-mod": "writing" }, h("span", { class: "emoji" }, "✍️"), h("strong", {}, t("writing")), h("small", {}, t("writingIntro"))),
+      h("button", { class: "card tile t3", style: "margin:0", type: "button", onclick: () => go("certs") }, h("span", { class: "emoji" }, "🎓"), h("strong", {}, t("certificates")), h("small", {}, t("certTileSub", { n: Object.keys(P.progress.certificates || {}).length })))),
     h("p", { class: "muted" }, t("themes")),
     h("div", { class: "grid" }, tiles), btn(t("practiceAll"), () => startQuiz(vocabItems()), "primary"),
     h("h2", {}, t("lessons")), P.progress.lastLesson && lessons.find(l => l.id === P.progress.lastLesson) ? btn("▶ " + t("resume"), () => go("lesson", { l: lessons.find(l => l.id === P.progress.lastLesson) }), "gold") : null,
@@ -104,14 +105,14 @@ function homeView() {
     h("h2", {}, t("level2")), lessons.some(l => l.level === "intermediate") ? lessons.filter(l => l.level === "intermediate").map(lessonRow) : h("p", { class: "badge" }, t("soon")),
     h("h2", {}, t("level3")), lessons.some(l => l.level === "advanced") ? lessons.filter(l => l.level === "advanced").map(lessonRow) : h("p", { class: "badge" }, t("soon")),
     h("p", { class: "note" }, t("review.note"))]);
+  for (const k of ["library", "builder", "listening", "writing"]) if (hide(k)) app.querySelectorAll(`[data-mod="${k}"]`).forEach(e => e.remove());
 }
 
 // ---------- Flashcards ----------
-const hasArabicVoice = () => !!(window.speechSynthesis && speechSynthesis.getVoices().some(v => v.lang.startsWith("ar")));
-function speak(text) {
-  const v = window.speechSynthesis && speechSynthesis.getVoices().find(x => x.lang.startsWith("ar"));
-  if (!v) return flash(t("noVoice"));
-  const u = new SpeechSynthesisUtterance(text); u.voice = v; u.lang = v.lang; speechSynthesis.cancel(); speechSynthesis.speak(u);
+async function playItem(id, text) {
+  const src = await play(id, text);
+  if (!src) return flash(hasArabicVoice() ? t("audioFail") : t("noAudioWord"));
+  if (src === "ai") flash(t("aiVoiceNote"));
 }
 function themeView() {
   const { th } = ctx, it = th.items[ctx.i], r = P.progress.items[it.id] || {};
@@ -119,9 +120,9 @@ function themeView() {
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("seen", { i: ctx.i + 1, n: th.items.length }))),
     h("h2", {}, title(th)), bar(((ctx.i + 1) / th.items.length) * 100),
     h("button", { class: "card flash", type: "button", "aria-label": t("tapFlip"), onclick: async () => { markSeen(it); ctx.flip = !ctx.flip; render(); } },
-      h("span", { class: "emoji big", "aria-hidden": "true" }, it.emoji), ar(it.ar, "big"),
+      picEl(it.id, it.emoji, "xl"), ar(it.ar, "big"),
       ctx.flip ? h("strong", { dir: "ltr" }, it.en) : h("small", { class: "muted" }, t("tapFlip"))),
-    h("div", { class: "row" }, btn("🔊 " + t("listen"), () => speak(it.ar)), btn(learned ? t("learnedDone") : "⭐ " + t("markLearned"), async () => {
+    h("div", { class: "row" }, btn("🔊 " + t("listen"), () => playItem(it.id, it.ar)), btn(learned ? t("learnedDone") : "⭐ " + t("markLearned"), async () => {
       if (learned) return; markSeen(it); P.progress.items[it.id].learned = true; P.progress.xp += POLICY.xpLearn; touchStreak(P.progress); await save(); render(); }, learned ? "" : "gold")),
     h("small", { class: "muted" }, t("voiceNote")), h("div", { class: "row", style: "margin-top:.6rem" }, btn("✍️ " + t("traceLetter"), () => go("trace", { texts: [{ label: it.en, text: it.ar }], k: 0, back: "theme", backCtx: { th, i: ctx.i, flip: false } }))),
     h("div", { class: "row sb", style: "margin-top:1rem" },
@@ -210,9 +211,11 @@ function promptView() {
 }
 
 // ---------- Listening lab ----------
+function listeningPool() { return hasArabicVoice() ? vocabItems() : vocabItems().filter(it => hasAudio(it.id)); }
 function listeningView() {
+  const pool = listeningPool();
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("listening")), h("p", { class: "muted" }, t("listeningIntro")),
-    hasArabicVoice() ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(vocabItems(), t), qi: 0, topic: "listening" }), "primary") : h("p", { class: "note" }, t("noVoice")),
+    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : [h("p", { class: "note" }, t("noVoice")), h("p", { class: "note" }, t("voiceHelp"))],
     h("p", { class: "note" }, t("listenNote"))]);
 }
 
@@ -247,7 +250,7 @@ function libraryView() {
 function passageView() {
   const p = ctx.p, r = rp(p.id);
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("library")), p.classical ? h("span", { class: "badge" }, t("classical")) : null), h("h1", {}, loc(p.title)),
-    p.lines.map(l => h("div", { class: "card" }, h("div", { class: "row sb" }, ar(l.ar, "big"), h("button", { type: "button", "aria-label": t("listen"), onclick: () => speak(l.ar) }, "🔊")),
+    p.lines.map((l, k) => h("div", { class: "card" }, h("div", { class: "row sb" }, ar(l.ar, "big"), h("button", { type: "button", "aria-label": t("listen"), onclick: () => playItem(p.id + "-" + (k + 1), l.ar) }, "🔊")),
       h("div", { dir: "ltr", class: "muted" }, l.tr), ctx.show ? h("div", { dir: "ltr" }, l.en) : null)),
     btn(ctx.show ? t("hideTrans") : t("showTrans"), () => { ctx.show = !ctx.show; render(); }),
     h("h3", {}, t("support")), p.vocabulary.map(v => h("div", { class: "row sb card" }, ar(v.ar), h("span", { dir: "ltr" }, `${v.tr} · ${v.en}`))),
@@ -264,20 +267,121 @@ function challengeBlock() {
 }
 function certsView() {
   const got = P.progress.certificates || {};
-  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("dashboard"))), h("h1", {}, t("certificates")), h("p", { class: "muted" }, t("certIntro")),
-    certs.map(c => { const pg = certProgress(P, c, lessons);
-      return h("div", { class: "card" }, h("strong", {}, loc(c.title)), got[c.id] ? [h("p", {}, t("certEarned", { d: new Date(got[c.id]).toLocaleDateString() })), btn(t("viewCert"), () => go("cert", { c }), "primary")]
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, "🎓 " + t("certificates")), h("p", { class: "muted" }, t("certIntro")),
+    certs.map((c, i) => { const pg = certProgress(P, c, lessons);
+      return h("div", { class: `card cc${i % 5}` }, h("strong", {}, loc(c.title)), got[c.id] ? [h("p", {}, t("certEarned", { d: new Date(got[c.id]).toLocaleDateString() })), btn(t("viewCert"), () => go("cert", { c }), "primary")]
         : [h("p", { class: "muted" }, t("certLocked")), bar(pg.total ? (pg.done / pg.total) * 100 : 0), h("small", {}, `${pg.done} / ${pg.total}`), h("p", {}, h("small", {}, t("requirement", { m: c.modules.join(", ") })))]); })]);
 }
 function certView() {
-  const c = ctx.c, when = (P.progress.certificates || {})[c.id];
-  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("certs")), btn("🖨 " + t("printBtn"), () => window.print(), "primary")),
-    h("div", { class: "card cert", style: "text-align:center;border:4px double var(--gold);padding:2rem 1rem" }, h("small", {}, t("org")), h("h1", {}, t("certTitleLine")), h("p", {}, t("certThat")), h("h2", {}, P.name),
-      h("p", {}, t("certCompleted")), h("h2", {}, loc(c.title)), h("p", {}, t("dateLine", { d: when ? new Date(when).toLocaleDateString() : "" })), h("small", { class: "muted" }, t("certFoot")))]);
+  const c = ctx.c, b = brand(), pre = !!ctx.preview, when = pre ? Date.now() : (P.progress.certificates || {})[c.id], name = pre ? "Sample Learner" : P.name;
+  const serial = certSerial(pre ? "preview" : P.id, c.id, when), d = new Date(when).toLocaleDateString();
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go(pre ? "admin" : "certs", pre ? { open: "brand" } : {})), btn("🖨 " + t("printBtn"), () => window.print(), "primary")),
+    h("div", { class: "cert" }, h("div", { class: "cert-top" }, brandImage("logo", "cert-logo"), h("div", { class: "cert-org" }, b.org)), h("h1", { class: "cert-title" }, b.heading),
+      h("p", {}, t("certThat")), h("h2", { class: "cert-name" }, name), h("p", {}, t("certCompleted")), h("h2", { class: "cert-course" }, loc(c.title)), h("p", { class: "cert-statement" }, b.statement),
+      h("div", { class: "cert-sign" }, h("div", { class: "sig" }, brandImage("signature", "cert-sig"), h("div", { class: "line" }), h("strong", {}, b.signatoryName), h("small", {}, b.signatoryTitle)), h("div", { class: "stamp" }, brandImage("stamp", "cert-stamp"))),
+      h("small", { class: "muted" }, `${t("serial")}: ${serial} · ${t("dateLine", { d })}`), h("small", { class: "muted", style: "display:block" }, b.footer))]);
+}
+
+// ---------- Settings, branding, pictures, PIN, admin ----------
+const APP_VERSION = "6.0";
+const hide = k => !!(settings.hide && settings.hide[k]);
+async function saveSettings() { try { await S.kvSet("settings", settings); } catch { flash(t("storageError")); } }
+function brand() {
+  const pick = k => { const d = brandDef[k], o = (settings.brand || {})[k];
+    if (d && typeof d === "object") { const m = { ...d }; if (o) for (const l of ["en", "ar"]) if (o[l]) m[l] = o[l]; return loc(m); }
+    return o || d || ""; };
+  return { org: pick("org"), heading: pick("heading"), statement: pick("statement"), footer: pick("footer"), signatoryName: pick("signatoryName"), signatoryTitle: pick("signatoryTitle") };
+}
+function brandImage(kind, cls) {
+  const ext = brandDef.files && brandDef.files[kind], src = brandImgs["brand:" + kind] || (ext ? `assets/branding/${kind}.${ext}` : null);
+  if (!src) return h("span");
+  const im = h("img", { src, alt: "", class: cls }); im.onerror = () => im.remove(); return im;
+}
+function picEl(id, emoji, size = "") {
+  const wrap = h("span", { class: "pic " + size, "aria-hidden": "true" }, h("span", { class: "emoji" }, emoji || ""));
+  const dev = id && imgs["img:" + id], ext = id && imgFiles[id], src = dev || (ext ? `assets/images/vocab/${id}.${ext}` : null);
+  if (src) { const im = h("img", { alt: "", loading: "lazy", src }); im.onerror = () => im.remove(); wrap.append(im); }
+  return wrap;
+}
+function fileToDataUrl(file, max, png) {
+  return new Promise((res, rej) => { const url = URL.createObjectURL(file), im = new Image();
+    im.onload = () => { const k = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement("canvas"); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+      c.getContext("2d").drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url); res(c.toDataURL(png ? "image/png" : "image/jpeg", 0.82)); };
+    im.onerror = () => { URL.revokeObjectURL(url); rej(new Error("image")); }; im.src = url; });
+}
+const sha = async s => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))].map(x => x.toString(16).padStart(2, "0")).join("");
+function gate(next) { settings.pin ? go("pin", { next }) : next(); }
+function pinView() {
+  const input = h("input", { id: "pin", type: "password", inputmode: "numeric", autocomplete: "off", maxlength: 8 }), out = h("div", { role: "status" });
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go(P ? "settings" : "profiles"))), h("h1", {}, t("pinTitle")), h("label", { for: "pin" }, t("pinEnter")), input, out,
+    h("div", { style: "margin-top:1rem" }, btn(t("unlock"), async () => { if ((await sha(settings.pin.salt + input.value)) === settings.pin.hash) ctx.next(); else out.replaceChildren(h("p", { class: "note" }, t("pinWrong"))); }, "primary"))]);
+}
+const download = (name, text, type) => { const a = h("a", { href: URL.createObjectURL(new Blob([text], { type })), download: name }); a.click(); };
+async function probe(urls) { for (const u of urls) { try { const r = await fetch(u, { method: "HEAD", cache: "no-store" }); if (r.ok) return u; } catch { /* offline or missing */ } } return null; }
+function contentErrors() { return [...validateVocab(files), ...validateLetters(lfiles), ...validateLessons(lsFiles), ...validateAchievements(catalog), ...validateReading(rdFiles), ...validateSentences(sfiles), ...validateChallenges(challenges), ...validateCertificates(certs, lessons), ...validateWriting(wfiles)]; }
+function expectedAudioIds() { return [...vocabItems().map(i => i.id), ...letters.map(l => l.id), ...passages.flatMap(p => p.lines.map((_, k) => `${p.id}-${k + 1}`))]; }
+function adminView() {
+  const open = ctx.open || "", ov = settings.brand || {}, refresh = k => go("admin", { open: k });
+  const sec = (key, title, ...kids) => h("details", { class: "card", open: open === key }, h("summary", {}, h("strong", {}, title)), kids);
+  const inputs = {}, field = (id, label, val, ph, area) => { const el = h(area ? "textarea" : "input", { id, value: area ? null : val || "", placeholder: ph || "", rows: area ? 3 : null, style: area ? "width:100%;font:inherit;padding:.6rem;border:2px solid var(--line);border-radius:12px" : null }, area ? val || "" : null); inputs[id] = el; return [h("label", { for: id }, label), el]; };
+  const v = id => inputs[id].value.trim(), out = h("div", { role: "status" });
+  const pin1 = h("input", { id: "np", type: "password", inputmode: "numeric", maxlength: 8, autocomplete: "off" });
+  const imgRow = kind => { const picker = h("input", { type: "file", accept: "image/*", hidden: true, onchange: async e => { const f = e.target.files[0]; if (!f) return;
+      try { const d = await fileToDataUrl(f, 600, true); brandImgs["brand:" + kind] = d; await S.kvSet("brand:" + kind, d); flash(t("brandSaved")); refresh("brand"); } catch { flash(t("importFail")); } } });
+    return h("div", { class: "row sb card" }, h("strong", {}, t(kind)), brandImage(kind, "thumb"), h("span", { class: "row" }, btn(t("imgChoose"), () => picker.click()), picker,
+      brandImgs["brand:" + kind] ? btn(t("imgRemove"), async () => { delete brandImgs["brand:" + kind]; await S.kvDel("brand:" + kind); refresh("brand"); }, "danger") : null)); };
+  const picRow = it => { const picker = h("input", { type: "file", accept: "image/*", hidden: true, onchange: async e => { const f = e.target.files[0]; if (!f) return;
+      try { const d = await fileToDataUrl(f, 480, false); imgs["img:" + it.id] = d; await S.kvSet("img:" + it.id, d); refresh("pics"); } catch { flash(t("importFail")); } } });
+    return h("div", { class: "card tile", style: "margin:0;min-height:0" }, picEl(it.id, it.emoji, "md"), ar(it.ar), h("small", { dir: "ltr" }, it.en), btn(t("picChoose"), () => picker.click()), picker,
+      imgs["img:" + it.id] ? btn(t("picRemove"), async () => { delete imgs["img:" + it.id]; await S.kvDel("img:" + it.id); refresh("pics"); }, "danger") : null); };
+  const manifestBox = (txt, hint) => [h("label", {}, hint), h("textarea", { rows: 6, readonly: true, dir: "ltr", style: "width:100%;font:.8rem monospace;padding:.5rem;border-radius:10px;border:2px solid var(--line)" }, txt),
+    btn(t("copy"), async () => { try { await navigator.clipboard.writeText(txt); flash(t("copied")); } catch { flash(txt.slice(0, 40) + "…"); } })];
+  const ids = expectedAudioIds(), have = ids.filter(hasAudio).length;
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go(P ? "settings" : "profiles"))), h("h1", {}, "🛠 " + t("admin")), h("p", { class: "note" }, t("adminIntro")),
+    sec("sec", t("adminSecurity"), h("p", { class: "muted" }, t("pinNote")), h("p", {}, settings.pin ? "🔒 " + t("pinOn") : t("pinOff")), h("label", { for: "np" }, t("pinNew")), pin1,
+      h("div", { class: "row", style: "margin-top:.6rem" }, btn(t("pinSave"), async () => { if (!/^\d{4,8}$/.test(pin1.value)) return flash(t("pinFormat")); if (!(window.crypto && crypto.subtle)) return flash(t("pinNeedsHttps"));
+        const salt = crypto.randomUUID(); settings.pin = { salt, hash: await sha(salt + pin1.value) }; await saveSettings(); flash(t("pinSaved")); refresh("sec"); }, "primary"),
+        settings.pin ? btn(t("pinRemove"), async () => { delete settings.pin; await saveSettings(); refresh("sec"); }, "danger") : null)),
+    sec("brand", t("adminBrand"), ...field("b-org-en", t("brandOrgEn"), (ov.org || {}).en, brandDef.org && brandDef.org.en), ...field("b-org-ar", t("brandOrgAr"), (ov.org || {}).ar, brandDef.org && brandDef.org.ar),
+      ...field("b-sn", t("brandSigner"), ov.signatoryName), ...field("b-st-en", t("brandSignerTitleEn"), (ov.signatoryTitle || {}).en), ...field("b-st-ar", t("brandSignerTitleAr"), (ov.signatoryTitle || {}).ar),
+      ...field("b-ss-en", t("brandStatementEn"), (ov.statement || {}).en, brandDef.statement && brandDef.statement.en, true), ...field("b-ss-ar", t("brandStatementAr"), (ov.statement || {}).ar, brandDef.statement && brandDef.statement.ar, true),
+      ...field("b-ft-en", t("brandFooterEn"), (ov.footer || {}).en, brandDef.footer && brandDef.footer.en, true), ...field("b-ft-ar", t("brandFooterAr"), (ov.footer || {}).ar, brandDef.footer && brandDef.footer.ar, true),
+      h("div", { class: "row", style: "margin:.6rem 0" }, btn(t("brandSave"), async () => { settings.brand = { org: { en: v("b-org-en"), ar: v("b-org-ar") }, signatoryName: v("b-sn"), signatoryTitle: { en: v("b-st-en"), ar: v("b-st-ar") },
+          statement: { en: v("b-ss-en"), ar: v("b-ss-ar") }, footer: { en: v("b-ft-en"), ar: v("b-ft-ar") } }; await saveSettings(); flash(t("brandSaved")); refresh("brand"); }, "primary"),
+        btn(t("brandPreview"), () => go("cert", { c: certs[0], preview: true }))), h("h3", {}, t("brandImages")), h("p", { class: "muted" }, t("imgNoteDevice")), imgRow("logo"), imgRow("signature"), imgRow("stamp")),
+    sec("mods", t("adminModules"), ["library", "builder", "listening", "writing"].map(k => h("label", { class: "row" }, h("input", { type: "checkbox", style: "width:auto;min-height:auto", checked: !hide(k), onchange: async e => { (settings.hide ||= {})[k] = !e.target.checked; await saveSettings(); } }), t("mod." + k)))),
+    sec("pics", t("adminPictures"), h("p", { class: "muted" }, t("picNote")), h("div", { class: "grid" }, vocabItems().map(picRow)),
+      h("div", { class: "row", style: "margin-top:.8rem" }, btn(t("picCheck"), async () => { const found = {}; for (const it of vocabItems()) for (const ext of ["jpg", "png", "webp"]) { if (await probe([`assets/images/vocab/${it.id}.${ext}`])) { found[it.id] = ext; break; } }
+        out.replaceChildren(h("p", {}, t("picFound", { n: Object.keys(found).length })), ...manifestBox(JSON.stringify({ files: found }, null, 1), t("manifestJson") + " (content/images/manifest.json)")); })), out),
+    sec("audio", t("adminAudio"), h("p", { class: "muted" }, t("audioNote")), h("p", {}, t("audioHave", { n: have, m: ids.length })),
+      h("div", { class: "row" }, btn(t("audioCheck"), async () => { const found = {}; for (const id of ids) { if (await probe([`assets/audio/${id}.mp3`])) found[id] = audioSource(id) || "recorded"; }
+        out.replaceChildren(h("p", {}, t("audioFound", { n: Object.keys(found).length })), ...manifestBox(JSON.stringify({ files: found }, null, 1), t("manifestJson") + " (content/audio/manifest.json)")); }),
+        audioIds()[0] ? btn("▶ " + t("audioTest"), () => playItem(audioIds()[0], "")) : null), h("p", { class: "note" }, t("voiceHelp"))),
+    sec("content", t("adminContent"), btn(t("checkContent"), () => { const e = contentErrors(); out.replaceChildren(e.length ? h("div", { class: "note" }, t("contentBad"), h("ul", {}, e.map(x => h("li", {}, x)))) : h("div", { class: "note" }, t("contentOk", { n: lessons.length + vocabItems().length + letters.length }))); }), out),
+    sec("data", t("adminData"), h("div", { class: "row" }, btn(t("backupAll"), async () => { const all = await S.allProfiles(); download("kalimati-all-learners.json", JSON.stringify({ app: "kalimati-backup", version: APP_VERSION, profiles: all.map(p => ({ app: "kalimati", ...p })) }), "application/json"); }),
+      btn(t("registerCsv"), async () => { const all = await S.allProfiles(); download("kalimati-certificate-register.csv", registerCSV(all, certs), "text/csv"); }),
+      btn(t("restoreAll"), () => rp2.click()))),
+    sec("about", t("adminAbout"), h("p", {}, t("aboutLine", { v: APP_VERSION, n: ctx.count ?? "…" })))]);
+  const rp2 = h("input", { type: "file", accept: "application/json", hidden: true, onchange: async e => { const f = e.target.files[0]; if (!f) return; let n = 0;
+    try { const o = JSON.parse(await f.text()); if (o.app !== "kalimati-backup" || !Array.isArray(o.profiles)) throw 0; for (const p of o.profiles) { const q = S.parseImport(p); if (q) { await S.saveProfile(q); n++; } } flash(t("restored", { n })); } catch { flash(t("restoreFail")); } } });
+  app.append(rp2); S.allProfiles().then(l => { const el = app.querySelector("details:last-of-type p"); if (el) el.textContent = t("aboutLine", { v: APP_VERSION, n: l.length }); }).catch(() => {});
+}
+
+// ---------- Hero banners ----------
+function hero() {
+  return h("section", { class: "hero" }, h("div", { class: "hero-ar ar", lang: "ar", dir: "rtl" }, "كَلِمَاتِي الأُولَى"), h("div", { class: "hero-en" }, "Kalimāti al-Ūlā"), h("p", {}, t("tagline")), h("small", {}, t("org")));
+}
+function homeHero(kicker) {
+  const done = lessons.filter(l => lq(l.id).completed).length, pct = lessons.length ? Math.round((done / lessons.length) * 100) : 0, pr = P.progress;
+  return h("section", { class: "hero hero-home" }, h("div", { class: "hero-text" }, h("small", {}, kicker), h("h1", {}, `${P.avatar} ${P.name}`),
+    h("div", { class: "chips" }, h("span", { class: "chip" }, `⭐ ${pr.xp} ${t("xp")}`), h("span", { class: "chip" }, `🔥 ${pr.streak.count}`), h("span", { class: "chip" }, `🎓 ${Object.keys(pr.certificates || {}).length}`))),
+    h("div", { class: "ring", style: `--p:${pct}`, role: "img", "aria-label": `${pct}%` }, h("span", {}, pct + "%")));
 }
 
 // ---------- Parent & teacher centre (local to this device) ----------
-async function openCentre() {
+const openCentre = () => gate(openCentreNow);
+const openAdmin = () => gate(() => go("admin", {}));
+async function openCentreNow() {
   try { const list = await S.allProfiles(); go("centre", { profiles: list.map(p => (P && p.id === P.id ? P : p)) }); } catch { flash(t("storageError")); }
 }
 const dayLabel = ms => (ms ? new Date(ms).toLocaleDateString() : t("never"));
@@ -307,7 +411,7 @@ function centreLearnerView() {
   type.addEventListener("change", fill); fill();
   const due = h("input", { type: "date", id: "ad" }), note = h("input", { id: "an", maxlength: 120 });
   const stat = (v, k) => h("div", { class: "card tile", style: "margin:0;min-height:80px" }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
-  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => openCentre())), h("h1", {}, `${p.avatar} ${p.name}`),
+  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => openCentreNow())), h("h1", {}, `${p.avatar} ${p.name}`),
     h("div", { class: "grid" }, stat(`${s.done}/${s.total}`, "lessonsDoneN"), stat(s.xp, "xp"), stat(s.avg == null ? "–" : s.avg + "%", "avgScore"), stat(s.streak, "streakDays")),
     h("div", { class: "row", style: "margin-top:.6rem" }, btn("📄 " + t("report"), () => go("report", { p }), "primary")),
     h("h2", {}, t("assignments")), asg.length ? asg.map(a => { const info = assignInfo(a), d = assignmentDone(p, a);
@@ -350,7 +454,7 @@ function letterView() {
     h("div", { class: "card flash" }, h("span", { style: "font-size:5rem", class: "ar", lang: "ar", dir: "rtl" }, l.ar), ar(l.nameAr), h("strong", { dir: "ltr" }, l.en)),
     h("h3", {}, t("forms")), h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(110px,1fr))" },
       forms(l).map(([k, f]) => h("div", { class: "card tile", style: "min-height:90px;margin:0" }, ar(f, "big"), h("small", {}, t(k))))),
-    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")), h("div", { class: "row" }, learnBtn(l), btn("✍️ " + t("traceLetter"), () => go("trace", { texts: letterTexts(l), k: 0, back: "letter", backCtx: { i: ctx.i } }))),
+    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")), h("div", { class: "row" }, btn("🔊 " + t("listen"), () => playItem(l.id, l.nameAr)), learnBtn(l), btn("✍️ " + t("traceLetter"), () => go("trace", { texts: letterTexts(l), k: 0, back: "letter", backCtx: { i: ctx.i } }))),
     h("div", { class: "row sb", style: "margin-top:1rem" }, btn("← " + t("prev"), () => go("letter", { i: (ctx.i - 1 + n) % n })), btn(t("next") + " →", () => go("letter", { i: (ctx.i + 1) % n }), "primary"))]);
 }
 
@@ -389,7 +493,7 @@ function quizView() {
   const last = qi === qs.length - 1;
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("q", { i: qi + 1, n: qs.length }))),
     bar((qi / qs.length) * 100), h("h2", {}, q.heading || t("question." + q.type)),
-    q.promptKind === "none" ? null : h("div", { class: "card flash" }, q.promptKind === "listen" ? h("button", { type: "button", class: "gold", style: "min-height:88px;font-size:2.4rem", "aria-label": t("listen"), onclick: () => speak(q.ar) }, "🔊") : q.promptKind === "emoji" ? h("span", { class: "emoji big", "aria-hidden": "true" }, q.emoji) : q.promptKind === "text" ? h("strong", { class: "big", dir: "ltr" }, q.en) : ar(q.ar, "big")),
+    q.promptKind === "none" ? null : h("div", { class: "card flash" }, q.promptKind === "listen" ? h("button", { type: "button", class: "gold", style: "min-height:88px;font-size:2.4rem", "aria-label": t("listen"), onclick: () => playItem(q.itemId.split(":")[0], q.ar) }, "🔊") : q.promptKind === "emoji" ? picEl(q.itemId, q.emoji, "xl") : q.promptKind === "text" ? h("strong", { class: "big", dir: "ltr" }, q.en) : ar(q.ar, "big")),
     h("div", { class: "opts" }, opts),
     answered ? h("div", { role: "status" }, h("p", {}, q.options[q.chosen].ok ? "✅ " + t("correct") : "❌ " + t("wrong", { a: q.answer })), q.explanation ? h("p", { class: "note" }, q.explanation) : null,
       btn(last ? t("finish") : t("check"), () => (last ? finishQuiz() : go("quiz", { ...ctx, qi: qi + 1 })), "primary")) : null]);
@@ -406,7 +510,7 @@ function resultView() {
   const { res, xp, qs, lessonId, passageId } = ctx, wrong = qs.filter(q => !q.options[q.chosen].ok);
   shell([h("h1", {}, t("result")), h("div", { class: "card" }, h("p", {}, t("score") + ": ", h("strong", {}, `${res.correct}/${res.total} (${res.pct}%)`)),
     h("p", {}, res.passed ? "🏆 " + t("passed") : t("keep")), h("p", { class: "muted" }, `${t("xpEarned")}: +${xp}`)),
-    wrong.length ? [h("h3", {}, t("review")), wrong.map(q => h("div", { class: "card row" }, h("span", { class: "emoji" }, q.emoji), ar(q.ar || ""), h("span", { dir: "ltr" }, q.lesson || q.type === "position" ? q.answer : q.en)))] : null,
+    wrong.length ? [h("h3", {}, t("review")), wrong.map(q => h("div", { class: "card row" }, q.emoji ? picEl(q.itemId.split(":")[0], q.emoji, "sm") : null, ar(q.ar || ""), h("span", { dir: "ltr" }, q.lesson || q.type === "position" ? q.answer : q.en)))] : null,
     h("div", { class: "row" }, passageId ? btn(t("backPassage"), () => go("passage", { p: passages.find(x => x.id === passageId), show: false }), "primary") : lessonId ? btn(t("backLesson"), () => go("lesson", { l: lessons.find(x => x.id === lessonId) }), "primary") : btn(t("again"), () => go("home"), "primary"), btn(t("dashboard"), () => go("dashboard")))]);
 }
 
@@ -414,11 +518,11 @@ function resultView() {
 function dashView() {
   const pr = P.progress, items = allItems(), mastered = items.filter(i => itemState(pr.items[i.id]) === "mastered").length;
   const learned = items.filter(i => pr.items[i.id]?.learned).length, rev = revisionList(pr, items);
-  const stat = (v, k) => h("div", { class: "card tile" }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
-  shell([h("h1", {}, t("dashboard")),
+  let si = 0; const stat = (v, k) => h("div", { class: `card tile st${si++ % 4}` }, h("strong", { class: "big" }, v), h("small", {}, t(k)));
+  shell([homeHero(t("dashboard")),
     h("div", { class: "grid" }, stat(pr.xp, "xp"), stat(pr.streak.count, "streak"), stat(`${mastered}/${items.length}`, "mastered"), stat(pr.attempts.length, "attempts")),
     h("p", {}, t("passagesRead", { n: passages.filter(p => rq(p.id).passed).length, m: passages.length })), h("p", {}, t("lessonsDone", { n: lessons.filter(l => lq(l.id).completed).length, m: lessons.length })), h("p", {}, t("learnedCount", { n: learned, m: items.length })), bar((learned / items.length) * 100),
-    h("h2", {}, t("revision")), rev.length ? rev.map(x => h("div", { class: "card row sb" }, h("span", {}, x.i.emoji + " ", ar(x.i.ar)), h("span", { class: "badge" }, t("state." + x.s)))) : h("p", { class: "muted" }, t("noRevision")),
+    h("h2", {}, t("revision")), rev.length ? rev.map(x => h("div", { class: "card row sb" }, h("span", { class: "row" }, picEl(x.i.id, x.i.emoji, "sm"), ar(x.i.ar)), h("span", { class: "badge" }, t("state." + x.s)))) : h("p", { class: "muted" }, t("noRevision")),
     h("h2", {}, t("attempts")), pr.attempts.length ? [...pr.attempts].reverse().slice(0, 8).map(a => h("div", { class: "card row sb" }, h("span", {}, new Date(a.ts).toLocaleDateString()), h("strong", {}, `${a.correct}/${a.total} · ${a.pct}%`))) : h("p", { class: "muted" }, t("noAttempts")),
     h("h2", {}, t("achievements")), h("div", { class: "grid" }, catalog.map(a => { const got = (pr.achievements || {})[a.id];
       return h("div", { class: "card tile", style: "margin:0" + (got ? "" : ";opacity:.55") }, h("span", { class: "emoji" }, got ? a.icon : "🔒"), h("strong", {}, loc(a.title)), h("small", {}, loc(a.desc))); })),
@@ -436,7 +540,7 @@ function settingsView() {
   shell([h("h1", {}, t("settings")), h("div", { class: "row sb" }, h("span", {}, t("language")), langToggle()),
     h("label", { for: "md" }, t("mode")), modeSel, h("label", { for: "sz" }, t("textSize")), sizeSel,
     h("div", { class: "row", style: "margin-top:1rem" },
-      btn(t("centre"), openCentre), btn(t("switch"), () => { P = null; S.setCurrentId(null); go("profiles"); }),
+      btn(t("centre"), openCentre), btn("🛠 " + t("admin"), openAdmin), btn(t("switch"), () => { P = null; S.setCurrentId(null); go("profiles"); }),
       btn(t("export"), () => { const a = h("a", { href: URL.createObjectURL(new Blob([S.exportJSON(P)], { type: "application/json" })), download: `kalimati-${P.name}.json` }); a.click(); }),
       btn(t("import"), () => file.click()), file),
     h("div", { class: "row", style: "margin-top:1rem" }, btn(t("checkContent"), () => {
@@ -450,8 +554,8 @@ function applySize() { document.body.classList.remove("size-l", "size-xl"); cons
 
 // ---------- Router ----------
 function render() {
-  const views = { copy: copyView, prompt: promptView, centre: centreView, centreLearner: centreLearnerView, report: reportView, certs: certsView, cert: certView, trace: traceView, writing: writingView, builder: builderView, listening: listeningView, library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
-  if (!P && !["profiles", "centre", "centreLearner", "report"].includes(view)) view = "profiles";
+  const views = { pin: pinView, admin: adminView, copy: copyView, prompt: promptView, centre: centreView, centreLearner: centreLearnerView, report: reportView, certs: certsView, cert: certView, trace: traceView, writing: writingView, builder: builderView, listening: listeningView, library: libraryView, passage: passageView, lesson: lessonView, alphabet: alphabetView, letter: letterView, profiles: () => profilesView(ctx.creating), home: homeView, theme: themeView, quiz: quizView, result: resultView, dashboard: dashView, settings: settingsView };
+  if (!P && !["profiles", "centre", "centreLearner", "report", "pin", "admin", "cert"].includes(view)) view = "profiles";
   views[view]();
 }
 
@@ -470,6 +574,10 @@ async function boot() {
     sentences = Object.values(sfiles).flatMap(d => d.sentences);
     for (const f of idx.writing || []) wfiles[f] = await (await fetch("content/" + f)).json();
     wprompts = Object.values(wfiles).flatMap(d => d.prompts);
+    try { brandDef = await (await fetch("content/shared/branding.json")).json(); } catch { brandDef = {}; }
+    try { const r = await fetch("content/images/manifest.json"); if (r.ok) imgFiles = (await r.json()).files || {}; } catch { imgFiles = {}; }
+    await loadAudioManifest();
+    try { settings = (await S.kvGet("settings")) || {}; for (const [k, v] of await S.kvEntries("img:")) imgs[k] = v; for (const [k, v] of await S.kvEntries("brand:")) brandImgs[k] = v; } catch { settings = {}; }
     if (idx.challenges) challenges = (await (await fetch("content/" + idx.challenges)).json()).challenges;
     if (idx.certificates) certs = (await (await fetch("content/" + idx.certificates)).json()).certificates;
     if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;

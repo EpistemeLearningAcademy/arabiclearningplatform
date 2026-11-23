@@ -26,3 +26,17 @@ export function toCSV(p, lessons) {
   for (const a of pr.assignments || []) rows.push(["assignment", a.id, a.type + ":" + a.target, a.due || "", "", "", assignmentDone(p, a) ? "done" : "open"]);
   return rows.map(r => r.map(cell).join(",")).join("\n");
 }
+
+// Certificate serial: a short code derived from learner, certificate and date. It is NOT a security feature:
+// it only helps ELA match a printed certificate with its own register (see Admin -> Data -> Certificate register).
+export function certSerial(profileId, certId, ts) {
+  let h = 0x811c9dc5; for (const ch of `${profileId}|${certId}|${ts}`) { h ^= ch.charCodeAt(0); h = Math.imul(h, 0x01000193) >>> 0; }
+  return "KAL-" + h.toString(36).toUpperCase().padStart(7, "0");
+}
+export function registerCSV(profiles, certs) {
+  const rows = [["learner", "certificate_id", "certificate_title", "earned_date", "serial"]];
+  for (const p of profiles) for (const [cid, ts] of Object.entries((p.progress || {}).certificates || {})) {
+    const c = certs.find(x => x.id === cid); rows.push([p.name, cid, c ? c.title.en : cid, new Date(ts).toISOString().slice(0, 10), certSerial(p.id, cid, ts)]);
+  }
+  return rows.map(r => r.map(cell).join(",")).join("\n");
+}
