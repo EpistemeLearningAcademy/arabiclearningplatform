@@ -19,9 +19,22 @@ export function playFile(id) {
   });
 }
 export function speakText(text) {
-  if (!hasArabicVoice()) return false;
-  const v = speechSynthesis.getVoices().find(x => x.lang.startsWith("ar")), u = new SpeechSynthesisUtterance(text);
-  u.voice = v; u.lang = v.lang; speechSynthesis.cancel(); speechSynthesis.speak(u); return true;
+  if (!text || !window.speechSynthesis || !hasArabicVoice()) return false;
+  const voices = speechSynthesis.getVoices().filter(v => /^ar(?:-|$)/i.test(v.lang));
+  // Prefer a clear Modern Standard Arabic-capable voice when the device offers one.
+  const v = voices.find(x => /^ar-SA/i.test(x.lang))
+    || voices.find(x => /^ar-EG/i.test(x.lang))
+    || voices.find(x => /^ar/i.test(x.lang));
+  if (!v) return false;
+  const u = new SpeechSynthesisUtterance(text);
+  u.voice = v;
+  u.lang = v.lang || "ar";
+  u.rate = 0.86;
+  u.pitch = 1;
+  u.volume = 1;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+  return true;
 }
 // Returns "recorded" | "ai" | "device" on success, or null when nothing could play.
 export async function play(id, text) {

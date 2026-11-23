@@ -227,6 +227,7 @@ function builderView() {
   const chip = (k, fn) => h("button", { type: "button", lang: "ar", dir: "rtl", class: "ar", disabled: ctx.checked, onclick: fn }, ctx.pool[k]);
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("q", { i: i + 1, n: set.length }))), bar((i / set.length) * 100),
     h("h2", {}, t("builder")), h("p", {}, t("builderPrompt", { s: s.meaning })), h("p", { class: "muted" }, t("builderIntro")),
+    h("div", { class: "row", style: "margin-block:.6rem" }, btn("🔊 Hear the sentence", () => playItem("sentence-" + s.id, s.answers[0].join(" ")))),
     h("div", { class: "card row", dir: "rtl", style: "min-height:76px" }, ctx.picked.map(k => chip(k, () => { ctx.picked.splice(ctx.picked.indexOf(k), 1); render(); }))),
     h("div", { class: "row", dir: "rtl" }, ctx.pool.map((_, k) => ctx.picked.includes(k) ? null : chip(k, () => { ctx.picked.push(k); render(); }))),
     h("div", { class: "row", style: "margin-top:.8rem" }, btn(t("checkAnswer"), () => { ctx.checked = true; ctx.ok[i] = checkOrder(s.answers, words); render(); }, "primary"), btn(t("clear"), () => { ctx.picked = []; render(); })),
@@ -443,19 +444,51 @@ function learnBtn(it) {
     P.progress.items[it.id].learned = true; P.progress.xp += POLICY.xpLearn; touchStreak(P.progress); await save(); render(); }, done ? "" : "gold");
 }
 function alphabetView() {
-  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", {}, t("letters"))), h("h2", {}, t("alphabet")),
-    h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(88px,1fr))" }, letters.map((l, i) =>
-      h("button", { class: "card tile", style: "min-height:96px;margin:0", type: "button", onclick: () => go("letter", { i }) }, ar(l.ar, "big"), h("small", {}, l.en)))),
-    h("div", { class: "row", style: "margin-top:1rem" }, btn(t("practice"), () => startQuiz(letters), "primary"), btn(t("positions"), () => go("quiz", { qs: buildPositionQuiz(letters, t, lang()), qi: 0, topic: "positions" }))), h("p", { class: "note" }, t("letterNote"))]);
+  const arabicUI = lang() === "ar";
+  shell([
+    h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home")), h("span", { class: "badge" }, t("letters"))),
+    h("section", { class: "alphabet-banner" },
+      h("div", { class: "alphabet-banner-art", "aria-hidden": "true" }, "أ ب ت"),
+      h("div", {}, h("p", { class: "alphabet-kicker" }, arabicUI ? "هَيَّا نَتَعَلَّمُ العَرَبِيَّةَ" : "LET'S LEARN ARABIC"),
+        h("h1", {}, t("alphabet")), h("p", {}, arabicUI ? "تَعَرَّفْ عَلَى الحُرُوفِ الثَّمَانِيَةِ وَالعِشْرِينَ. اِضْغَطْ عَلَى الحَرْفِ لِتَسْمَعَ اسْمَهُ." : "Meet the 28 letters. Tap a letter to explore it and hear its name."))),
+    h("div", { class: "alphabet-grid" }, letters.map((l, i) =>
+      h("article", { class: `letter-tile letter-color-${i % 8}` },
+        h("button", { class: "letter-open", type: "button", onclick: () => go("letter", { i }), "aria-label": `${l.en} ${l.ar}` },
+          h("span", { class: "letter-index" }, String(i + 1).padStart(2, "0")),
+          ar(l.ar, "letter-tile-glyph"),
+          h("strong", { dir: "ltr" }, l.en),
+          h("small", { class: "letter-name-ar", lang: "ar", dir: "rtl" }, l.nameAr)),
+        btn("🔊 " + t("listen"), () => playItem(l.id + "-name", l.nameAr), "letter-sound")))),
+    h("div", { class: "row", style: "margin-top:1rem" },
+      btn(t("practice"), () => startQuiz(letters), "primary"),
+      btn(t("positions"), () => go("quiz", { qs: buildPositionQuiz(letters, t, lang()), qi: 0, topic: "positions" }))),
+    h("p", { class: "note" }, t("letterNote"))
+  ]);
 }
 function letterView() {
-  const l = letters[ctx.i], n = letters.length;
-  shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("alphabet")), h("span", {}, t("seen", { i: ctx.i + 1, n }))),
-    h("div", { class: "card flash" }, h("span", { style: "font-size:5rem", class: "ar", lang: "ar", dir: "rtl" }, l.ar), ar(l.nameAr), h("strong", { dir: "ltr" }, l.en)),
-    h("h3", {}, t("forms")), h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(110px,1fr))" },
-      forms(l).map(([k, f]) => h("div", { class: "card tile", style: "min-height:90px;margin:0" }, ar(f, "big"), h("small", {}, t(k))))),
-    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")), h("div", { class: "row" }, btn("🔊 " + t("listen"), () => playItem(l.id, l.nameAr)), learnBtn(l), btn("✍️ " + t("traceLetter"), () => go("trace", { texts: letterTexts(l), k: 0, back: "letter", backCtx: { i: ctx.i } }))),
-    h("div", { class: "row sb", style: "margin-top:1rem" }, btn("← " + t("prev"), () => go("letter", { i: (ctx.i - 1 + n) % n })), btn(t("next") + " →", () => go("letter", { i: (ctx.i + 1) % n }), "primary"))]);
+  const l = letters[ctx.i], n = letters.length, palette = ctx.i % 8, arabicUI = lang() === "ar";
+  shell([
+    h("div", { class: "row sb" }, btn("← " + t("back"), () => go("alphabet")), h("span", { class: "badge" }, t("seen", { i: ctx.i + 1, n }))),
+    h("section", { class: `letter-hero letter-color-${palette}` },
+      h("span", { class: "letter-hero-count" }, arabicUI ? `الحَرْفُ ${String(ctx.i + 1).padStart(2, "0")} / ٢٨` : `LETTER ${String(ctx.i + 1).padStart(2, "0")} / 28`),
+      h("div", { class: "letter-hero-glyph ar", lang: "ar", dir: "rtl" }, l.ar),
+      h("h1", { class: "letter-hero-name", lang: "ar", dir: "rtl" }, l.nameAr),
+      h("strong", { class: "letter-hero-en", dir: "ltr" }, l.en),
+      h("div", { class: "row letter-hero-actions" },
+        btn("🔊 Hear the letter name", () => playItem(l.id + "-name", l.nameAr)),
+        btn("🔊 Hear the letter", () => playItem(l.id + "-sound", l.ar)))),
+    h("h2", {}, t("forms")),
+    h("div", { class: "letter-forms-grid" },
+      forms(l).map(([k, f], i) => h("div", { class: `letter-form-card letter-color-${(palette + i + 1) % 8}` },
+        ar(f, "letter-form-glyph"), h("strong", {}, t(k))))),
+    l.joinsNext ? null : h("p", { class: "note" }, t("noJoin")),
+    h("div", { class: "row letter-action-row" },
+      learnBtn(l),
+      btn("✍️ " + t("traceLetter"), () => go("trace", { texts: letterTexts(l), k: 0, back: "letter", backCtx: { i: ctx.i } }))),
+    h("div", { class: "row sb", style: "margin-top:1rem" },
+      btn("← " + t("prev"), () => go("letter", { i: (ctx.i - 1 + n) % n })),
+      btn(t("next") + " →", () => go("letter", { i: (ctx.i + 1) % n }), "primary"))
+  ]);
 }
 
 // ---------- Lessons ----------
