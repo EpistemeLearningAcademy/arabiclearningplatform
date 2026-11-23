@@ -300,8 +300,15 @@ function brandImage(kind, cls) {
 }
 function picEl(id, emoji, size = "") {
   const wrap = h("span", { class: "pic " + size, "aria-hidden": "true" }, h("span", { class: "emoji" }, emoji || ""));
-  const dev = id && imgs["img:" + id], ext = id && imgFiles[id], src = dev || (ext ? `assets/images/vocab/${id}.${ext}` : null);
-  if (src) { const im = h("img", { alt: "", loading: "lazy", src }); im.onerror = () => im.remove(); wrap.append(im); }
+  const dev = id && imgs["img:" + id], entry = id && imgFiles[id];
+  const src = dev || (typeof entry === "string" && /^https?:\\/\\//i.test(entry)
+    ? entry
+    : entry ? `assets/images/vocab/${id}.${entry}` : null);
+  if (src) {
+    const im = h("img", { alt: "", loading: "lazy", decoding: "async", src });
+    im.onerror = () => im.remove();
+    wrap.append(im);
+  }
   return wrap;
 }
 function fileToDataUrl(file, max, png) {
@@ -507,7 +514,10 @@ function lessonView() {
     h("h3", {}, t("objectives")), h("ul", {}, l.objectives.map(o => h("li", {}, loc(o)))),
     h("h3", {}, t("explanation")), l.explanation.map(p => h("p", {}, loc(p))),
     h("h3", {}, t("examples")), h("div", { class: "grid", style: "grid-template-columns:repeat(auto-fill,minmax(100px,1fr))" },
-      l.examples.map(e => h("div", { class: "card tile", style: "min-height:90px;margin:0" }, ar(e.ar, "big"), h("strong", { dir: "ltr" }, e.tr), e.en !== "syllable" ? h("small", { dir: "ltr" }, e.en) : null))),
+      l.examples.map((e, k) => h("div", { class: "card tile example-audio-card", style: "min-height:90px;margin:0" },
+        ar(e.ar, "big"), h("strong", { dir: "ltr" }, e.tr),
+        e.en !== "syllable" ? h("small", { dir: "ltr" }, e.en) : null,
+        btn("🔊 " + t("listen"), () => playItem(`${l.id}-example-${k + 1}`, e.ar), "example-listen")))),
     h("p", {}, t("bestScore") + ": ", h("strong", {}, st.best != null ? st.best + "%" : t("noScore"))),
     h("div", { class: "row" }, btn(t("startPractice"), () => go("quiz", { qs: buildLessonQuiz(l, lang()), qi: 0, lessonId: l.id }), "primary"),
       btn(marked ? t("bookmarked") : "☆ " + t("bookmark"), async () => { marked ? book.splice(book.indexOf(l.id), 1) : book.push(l.id); await save(); render(); })),
