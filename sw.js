@@ -1,6 +1,6 @@
 // Bump CACHE when shipping new files. Learner data lives in IndexedDB/localStorage, never in caches,
 // so deleting old caches cannot erase progress.
-const CACHE = "kalimati-v2-16";
+const CACHE = "kalimati-v2-17";
 const PRECACHE = ["./","index.html","offline.html","manifest.json","assets/css/main.css",
   "assets/js/app.js","assets/js/i18n.js","assets/js/storage.js","assets/js/engine.js","assets/js/validators.js","assets/js/gamification.js","assets/js/reports.js","assets/js/writing.js","assets/js/audio.js","content/audio/manifest.json","content/images/manifest.json","content/shared/branding.json","content/advanced/lessons/moods-passive.json","content/advanced/lessons/sentence-structures.json","content/intermediate/reading/graded-02.json","content/advanced/reading/graded-02.json","content/intermediate/writing/prompts.json","content/advanced/writing/prompts.json","content/shared/challenges.json","content/shared/certificates.json","content/shared/achievements.json","content/intermediate/lessons/nouns-pronouns.json","content/intermediate/lessons/nouns-number.json","content/intermediate/reading/graded-01.json","content/intermediate/lessons/verbs-sentences.json","content/intermediate/sentences/builder-01.json","content/intermediate/lessons/adjectives-prepositions.json","content/advanced/lessons/case-morphology.json","content/advanced/lessons/verbs-particles.json","content/advanced/reading/graded-01.json",
   "content/index.json","content/translations/en.json","content/translations/ar.json",

@@ -7,3 +7,13 @@ Bilingual (English/Arabic interface) Arabic learning PWA by Episteme Learning Ac
 **Not built yet:** Levels 2-3, tracing, grammar, reading, audio recordings, badges, teacher portal. See `docs/known-limitations.md`.
 
 Run locally: serve the folder with any static server (service workers need localhost or HTTPS). Deploy: `docs/deployment-guide.md`. Edit content: `docs/content-guide.md`. Original v1 code: `original/`.
+
+
+## Recent learner-interface improvements
+- Redesigned the 28-letter alphabet index and individual letter pages with colourful,
+  responsive letter tiles and clearer sound controls.
+- Added sentence playback controls to the sentence builder.
+- Device speech now prefers an Arabic Saudi voice, then an Egyptian Arabic voice,
+  where available, and speaks at a learner-friendly pace.
+- Vocabulary photos can be bundled in `assets/images/vocab/` using the exact filenames
+  listed in that folder's README. Recorded pronunciation can be bundled in `assets/audio/`.
