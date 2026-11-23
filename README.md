@@ -17,3 +17,8 @@ Run locally: serve the folder with any static server (service workers need local
   where available, and speaks at a learner-friendly pace.
 - Vocabulary photos can be bundled in `assets/images/vocab/` using the exact filenames
   listed in that folder's README. Recorded pronunciation can be bundled in `assets/audio/`.
+
+
+## Beginner pictures and speech
+
+See [Media and speech setup](docs/media-and-speech.md) for how vocabulary photos are loaded, how offline caching works, and how device Arabic speech is configured.
