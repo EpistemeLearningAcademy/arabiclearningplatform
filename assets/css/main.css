@@ -61,3 +61,64 @@ nav.tabs button{flex:1;background:transparent;color:#fff;border-color:transparen
 details>summary{cursor:pointer;list-style-position:inside;padding-block:.3rem}
 table{width:100%;border-collapse:collapse;margin-block:.6rem}th,td{border-bottom:1px solid var(--line);padding:.4rem .5rem;text-align:start;vertical-align:top}th{font-weight:600;width:45%}
 @media print{nav.tabs,button,#status,.hero{display:none!important}body{background:#fff}body::before{display:none}main{padding:0;max-width:none}.card{break-inside:avoid;box-shadow:none;backdrop-filter:none;background:#fff}.cert{box-shadow:none}}
+
+
+/* Kalimati 2.0 — playful, high-contrast Arabic alphabet experience */
+.alphabet-banner{
+  display:grid;grid-template-columns:112px 1fr;align-items:center;gap:1rem;
+  padding:1.15rem;border-radius:26px;margin-block:.8rem 1.2rem;
+  color:#fff;background:linear-gradient(135deg,#164E63,#168A91 58%,#54B8B0);
+  box-shadow:0 12px 28px rgba(22,78,99,.2);overflow:hidden
+}
+.alphabet-banner-art{
+  display:grid;place-items:center;min-height:108px;border-radius:22px;
+  background:rgba(255,255,255,.16);color:#FFF0A8;
+  font:700 2.35rem/1.5 "Noto Naskh Arabic",Amiri,serif;direction:rtl;
+  transform:rotate(-3deg)
+}
+.alphabet-kicker{font-size:.68rem;font-weight:800;letter-spacing:.13em;margin:0;opacity:.85}
+.alphabet-banner h1{margin:.15rem 0;font-size:1.55rem}
+.alphabet-banner p:last-child{margin:.2rem 0;font-size:.88rem;opacity:.94}
+.alphabet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.letter-tile{
+  min-width:0;padding:.55rem .35rem .65rem;border-radius:20px;
+  border:1px solid rgba(255,255,255,.9);box-shadow:0 5px 14px rgba(28,67,82,.1);
+  display:flex;flex-direction:column;align-items:stretch;gap:.25rem
+}
+.letter-open{width:100%;border:0;background:transparent;box-shadow:none;min-height:0;
+  padding:.35rem .2rem;display:flex;flex-direction:column;align-items:center;gap:.05rem}
+.letter-index{align-self:flex-start;font-size:.66rem;font-weight:800;opacity:.58;padding-inline:.35rem}
+.letter-tile-glyph{font-size:clamp(2.4rem,10vw,3.35rem);line-height:1.55;color:#183E50}
+.letter-open strong{font-size:.92rem}
+.letter-name-ar{font-size:.8rem;opacity:.78}
+.letter-sound{min-height:36px;padding:.2rem .3rem;border:1px solid rgba(25,67,81,.18);
+  border-radius:12px;background:rgba(255,255,255,.55);font-size:.75rem;box-shadow:none}
+.letter-color-0{background:linear-gradient(145deg,#E5F7FC,#B9E8F2)}
+.letter-color-1{background:linear-gradient(145deg,#FFF5D8,#F8D985)}
+.letter-color-2{background:linear-gradient(145deg,#FFE9E5,#F6B8AE)}
+.letter-color-3{background:linear-gradient(145deg,#E4F8EC,#B9E9CE)}
+.letter-color-4{background:linear-gradient(145deg,#F0EAFE,#D5C8F5)}
+.letter-color-5{background:linear-gradient(145deg,#E7F0FF,#BDD4F8)}
+.letter-color-6{background:linear-gradient(145deg,#FFF0DA,#F5C79B)}
+.letter-color-7{background:linear-gradient(145deg,#E2F5F0,#A9DED1)}
+.letter-hero{
+  position:relative;overflow:hidden;border-radius:30px;padding:1.25rem;
+  margin-block:.8rem 1.3rem;display:flex;flex-direction:column;align-items:center;
+  text-align:center;box-shadow:0 12px 26px rgba(28,67,82,.13)
+}
+.letter-hero::after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;
+  inset-inline-end:-75px;inset-block-start:-85px;background:rgba(255,255,255,.3)}
+.letter-hero-count{align-self:flex-start;font-size:.7rem;font-weight:800;letter-spacing:.1em;opacity:.68}
+.letter-hero-glyph{font-size:clamp(7rem,30vw,11rem);line-height:1.5;color:#173F50;
+  text-shadow:0 5px 0 rgba(255,255,255,.42);z-index:1}
+.letter-hero-name{font-size:1.6rem;margin:0;color:#173F50}
+.letter-hero-en{font-size:1.1rem;color:#173F50}
+.letter-hero-actions{justify-content:center;margin-top:1rem;z-index:1}
+.letter-hero-actions button{background:rgba(255,255,255,.8);border-color:rgba(23,63,80,.18);font-size:.83rem}
+.letter-forms-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.letter-form-card{border-radius:20px;padding:.8rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:112px;border:1px solid rgba(255,255,255,.9)}
+.letter-form-glyph{font-size:2.8rem;line-height:1.7;color:#173F50}
+.letter-form-card strong{font-size:.85rem}
+.letter-action-row{margin-top:.8rem}
+@media(min-width:520px){.alphabet-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.letter-forms-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:360px){.alphabet-banner{grid-template-columns:82px 1fr;padding:.8rem}.alphabet-banner-art{min-height:90px;font-size:1.8rem}.alphabet-banner h1{font-size:1.25rem}.alphabet-grid{gap:.45rem}.letter-tile{border-radius:15px}}
