@@ -1,0 +1,26 @@
+{
+ "schema": 1,
+ "org": {
+  "en": "Episteme Learning Academy",
+  "ar": "أكاديمية إبستيمي للتعلّم"
+ },
+ "heading": {
+  "en": "Certificate of Completion",
+  "ar": "شهادة إتمام"
+ },
+ "statement": {
+  "en": "This certificate is issued by Episteme Learning Academy on the basis of progress recorded in the Kalimāti app.",
+  "ar": "صدرت هذه الشهادة عن أكاديمية إبستيمي للتعلّم بناءً على التقدّم المسجّل في تطبيق كلماتي."
+ },
+ "footer": {
+  "en": "Progress is recorded on the learner’s device. Please keep the serial number for ELA’s records.",
+  "ar": "يُسجَّل التقدّم في جهاز المتعلّم. يُرجى الاحتفاظ بالرقم التسلسلي لسجلّات الأكاديمية."
+ },
+ "signatoryName": "",
+ "signatoryTitle": {
+  "en": "",
+  "ar": ""
+ },
+ "passMarkNote": "",
+ "files": {}
+}
