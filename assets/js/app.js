@@ -301,7 +301,7 @@ function brandImage(kind, cls) {
 function picEl(id, emoji, size = "") {
   const wrap = h("span", { class: "pic " + size, "aria-hidden": "true" }, h("span", { class: "emoji" }, emoji || ""));
   const dev = id && imgs["img:" + id], entry = id && imgFiles[id];
-  const src = dev || (typeof entry === "string" && /^https?:\\/\\//i.test(entry)
+  const src = dev || (typeof entry === "string" && /^https?:\/\//i.test(entry)
     ? entry
     : entry ? `assets/images/vocab/${id}.${entry}` : null);
   if (src) {
@@ -633,6 +633,14 @@ async function boot() {
 }
 const net = () => { const s = document.getElementById("status"); if (!navigator.onLine) { s.textContent = t("offline"); s.hidden = false; } else s.hidden = true; };
 addEventListener("online", net); addEventListener("offline", net);
-if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then(reg => reg.update()).catch(() => {}));
 if (window.speechSynthesis && speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", () => { if (view === "listening") render(); });
-boot().then(net);
+boot().then(net).catch(error => {
+  console.error("Kalimāti startup failed:", error);
+  app.replaceChildren(h("main", { class: "card" },
+    h("h1", {}, "Kalimāti could not start"),
+    h("p", {}, "The app encountered a startup error. Please reload the page. If it continues, share this message with the developer."),
+    h("p", { class: "muted" }, error && error.message ? String(error.message) : "Unknown startup error"),
+    btn("Reload app", () => location.reload(), "primary")
+  ));
+});
