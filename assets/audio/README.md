@@ -3,7 +3,9 @@
 Put one MP3 file per item in this folder. The file name is the item's id:
 
 - Vocabulary word: `b-animals-1.mp3`, `b-fruits-3.mp3` …
-- Letter: `b-letter-01.mp3` … `b-letter-28.mp3` (say the letter's name)
+- Letter name: `b-letter-01-name.mp3` … `b-letter-28-name.mp3`
+- Letter sound: `b-letter-01-sound.mp3` … `b-letter-28-sound.mp3`
+- Sentence builder: `sentence-s-01.mp3`, `sentence-s-02.mp3`, etc.
 - Reading line: `r-home-01-1.mp3` (passage id, then the line number)
 
 Then list each file in `content/audio/manifest.json`:
