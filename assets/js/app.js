@@ -84,22 +84,35 @@ async function profilesView(creating) {
 
 // ---------- Home / themes ----------
 function homeView() {
-  const pr = P.progress, tiles = themes.map((th, ti) => {
+  const pr = P.progress;
+  const palette = ["dash-green", "dash-orange", "dash-purple", "dash-blue", "dash-teal", "dash-pink"];
+  const categoryTiles = themes.map((th, ti) => {
     const n = th.items.filter(i => pr.items[i.id]?.seen && pr.items[i.id].learned).length;
-    return h("button", { class: `card tile t${ti % 6}`, type: "button", onclick: () => go("theme", { th, i: 0, flip: false }) },
-      h("span", { class: "emoji" }, th.emoji), ar(th.title.ar), lang() === "en" ? h("span", {}, th.title.en) : null,
-      h("small", {}, t("learnedCount", { n, m: th.items.length })));
+    const first = th.items[0];
+    const art = first ? picEl(first.id, first.emoji, "dash-thumb") : h("span", { class: "dash-symbol" }, th.emoji || "📘");
+    const heading = h("span", { class: "dash-heading" }, h("strong", {}, th.title.en), ar(th.title.ar));
+    const action = h("span", { class: "dash-action" }, `${th.items.length} ${t("words")} · ${n} ${t("mastered")}`, h("b", {}, "›"));
+    return h("button", { class: `dash-card ${palette[ti % palette.length]}`, type: "button", onclick: () => go("theme", { th, i: 0, flip: false }) },
+      h("span", { class: "dash-card-top" }, art, heading, h("span", { class: "dash-sound", "aria-hidden": "true" }, "🔊")), action);
   });
-  shell([homeHero(t("welcomeBack")), assignedBlock(), h("h2", {}, t("level1")),
-    h("button", { class: "card tile t0", style: "width:100%", type: "button", onclick: () => go("alphabet") }, h("span", { class: "ar big" }, "أ ب ت"), h("strong", {}, t("alphabet")), h("small", {}, t("letters"))),
-    h("button", { class: "card tile t1", style: "width:100%", type: "button", onclick: () => go("library"), "data-mod": "library" }, h("span", { class: "emoji" }, "📚"), h("strong", {}, t("library")), h("small", {}, t("libraryIntro"))),
-    h("div", { class: "grid" },
-      h("button", { class: "card tile t5", style: "margin:0", type: "button", onclick: startBuilder, "data-mod": "builder" }, h("span", { class: "emoji" }, "🧩"), h("strong", {}, t("builder")), h("small", {}, t("builderIntro"))),
-      h("button", { class: "card tile t4", style: "margin:0", type: "button", onclick: () => go("listening"), "data-mod": "listening" }, h("span", { class: "emoji" }, "🎧"), h("strong", {}, t("listening")), h("small", {}, t("listeningIntro"))),
-      h("button", { class: "card tile t2", style: "margin:0", type: "button", onclick: () => go("writing"), "data-mod": "writing" }, h("span", { class: "emoji" }, "✍️"), h("strong", {}, t("writing")), h("small", {}, t("writingIntro"))),
-      h("button", { class: "card tile t3", style: "margin:0", type: "button", onclick: () => go("certs") }, h("span", { class: "emoji" }, "🎓"), h("strong", {}, t("certificates")), h("small", {}, t("certTileSub", { n: Object.keys(P.progress.certificates || {}).length })))),
-    h("p", { class: "muted" }, t("themes")),
-    h("div", { class: "grid" }, tiles), btn(t("practiceAll"), () => startQuiz(vocabItems()), "primary"),
+  const listening = h("button", { class: "dash-card dash-pink", type: "button", onclick: () => go("listening"), "data-mod": "listening" },
+    h("span", { class: "dash-card-top" }, h("span", { class: "dash-symbol" }, "🎧"), h("span", { class: "dash-heading" }, h("strong", {}, "Listening Lab"), ar("مُخْتَبَرُ الِاسْتِمَاعِ")), h("span", { class: "dash-sound" }, "🔊")),
+    h("span", { class: "dash-action" }, "Listen & repeat", h("b", {}, "›")));
+  const done = Object.values(pr.items || {}).filter(x => x.learned).length;
+  const total = vocabItems().length;
+  const top = h("section", { class: "dash-hero" },
+    h("div", { class: "dash-brandline" }, brandImage("logo", "dash-logo"), h("span", {}, "Episteme Learning Academy")),
+    h("div", { class: "dash-title" }, h("div", { class: "ar", lang: "ar", dir: "rtl" }, "كَلِمَاتِي الأُولَى"), h("h1", {}, "Kalimāti al-Ūlā 2.0"), h("p", {}, "Learn · Practise · Grow")),
+    h("div", { class: "dash-progress" }, h("strong", {}, P.name), h("span", {}, `⭐ ${pr.xp} XP`), h("span", {}, `${done}/${total} words learned`)));
+  const extras = h("div", { class: "dash-extras" },
+    h("button", { class: "dash-mini", type: "button", onclick: () => go("alphabet") }, h("b", {}, "أ ب ت"), h("span", {}, t("alphabet"))),
+    h("button", { class: "dash-mini", type: "button", onclick: () => go("library"), "data-mod": "library" }, h("b", {}, "📚"), h("span", {}, t("library"))),
+    h("button", { class: "dash-mini", type: "button", onclick: startBuilder, "data-mod": "builder" }, h("b", {}, "🧩"), h("span", {}, t("builder"))),
+    h("button", { class: "dash-mini", type: "button", onclick: () => go("writing"), "data-mod": "writing" }, h("b", {}, "✍️"), h("span", {}, t("writing"))),
+    h("button", { class: "dash-mini", type: "button", onclick: () => go("certs") }, h("b", {}, "🏆"), h("span", {}, t("certificates"))));
+  shell([top, assignedBlock(), h("div", { class: "dash-section-title" }, h("h2", {}, t("level1")), h("span", {}, "Choose a learning adventure")),
+    h("div", { class: "dash-grid" }, [...categoryTiles, listening]), extras,
+    btn(t("practiceAll"), () => startQuiz(vocabItems()), "primary"),
     h("h2", {}, t("lessons")), P.progress.lastLesson && lessons.find(l => l.id === P.progress.lastLesson) ? btn("▶ " + t("resume"), () => go("lesson", { l: lessons.find(l => l.id === P.progress.lastLesson) }), "gold") : null,
     lessons.filter(l => l.level === "beginner").map(lessonRow),
     h("h2", {}, t("level2")), lessons.some(l => l.level === "intermediate") ? lessons.filter(l => l.level === "intermediate").map(lessonRow) : h("p", { class: "badge" }, t("soon")),
@@ -211,17 +224,12 @@ function promptView() {
 }
 
 // ---------- Listening lab ----------
-function listeningPool() { return vocabItems(); }
+function listeningPool() { return hasArabicVoice() ? vocabItems() : vocabItems().filter(it => hasAudio(it.id)); }
 function listeningView() {
   const pool = listeningPool();
-  const canSpeak = "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("listening")), h("p", { class: "muted" }, t("listeningIntro")),
-    h("div", { class: "card" }, h("h3", {}, t("listeningReady")),
-      h("p", {}, canSpeak ? t("listeningTtsReady") : t("listeningTtsUnavailable")),
-      btn("🔊 " + t("sampleVoice"), () => playItem(pool[0]?.id, pool[0]?.ar), "gold")),
-    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : null,
-    h("p", { class: "note" }, t("listenNote")),
-    !canSpeak ? h("div", { class: "note" }, t("voiceHelp")) : null]);
+    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : [h("p", { class: "note" }, t("noVoice")), h("p", { class: "note" }, t("voiceHelp"))],
+    h("p", { class: "note" }, t("listenNote"))]);
 }
 
 // ---------- Sentence builder ----------
@@ -611,38 +619,24 @@ async function boot() {
   try { await setLang(savedLang()); } catch { app.textContent = "Could not load interface strings."; return; }
   applySize();
   try {
-    const getJson = async path => { const r = await fetch("content/" + path); if (!r.ok) throw new Error(`Content request failed: ${path} (${r.status})`); return r.json(); };
-    const idx = await getJson("index.json");
-    const [vocabData, alphabetData, lessonData, readingData, sentenceData, writingData, brandData, imageData, audioResult, challengeData, certificateData, achievementData] = await Promise.all([
-      Promise.all((idx.vocabulary || []).map(getJson)),
-      Promise.all((idx.alphabet || []).map(getJson)),
-      Promise.all((idx.lessons || []).map(getJson)),
-      Promise.all((idx.reading || []).map(getJson)),
-      Promise.all((idx.sentences || []).map(getJson)),
-      Promise.all((idx.writing || []).map(getJson)),
-      getJson("shared/branding.json").catch(() => ({})),
-      getJson("images/manifest.json").catch(() => ({ files: {} })),
-      loadAudioManifest(),
-      idx.challenges ? getJson(idx.challenges).catch(() => ({ challenges: [] })) : Promise.resolve({ challenges: [] }),
-      idx.certificates ? getJson(idx.certificates).catch(() => ({ certificates: [] })) : Promise.resolve({ certificates: [] }),
-      idx.achievements ? getJson(idx.achievements).catch(() => ({ achievements: [] })) : Promise.resolve({ achievements: [] })
-    ]);
-    for (let i = 0; i < (idx.vocabulary || []).length; i++) files[idx.vocabulary[i]] = vocabData[i];
-    for (let i = 0; i < (idx.alphabet || []).length; i++) lfiles[idx.alphabet[i]] = alphabetData[i];
-    for (let i = 0; i < (idx.lessons || []).length; i++) lsFiles[idx.lessons[i]] = lessonData[i];
-    for (let i = 0; i < (idx.reading || []).length; i++) rdFiles[idx.reading[i]] = readingData[i];
-    for (let i = 0; i < (idx.sentences || []).length; i++) sfiles[idx.sentences[i]] = sentenceData[i];
-    for (let i = 0; i < (idx.writing || []).length; i++) wfiles[idx.writing[i]] = writingData[i];
+    const idx = await (await fetch("content/index.json")).json();
+    for (const f of idx.vocabulary) files[f] = await (await fetch("content/" + f)).json();
     themes = Object.values(files).flatMap(d => d.themes);
+    for (const f of idx.alphabet || []) lfiles[f] = await (await fetch("content/" + f)).json();
+    for (const f of idx.lessons || []) lsFiles[f] = await (await fetch("content/" + f)).json();
+    for (const f of idx.reading || []) rdFiles[f] = await (await fetch("content/" + f)).json();
     passages = Object.values(rdFiles).flatMap(d => d.passages);
+    for (const f of idx.sentences || []) sfiles[f] = await (await fetch("content/" + f)).json();
     sentences = Object.values(sfiles).flatMap(d => d.sentences);
+    for (const f of idx.writing || []) wfiles[f] = await (await fetch("content/" + f)).json();
     wprompts = Object.values(wfiles).flatMap(d => d.prompts);
-    brandDef = brandData;
-    imgFiles = imageData.files || {};
-    challenges = challengeData.challenges || [];
-    certs = certificateData.certificates || [];
-    catalog = achievementData.achievements || [];
-    try { settings = (await S.kvGet("settings")) || {}; const [savedImgs, savedBrand] = await Promise.all([S.kvEntries("img:"), S.kvEntries("brand:")]); for (const [k, v] of savedImgs) imgs[k] = v; for (const [k, v] of savedBrand) brandImgs[k] = v; } catch { settings = {}; }
+    try { brandDef = await (await fetch("content/shared/branding.json")).json(); } catch { brandDef = {}; }
+    try { const r = await fetch("content/images/manifest.json"); if (r.ok) imgFiles = (await r.json()).files || {}; } catch { imgFiles = {}; }
+    await loadAudioManifest();
+    try { settings = (await S.kvGet("settings")) || {}; for (const [k, v] of await S.kvEntries("img:")) imgs[k] = v; for (const [k, v] of await S.kvEntries("brand:")) brandImgs[k] = v; } catch { settings = {}; }
+    if (idx.challenges) challenges = (await (await fetch("content/" + idx.challenges)).json()).challenges;
+    if (idx.certificates) certs = (await (await fetch("content/" + idx.certificates)).json()).certificates;
+    if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;
     lessons = Object.values(lsFiles).flatMap(d => d.lessons);
     letters = Object.values(lfiles).flatMap(d => d.letters).map(l => ({ ...l, kind: "letter", emoji: "" }));
   } catch { app.replaceChildren(h("main", {}, h("p", {}, "Could not load lesson content. Check your connection and reload."))); return; }
