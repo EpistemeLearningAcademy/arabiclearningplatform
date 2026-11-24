@@ -10,9 +10,9 @@
     "b-fruits-1": "webp",
     "b-fruits-2": "webp",
     "b-fruits-3": "webp",
-    "b-fruits-4": "webp",
-    "b-fruits-5": "webp",
-    "b-fruits-6": "webp",
+    "b-fruits-4": "https://loremflickr.com/640/480/purple-grapes-fruit?lock=93616",
+    "b-fruits-5": "https://loremflickr.com/640/480/strawberry-fruit?lock=51137",
+    "b-fruits-6": "https://loremflickr.com/640/480/watermelon-slice-fruit?lock=97718",
     "b-colors-1": "https://loremflickr.com/640/480/red-color-swatch?lock=50188",
     "b-colors-2": "https://loremflickr.com/640/480/blue-color-swatch?lock=6796",
     "b-colors-3": "https://loremflickr.com/640/480/green-color-swatch?lock=93608",
@@ -36,6 +36,18 @@
     "b-home-3": "webp",
     "b-home-4": "webp",
     "b-home-5": "webp",
-    "b-home-6": "webp"
+    "b-home-6": "webp",
+    "b-home-7": "webp",
+    "b-home-8": "webp",
+    "b-home-9": "webp",
+    "b-home-10": "webp",
+    "b-home-11": "webp",
+    "b-home-12": "webp",
+    "b-body-7": "webp",
+    "b-body-8": "webp",
+    "b-body-9": "webp",
+    "b-body-10": "webp",
+    "b-body-11": "webp",
+    "b-body-12": "webp"
   }
 }
