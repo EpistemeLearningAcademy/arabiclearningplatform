@@ -46,42 +46,6 @@
           "ar": "سَمَكَةٌ",
           "en": "Fish",
           "emoji": "🐟"
-        },
-        {
-          "id": "b-animals-7",
-          "ar": "جَمَلٌ",
-          "en": "Camel",
-          "emoji": "🐪"
-        },
-        {
-          "id": "b-animals-8",
-          "ar": "حِصَانٌ",
-          "en": "Horse",
-          "emoji": "🐎"
-        },
-        {
-          "id": "b-animals-9",
-          "ar": "بَقَرَةٌ",
-          "en": "Cow",
-          "emoji": "🐄"
-        },
-        {
-          "id": "b-animals-10",
-          "ar": "خَرُوفٌ",
-          "en": "Sheep",
-          "emoji": "🐑"
-        },
-        {
-          "id": "b-animals-11",
-          "ar": "أَرْنَبٌ",
-          "en": "Rabbit",
-          "emoji": "🐇"
-        },
-        {
-          "id": "b-animals-12",
-          "ar": "قِرْدٌ",
-          "en": "Monkey",
-          "emoji": "🐒"
         }
       ]
     },
@@ -130,42 +94,6 @@
           "ar": "بِطِّيخٌ",
           "en": "Watermelon",
           "emoji": "🍉"
-        },
-        {
-          "id": "b-fruits-7",
-          "ar": "مَانْجُو",
-          "en": "Mango",
-          "emoji": "🥭"
-        },
-        {
-          "id": "b-fruits-8",
-          "ar": "أَنَانَاسٌ",
-          "en": "Pineapple",
-          "emoji": "🍍"
-        },
-        {
-          "id": "b-fruits-9",
-          "ar": "لَيْمُونَةٌ",
-          "en": "Lemon",
-          "emoji": "🍋"
-        },
-        {
-          "id": "b-fruits-10",
-          "ar": "كُمَّثْرَى",
-          "en": "Pear",
-          "emoji": "🍐"
-        },
-        {
-          "id": "b-fruits-11",
-          "ar": "تَمْرٌ",
-          "en": "Dates",
-          "emoji": "🌴"
-        },
-        {
-          "id": "b-fruits-12",
-          "ar": "بَابَايَا",
-          "en": "Papaya",
-          "emoji": "🍈"
         }
       ]
     },
@@ -214,6 +142,36 @@
           "ar": "أَسْوَدُ",
           "en": "Black",
           "emoji": "⚫"
+        },
+        {
+          "id": "b-colors-7",
+          "ar": "بَنَفْسَجِيٌّ",
+          "en": "Purple",
+          "emoji": "🟣"
+        },
+        {
+          "id": "b-colors-8",
+          "ar": "وَرْدِيٌّ",
+          "en": "Pink",
+          "emoji": "🩷"
+        },
+        {
+          "id": "b-colors-9",
+          "ar": "بُنِّيٌّ",
+          "en": "Brown",
+          "emoji": "🟤"
+        },
+        {
+          "id": "b-colors-10",
+          "ar": "رَمَادِيٌّ",
+          "en": "Grey",
+          "emoji": "🩶"
+        },
+        {
+          "id": "b-colors-11",
+          "ar": "بُرْتُقَالِيٌّ",
+          "en": "Orange",
+          "emoji": "🟠"
         }
       ]
     },
@@ -222,7 +180,7 @@
       "level": "beginner",
       "title": {
         "en": "Body parts",
-        "ar": "أَجْزَاءُ الْجِسْمِ"
+        "ar": "جِسْمُ الإِنْسَانِ"
       },
       "emoji": "🧒",
       "review": "migrated-original-unreviewed",
@@ -265,9 +223,9 @@
         },
         {
           "id": "b-body-7",
-          "ar": "ذِرَاعٌ",
-          "en": "Arm",
-          "emoji": "💪"
+          "ar": "قَدَمٌ",
+          "en": "Foot",
+          "emoji": "🦶"
         },
         {
           "id": "b-body-8",
@@ -277,27 +235,27 @@
         },
         {
           "id": "b-body-9",
-          "ar": "قَدَمٌ",
-          "en": "Foot",
-          "emoji": "🦶"
+          "ar": "لِسَانٌ",
+          "en": "Tongue",
+          "emoji": "👅"
         },
         {
           "id": "b-body-10",
-          "ar": "إِصْبَعٌ",
-          "en": "Finger",
-          "emoji": "☝️"
-        },
-        {
-          "id": "b-body-11",
           "ar": "شَعْرٌ",
           "en": "Hair",
           "emoji": "💇"
         },
         {
-          "id": "b-body-12",
+          "id": "b-body-11",
           "ar": "أَسْنَانٌ",
           "en": "Teeth",
           "emoji": "🦷"
+        },
+        {
+          "id": "b-body-12",
+          "ar": "إِصْبَعٌ",
+          "en": "Finger",
+          "emoji": "☝️"
         }
       ]
     },
@@ -305,7 +263,7 @@
       "id": "b-numbers",
       "level": "beginner",
       "title": {
-        "en": "Numbers 1–100",
+        "en": "Numbers",
         "ar": "الأَرْقَامُ"
       },
       "emoji": "🔢",
@@ -315,601 +273,37 @@
           "id": "b-numbers-1",
           "ar": "وَاحِدٌ",
           "en": "One",
-          "emoji": "1"
+          "emoji": "1️⃣"
         },
         {
           "id": "b-numbers-2",
           "ar": "اِثْنَانِ",
           "en": "Two",
-          "emoji": "2"
+          "emoji": "2️⃣"
         },
         {
           "id": "b-numbers-3",
           "ar": "ثَلَاثَةٌ",
           "en": "Three",
-          "emoji": "3"
+          "emoji": "3️⃣"
         },
         {
           "id": "b-numbers-4",
           "ar": "أَرْبَعَةٌ",
           "en": "Four",
-          "emoji": "4"
+          "emoji": "4️⃣"
         },
         {
           "id": "b-numbers-5",
           "ar": "خَمْسَةٌ",
           "en": "Five",
-          "emoji": "5"
+          "emoji": "5️⃣"
         },
         {
           "id": "b-numbers-6",
           "ar": "سِتَّةٌ",
           "en": "Six",
-          "emoji": "6"
-        },
-        {
-          "id": "b-numbers-7",
-          "ar": "سَبْعَةٌ",
-          "en": "Seven",
-          "emoji": "7"
-        },
-        {
-          "id": "b-numbers-8",
-          "ar": "ثَمَانِيَةٌ",
-          "en": "Eight",
-          "emoji": "8"
-        },
-        {
-          "id": "b-numbers-9",
-          "ar": "تِسْعَةٌ",
-          "en": "Nine",
-          "emoji": "9"
-        },
-        {
-          "id": "b-numbers-10",
-          "ar": "عَشَرَةٌ",
-          "en": "Ten",
-          "emoji": "10"
-        },
-        {
-          "id": "b-numbers-11",
-          "ar": "أَحَدَ عَشَرَ",
-          "en": "Eleven",
-          "emoji": "11"
-        },
-        {
-          "id": "b-numbers-12",
-          "ar": "اِثْنَا عَشَرَ",
-          "en": "Twelve",
-          "emoji": "12"
-        },
-        {
-          "id": "b-numbers-13",
-          "ar": "ثَلَاثَةَ عَشَرَ",
-          "en": "Thirteen",
-          "emoji": "13"
-        },
-        {
-          "id": "b-numbers-14",
-          "ar": "أَرْبَعَةَ عَشَرَ",
-          "en": "Fourteen",
-          "emoji": "14"
-        },
-        {
-          "id": "b-numbers-15",
-          "ar": "خَمْسَةَ عَشَرَ",
-          "en": "Fifteen",
-          "emoji": "15"
-        },
-        {
-          "id": "b-numbers-16",
-          "ar": "سِتَّةَ عَشَرَ",
-          "en": "Sixteen",
-          "emoji": "16"
-        },
-        {
-          "id": "b-numbers-17",
-          "ar": "سَبْعَةَ عَشَرَ",
-          "en": "Seventeen",
-          "emoji": "17"
-        },
-        {
-          "id": "b-numbers-18",
-          "ar": "ثَمَانِيَةَ عَشَرَ",
-          "en": "Eighteen",
-          "emoji": "18"
-        },
-        {
-          "id": "b-numbers-19",
-          "ar": "تِسْعَةَ عَشَرَ",
-          "en": "Nineteen",
-          "emoji": "19"
-        },
-        {
-          "id": "b-numbers-20",
-          "ar": "عِشْرُونَ",
-          "en": "Twenty",
-          "emoji": "20"
-        },
-        {
-          "id": "b-numbers-21",
-          "ar": "وَاحِدٌ وَعِشْرُونَ",
-          "en": "Twenty-One",
-          "emoji": "21"
-        },
-        {
-          "id": "b-numbers-22",
-          "ar": "اِثْنَانِ وَعِشْرُونَ",
-          "en": "Twenty-Two",
-          "emoji": "22"
-        },
-        {
-          "id": "b-numbers-23",
-          "ar": "ثَلَاثَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Three",
-          "emoji": "23"
-        },
-        {
-          "id": "b-numbers-24",
-          "ar": "أَرْبَعَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Four",
-          "emoji": "24"
-        },
-        {
-          "id": "b-numbers-25",
-          "ar": "خَمْسَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Five",
-          "emoji": "25"
-        },
-        {
-          "id": "b-numbers-26",
-          "ar": "سِتَّةٌ وَعِشْرُونَ",
-          "en": "Twenty-Six",
-          "emoji": "26"
-        },
-        {
-          "id": "b-numbers-27",
-          "ar": "سَبْعَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Seven",
-          "emoji": "27"
-        },
-        {
-          "id": "b-numbers-28",
-          "ar": "ثَمَانِيَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Eight",
-          "emoji": "28"
-        },
-        {
-          "id": "b-numbers-29",
-          "ar": "تِسْعَةٌ وَعِشْرُونَ",
-          "en": "Twenty-Nine",
-          "emoji": "29"
-        },
-        {
-          "id": "b-numbers-30",
-          "ar": "ثَلَاثُونَ",
-          "en": "Thirty",
-          "emoji": "30"
-        },
-        {
-          "id": "b-numbers-31",
-          "ar": "وَاحِدٌ وَثَلَاثُونَ",
-          "en": "Thirty-One",
-          "emoji": "31"
-        },
-        {
-          "id": "b-numbers-32",
-          "ar": "اِثْنَانِ وَثَلَاثُونَ",
-          "en": "Thirty-Two",
-          "emoji": "32"
-        },
-        {
-          "id": "b-numbers-33",
-          "ar": "ثَلَاثَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Three",
-          "emoji": "33"
-        },
-        {
-          "id": "b-numbers-34",
-          "ar": "أَرْبَعَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Four",
-          "emoji": "34"
-        },
-        {
-          "id": "b-numbers-35",
-          "ar": "خَمْسَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Five",
-          "emoji": "35"
-        },
-        {
-          "id": "b-numbers-36",
-          "ar": "سِتَّةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Six",
-          "emoji": "36"
-        },
-        {
-          "id": "b-numbers-37",
-          "ar": "سَبْعَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Seven",
-          "emoji": "37"
-        },
-        {
-          "id": "b-numbers-38",
-          "ar": "ثَمَانِيَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Eight",
-          "emoji": "38"
-        },
-        {
-          "id": "b-numbers-39",
-          "ar": "تِسْعَةٌ وَثَلَاثُونَ",
-          "en": "Thirty-Nine",
-          "emoji": "39"
-        },
-        {
-          "id": "b-numbers-40",
-          "ar": "أَرْبَعُونَ",
-          "en": "Forty",
-          "emoji": "40"
-        },
-        {
-          "id": "b-numbers-41",
-          "ar": "وَاحِدٌ وَأَرْبَعُونَ",
-          "en": "Forty-One",
-          "emoji": "41"
-        },
-        {
-          "id": "b-numbers-42",
-          "ar": "اِثْنَانِ وَأَرْبَعُونَ",
-          "en": "Forty-Two",
-          "emoji": "42"
-        },
-        {
-          "id": "b-numbers-43",
-          "ar": "ثَلَاثَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Three",
-          "emoji": "43"
-        },
-        {
-          "id": "b-numbers-44",
-          "ar": "أَرْبَعَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Four",
-          "emoji": "44"
-        },
-        {
-          "id": "b-numbers-45",
-          "ar": "خَمْسَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Five",
-          "emoji": "45"
-        },
-        {
-          "id": "b-numbers-46",
-          "ar": "سِتَّةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Six",
-          "emoji": "46"
-        },
-        {
-          "id": "b-numbers-47",
-          "ar": "سَبْعَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Seven",
-          "emoji": "47"
-        },
-        {
-          "id": "b-numbers-48",
-          "ar": "ثَمَانِيَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Eight",
-          "emoji": "48"
-        },
-        {
-          "id": "b-numbers-49",
-          "ar": "تِسْعَةٌ وَأَرْبَعُونَ",
-          "en": "Forty-Nine",
-          "emoji": "49"
-        },
-        {
-          "id": "b-numbers-50",
-          "ar": "خَمْسُونَ",
-          "en": "Fifty",
-          "emoji": "50"
-        },
-        {
-          "id": "b-numbers-51",
-          "ar": "وَاحِدٌ وَخَمْسُونَ",
-          "en": "Fifty-One",
-          "emoji": "51"
-        },
-        {
-          "id": "b-numbers-52",
-          "ar": "اِثْنَانِ وَخَمْسُونَ",
-          "en": "Fifty-Two",
-          "emoji": "52"
-        },
-        {
-          "id": "b-numbers-53",
-          "ar": "ثَلَاثَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Three",
-          "emoji": "53"
-        },
-        {
-          "id": "b-numbers-54",
-          "ar": "أَرْبَعَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Four",
-          "emoji": "54"
-        },
-        {
-          "id": "b-numbers-55",
-          "ar": "خَمْسَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Five",
-          "emoji": "55"
-        },
-        {
-          "id": "b-numbers-56",
-          "ar": "سِتَّةٌ وَخَمْسُونَ",
-          "en": "Fifty-Six",
-          "emoji": "56"
-        },
-        {
-          "id": "b-numbers-57",
-          "ar": "سَبْعَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Seven",
-          "emoji": "57"
-        },
-        {
-          "id": "b-numbers-58",
-          "ar": "ثَمَانِيَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Eight",
-          "emoji": "58"
-        },
-        {
-          "id": "b-numbers-59",
-          "ar": "تِسْعَةٌ وَخَمْسُونَ",
-          "en": "Fifty-Nine",
-          "emoji": "59"
-        },
-        {
-          "id": "b-numbers-60",
-          "ar": "سِتُّونَ",
-          "en": "Sixty",
-          "emoji": "60"
-        },
-        {
-          "id": "b-numbers-61",
-          "ar": "وَاحِدٌ وَسِتُّونَ",
-          "en": "Sixty-One",
-          "emoji": "61"
-        },
-        {
-          "id": "b-numbers-62",
-          "ar": "اِثْنَانِ وَسِتُّونَ",
-          "en": "Sixty-Two",
-          "emoji": "62"
-        },
-        {
-          "id": "b-numbers-63",
-          "ar": "ثَلَاثَةٌ وَسِتُّونَ",
-          "en": "Sixty-Three",
-          "emoji": "63"
-        },
-        {
-          "id": "b-numbers-64",
-          "ar": "أَرْبَعَةٌ وَسِتُّونَ",
-          "en": "Sixty-Four",
-          "emoji": "64"
-        },
-        {
-          "id": "b-numbers-65",
-          "ar": "خَمْسَةٌ وَسِتُّونَ",
-          "en": "Sixty-Five",
-          "emoji": "65"
-        },
-        {
-          "id": "b-numbers-66",
-          "ar": "سِتَّةٌ وَسِتُّونَ",
-          "en": "Sixty-Six",
-          "emoji": "66"
-        },
-        {
-          "id": "b-numbers-67",
-          "ar": "سَبْعَةٌ وَسِتُّونَ",
-          "en": "Sixty-Seven",
-          "emoji": "67"
-        },
-        {
-          "id": "b-numbers-68",
-          "ar": "ثَمَانِيَةٌ وَسِتُّونَ",
-          "en": "Sixty-Eight",
-          "emoji": "68"
-        },
-        {
-          "id": "b-numbers-69",
-          "ar": "تِسْعَةٌ وَسِتُّونَ",
-          "en": "Sixty-Nine",
-          "emoji": "69"
-        },
-        {
-          "id": "b-numbers-70",
-          "ar": "سَبْعُونَ",
-          "en": "Seventy",
-          "emoji": "70"
-        },
-        {
-          "id": "b-numbers-71",
-          "ar": "وَاحِدٌ وَسَبْعُونَ",
-          "en": "Seventy-One",
-          "emoji": "71"
-        },
-        {
-          "id": "b-numbers-72",
-          "ar": "اِثْنَانِ وَسَبْعُونَ",
-          "en": "Seventy-Two",
-          "emoji": "72"
-        },
-        {
-          "id": "b-numbers-73",
-          "ar": "ثَلَاثَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Three",
-          "emoji": "73"
-        },
-        {
-          "id": "b-numbers-74",
-          "ar": "أَرْبَعَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Four",
-          "emoji": "74"
-        },
-        {
-          "id": "b-numbers-75",
-          "ar": "خَمْسَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Five",
-          "emoji": "75"
-        },
-        {
-          "id": "b-numbers-76",
-          "ar": "سِتَّةٌ وَسَبْعُونَ",
-          "en": "Seventy-Six",
-          "emoji": "76"
-        },
-        {
-          "id": "b-numbers-77",
-          "ar": "سَبْعَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Seven",
-          "emoji": "77"
-        },
-        {
-          "id": "b-numbers-78",
-          "ar": "ثَمَانِيَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Eight",
-          "emoji": "78"
-        },
-        {
-          "id": "b-numbers-79",
-          "ar": "تِسْعَةٌ وَسَبْعُونَ",
-          "en": "Seventy-Nine",
-          "emoji": "79"
-        },
-        {
-          "id": "b-numbers-80",
-          "ar": "ثَمَانُونَ",
-          "en": "Eighty",
-          "emoji": "80"
-        },
-        {
-          "id": "b-numbers-81",
-          "ar": "وَاحِدٌ وَثَمَانُونَ",
-          "en": "Eighty-One",
-          "emoji": "81"
-        },
-        {
-          "id": "b-numbers-82",
-          "ar": "اِثْنَانِ وَثَمَانُونَ",
-          "en": "Eighty-Two",
-          "emoji": "82"
-        },
-        {
-          "id": "b-numbers-83",
-          "ar": "ثَلَاثَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Three",
-          "emoji": "83"
-        },
-        {
-          "id": "b-numbers-84",
-          "ar": "أَرْبَعَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Four",
-          "emoji": "84"
-        },
-        {
-          "id": "b-numbers-85",
-          "ar": "خَمْسَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Five",
-          "emoji": "85"
-        },
-        {
-          "id": "b-numbers-86",
-          "ar": "سِتَّةٌ وَثَمَانُونَ",
-          "en": "Eighty-Six",
-          "emoji": "86"
-        },
-        {
-          "id": "b-numbers-87",
-          "ar": "سَبْعَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Seven",
-          "emoji": "87"
-        },
-        {
-          "id": "b-numbers-88",
-          "ar": "ثَمَانِيَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Eight",
-          "emoji": "88"
-        },
-        {
-          "id": "b-numbers-89",
-          "ar": "تِسْعَةٌ وَثَمَانُونَ",
-          "en": "Eighty-Nine",
-          "emoji": "89"
-        },
-        {
-          "id": "b-numbers-90",
-          "ar": "تِسْعُونَ",
-          "en": "Ninety",
-          "emoji": "90"
-        },
-        {
-          "id": "b-numbers-91",
-          "ar": "وَاحِدٌ وَتِسْعُونَ",
-          "en": "Ninety-One",
-          "emoji": "91"
-        },
-        {
-          "id": "b-numbers-92",
-          "ar": "اِثْنَانِ وَتِسْعُونَ",
-          "en": "Ninety-Two",
-          "emoji": "92"
-        },
-        {
-          "id": "b-numbers-93",
-          "ar": "ثَلَاثَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Three",
-          "emoji": "93"
-        },
-        {
-          "id": "b-numbers-94",
-          "ar": "أَرْبَعَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Four",
-          "emoji": "94"
-        },
-        {
-          "id": "b-numbers-95",
-          "ar": "خَمْسَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Five",
-          "emoji": "95"
-        },
-        {
-          "id": "b-numbers-96",
-          "ar": "سِتَّةٌ وَتِسْعُونَ",
-          "en": "Ninety-Six",
-          "emoji": "96"
-        },
-        {
-          "id": "b-numbers-97",
-          "ar": "سَبْعَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Seven",
-          "emoji": "97"
-        },
-        {
-          "id": "b-numbers-98",
-          "ar": "ثَمَانِيَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Eight",
-          "emoji": "98"
-        },
-        {
-          "id": "b-numbers-99",
-          "ar": "تِسْعَةٌ وَتِسْعُونَ",
-          "en": "Ninety-Nine",
-          "emoji": "99"
-        },
-        {
-          "id": "b-numbers-100",
-          "ar": "مِائَةٌ",
-          "en": "One Hundred",
-          "emoji": "100"
+          "emoji": "6️⃣"
         }
       ]
     },
@@ -917,8 +311,8 @@
       "id": "b-home",
       "level": "beginner",
       "title": {
-        "en": "Things in the house",
-        "ar": "أَشْيَاءُ فِي الْبَيْتِ"
+        "en": "Things in the House",
+        "ar": "أَدَوَاتُ الْمَنْزِلِ"
       },
       "emoji": "🏠",
       "review": "migrated-original-unreviewed",
@@ -961,9 +355,9 @@
         },
         {
           "id": "b-home-7",
-          "ar": "نَافِذَةٌ",
-          "en": "Window",
-          "emoji": "🪟"
+          "ar": "أَرِيكَةٌ",
+          "en": "Sofa",
+          "emoji": "🛋️"
         },
         {
           "id": "b-home-8",
@@ -973,21 +367,21 @@
         },
         {
           "id": "b-home-9",
-          "ar": "كُوبٌ",
-          "en": "Cup",
-          "emoji": "🥛"
+          "ar": "مِرْآةٌ",
+          "en": "Mirror",
+          "emoji": "🪞"
         },
         {
           "id": "b-home-10",
-          "ar": "طَبَقٌ",
-          "en": "Plate",
-          "emoji": "🍽️"
+          "ar": "سَاعَةٌ",
+          "en": "Clock",
+          "emoji": "🕒"
         },
         {
           "id": "b-home-11",
-          "ar": "مِلْعَقَةٌ",
-          "en": "Spoon",
-          "emoji": "🥄"
+          "ar": "كُوبٌ",
+          "en": "Cup",
+          "emoji": "🥤"
         },
         {
           "id": "b-home-12",
