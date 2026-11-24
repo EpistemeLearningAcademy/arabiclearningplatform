@@ -1,0 +1,10 @@
+KALIMATI AL-ULA 2.0 — DASHBOARD AND REAL PICTURE UPDATE
+
+Replace the files in the exact paths shown in this package. Keep all other repository files unchanged.
+
+Changed: assets/js/app.js, assets/css/main.css, content/images/manifest.json, sw.js.
+Added/replaced local vocabulary pictures: assets/images/vocab/*.webp
+
+The dashboard remains a live interface: category cards open the existing vocabulary lessons; listening, alphabet, builder, writing, progress and settings remain functional. Learner profile and progress storage are not changed.
+
+After committing, wait for GitHub Pages deployment, then reload the site. If an old version remains visible, close the installed PWA/browser tab and reopen after deployment.
