@@ -1,0 +1,44 @@
+KALIMATI AL-ULA 2.0 — VOCABULARY, PICTURES, LISTENING LAB & SPEED UPDATE
+
+Replace/add only the files in this update ZIP, keeping their folder paths:
+
+REPLACE:
+- assets/js/app.js
+- assets/images/vocab/b-fruits-2.webp
+- assets/images/vocab/b-fruits-3.webp
+- content/beginner/vocabulary/core.json
+- content/images/manifest.json
+- content/translations/en.json
+- content/translations/ar.json
+- sw.js
+
+ADD:
+- assets/images/vocab/b-animals-7.webp
+- assets/images/vocab/b-animals-8.webp
+- assets/images/vocab/b-animals-9.webp
+- assets/images/vocab/b-animals-10.webp
+- assets/images/vocab/b-animals-11.webp
+- assets/images/vocab/b-animals-12.webp
+
+WHAT CHANGED:
+- Animals: 6 new words (12 total)
+- Fruits: 6 new words (12 total), including grapes, strawberry and watermelon pictures
+- Things in the house: 6 new words (12 total)
+- Body parts: 6 new words (12 total)
+- Numbers: expanded to 1–100
+- Corrected the banana/orange image mapping by swapping the two incorrectly named local image files
+- Listening Lab now uses device/browser Arabic text-to-speech; no teacher recordings are required
+- Startup content files now load concurrently rather than one after another
+- Service-worker cache version bumped so the updated app is fetched
+
+PICTURE / OFFLINE NOTE:
+The six new animal pictures and the corrected banana/orange pictures are bundled locally. The other new vocabulary pictures and the grapes/strawberry/watermelon photos use remote image URLs; the service worker caches them after their first successful online load, so revisit those cards once while online before expecting them offline.
+
+LISTENING NOTE:
+Speech quality depends on the Arabic voice installed on the learner's device. On Android, install Arabic voice data under Settings → Text-to-speech output → Google Speech Services. No MP3 recordings need to be uploaded.
+
+SAFE DATA NOTE:
+This update does not modify learner storage, IndexedDB, localStorage, or profile data. Do not clear browser storage when installing it.
+
+TESTS:
+JavaScript syntax checks and the repository content, logic, and writing checks passed. A live browser test was not available in this environment.

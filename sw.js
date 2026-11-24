@@ -1,6 +1,6 @@
 // Kalimāti al-Ūlā — reliable updates with offline fallback.
 // Learner profiles and progress remain in IndexedDB/localStorage.
-const CACHE = "kalimati-v2-19";
+const CACHE = "kalimati-v2-20";
 const PRECACHE = [
   "index.html", "offline.html", "manifest.json", "assets/css/main.css",
   "assets/js/app.js", "assets/js/i18n.js", "assets/js/storage.js", "assets/js/engine.js",
