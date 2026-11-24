@@ -211,12 +211,17 @@ function promptView() {
 }
 
 // ---------- Listening lab ----------
-function listeningPool() { return hasArabicVoice() ? vocabItems() : vocabItems().filter(it => hasAudio(it.id)); }
+function listeningPool() { return vocabItems(); }
 function listeningView() {
   const pool = listeningPool();
+  const canSpeak = "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("listening")), h("p", { class: "muted" }, t("listeningIntro")),
-    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : [h("p", { class: "note" }, t("noVoice")), h("p", { class: "note" }, t("voiceHelp"))],
-    h("p", { class: "note" }, t("listenNote"))]);
+    h("div", { class: "card" }, h("h3", {}, t("listeningReady")),
+      h("p", {}, canSpeak ? t("listeningTtsReady") : t("listeningTtsUnavailable")),
+      btn("🔊 " + t("sampleVoice"), () => playItem(pool[0]?.id, pool[0]?.ar), "gold")),
+    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : null,
+    h("p", { class: "note" }, t("listenNote")),
+    !canSpeak ? h("div", { class: "note" }, t("voiceHelp")) : null]);
 }
 
 // ---------- Sentence builder ----------
@@ -606,24 +611,38 @@ async function boot() {
   try { await setLang(savedLang()); } catch { app.textContent = "Could not load interface strings."; return; }
   applySize();
   try {
-    const idx = await (await fetch("content/index.json")).json();
-    for (const f of idx.vocabulary) files[f] = await (await fetch("content/" + f)).json();
+    const getJson = async path => { const r = await fetch("content/" + path); if (!r.ok) throw new Error(`Content request failed: ${path} (${r.status})`); return r.json(); };
+    const idx = await getJson("index.json");
+    const [vocabData, alphabetData, lessonData, readingData, sentenceData, writingData, brandData, imageData, audioResult, challengeData, certificateData, achievementData] = await Promise.all([
+      Promise.all((idx.vocabulary || []).map(getJson)),
+      Promise.all((idx.alphabet || []).map(getJson)),
+      Promise.all((idx.lessons || []).map(getJson)),
+      Promise.all((idx.reading || []).map(getJson)),
+      Promise.all((idx.sentences || []).map(getJson)),
+      Promise.all((idx.writing || []).map(getJson)),
+      getJson("shared/branding.json").catch(() => ({})),
+      getJson("images/manifest.json").catch(() => ({ files: {} })),
+      loadAudioManifest(),
+      idx.challenges ? getJson(idx.challenges).catch(() => ({ challenges: [] })) : Promise.resolve({ challenges: [] }),
+      idx.certificates ? getJson(idx.certificates).catch(() => ({ certificates: [] })) : Promise.resolve({ certificates: [] }),
+      idx.achievements ? getJson(idx.achievements).catch(() => ({ achievements: [] })) : Promise.resolve({ achievements: [] })
+    ]);
+    for (let i = 0; i < (idx.vocabulary || []).length; i++) files[idx.vocabulary[i]] = vocabData[i];
+    for (let i = 0; i < (idx.alphabet || []).length; i++) lfiles[idx.alphabet[i]] = alphabetData[i];
+    for (let i = 0; i < (idx.lessons || []).length; i++) lsFiles[idx.lessons[i]] = lessonData[i];
+    for (let i = 0; i < (idx.reading || []).length; i++) rdFiles[idx.reading[i]] = readingData[i];
+    for (let i = 0; i < (idx.sentences || []).length; i++) sfiles[idx.sentences[i]] = sentenceData[i];
+    for (let i = 0; i < (idx.writing || []).length; i++) wfiles[idx.writing[i]] = writingData[i];
     themes = Object.values(files).flatMap(d => d.themes);
-    for (const f of idx.alphabet || []) lfiles[f] = await (await fetch("content/" + f)).json();
-    for (const f of idx.lessons || []) lsFiles[f] = await (await fetch("content/" + f)).json();
-    for (const f of idx.reading || []) rdFiles[f] = await (await fetch("content/" + f)).json();
     passages = Object.values(rdFiles).flatMap(d => d.passages);
-    for (const f of idx.sentences || []) sfiles[f] = await (await fetch("content/" + f)).json();
     sentences = Object.values(sfiles).flatMap(d => d.sentences);
-    for (const f of idx.writing || []) wfiles[f] = await (await fetch("content/" + f)).json();
     wprompts = Object.values(wfiles).flatMap(d => d.prompts);
-    try { brandDef = await (await fetch("content/shared/branding.json")).json(); } catch { brandDef = {}; }
-    try { const r = await fetch("content/images/manifest.json"); if (r.ok) imgFiles = (await r.json()).files || {}; } catch { imgFiles = {}; }
-    await loadAudioManifest();
-    try { settings = (await S.kvGet("settings")) || {}; for (const [k, v] of await S.kvEntries("img:")) imgs[k] = v; for (const [k, v] of await S.kvEntries("brand:")) brandImgs[k] = v; } catch { settings = {}; }
-    if (idx.challenges) challenges = (await (await fetch("content/" + idx.challenges)).json()).challenges;
-    if (idx.certificates) certs = (await (await fetch("content/" + idx.certificates)).json()).certificates;
-    if (idx.achievements) catalog = (await (await fetch("content/" + idx.achievements)).json()).achievements;
+    brandDef = brandData;
+    imgFiles = imageData.files || {};
+    challenges = challengeData.challenges || [];
+    certs = certificateData.certificates || [];
+    catalog = achievementData.achievements || [];
+    try { settings = (await S.kvGet("settings")) || {}; const [savedImgs, savedBrand] = await Promise.all([S.kvEntries("img:"), S.kvEntries("brand:")]); for (const [k, v] of savedImgs) imgs[k] = v; for (const [k, v] of savedBrand) brandImgs[k] = v; } catch { settings = {}; }
     lessons = Object.values(lsFiles).flatMap(d => d.lessons);
     letters = Object.values(lfiles).flatMap(d => d.letters).map(l => ({ ...l, kind: "letter", emoji: "" }));
   } catch { app.replaceChildren(h("main", {}, h("p", {}, "Could not load lesson content. Check your connection and reload."))); return; }
