@@ -183,37 +183,83 @@
           "id": "b-colors-1",
           "ar": "أَحْمَرُ",
           "en": "Red",
-          "emoji": "🔴"
+          "emoji": "🔴",
+          "color": "#EF4444"
         },
         {
           "id": "b-colors-2",
           "ar": "أَزْرَقُ",
           "en": "Blue",
-          "emoji": "🔵"
+          "emoji": "🔵",
+          "color": "#2563EB"
         },
         {
           "id": "b-colors-3",
           "ar": "أَخْضَرُ",
           "en": "Green",
-          "emoji": "🟢"
+          "emoji": "🟢",
+          "color": "#16A34A"
         },
         {
           "id": "b-colors-4",
           "ar": "أَصْفَرُ",
           "en": "Yellow",
-          "emoji": "🟡"
+          "emoji": "🟡",
+          "color": "#FACC15"
         },
         {
           "id": "b-colors-5",
           "ar": "أَبْيَضُ",
           "en": "White",
-          "emoji": "⚪"
+          "emoji": "⚪",
+          "color": "#FFFFFF"
         },
         {
           "id": "b-colors-6",
           "ar": "أَسْوَدُ",
           "en": "Black",
-          "emoji": "⚫"
+          "emoji": "⚫",
+          "color": "#111827"
+        },
+        {
+          "id": "b-colors-7",
+          "ar": "بَنَفْسَجِيٌّ",
+          "en": "Purple",
+          "emoji": "🟣",
+          "color": "#800080",
+          "colorName": "Purple"
+        },
+        {
+          "id": "b-colors-8",
+          "ar": "وَرْدِيٌّ",
+          "en": "Pink",
+          "emoji": "🩷",
+          "color": "#EC4899",
+          "colorName": "Pink"
+        },
+        {
+          "id": "b-colors-9",
+          "ar": "بُنِّيٌّ",
+          "en": "Brown",
+          "emoji": "🟤",
+          "color": "#8B4513",
+          "colorName": "Brown"
+        },
+        {
+          "id": "b-colors-10",
+          "ar": "رَمَادِيٌّ",
+          "en": "Grey",
+          "emoji": "⚪",
+          "color": "#808080",
+          "colorName": "Ash/Grey"
+        },
+        {
+          "id": "b-colors-11",
+          "ar": "بُرْتُقَالِيٌّ",
+          "en": "Orange",
+          "emoji": "🟠",
+          "color": "#F97316",
+          "colorName": "Orange"
         }
       ]
     },
