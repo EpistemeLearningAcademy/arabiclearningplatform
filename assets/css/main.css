@@ -187,3 +187,9 @@ main:has(.dash-hero){max-width:1180px;padding:clamp(.55rem,2vw,1.25rem);padding-
 @media(max-width:700px){.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}.dash-card{min-height:165px;padding:.6rem}.dash-thumb,.dash-symbol{--s:62px;width:62px;height:62px}.dash-heading strong{font-size:.94rem}.dash-heading .ar{font-size:1rem}.dash-progress{font-size:.68rem;padding:.5rem}.dash-extras{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:390px){.dash-card-top{gap:.35rem}.dash-thumb,.dash-symbol{--s:50px;width:50px;height:50px}.dash-sound{width:30px;height:30px;font-size:.8rem}.dash-card{min-height:150px}.dash-heading strong{font-size:.84rem}.dash-heading .ar{font-size:.9rem}.dash-action{font-size:.72rem;padding:.35rem .5rem}.dash-title .ar{font-size:1.8rem}}
 @media(prefers-reduced-motion:reduce){.dash-card{transition:none}}
+
+/* Vocabulary colour swatches: real CSS colour samples, not emoji substitutes. */
+.pic.has-swatch{display:inline-grid;place-items:center}
+.pic .color-swatch{display:block;width:100%;height:100%;border-radius:50%;background:var(--swatch);border:3px solid rgba(0,0,0,.12);box-shadow:inset 0 2px 5px rgba(255,255,255,.45),0 5px 12px rgba(0,0,0,.12)}
+.pic.has-swatch.xl .color-swatch{border-width:5px}
+.pic.image-missing .emoji{opacity:.18}
