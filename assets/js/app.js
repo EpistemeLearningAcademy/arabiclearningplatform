@@ -224,11 +224,18 @@ function promptView() {
 }
 
 // ---------- Listening lab ----------
-function listeningPool() { return hasArabicVoice() ? vocabItems() : vocabItems().filter(it => hasAudio(it.id)); }
+function listeningPool() { return vocabItems(); }
 function listeningView() {
   const pool = listeningPool();
+  const sample = pool.find(it => it.ar) || { ar: "مَرْحَبًا", id: "listening-test" };
   shell([h("div", { class: "row sb" }, btn("← " + t("back"), () => go("home"))), h("h1", {}, t("listening")), h("p", { class: "muted" }, t("listeningIntro")),
-    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : [h("p", { class: "note" }, t("noVoice")), h("p", { class: "note" }, t("voiceHelp"))],
+    h("div", { class: "card", style: "text-align:center;padding:1.2rem" },
+      h("div", { style: "font-size:3rem" }, "🎧"),
+      h("p", {}, "Try the Arabic voice on this device"),
+      h("p", { class: "ar big", lang: "ar", dir: "rtl" }, sample.ar),
+      btn("🔊 Test Arabic pronunciation", () => playItem(sample.id, sample.ar), "gold")),
+    pool.length >= 4 ? btn(t("startListening"), () => go("quiz", { qs: buildListeningQuiz(pool, t), qi: 0, topic: "listening" }), "primary") : h("p", { class: "note" }, "Vocabulary is being prepared."),
+    h("p", { class: "note" }, "Listening uses your device's Arabic text-to-speech voice. If no Arabic voice is installed, install an Arabic speech voice in your Android text-to-speech settings and try again."),
     h("p", { class: "note" }, t("listenNote"))]);
 }
 
@@ -312,14 +319,20 @@ function brandImage(kind, cls) {
   const im = h("img", { src, alt: "", class: cls }); im.onerror = () => im.remove(); return im;
 }
 function picEl(id, emoji, size = "") {
-  const wrap = h("span", { class: "pic " + size, "aria-hidden": "true" }, h("span", { class: "emoji" }, emoji || ""));
+  const item = vocabItems().find(x => x.id === id);
+  const wrap = h("span", { class: "pic " + size + (item?.color ? " has-swatch" : ""), "aria-hidden": "true" });
+  if (item?.color) {
+    wrap.append(h("span", { class: "color-swatch", style: `--swatch:${item.color}` }));
+    return wrap;
+  }
+  wrap.append(h("span", { class: "emoji" }, emoji || ""));
   const dev = id && imgs["img:" + id], entry = id && imgFiles[id];
   const src = dev || (typeof entry === "string" && /^https?:\/\//i.test(entry)
     ? entry
     : entry ? `assets/images/vocab/${id}.${entry}` : null);
   if (src) {
     const im = h("img", { alt: "", loading: "lazy", decoding: "async", src });
-    im.onerror = () => im.remove();
+    im.onerror = () => { im.remove(); wrap.classList.add("image-missing"); };
     wrap.append(im);
   }
   return wrap;
