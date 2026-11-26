@@ -1,0 +1,35 @@
+KALIMATI — TARGETED BODY / HOUSE / COLOURS / LISTENING FIX
+===========================================================
+
+Replace/add ONLY the following files in the existing repository, keeping paths:
+
+REPLACE:
+- assets/js/app.js
+- assets/js/audio.js
+- assets/css/main.css
+- content/beginner/vocabulary/core.json
+- content/images/manifest.json
+- sw.js
+
+REPLACE THESE IMAGE FILES:
+- assets/images/vocab/b-body-7.webp through b-body-12.webp
+- assets/images/vocab/b-home-7.webp
+- assets/images/vocab/b-home-10.webp
+- assets/images/vocab/b-home-11.webp
+
+What this patch does:
+- Replaces the six misassigned body-part images with separate arm, leg, foot, finger, hair and teeth images.
+- Corrects the household image mapping: window, plate and spoon replace the sofa, clock and mirror mismatches. Chair remains a chair; no sofa image is assigned to the Chair vocabulary.
+- Adds Purple, Pink, Brown, Grey (Ash) and Orange with colour swatches and Arabic vocabulary.
+- Makes the Listening Lab available even when Android reports no Arabic voice before the user starts.
+- Adds a test-pronunciation button and improves speechSynthesis resume/voice refresh handling.
+- Bumps the service-worker cache to kalimati-v2-22 so the browser fetches this release.
+
+NOT CHANGED:
+- Learner profiles, IndexedDB/localStorage progress, authentication, other lessons, animals, fruits, numbers, dashboard layout, and unrelated content.
+
+After upload:
+1. Commit the changes to GitHub.
+2. Wait for GitHub Pages to finish deploying.
+3. Open the app online once and reload. If an older screen remains, close the app tab and reopen it.
+4. In Listening Lab, tap “Test Arabic pronunciation”. If the device has no Arabic TTS voice, install/download an Arabic voice in Android's Text-to-speech settings and retry. Browser speech availability depends on the device's installed speech service.
